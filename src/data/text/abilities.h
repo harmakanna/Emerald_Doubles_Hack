@@ -879,6 +879,10 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_WHITE_SMOKE] = sWhiteSmokeDescription,
     [ABILITY_PURE_POWER] = sPurePowerDescription,
     [ABILITY_SHELL_ARMOR] = sShellArmorDescription,
+<<<<<<< HEAD
+=======
+//    [ABILITY_CACOPHONY] = sCacophonyDescription,
+>>>>>>> f2c509eab79c64dcb76d62c863b1bdac7a7f1b3a
     [ABILITY_AIR_LOCK] = sAirLockDescription,
     [ABILITY_TANGLED_FEET] = sTangledFeetDescription,
     [ABILITY_MOTOR_DRIVE] = sMotorDriveDescription,

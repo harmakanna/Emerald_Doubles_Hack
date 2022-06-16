@@ -54,6 +54,8 @@
 #define AI_FLAG_STALL                 (1 << 13)  // AI stalls battle and prefers secondary damage/trapping/etc. TODO not finished
 #define AI_FLAG_SCREENER              (1 << 14)  // AI prefers screening effects like reflect, mist, etc. TODO unfinished
 #define AI_FLAG_SMART_SWITCHING       (1 << 15)  // AI includes a lot more switching checks
+#define AI_FLAG_DO_NOT_SWITCH       (1 << 16)  // AI does not ever switch when battling
+#define AI_FLAG_PRESERVE_ORDER      (1 << 17)  // AI will send out new Pokemon in the order that they are set
 
 // 'other' ai logic flags
 #define AI_FLAG_ROAMING               (1 << 29)

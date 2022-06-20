@@ -49,7 +49,7 @@ static const u8 sThickFatDescription[] = _("Heat-and-cold protection.");
 static const u8 sEarlyBirdDescription[] = _("Awakens quickly from sleep.");
 static const u8 sFlameBodyDescription[] = _("Burns the foe on contact.");
 static const u8 sRunAwayDescription[] = _("Makes escaping easier.");
-static const u8 sKeenEyeDescription[] = _("Prevents loss of accuracy.");
+static const u8 sKeenEyeDescription[] = _("Boosts super-effective.");
 static const u8 sHyperCutterDescription[] = _("Prevents Attack reduction.");
 static const u8 sPickupDescription[] = _("May pick up items.");
 static const u8 sTruantDescription[] = _("Moves only every two turns.");
@@ -254,6 +254,16 @@ static const u8 sChillingNeighDescription[] = _("KOs boost Attack stat.");
 static const u8 sGrimNeighDescription[] = _("KOs boost Sp. Atk stat.");
 static const u8 sAsOneIceRiderDescription[] = _("Unnerve and Chilling Neigh.");
 static const u8 sAsOneShadowRiderDescription[] = _("Unnerve and Grim Neigh.");
+static const u8 sCheerleaderDescription[] = _("Powers up ally moves.");
+static const u8 sEvaporateDescription[] = _("Not hit by Water attacks.");
+static const u8 sSandSpiritDescription[] = _("Ground STAB + Sand immune.");
+static const u8 sSkySonataDescription[] = _("Flying STAB and Levitate.");
+static const u8 sPsychOutDescription[] = _("Lowers the foe's Sp. Atk.");
+static const u8 sSpiritWardDescription[] = _("Ghost-and-dark protection.");
+static const u8 sIcyPeltDescription[] = _("Ups Defense in hail.");
+static const u8 sFirePouchDescription[] = _("idk");
+static const u8 sSnowPlowDescription[] = _("Ups Ice moves in hail.");
+static const u8 sFreeSpiritDescription[] = _("Prevents status.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -526,6 +536,16 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_GRIM_NEIGH] = _("Grim Neigh"),
     [ABILITY_AS_ONE_ICE_RIDER] = _("As One"),
     [ABILITY_AS_ONE_SHADOW_RIDER] = _("As One"),
+    [ABILITY_CHEERLEADER] = _("Cheerleader"),
+    [ABILITY_EVAPORATE] = _("Evaporate"),
+    [ABILITY_SAND_SPIRIT] = _("Desert Spirit"),
+    [ABILITY_SKY_SONATA] = _("Sky Sonata"),
+    [ABILITY_PSYCH_OUT] = _("Psych Out"),
+    [ABILITY_SPIRIT_WARD] = _("Spirit Ward"),
+    [ABILITY_ICY_PELT] = _("Icy Pelt"),
+    [ABILITY_FIRE_POUCH] = _("Fire Pouch"),
+    [ABILITY_SNOW_PLOW] = _("Snow Plow"),
+    [ABILITY_FREE_SPIRIT] = _("Free Spirit"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -798,6 +818,16 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_GRIM_NEIGH] = _("Grim Neigh"),
     [ABILITY_AS_ONE_ICE_RIDER] = _("As One"),
     [ABILITY_AS_ONE_SHADOW_RIDER] = _("As One"),
+    [ABILITY_CHEERLEADER] = _("Cheerleader"),
+    [ABILITY_EVAPORATE] = _("Evaporate"),
+    [ABILITY_SAND_SPIRIT] = _("Sand Spirit"),
+    [ABILITY_SKY_SONATA] = _("Sky Sonata"),
+    [ABILITY_PSYCH_OUT] = _("Psych Out"),
+    [ABILITY_SPIRIT_WARD] = _("Spirit Ward"),
+    [ABILITY_ICY_PELT] = _("Icy Pelt"),
+    [ABILITY_FIRE_POUCH] = _("Fire Pouch"),
+    [ABILITY_SNOW_PLOW] = _("Snow Plow"),
+    [ABILITY_FREE_SPIRIT] = _("Free Spirit"),
 };
 #endif
 
@@ -1072,4 +1102,14 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_GRIM_NEIGH] = sGrimNeighDescription,
     [ABILITY_AS_ONE_ICE_RIDER] = sAsOneIceRiderDescription,
     [ABILITY_AS_ONE_SHADOW_RIDER] = sAsOneShadowRiderDescription,
+    [ABILITY_CHEERLEADER] = sCheerleaderDescription,
+    [ABILITY_EVAPORATE] = sEvaporateDescription,
+    [ABILITY_SAND_SPIRIT] = sSandSpiritDescription,
+    [ABILITY_SKY_SONATA] = sSkySonataDescription,
+    [ABILITY_PSYCH_OUT] = sPsychOutDescription,
+    [ABILITY_SPIRIT_WARD] = sSpiritWardDescription,
+    [ABILITY_ICY_PELT] = sIcyPeltDescription,
+    [ABILITY_FIRE_POUCH] = sFirePouchDescription,
+    [ABILITY_SNOW_PLOW] = sSnowPlowDescription,
+    [ABILITY_FREE_SPIRIT] = sFreeSpiritDescription,
 };

@@ -2619,8 +2619,8 @@ static const u8 sSafetyGogglesDesc[] = _(
 
 static const u8 sAdrenalineOrbDesc[] = _(
     "Boosts Speed if the\n"
-    "user is intimidated,\n"
-    "but only one time.");
+    "user is intimidated\n"
+    "or psyched out once.");
 
 static const u8 sTerrainExtenderDesc[] = _(
     "Extends the length\n"

@@ -472,7 +472,7 @@ BattleScript_BeakBlastSetUp::
 	setbeakblast BS_ATTACKER
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 0x1
-	playanimation BS_ATTACKER, B_ANIM_BEAK_BLAST_SETUP, NULL	
+	playanimation BS_ATTACKER, B_ANIM_BEAK_BLAST_SETUP, NULL
 	printstring STRINGID_HEATUPBEAK
 	waitmessage 0x40
 	end2
@@ -562,7 +562,7 @@ BattleScript_ScaleShotEnd::
 	moveendcase MOVEEND_SYNCHRONIZE_TARGET
 	moveendfrom MOVEEND_STATUS_IMMUNITY_ABILITIES
 	end
-  
+
 BattleScript_EffectSkyDrop:
 	jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_SkyDropTurn2
 	attackcanceler
@@ -3600,6 +3600,7 @@ BattleScript_EffectToxic::
 	attackstring
 	ppreduce
 	jumpifability BS_TARGET, ABILITY_IMMUNITY, BattleScript_ImmunityProtected
+	jumpifability BS_TARGET, ABILITY_FREE_SPIRIT, BattleScript_ImmunityProtected
 	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_LeafGuardProtects
 	jumpifability BS_TARGET_SIDE, ABILITY_PASTEL_VEIL, BattleScript_PastelVeilProtects
 	jumpifflowerveil BattleScript_FlowerVeilProtects
@@ -3958,6 +3959,7 @@ BattleScript_EffectPoison::
 	attackstring
 	ppreduce
 	jumpifability BS_TARGET, ABILITY_IMMUNITY, BattleScript_ImmunityProtected
+	jumpifability BS_TARGET, ABILITY_FREE_SPIRIT, BattleScript_ImmunityProtected
 	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_LeafGuardProtects
 	jumpifability BS_TARGET_SIDE, ABILITY_PASTEL_VEIL, BattleScript_PastelVeilProtects
 	jumpifflowerveil BattleScript_FlowerVeilProtects
@@ -3984,6 +3986,7 @@ BattleScript_EffectParalyze:
 	attackstring
 	ppreduce
 	jumpifability BS_TARGET, ABILITY_LIMBER, BattleScript_LimberProtected
+	jumpifability BS_TARGET, ABILITY_FREE_SPIRIT, BattleScript_LimberProtected
 	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_LeafGuardProtects
 	jumpifflowerveil BattleScript_FlowerVeilProtects
 	jumpifleafguardprotected BS_TARGET, BattleScript_LeafGuardProtects
@@ -5426,6 +5429,7 @@ BattleScript_EffectWillOWisp::
 	jumpifability BS_TARGET, ABILITY_WATER_VEIL, BattleScript_WaterVeilPrevents
 	jumpifability BS_TARGET, ABILITY_WATER_BUBBLE, BattleScript_WaterVeilPrevents
 	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_LeafGuardProtects
+	jumpifability BS_TARGET, ABILITY_FREE_SPIRIT, BattleScript_WaterVeilPrevents
 	jumpifflowerveil BattleScript_FlowerVeilProtects
 	jumpifleafguardprotected BS_TARGET, BattleScript_LeafGuardProtects
 	jumpifshieldsdown BS_TARGET, BattleScript_LeafGuardProtects
@@ -5451,6 +5455,13 @@ BattleScript_AlreadyBurned::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_PKMNALREADYHASBURN
 	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_MagmaArmorPrevents::
+	call BattleScript_AbilityPopUp
+	copybyte gEffectBattler, gBattlerTarget
+	setbyte cMULTISTRING_CHOOSER, B_MSG_ABILITY_PREVENTS_MOVE_STATUS
+	call BattleScript_FRZPrevention
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectMemento::
@@ -5610,7 +5621,7 @@ BattleScript_EffectRolePlay::
 	pause 20
 	destroyabilitypopup
 	pause 40
-.endif	
+.endif
 	printstring STRINGID_PKMNCOPIEDFOE
 	waitmessage B_WAIT_TIME_LONG
 	switchinabilities BS_ATTACKER
@@ -5715,6 +5726,7 @@ BattleScript_EffectYawn::
 	jumpifability BS_TARGET, ABILITY_VITAL_SPIRIT, BattleScript_PrintBankAbilityMadeIneffective
 	jumpifability BS_TARGET, ABILITY_INSOMNIA, BattleScript_PrintBankAbilityMadeIneffective
 	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_PrintBankAbilityMadeIneffective
+	jumpifability BS_TARGET, ABILITY_FREE_SPIRIT, BattleScript_PrintBankAbilityMadeIneffective
 	jumpifflowerveil BattleScript_FlowerVeilProtects
 	jumpifleafguardprotected BS_TARGET, BattleScript_LeafGuardProtects
 	jumpifshieldsdown BS_TARGET, BattleScript_LeafGuardProtects
@@ -8245,6 +8257,47 @@ BattleScript_IntimidatePrevented:
 	call BattleScript_TryAdrenalineOrb
 	goto BattleScript_IntimidateActivatesLoopIncrement
 
+BattleScript_PsychOutActivatesEnd3::
+	call BattleScript_PausePsychOutActivates
+	end3
+
+BattleScript_PausePsychOutActivates:
+	pause B_WAIT_TIME_SHORT
+BattleScript_PsychOutActivates::
+	setbyte gBattlerTarget, 0
+	call BattleScript_AbilityPopUp
+BattleScript_PsychOutActivatesLoop:
+	setstatchanger STAT_SPATK, 1, TRUE
+	trygetintimidatetarget BattleScript_PsychOutActivatesReturn
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_PsychOutActivatesLoopIncrement
+	jumpifability BS_TARGET, ABILITY_CLEAR_BODY, BattleScript_PsychOutPrevented
+	jumpifability BS_TARGET, ABILITY_WHITE_SMOKE, BattleScript_PsychOutPrevented
+	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_PsychOutPrevented
+	jumpifability BS_TARGET, ABILITY_ANTICIPATION, BattleScript_PsychOutPrevented
+	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_PsychOutPrevented
+	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_PsychOutPrevented
+	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_PsychOutActivatesLoopIncrement
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_PsychOutActivatesLoopIncrement
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_PKMNCUTSSPATTACKWITH
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_TryAdrenalineOrb
+BattleScript_PsychOutActivatesLoopIncrement:
+	addbyte gBattlerTarget, 1
+	goto BattleScript_PsychOutActivatesLoop
+BattleScript_PsychOutActivatesReturn:
+	return
+BattleScript_PsychOutPrevented:
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	setbyte gBattleCommunication STAT_SPATK
+	stattextbuffer BS_ATTACKER
+	printstring STRINGID_STATWASNOTLOWERED
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_TryAdrenalineOrb
+	goto BattleScript_PsychOutActivatesLoopIncrement
+
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
@@ -8492,6 +8545,12 @@ BattleScript_PRLZPrevention::
 BattleScript_PSNPrevention::
 	pause B_WAIT_TIME_SHORT
 	printfromtable gPSNPreventionStringIds
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_FRZPrevention::
+	pause B_WAIT_TIME_SHORT
+	printfromtable gFRZPreventionStringIds
 	waitmessage B_WAIT_TIME_LONG
 	return
 
@@ -9629,7 +9688,7 @@ BattleScript_NeutralizingGasExitsLoop:
 	jumpifbytenotequal gBattlerTarget, sByteFour, BattleScript_NeutralizingGasExitsLoop	@ SOMEHOW, comparing to gBattlersCount is problematic.
 	restoretarget
 	return
-  
+
 BattleScript_MagicianActivates::
 	call BattleScript_AbilityPopUp
 	call BattleScript_ItemSteal

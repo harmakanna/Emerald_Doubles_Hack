@@ -779,6 +779,7 @@ gBattleAnims_Moves::
 	.4byte Move_GLACIAL_LANCE
 	.4byte Move_ASTRAL_BARRAGE
 	.4byte Move_EERIE_SPELL
+	.4byte Move_POUNCE
 	.4byte Move_COUNT @ cannot be reached, because last move is Eerie Spell
 
 	.align 2
@@ -14131,7 +14132,7 @@ TerrainPulseElectric:
 	createvisualtask AnimTask_SwayMon, 5, 0, 4, 51200, 24, ANIM_TARGET
 	createvisualtask AnimTask_BlendColorCycle, 2, 4, 2, 2, 0, 12, RGB(27, 27, 0)
 	goto TerrainPulseEnd
-  
+
 TerrainPulseGrass:
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_DRAGON_PULSE, 0, 12, 12, RGB(11, 26, 11)
 	waitforvisualfinish
@@ -14153,7 +14154,7 @@ TerrainPulseFairy:
 	createvisualtask AnimTask_SwayMon, 5, 0, 4, 51200, 24, ANIM_TARGET
 	createvisualtask AnimTask_BlendColorCycle, 2, 4, 2, 2, 0, 12, RGB(31, 24, 31)
 	goto TerrainPulseEnd
-  
+
 TerrainPulsePsychic:
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_DRAGON_PULSE, 0, 12, 12, RGB(27, 0, 13)
 	waitforvisualfinish
@@ -14410,6 +14411,30 @@ Move_TACKLE:
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
 	setalpha 12, 8
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 4
+	delay 6
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 6, 1
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+
+Move_POUNCE:
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	loadspritegfx ANIM_TAG_MAGENTA_HEART
+	createvisualtask AnimTask_RockMonBackAndForth, 5, ANIM_ATTACKER, 2, 0
+	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, 0, 20
+	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
+	delay 15
+	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, -20, 20
+	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
+	delay 15
+	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, 20, 20
+	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
+	loadspritegfx ANIM_TAG_IMPACT
 	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 4
 	delay 6
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 2

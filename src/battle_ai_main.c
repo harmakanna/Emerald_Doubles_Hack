@@ -1123,8 +1123,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_ACCURACY_DOWN_2:
             if (!ShouldLowerStat(battlerDef, AI_DATA->defAbility, STAT_ACC))
                 score -= 10;
-            else if (AI_DATA->defAbility == ABILITY_KEEN_EYE)
-                score -= 8;
+            //else if (AI_DATA->defAbility == ABILITY_KEEN_EYE)
+            //    score -= 8;
             break;
         case EFFECT_EVASION_DOWN:
         case EFFECT_EVASION_DOWN_2:

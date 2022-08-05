@@ -4,6 +4,7 @@
 .set LOCALID_BALL_CYNDAQUIL, 4
 .set LOCALID_BALL_TOTODILE, 5
 .set LOCALID_BALL_CHIKORITA, 6
+.set LOCALID_EEVEE, 7
 
 LittlerootTown_ProfessorBirchsLab_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_ProfessorBirchsLab_OnTransition
@@ -148,12 +149,37 @@ LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRival::
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRival
 	end
 
-LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent::
-	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex
-	waitmovement 0
-	goto LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex
-	end
+	LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent:: @ 81F9E67
+		lockall
+		applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex
+		waitmovement 0
+		msgbox LittlerootTown_ProfessorBirchsLab_Text_EeveeRest MSGBOX_DEFAULT
+		closemessage
+		applymovement LOCALID_EEVEE LittlerootTown_ProfessorBirchsLab_Movement_Eevee
+		waitmovement 0
+		applymovement OBJ_EVENT_ID_PLAYER Common_Movement_FaceLeft
+		msgbox LittlerootTown_ProfessorBirchsLab_Text_EeveeJoins MSGBOX_DEFAULT
+		playfanfare MUS_OBTAIN_ITEM
+		msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedEevee MSGBOX_DEFAULT
+		givemon SPECIES_EEVEE, 5, ITEM_NONE
+		waitfanfare
+		bufferspeciesname 0, SPECIES_EEVEE
+		msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+		compare VAR_RESULT, NO
+		goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedEevee
+		call Common_EventScript_GetGiftMonPartySlot
+		call Common_EventScript_NameReceivedPartyMon
+		goto LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedEevee
+		end
+
+	LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedEevee::
+		fadescreen FADE_TO_BLACK
+		removeobject LOCALID_EEVEE
+		setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_EEVEE
+		closemessage
+		fadescreen FADE_FROM_BLACK
+		goto LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex
+		end
 
 LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex:
 	walk_up
@@ -163,6 +189,11 @@ LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex:
 	walk_up
 	walk_up
 	walk_up
+	step_end
+
+LittlerootTown_ProfessorBirchsLab_Movement_Eevee: @ 81F9E78
+	walk_down
+	face_right
 	step_end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex::
@@ -733,6 +764,19 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "in tall grass again somewhere…\p"
 	.string "If you or your POKéMON get tired,\n"
 	.string "you should get some rest at home.$"
+
+ittlerootTown_ProfessorBirchsLab_Text_EeveeRest:
+	.string "Prof. Birch: Alright, it seems like\n"
+	.string "Eevee's doing a lot better after a\l"
+	.string "quick rest!\p"
+	.string "Eevee: Vi!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_EeveeJoins:
+	.string "Eevee looks like it wants to come with\n"
+	.string "you.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ReceivedEevee:
+	.string "{PLAYER} received the Eevee!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "PROF. BIRCH: Oh, hi, {PLAYER}{KUN}!\p"

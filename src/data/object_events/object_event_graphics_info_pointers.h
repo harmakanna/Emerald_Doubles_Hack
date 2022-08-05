@@ -237,6 +237,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireBrenda
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireMay;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lugia;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee1;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -244,6 +245,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Storyteller;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giddy;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
+
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -486,6 +488,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LINK_RS_MAY] =              &gObjectEventGraphicsInfo_RubySapphireMay,
     [OBJ_EVENT_GFX_LUGIA] =                    &gObjectEventGraphicsInfo_Lugia,
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
+    [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

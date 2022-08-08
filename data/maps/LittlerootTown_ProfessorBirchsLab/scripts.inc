@@ -765,7 +765,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "If you or your POKéMON get tired,\n"
 	.string "you should get some rest at home.$"
 
-ittlerootTown_ProfessorBirchsLab_Text_EeveeRest:
+LittlerootTown_ProfessorBirchsLab_Text_EeveeRest:
 	.string "Prof. Birch: Alright, it seems like\n"
 	.string "Eevee's doing a lot better after a\l"
 	.string "quick rest!\p"

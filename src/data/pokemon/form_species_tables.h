@@ -176,7 +176,7 @@ static const u16 sSeelFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
-static const u16 sSeelFormSpeciesIdTable[] = {
+static const u16 sDewgongFormSpeciesIdTable[] = {
     SPECIES_DEWGONG,
     SPECIES_DEWGONG_HOENNIAN,
     FORM_SPECIES_END,
@@ -825,6 +825,12 @@ static const u16 sMeowsticFormSpeciesIdTable[] = {
 static const u16 sAegislashFormSpeciesIdTable[] = {
     SPECIES_AEGISLASH,
     SPECIES_AEGISLASH_BLADE,
+    FORM_SPECIES_END,
+};
+
+static const u16 sCarbinkFormSpeciesIdTable[] = {
+    SPECIES_CARBINK,
+    SPECIES_CARBINK_HOENNIAN,
     FORM_SPECIES_END,
 };
 

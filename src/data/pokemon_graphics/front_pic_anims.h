@@ -9363,7 +9363,7 @@ static const union AnimCmd sAnim_CHATOT_HOENNIAN_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_PHIONE_1[] =
+static const union AnimCmd sAnim_PHIONE_HOENNIAN_1[] =
 {
     ANIMCMD_FRAME(0, 30),
     ANIMCMD_FRAME(1, 30),

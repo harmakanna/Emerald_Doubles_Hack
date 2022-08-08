@@ -4410,6 +4410,66 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRATERCREST_TOWN",
+      "name": "CratercrestTown_Layout",
+      "width": 31,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/CratercrestTown/border.bin",
+      "blockdata_filepath": "data/layouts/CratercrestTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_METEOR_1F_1R",
+      "name": "MtMeteor_1F_1R_Layout",
+      "width": 32,
+      "height": 47,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtMeteor_1F_1R/border.bin",
+      "blockdata_filepath": "data/layouts/MtMeteor_1F_1R/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_METEOR_2F_1R",
+      "name": "MtMeteor_2F_1R_Layout",
+      "width": 38,
+      "height": 47,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtMeteor_2F_1R/border.bin",
+      "blockdata_filepath": "data/layouts/MtMeteor_2F_1R/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_METEOR_1F_2R",
+      "name": "MtMeteor_1F_2R_Layout",
+      "width": 39,
+      "height": 51,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtMeteor_1F_2R/border.bin",
+      "blockdata_filepath": "data/layouts/MtMeteor_1F_2R/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_METEOR_2F_2R",
+      "name": "MtMeteor_2F_2R_Layout",
+      "width": 61,
+      "height": 38,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtMeteor_2F_2R/border.bin",
+      "blockdata_filepath": "data/layouts/MtMeteor_2F_2R/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_PEAK",
+      "name": "MeteorPeak_Layout",
+      "width": 45,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/MeteorPeak/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorPeak/map.bin"
     }
   ]
 }

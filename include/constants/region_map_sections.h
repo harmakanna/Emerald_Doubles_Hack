@@ -214,7 +214,19 @@
 #define MAPSEC_ALTERING_CAVE                0xD2
 #define MAPSEC_NAVEL_ROCK                   0xD3
 #define MAPSEC_TRAINER_HILL                 0xD4
-#define MAPSEC_NONE                         0xD5
+#define MAPSEC_MT_METEOR                    0xD5
+#define MAPSEC_CRATERCREST_TOWN             0xD6
+#define MAPSEC_METEOR_PEAK                  0xD7
+#define MAPSEC_LITTLEROOT_WOODS             0xD8
+#define MAPSEC_ROUTE_135                    0xD9
+#define MAPSEC_ROUTE_136                    0xDA
+#define MAPSEC_DRAGONS_DEN                  0xDB
+#define MAPSEC_FORGOTTEN_PLANT              0xDC
+#define MAPSEC_DEWFORD_DUNES                0xDD
+#define MAPSEC_AWAKENING_WOOD               0xDE
+#define MAPSEC_RUIN_OUTSKIRTS               0xDF
+#define MAPSEC_NEW_ISLAND                   0xE0
+#define MAPSEC_NONE                         0xE1
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

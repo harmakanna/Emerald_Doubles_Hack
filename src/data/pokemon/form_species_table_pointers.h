@@ -516,4 +516,12 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER] = sCalyrexFormSpeciesIdTable,
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexFormSpeciesIdTable,
+    // Hoennian Forms
+    [SPECIES_OBSTAGOON_HOENNIAN] = sObstagoonFormSpeciesIdTable,
+    [SPECIES_GOGOAT_HOENNIAN] = sGogoatFormSpeciesIdTable,
+    [SPECIES_CARBINK_HOENNIAN] = sCarbinkFormSpeciesIdTable,
+    [SPECIES_SEEL_HOENNIAN] = sSeelFormSpeciesIdTable,
+    [SPECIES_DEWGONG_HOENNIAN] = sDewgongFormSpeciesIdTable,
+    [SPECIES_CHATOT_HOENNIAN] = sChatotFormSpeciesIdTable,
+    [SPECIES_PHIONE_HOENNIAN] = sPhioneFormSpeciesIdTable,
 };

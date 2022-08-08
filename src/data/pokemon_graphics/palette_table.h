@@ -1272,6 +1272,14 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(CALYREX_ICE_RIDER, gMonPalette_CalyrexIceRider),
     SPECIES_PAL(CALYREX_SHADOW_RIDER, gMonPalette_CalyrexShadowRider),
 
+    SPECIES_PAL(OBSTAGOON_HOENNIAN, gMonPalette_ObstagoonHoennian),
+    SPECIES_PAL(GOGOAT_HOENNIAN, gMonPalette_GogoatHoennian),
+    SPECIES_PAL(CARBINK_HOENNIAN, gMonPalette_CarbinkHoennian),
+    SPECIES_PAL(SEEL_HOENNIAN, gMonPalette_SeelHoennian),
+    SPECIES_PAL(DEWGONG_HOENNIAN, gMonPalette_DewgongHoennian),
+    SPECIES_PAL(CHATOT_HOENNIAN, gMonPalette_ChatotHoennian),
+    SPECIES_PAL(PHIONE_HOENNIAN, gMonPalette_PhioneHoennian),
+
     SPECIES_PAL(EGG, gMonPalette_Egg),
 };
 

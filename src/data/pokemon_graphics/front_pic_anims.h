@@ -9316,6 +9316,61 @@ static const union AnimCmd sAnim_PICHU_SPIKY_EARED_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_OBSTAGOON_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_GOGOAT_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CARBINK_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_SEEL_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DEWGONG_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CHATOT_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_PHIONE_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd *const sAnims_NONE[] ={
     sAnim_GeneralFrame0,
     sAnim_NONE_1,
@@ -14669,6 +14724,41 @@ static const union AnimCmd *const sAnims_PICHU_SPIKY_EARED[] ={
     sAnim_PICHU_SPIKY_EARED_1,
 };
 
+static const union AnimCmd *const sAnims_OBSTAGOON_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_OBSTAGOON_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_GOGOAT_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_GOGOAT_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_CARBINK_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_CARBINK_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_SEEL_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SEEL_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_DEWGONG_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DEWGONG_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_CHATOT_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_CHATOT_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_PHIONE_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_PHIONE_HOENNIAN_1,
+};
+
 #define ANIM_CMD(name)             [SPECIES_##name] = sAnims_##name
 #define ANIM_CMD_FULL(name, anims) [SPECIES_##name] = anims
 
@@ -15881,6 +15971,13 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD_FULL(ZARUDE_DADA, sAnims_ZARUDE),
     ANIM_CMD_FULL(CALYREX_ICE_RIDER, sAnims_CALYREX),
     ANIM_CMD_FULL(CALYREX_SHADOW_RIDER, sAnims_CALYREX),
+    ANIM_CMD(OBSTAGOON_HOENNIAN),
+    ANIM_CMD(GOGOAT_HOENNIAN),
+    ANIM_CMD(CARBINK_HOENNIAN),
+    ANIM_CMD(SEEL_HOENNIAN),
+    ANIM_CMD(DEWGONG_HOENNIAN),
+    ANIM_CMD(CHATOT_HOENNIAN),
+    ANIM_CMD(PHIONE_HOENNIAN),
     ANIM_CMD(EGG),
 };
 

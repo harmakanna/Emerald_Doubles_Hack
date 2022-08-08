@@ -6104,6 +6104,41 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = MON_COORDS_SIZE(64, 64),
         .y_offset = 0,
     },
+    [SPECIES_OBSTAGOON_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(56, 64),
+        .y_offset = 0,
+    },
+    [SPECIES_GOGOAT_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(56, 64),
+        .y_offset = 2,
+    },
+    [SPECIES_CARBINK_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(48, 48),
+        .y_offset = 10,
+    },
+    [SPECIES_SEEL_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(56, 48),
+        .y_offset = 8,
+    },
+    [SPECIES_DEWGONG_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(64, 64),
+        .y_offset = 2,
+    },
+    [SPECIES_CHATOT_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(40, 48),
+        .y_offset = 11,
+    },
+    [SPECIES_PHIONE_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(56, 40),
+        .y_offset = 8,
+    },
     // Egg
     [SPECIES_EGG] =
     {

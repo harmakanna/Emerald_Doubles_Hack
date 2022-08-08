@@ -1237,6 +1237,13 @@ const u8 *const gMonIconTable[] =
     [SPECIES_ZARUDE_DADA] = gMonIcon_ZarudeDada,
     [SPECIES_CALYREX_ICE_RIDER] = gMonIcon_CalyrexIceRider,
     [SPECIES_CALYREX_SHADOW_RIDER] = gMonIcon_CalyrexShadowRider,
+    [SPECIES_OBSTAGOON_HOENNIAN] = gMonIcon_ObstagoonHoennian,
+    [SPECIES_GOGOAT_HOENNIAN] = gMonIcon_GogoatHoennian,
+    [SPECIES_CARBINK_HOENNIAN] = gMonIcon_CarbinkHoennian,
+    [SPECIES_SEEL_HOENNIAN] = gMonIcon_SeelHoennian,
+    [SPECIES_DEWGONG_HOENNIAN] = gMonIcon_DewgongHoennian,
+    [SPECIES_CHATOT_HOENNIAN] = gMonIcon_ChatotHoennian,
+    [SPECIES_PHIONE_HOENNIAN] = gMonIcon_PhioneHoennian,
     [SPECIES_EGG] = gMonIcon_Egg,
 };
 
@@ -2432,6 +2439,13 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_ZARUDE_DADA] = 1,
     [SPECIES_CALYREX_ICE_RIDER] = 0,
     [SPECIES_CALYREX_SHADOW_RIDER] = 0,
+    [SPECIES_OBSTAGOON_HOENNIAN] = 0,
+    [SPECIES_GOGOAT_HOENNIAN] = 1,
+    [SPECIES_CARBINK_HOENNIAN] = 2,
+    [SPECIES_SEEL_HOENNIAN] = 0,
+    [SPECIES_DEWGONG_HOENNIAN] = 2,
+    [SPECIES_CHATOT_HOENNIAN] = 0,
+    [SPECIES_PHIONE_HOENNIAN] = 0,
     [SPECIES_EGG] = 1,
 };
 

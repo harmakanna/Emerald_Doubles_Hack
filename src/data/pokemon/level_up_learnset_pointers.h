@@ -1272,4 +1272,12 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER] = sCalyrexIceRiderLevelUpLearnset,
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexShadowRiderLevelUpLearnset,
+    // Hoennian Forms
+    [SPECIES_OBSTAGOON_HOENNIAN] = sObstagoonHoennianLevelUpLearnset,
+    [SPECIES_GOGOAT_HOENNIAN] = sGogoatHoennianLevelUpLearnset,
+    [SPECIES_CARBINK_HOENNIAN] = sCarbinkHoennianLevelUpLearnset,
+    [SPECIES_SEEL_HOENNIAN] = sSeelFormHoennianLevelUpLearnset,
+    [SPECIES_DEWGONG_HOENNIAN] = sDewgongHoennianLevelUpLearnset,
+    [SPECIES_CHATOT_HOENNIAN] = sChatotHoennianLevelUpLearnset,
+    [SPECIES_PHIONE_HOENNIAN] = sPhioneHoennianLevelUpLearnset,
 };

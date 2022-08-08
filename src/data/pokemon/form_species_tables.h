@@ -170,6 +170,18 @@ static const u16 sFarfetchdFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sSeelFormSpeciesIdTable[] = {
+    SPECIES_SEEL,
+    SPECIES_SEEL_HOENNIAN,
+    FORM_SPECIES_END,
+};
+
+static const u16 sSeelFormSpeciesIdTable[] = {
+    SPECIES_DEWGONG,
+    SPECIES_DEWGONG_HOENNIAN,
+    FORM_SPECIES_END,
+};
+
 static const u16 sGrimerFormSpeciesIdTable[] = {
     SPECIES_GRIMER,
     SPECIES_GRIMER_ALOLAN,
@@ -545,6 +557,12 @@ static const u16 sLopunnyFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sChatotFormSpeciesIdTable[] = {
+    SPECIES_CHATOT,
+    SPECIES_CHATOT_HOENNIAN,
+    FORM_SPECIES_END,
+};
+
 static const u16 sGarchompFormSpeciesIdTable[] = {
     SPECIES_GARCHOMP,
     SPECIES_GARCHOMP_MEGA,
@@ -582,6 +600,12 @@ static const u16 sRotomFormSpeciesIdTable[] = {
 static const u16 sGiratinaFormSpeciesIdTable[] = {
     SPECIES_GIRATINA,
     SPECIES_GIRATINA_ORIGIN,
+    FORM_SPECIES_END,
+};
+
+static const u16 sPhioneFormSpeciesIdTable[] = {
+    SPECIES_PHIONE,
+    SPECIES_PHIONE_HOENNIAN,
     FORM_SPECIES_END,
 };
 
@@ -772,6 +796,12 @@ static const u16 sFlorgesFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sGogoatFormSpeciesIdTable[] = {
+    SPECIES_GOGOAT,
+    SPECIES_GOGOAT_HOENNIAN,
+    FORM_SPECIES_END,
+};
+
 static const u16 sFurfrouFormSpeciesIdTable[] = {
     SPECIES_FURFROU,
     SPECIES_FURFROU_HEART_TRIM,
@@ -950,6 +980,12 @@ static const u16 sSinisteaFormSpeciesIdTable[] = {
 static const u16 sPolteageistFormSpeciesIdTable[] = {
     SPECIES_POLTEAGEIST,
     SPECIES_POLTEAGEIST_ANTIQUE,
+    FORM_SPECIES_END,
+};
+
+static const u16 sObstagoonFormSpeciesIdTable[] = {
+    SPECIES_OBSTAGOON,
+    SPECIES_OBSTAGOON_HOENNIAN,
     FORM_SPECIES_END,
 };
 

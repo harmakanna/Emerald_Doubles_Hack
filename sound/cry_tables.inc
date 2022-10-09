@@ -1271,6 +1271,15 @@ gCryTable::
 	@ Calyrex
 	cry Cry_CalyrexIceRider
 	cry Cry_CalyrexShadowRider
+	@ Hoennian Forms
+	cry Cry_Obstagoon
+	cry Cry_Gogoat
+	cry Cry_Carbink
+	cry Cry_Seel
+	cry Cry_Dewgong
+	cry Cry_Chatot
+	cry Cry_Phione
+
 
 	.align 2
 gCryTable_Reverse::
@@ -2545,3 +2554,11 @@ gCryTable_Reverse::
 	@ Calyrex
 	cry_reverse Cry_CalyrexIceRider
 	cry_reverse Cry_CalyrexShadowRider
+	@ Hoennian Forms
+	cry_reverse Cry_Obstagoon
+	cry_reverse Cry_Gogoat
+	cry_reverse Cry_Carbink
+	cry_reverse Cry_Seel
+	cry_reverse Cry_Dewgong
+	cry_reverse Cry_Chatot
+	cry_reverse Cry_Phione

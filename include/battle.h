@@ -55,9 +55,10 @@ struct ResourceFlags
 #define RESOURCE_FLAG_ROOST             0x2
 #define RESOURCE_FLAG_UNBURDEN          0x4
 #define RESOURCE_FLAG_INTIMIDATED       0x8
-#define RESOURCE_FLAG_TRACED            0x10
-#define RESOURCE_FLAG_EMERGENCY_EXIT    0x20
-#define RESOURCE_FLAG_NEUTRALIZING_GAS  0x40
+#define RESOURCE_FLAG_PSYCHED_OUT       0x10
+#define RESOURCE_FLAG_TRACED            0x12
+#define RESOURCE_FLAG_EMERGENCY_EXIT    0x22
+#define RESOURCE_FLAG_NEUTRALIZING_GAS  0x42
 
 struct DisableStruct
 {
@@ -93,7 +94,7 @@ struct DisableStruct
     u8 mimickedMoves:4;
     u8 rechargeTimer;
     u8 autotomizeCount;
-    u8 slowStartTimer;
+    u8 slowStartTimer:3;
     u8 embargoTimer;
     u8 magnetRiseTimer;
     u8 telekinesisTimer;
@@ -159,6 +160,7 @@ struct SpecialStatus
     u8 lightningRodRedirected:1;
     u8 restoredBattlerSprite: 1;
     u8 intimidatedMon:1;
+    u8 psychedOutMon:1;
     u8 traced:1;
     u8 ppNotAffectedByPressure:1;
     u8 faintedHasReplacement:1;
@@ -549,6 +551,7 @@ struct BattleStruct
     u16 choicedMove[MAX_BATTLERS_COUNT];
     u16 changedItems[MAX_BATTLERS_COUNT];
     u8 intimidateBattler;
+    u8 psychOutBattler;
     u8 switchInItemsCounter;
     u8 arenaTurnCounter;
     u8 turnSideTracker;
@@ -610,6 +613,7 @@ struct BattleStruct
     u8 stickyWebUser;
     u8 appearedInBattle; // Bitfield to track which Pokemon appeared in battle. Used for Burmy's form change
     u8 skyDropTargets[MAX_BATTLERS_COUNT]; // For Sky Drop, to account for if multiple Pokemon use Sky Drop in a double battle.
+    u8 trackSlowStart;
 };
 
 #define F_DYNAMIC_TYPE_1 (1 << 6)
@@ -660,7 +664,7 @@ struct BattleStruct
 #define SET_STATCHANGER(statId, stage, goesDown)(gBattleScripting.statChanger = (statId) + ((stage) << 3) + (goesDown << 7))
 #define SET_STATCHANGER2(dst, statId, stage, goesDown)(dst = (statId) + ((stage) << 3) + (goesDown << 7))
 
-// NOTE: The members of this struct have hard-coded offsets 
+// NOTE: The members of this struct have hard-coded offsets
 //       in include/constants/battle_script_commands.h
 struct BattleScripting
 {

@@ -71,8 +71,10 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_EFFECT_SPORE] = 4,
     [ABILITY_ELECTRIC_SURGE] = 8,
     [ABILITY_EMERGENCY_EXIT] = 3,
+    [ABILITY_EVAPORATE] = 7,
     [ABILITY_FAIRY_AURA] = 6,
     [ABILITY_FILTER] = 6,
+    [ABILITY_FIRE_POUCH] = 5,
     [ABILITY_FLAME_BODY] = 4,
     [ABILITY_FLARE_BOOST] = 5,
     [ABILITY_FLASH_FIRE] = 6,
@@ -81,6 +83,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_FLUFFY] = 5,
     [ABILITY_FORECAST] = 6,
     [ABILITY_FOREWARN] = 2,
+    [ABILITY_FREE_SPIRIT] = 6,
     [ABILITY_FRIEND_GUARD] = 0,
     [ABILITY_FRISK] = 3,
     [ABILITY_FULL_METAL_BODY] = 4,
@@ -102,6 +105,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_HYDRATION] = 4,
     [ABILITY_HYPER_CUTTER] = 3,
     [ABILITY_ICE_BODY] = 3,
+    [ABILITY_ICY_PELT] = 2,
     [ABILITY_ILLUMINATE] = 0,
     [ABILITY_ILLUSION] = 8,
     [ABILITY_IMMUNITY] = 4,
@@ -114,7 +118,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_IRON_BARBS] = 6,
     [ABILITY_IRON_FIST] = 6,
     [ABILITY_JUSTIFIED] = 4,
-    [ABILITY_KEEN_EYE] = 1,
+    [ABILITY_KEEN_EYE] = 6,
     [ABILITY_KLUTZ] = -1,
     [ABILITY_LEAF_GUARD] = 2,
     [ABILITY_LEVITATE] = 7,
@@ -164,6 +168,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_PRIMORDIAL_SEA] = 10,
     [ABILITY_PRISM_ARMOR] = 6,
     [ABILITY_PROTEAN] = 8,
+    [ABILITY_PSYCH_OUT] = 7,
     [ABILITY_PSYCHIC_SURGE] = 8,
     [ABILITY_PURE_POWER] = 10,
     [ABILITY_QUEENLY_MAJESTY] = 6,
@@ -181,6 +186,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_RUN_AWAY] = 0,
     [ABILITY_SAND_FORCE] = 4,
     [ABILITY_SAND_RUSH] = 6,
+    [ABILITY_SAND_SPIRIT] = 8,
     [ABILITY_SAND_STREAM] = 9,
     [ABILITY_SAND_VEIL] = 3,
     [ABILITY_SAP_SIPPER] = 7,
@@ -196,16 +202,19 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SHIELDS_DOWN] = 6,
     [ABILITY_SIMPLE] = 8,
     [ABILITY_SKILL_LINK] = 7,
+    [ABILITY_SKY_SONATA] = 8,
     [ABILITY_SLOW_START] = -2,
     [ABILITY_SLUSH_RUSH] = 5,
     [ABILITY_SNIPER] = 3,
-    [ABILITY_SNOW_CLOAK] = 3,
+    [ABILITY_SNOW_CLOAK] = 4,
+    [ABILITY_SNOW_PLOW] = 4,
     [ABILITY_SNOW_WARNING] = 8,
     [ABILITY_SOLAR_POWER] = 3,
     [ABILITY_SOLID_ROCK] = 6,
     [ABILITY_SOUL_HEART] = 7,
     [ABILITY_SOUNDPROOF] = 4,
     [ABILITY_SPEED_BOOST] = 9,
+    [ABILITY_SPIRIT_WARD] = 7,
     [ABILITY_STAKEOUT] = 6,
     [ABILITY_STALL] = -1,
     [ABILITY_STAMINA] = 6,
@@ -271,6 +280,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_RIPEN] = 4,
     [ABILITY_ICE_FACE] = 4,
     [ABILITY_POWER_SPOT] = 2,
+    [ABILITY_CHEERLEADER] = 2,
     [ABILITY_MIMICRY] = 2,
     [ABILITY_SCREEN_CLEANER] = 3,
     [ABILITY_NEUTRALIZING_GAS] = 5,
@@ -1125,11 +1135,11 @@ bool32 AI_IsAbilityOnSide(u32 battlerId, u32 ability)
 s32 AI_GetAbility(u32 battlerId)
 {
     u32 knownAbility = GetBattlerAbility(battlerId);
-    
+
     // The AI knows its own ability.
     if (IsBattlerAIControlled(battlerId))
         return knownAbility;
-    
+
     // Check neutralizing gas, gastro acid
     if (knownAbility == ABILITY_NONE)
         return knownAbility;
@@ -1149,10 +1159,10 @@ s32 AI_GetAbility(u32 battlerId)
         {
             abilityGuess = gBaseStats[gBattleMons[battlerId].species].abilities[Random() % NUM_ABILITY_SLOTS];
         }
-        
+
         return abilityGuess;
     }
-    
+
     return ABILITY_NONE; // Unknown.
 }
 
@@ -1805,8 +1815,7 @@ bool32 ShouldLowerAccuracy(u8 battlerAtk, u8 battlerDef, u16 defAbility)
     if (defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
       && defAbility != ABILITY_WHITE_SMOKE
-      && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_KEEN_EYE)
+      && defAbility != ABILITY_FULL_METAL_BODY)
         return TRUE;
     return FALSE;
 }
@@ -2703,7 +2712,7 @@ static bool32 AI_CanPoisonType(u8 battlerAttacker, u8 battlerTarget)
 static bool32 AI_CanBePoisoned(u8 battlerAtk, u8 battlerDef)
 {
     u16 ability = AI_GetAbility(battlerDef);
-    
+
     if (!(AI_CanPoisonType(battlerAtk, battlerDef))
      || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
      || gBattleMons[battlerDef].status1 & STATUS1_ANY
@@ -3459,7 +3468,7 @@ void IncreaseStatUpScore(u8 battlerAtk, u8 battlerDef, u8 statId, s16 *score)
 
     if (GetHealthPercentage(battlerAtk) < 80 && AI_RandLessThan(128))
         return;
-    
+
     if ((AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return; // Damaging moves would get a score boost from AI_TryToFaint or PreferStrongestMove so we don't consider them here
 
@@ -3578,7 +3587,7 @@ void IncreaseParalyzeScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
 {
     if ((AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return;
-    
+
     if (AI_CanParalyze(battlerAtk, battlerDef, AI_DATA->defAbility, move, AI_DATA->partnerMove))
     {
         u8 atkSpeed = GetBattlerTotalSpeedStat(battlerAtk);
@@ -3599,7 +3608,7 @@ void IncreaseSleepScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
 {
     if ((AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return;
-    
+
     if (AI_CanPutToSleep(battlerAtk, battlerDef, AI_DATA->defAbility, move, AI_DATA->partnerMove))
         *score += 2;
     else
@@ -3617,7 +3626,7 @@ void IncreaseConfusionScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
 {
     if ((AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return;
-    
+
     if (AI_CanConfuse(battlerAtk, battlerDef, AI_DATA->defAbility, AI_DATA->battlerAtkPartner, move, AI_DATA->partnerMove)
       && AI_DATA->defHoldEffect != HOLD_EFFECT_CURE_CONFUSION
       && AI_DATA->defHoldEffect != HOLD_EFFECT_CURE_STATUS)

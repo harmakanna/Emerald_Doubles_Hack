@@ -1175,6 +1175,11 @@ static const u8 sDawnStoneDesc[] = _(
     "Makes certain\n"
     "species of Pokémon\n"
     "evolve.");
+    
+static const u8 sMegaStoneDesc[] = _(
+    "Makes certain\n"
+    "Pokémon permanently\n"
+    "Mega Evolve.");
 
 static const u8 sSweetAppleDesc[] = _(
     "A very sweet apple\n"

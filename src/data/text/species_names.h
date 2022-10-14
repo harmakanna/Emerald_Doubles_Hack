@@ -1275,7 +1275,7 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_CALYREX_ICE_RIDER] = _("Calyrex"),
     [SPECIES_CALYREX_SHADOW_RIDER] = _("Calyrex"),
     // Hoennian Forms
-    [SPECIES_OBSTAGOON_HOENNIAN] = _("Hobstagoon"),
+    [SPECIES_OBSTAGOON_HOENNIAN] = _("Obstagoon"),
     [SPECIES_GOGOAT_HOENNIAN] = _("H-Gogoat"),
     [SPECIES_CARBINK_HOENNIAN] = _("H-Carbink"),
     [SPECIES_SEEL_HOENNIAN] = _("H-Seel"),

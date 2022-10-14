@@ -928,7 +928,17 @@
 #define ITEM_RUBY 756
 #define ITEM_SAPPHIRE 757
 
-#define ITEMS_COUNT 758
+//Newly added items
+#define ITEM_MEGA_STONE 758 //Used to evolve Sableye, Mawile, Sharpedo, Camerupt, Altaria, and Banette
+#define ITEM_LV15_CANDY 759 //Post-Roxanne
+#define ITEM_LV20_CANDY 760 //Post-Brawly
+#define ITEM_LV27_CANDY 761 //Post-Wattson
+#define ITEM_LV35_CANDY 762 //Post-Flannery
+#define ITEM_LV40_CANDY 763 //Post-Norman
+#define ITEM_LV50_CANDY 764 //Post-Winona
+#define ITEM_LV60_CANDY 765 //Post-Tate&Liza
+#define ITEM_LV70_CANDY 766 //Post-Juan
+#define ITEMS_COUNT 767
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

@@ -395,17 +395,17 @@ static const u16 sGardevoirFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
-static const u16 sSableyeFormSpeciesIdTable[] = {
+/*static const u16 sSableyeFormSpeciesIdTable[] = {
     SPECIES_SABLEYE,
     SPECIES_SABLEYE_MEGA,
     FORM_SPECIES_END,
-};
+};*/
 
-static const u16 sMawileFormSpeciesIdTable[] = {
+/*static const u16 sMawileFormSpeciesIdTable[] = {
     SPECIES_MAWILE,
     SPECIES_MAWILE_MEGA,
     FORM_SPECIES_END,
-};
+};*/
 
 static const u16 sAggronFormSpeciesIdTable[] = {
     SPECIES_AGGRON,
@@ -425,23 +425,23 @@ static const u16 sManectricFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
-static const u16 sSharpedoFormSpeciesIdTable[] = {
+/*static const u16 sSharpedoFormSpeciesIdTable[] = {
     SPECIES_SHARPEDO,
     SPECIES_SHARPEDO_MEGA,
     FORM_SPECIES_END,
-};
+};*/
 
-static const u16 sCameruptFormSpeciesIdTable[] = {
+/*static const u16 sCameruptFormSpeciesIdTable[] = {
     SPECIES_CAMERUPT,
     SPECIES_CAMERUPT_MEGA,
     FORM_SPECIES_END,
-};
+};*/
 
-static const u16 sAltariaFormSpeciesIdTable[] = {
+/*static const u16 sAltariaFormSpeciesIdTable[] = {
     SPECIES_ALTARIA,
     SPECIES_ALTARIA_MEGA,
     FORM_SPECIES_END,
-};
+};*/
 
 static const u16 sCastformFormSpeciesIdTable[] = {
     SPECIES_CASTFORM,
@@ -451,11 +451,11 @@ static const u16 sCastformFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
-static const u16 sBanetteFormSpeciesIdTable[] = {
+/*static const u16 sBanetteFormSpeciesIdTable[] = {
     SPECIES_BANETTE,
     SPECIES_BANETTE_MEGA,
     FORM_SPECIES_END,
-};
+};*/
 
 static const u16 sAbsolFormSpeciesIdTable[] = {
     SPECIES_ABSOL,

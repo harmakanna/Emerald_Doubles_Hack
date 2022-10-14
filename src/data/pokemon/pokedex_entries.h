@@ -3636,12 +3636,36 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
+    [NATIONAL_DEX_SABLEYE_MEGA] =
+    {
+        .categoryName = _("Bejeweled"),
+        .height = 5,
+        .weight = 1610,
+        .description = gSableyeMegaPokedexText,
+        .pokemonScale = 451,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
     [NATIONAL_DEX_MAWILE] =
     {
         .categoryName = _("Deceiver"),
         .height = 6,
         .weight = 115,
         .description = gMawilePokedexText,
+        .pokemonScale = 466,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_MAWILE_MEGA] =
+    {
+        .categoryName = _("Malicious"),
+        .height = 10,
+        .weight = 235,
+        .description = gMawileMegaPokedexText,
         .pokemonScale = 466,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -3840,6 +3864,18 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 3,
     },
 
+    [NATIONAL_DEX_SHARPEDO_MEGA] =
+    {
+        .categoryName = _("Vicious"),
+        .height = 25,
+        .weight = 1303,
+        .description = gSharpedoMegaPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 317,
+        .trainerOffset = 3,
+    },
+
     [NATIONAL_DEX_WAILMER] =
     {
         .categoryName = _("Ball Whale"),
@@ -3882,6 +3918,18 @@ const struct PokedexEntry gPokedexEntries[] =
         .height = 19,
         .weight = 2200,
         .description = gCameruptPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 7,
+        .trainerScale = 345,
+        .trainerOffset = 6,
+    },
+
+    [NATIONAL_DEX_CAMERUPT_MEGA] =
+    {
+        .categoryName = _("Explosive"),
+        .height = 25,
+        .weight = 3205,
+        .description = gCameruptMegaPokedexText,
         .pokemonScale = 256,
         .pokemonOffset = 7,
         .trainerScale = 345,
@@ -4014,6 +4062,18 @@ const struct PokedexEntry gPokedexEntries[] =
         .height = 11,
         .weight = 206,
         .description = gAltariaPokedexText,
+        .pokemonScale = 327,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_ALTARIA_MEGA] =
+    {
+        .categoryName = _("Warbling"),
+        .height = 15,
+        .weight = 206,
+        .description = gAltariaMegaPokedexText,
         .pokemonScale = 327,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -4254,6 +4314,18 @@ const struct PokedexEntry gPokedexEntries[] =
         .height = 11,
         .weight = 125,
         .description = gBanettePokedexText,
+        .pokemonScale = 262,
+        .pokemonOffset = 9,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_BANETTE_MEGA] =
+    {
+        .categoryName = _("Grudgeful"),
+        .height = 12,
+        .weight = 130,
+        .description = gBanetteMegaPokedexText,
         .pokemonScale = 262,
         .pokemonOffset = 9,
         .trainerScale = 256,

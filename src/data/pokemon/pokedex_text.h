@@ -1786,6 +1786,12 @@ const u8 gSableyePokedexText[] = _(
     "A Sableye lurks in darkness and is seen\n"
     "only rarely.");
 
+const u8 gSableyeMegaPokedexText[] = _(
+    "During battle, M-Sableye shelters itself\n"
+    "behind its massive jewel. It's said that\n"
+    "M-Sableye can steal a person's soul if they\n"
+    "stare at the gem too long.");
+
 const u8 gBarboachPokedexText[] = _(
     "Its body is covered with a slimy film.\n"
     "The film acts as a barrier to prevent germs\n"
@@ -1840,6 +1846,11 @@ const u8 gSharpedoPokedexText[] = _(
     "drag in water. Its speed tops out at over\n"
     "75 miles per hour.");
 
+const u8 gSharpedoMegaPokedexText[] = _(
+    "The moment it charges into its opponent,\n"
+    "sharp spikes pop out of M-Sharpedo's head,\n"
+    "leaving its opponent with deep wounds.");
+
 const u8 gTrapinchPokedexText[] = _(
     "Its big jaws crunch through boulders.\n"
     "Because its head is so big, it has a hard\n"
@@ -1893,6 +1904,12 @@ const u8 gCameruptPokedexText[] = _(
     "a volcano. Every 10 years, the volcanoes\n"
     "on its back erupt violently. Research is\n"
     "under way on the cause of eruption.");
+
+const u8 gCameruptMegaPokedexText[] = _(
+    "This Pokémon's volcano hump is very active,\n"
+    "erupting up to three times per day.\n"
+    "M-Camerupt uses the volcano on its back to\n"
+    "intimidate its foes.");
 
 const u8 gSphealPokedexText[] = _(
     "It is completely covered with plushy fur.\n"
@@ -1984,6 +2001,12 @@ const u8 gMawilePokedexText[] = _(
     "complacency with its adorable gestures,\n"
     "then chomps them with its huge jaws.");
 
+const u8 gMawileMegaPokedexText[] = _(
+    "Its two sets of jaws thrash about\n"
+    "violently as if they each had a will of\n"
+    "their own. One gnash from them can turn\n"
+    "a boulder to dust.");
+
 const u8 gMedititePokedexText[] = _(
     "It continually meditates for hours every\n"
     "day. As a result of rigorous and dedicated\n"
@@ -2007,6 +2030,12 @@ const u8 gAltariaPokedexText[] = _(
     "It flies among white clouds in the blue\n"
     "sky. It launches intensely hot fireballs\n"
     "from its mouth.");
+
+const u8 gAltariaMegaPokedexText[] = _(
+    "M-Altaria's cloud-like plumage protect it\n"
+    "from powerful blows. It is said that\n"
+    "M-Altaria blesses anyone lucky enough to\n"
+    "hear its beautiful warbling sonatas.");
 
 const u8 gWynautPokedexText[] = _(
     "A Wynaut loves to eat sweet fruits.\n"
@@ -2121,6 +2150,12 @@ const u8 gBanettePokedexText[] = _(
     "Pokémon. They are said to live in garbage\n"
     "dumps and wander about in search of the\n"
     "children that threw them away.");
+
+const u8 gBanetteMegaPokedexText[] = _(
+    "The grudge which M-Banette held in its\n"
+    "body became too great to hold, causing it\n"
+    "to spill out. This Pokémon takes out its\n"
+    "feelings on its opponents.");
 
 const u8 gSeviperPokedexText[] = _(
     "Seviper and Zangoose are eternal rivals.\n"

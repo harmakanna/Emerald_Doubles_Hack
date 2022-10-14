@@ -901,6 +901,13 @@
 #define SPECIES_SPECTRIER 897
 #define SPECIES_CALYREX 898
 
+#define SPECIES_SABLEYE_MEGA                 899
+#define SPECIES_MAWILE_MEGA                  900
+#define SPECIES_SHARPEDO_MEGA                901
+#define SPECIES_CAMERUPT_MEGA                902
+#define SPECIES_ALTARIA_MEGA                 903
+#define SPECIES_BANETTE_MEGA                 904
+
 #define FORMS_START SPECIES_CALYREX
 
 // Megas
@@ -929,15 +936,15 @@
 #define SPECIES_BLAZIKEN_MEGA                FORMS_START + 23
 #define SPECIES_SWAMPERT_MEGA                FORMS_START + 24
 #define SPECIES_GARDEVOIR_MEGA               FORMS_START + 25
-#define SPECIES_SABLEYE_MEGA                 FORMS_START + 26
-#define SPECIES_MAWILE_MEGA                  FORMS_START + 27
+//#define SPECIES_SABLEYE_MEGA                 FORMS_START + 26
+//#define SPECIES_MAWILE_MEGA                  FORMS_START + 27
 #define SPECIES_AGGRON_MEGA                  FORMS_START + 28
 #define SPECIES_MEDICHAM_MEGA                FORMS_START + 29
 #define SPECIES_MANECTRIC_MEGA               FORMS_START + 30
-#define SPECIES_SHARPEDO_MEGA                FORMS_START + 31
-#define SPECIES_CAMERUPT_MEGA                FORMS_START + 32
-#define SPECIES_ALTARIA_MEGA                 FORMS_START + 33
-#define SPECIES_BANETTE_MEGA                 FORMS_START + 34
+//#define SPECIES_SHARPEDO_MEGA                FORMS_START + 31
+//#define SPECIES_CAMERUPT_MEGA                FORMS_START + 32
+//#define SPECIES_ALTARIA_MEGA                 FORMS_START + 33
+//#define SPECIES_BANETTE_MEGA                 FORMS_START + 34
 #define SPECIES_ABSOL_MEGA                   FORMS_START + 35
 #define SPECIES_GLALIE_MEGA                  FORMS_START + 36
 #define SPECIES_SALAMENCE_MEGA               FORMS_START + 37

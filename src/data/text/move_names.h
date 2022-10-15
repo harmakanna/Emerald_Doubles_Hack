@@ -757,4 +757,8 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_ASTRAL_BARRAGE] = _("AstrlBarrage"),
     [MOVE_EERIE_SPELL] = _("Eerie Spell"),
     [MOVE_POUNCE] = _("Pounce"),
+    [MOVE_SOUL_DANCE] = _("Soul Dance"),
+    [MOVE_GLACIER_SMASH] = _("GlacierSmash"),
+    [MOVE_MYSTIC_ROOM] = _("Mystic Room"),
+    [MOVE_VOLTAIC_DANCE] = _("VoltaicDance"),
 };

@@ -5,9 +5,15 @@ Route115_MapScripts::
 	.byte 0
 
 Route115_OnLoad:
+	call_if_unset FLAG_REGI_DOORS_OPENED, Route115_EventScript_CloseDragonsDen
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_EventScript_PlaceTilesRoute115West
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_EventScript_PlaceTilesRoute115East
 	end
+
+Route123_EventScript_CloseDragonsDen::
+	setmetatile 9, 8, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 9, 9, METATILE_General_RockWall_SandBase, TRUE
+	return
 
 Route115_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
@@ -142,4 +148,3 @@ Route115_Text_RouteSignRustboro:
 Route115_Text_MeteorFallsSign:
 	.string "METEOR FALLS\n"
 	.string "FALLARBOR TOWN THROUGH HERE$"
-

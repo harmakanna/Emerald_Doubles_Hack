@@ -61,7 +61,7 @@ DesertRuins_EventScript_Regirock::
 	playmoncry SPECIES_REGIROCK, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_REGIROCK, 40
+	setwildbattle SPECIES_REGIROCK, 70
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartRegiBattle
 	waitstate
@@ -83,4 +83,3 @@ DesertRuins_EventScript_RanFromRegirock::
 	setvar VAR_0x8004, SPECIES_REGIROCK
 	goto Common_EventScript_LegendaryFlewAway
 	end
-

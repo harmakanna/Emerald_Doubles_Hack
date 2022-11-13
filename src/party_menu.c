@@ -3675,8 +3675,16 @@ static void CursorCb_FieldMove(u8 taskId)
                 sPartyMenuInternal->data[0] = fieldMove;
                 break;
             case FIELD_MOVE_FLY:
-                gPartyMenu.exitCallback = CB2_OpenFlyMap;
-                Task_ClosePartyMenu(taskId);
+                if(ShouldDoBrailleRegidragoEffect())
+                {
+                  gPartyMenu.exitCallback = CB2_ReturnToField;
+                  gPostMenuFieldCallback = SetUpPuzzleEffectRegidrago;
+                }
+                else
+                {
+                  gPartyMenu.exitCallback = CB2_OpenFlyMap;
+                  Task_ClosePartyMenu(taskId);
+                }
                 break;
             default:
                 gPartyMenu.exitCallback = CB2_ReturnToField;

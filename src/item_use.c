@@ -264,6 +264,11 @@ void ItemUseOutOfBattle_Rod(u8 taskId)
         sItemUseOnFieldCB = ItemUseOnFieldCB_Rod;
         SetUpItemUseOnFieldCallback(taskId);
     }
+    else if (ShouldDoBrailleRegielekiPuzzle())
+    {
+        sItemUseOnFieldCB = SetUpPuzzleEffectRegieleki;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
     else
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
@@ -1176,7 +1181,7 @@ void ItemUseInBattle_EnigmaBerry(u8 taskId)
     }
 }
 
-void ItemUseOutOfBattle_FormChange(u8 taskId) 
+void ItemUseOutOfBattle_FormChange(u8 taskId)
 {
     gItemUseCB = ItemUseCB_FormChange;
     gTasks[taskId].data[0] = FALSE;

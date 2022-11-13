@@ -226,8 +226,9 @@
 #define MAPSEC_AWAKENING_WOOD               0xDE
 #define MAPSEC_RUIN_OUTSKIRTS               0xDF
 #define MAPSEC_NEW_ISLAND                   0xE0
-#define MAPSEC_NONE                         0xE1
+#define MAPSEC_DECREPIT_CASTLE              0xE1
 
+#define MAPSEC_NONE                         0xFC
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE
 #define METLOC_FATEFUL_ENCOUNTER            0xFF

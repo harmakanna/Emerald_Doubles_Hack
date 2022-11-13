@@ -61,7 +61,7 @@ AncientTomb_EventScript_Registeel::
 	playmoncry SPECIES_REGISTEEL, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_REGISTEEL, 40
+	setwildbattle SPECIES_REGISTEEL, 70
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartRegiBattle
 	waitstate
@@ -83,4 +83,3 @@ AncientTomb_EventScript_RanFromRegisteel::
 	setvar VAR_0x8004, SPECIES_REGISTEEL
 	goto Common_EventScript_LegendaryFlewAway
 	end
-

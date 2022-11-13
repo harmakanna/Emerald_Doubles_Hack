@@ -1,10 +1,20 @@
 Route123_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route123_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route123_OnLoad
 	.byte 0
 
 Route123_OnTransition:
 	special SetRoute123Weather
 	end
+
+Route123_OnLoad:
+	call_if_unset FLAG_REGI_DOORS_OPENED, Route123_EventScript_CloseForgottenPlant
+	end
+
+Route123_EventScript_CloseForgottenPlant::
+	setmetatile 151, 14, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 151, 15, METATILE_General_RockWall_SandBase, TRUE
+	return
 
 Route123_EventScript_GigaDrainGirl::
 	lock
@@ -195,4 +205,3 @@ Route123_Text_RouteSignMtPyre:
 
 Route123_Text_BerryMastersHouse:
 	.string "BERRY MASTER'S HOUSE$"
-

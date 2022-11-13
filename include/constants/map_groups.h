@@ -403,6 +403,8 @@
 #define MAP_MT_METEOR_1F_2R                          (110 | (24 << 8))
 #define MAP_MT_METEOR_2F_2R                          (111 | (24 << 8))
 #define MAP_METEOR_PEAK                              (112 | (24 << 8))
+#define MAP_DRAGONS_DEN                              (113 | (24 << 8))
+#define MAP_FORGOTTEN_PLANT                          (114 | (24 << 8))
 
 // Map Group 25
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

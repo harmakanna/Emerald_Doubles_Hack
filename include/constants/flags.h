@@ -41,12 +41,12 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
+#define FLAG_DEFEATED_REGIDRAGO              0x20
+#define FLAG_DEFEATED_REGIELEKI              0x21
+#define FLAG_HIDE_REGIDRAGO                  0x22
+#define FLAG_HIDE_REGIELEKI                  0x23
+#define FLAG_UNUSED_0x024    0x24
+#define FLAG_UNUSED_0x025    0x25
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
@@ -1497,13 +1497,13 @@
 #define FLAG_ARRIVED_AT_NAVEL_ROCK                  (SYSTEM_FLAGS + 0x81)
 #define FLAG_LANDMARK_TRAINER_HILL                  (SYSTEM_FLAGS + 0x82)
 
-#define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
+#define FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED         (SYSTEM_FLAGS + 0x83)
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
+#define FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED         (SYSTEM_FLAGS + 0x85)
+#define FLAG_LANDMARK_DRAGONS_DEN                   (SYSTEM_FLAGS + 0x86)
+#define FLAG_LANDMARK_FORGOTTEN_PLANT               (SYSTEM_FLAGS + 0x87)
 #define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
 #define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
 #define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag

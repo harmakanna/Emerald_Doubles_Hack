@@ -1063,3 +1063,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/Route135/scripts.inc"
+
+	.include "data/maps/DragonsDen/scripts.inc"
+
+	.include "data/maps/ForgottenPlant/scripts.inc"

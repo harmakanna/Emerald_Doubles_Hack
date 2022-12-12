@@ -239,6 +239,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lugia;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regidrago;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regieleki;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regigigas;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -490,6 +491,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
     [OBJ_EVENT_GFX_REGIDRAGO] =                &gObjectEventGraphicsInfo_Regidrago,
     [OBJ_EVENT_GFX_REGIELEKI] =                &gObjectEventGraphicsInfo_Regieleki,
+    [OBJ_EVENT_GFX_REGIGIGAS] =                &gObjectEventGraphicsInfo_Regigigas,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

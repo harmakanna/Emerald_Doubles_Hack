@@ -45,8 +45,8 @@
 #define FLAG_DEFEATED_REGIELEKI              0x21
 #define FLAG_HIDE_REGIDRAGO                  0x22
 #define FLAG_HIDE_REGIELEKI                  0x23
-#define FLAG_UNUSED_0x024    0x24
-#define FLAG_UNUSED_0x025    0x25
+#define FLAG_HIDE_REGIGIGAS                  0x24
+#define FLAG_DEFEATED_REGIGIGAS              0x25
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
@@ -1504,8 +1504,8 @@
 #define FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED         (SYSTEM_FLAGS + 0x85)
 #define FLAG_LANDMARK_DRAGONS_DEN                   (SYSTEM_FLAGS + 0x86)
 #define FLAG_LANDMARK_FORGOTTEN_PLANT               (SYSTEM_FLAGS + 0x87)
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
+#define FLAG_LANDMARK_DECREPIT_CASTLE               (SYSTEM_FLAGS + 0x88) // Unused Flag
+#define FLAG_SYS_DECREPIT_CASTLE_PUZZLE_COMPLETED   (SYSTEM_FLAGS + 0x89) // Unused Flag
 #define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
 #define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag

@@ -279,6 +279,11 @@ bool8 FldEff_UsePuzzleEffect(void)
       gTasks[taskId].data[8] = (u32)UseRegidragoHm_Callback >> 16;
       gTasks[taskId].data[9] = (u32)UseRegidragoHm_Callback;
     }
+    else if (sIsRegielekiPuzzle == TRUE)
+    {
+      gTasks[taskId].data[8] = (u32)UseRegielekiItemUse_Callback >> 16;
+      gTasks[taskId].data[9] = (u32)UseRegielekiItemUse_Callback;
+    }
     else
     {
         gTasks[taskId].data[8] = (u32)UseRegirockHm_Callback >> 16;
@@ -423,4 +428,32 @@ void DoBrailleRegielekiEffect(void)
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED);
     ScriptContext2_Disable();
+}
+
+void BrailleDecrepitCastleCheck(void)
+{
+  int i, regiCount[5] = {0, 0, 0, 0, 0};
+  for (i = 0; i < PARTY_SIZE; i++)
+  {
+      u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+      if(species == SPECIES_REGICE)
+        regiCount[0] = 1;
+      else if(species == SPECIES_REGIROCK)
+        regiCount[1] = 1;
+      else if(species == SPECIES_REGISTEEL)
+        regiCount[2] = 1;
+      else if(species == SPECIES_REGIDRAGO)
+        regiCount[3] = 1;
+      else if(species == SPECIES_REGIELEKI)
+        regiCount[4] = 1;
+  }
+
+  for (i = 0; i < 5; i++)
+  {
+      if(regiCount[i] == 0)
+        return FALSE;
+  }
+
+  ScriptContext1_SetupScript(IslandCave_EventScript_OpenRegiEntrance);
+  return TRUE;
 }

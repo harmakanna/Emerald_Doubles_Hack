@@ -1067,3 +1067,11 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/DragonsDen/scripts.inc"
 
 	.include "data/maps/ForgottenPlant/scripts.inc"
+
+	.include "data/maps/DecrepitCastle_1F/scripts.inc"
+
+	.include "data/maps/DecrepitCastle_B1F/scripts.inc"
+
+	.include "data/maps/DecrepitCastle_B2F/scripts.inc"
+
+	.include "data/maps/DecrepitCastle_B3F/scripts.inc"

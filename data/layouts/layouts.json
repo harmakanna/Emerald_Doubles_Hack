@@ -4500,6 +4500,46 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ForgottenPlant/border.bin",
       "blockdata_filepath": "data/layouts/ForgottenPlant/map.bin"
+    },
+    {
+      "id": "LAYOUT_DECREPIT_CASTLE_1F",
+      "name": "DecrepitCastle_1F_Layout",
+      "width": 17,
+      "height": 43,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DecrepitCastle_1F/border.bin",
+      "blockdata_filepath": "data/layouts/DecrepitCastle_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DECREPIT_CASTLE_B1F",
+      "name": "DecrepitCastle_B1F_Layout",
+      "width": 27,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DecrepitCastle_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/DecrepitCastle_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DECREPIT_CASTLE_B2F",
+      "name": "DecrepitCastle_B2F_Layout",
+      "width": 27,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DecrepitCastle_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/DecrepitCastle_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DECREPIT_CASTLE_B3F",
+      "name": "DecrepitCastle_B3F_Layout",
+      "width": 17,
+      "height": 33,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DecrepitCastle_B3F/border.bin",
+      "blockdata_filepath": "data/layouts/DecrepitCastle_B3F/map.bin"
     }
   ]
 }

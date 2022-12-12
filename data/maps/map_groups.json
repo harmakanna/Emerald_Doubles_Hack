@@ -440,7 +440,11 @@
     "MtMeteor_2F_2R",
     "MeteorPeak",
     "DragonsDen",
-    "ForgottenPlant"
+    "ForgottenPlant",
+    "DecrepitCastle_1F",
+    "DecrepitCastle_B1F",
+    "DecrepitCastle_B2F",
+    "DecrepitCastle_B3F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

@@ -405,6 +405,10 @@
 #define MAP_METEOR_PEAK                              (112 | (24 << 8))
 #define MAP_DRAGONS_DEN                              (113 | (24 << 8))
 #define MAP_FORGOTTEN_PLANT                          (114 | (24 << 8))
+#define MAP_DECREPIT_CASTLE_1F                       (115 | (24 << 8))
+#define MAP_DECREPIT_CASTLE_B1F                      (116 | (24 << 8))
+#define MAP_DECREPIT_CASTLE_B2F                      (117 | (24 << 8))
+#define MAP_DECREPIT_CASTLE_B3F                      (118 | (24 << 8))
 
 // Map Group 25
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

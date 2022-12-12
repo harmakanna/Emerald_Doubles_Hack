@@ -242,8 +242,9 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 #define OBJ_EVENT_GFX_REGIDRAGO                  239
 #define OBJ_EVENT_GFX_REGIELEKI                  240
+#define OBJ_EVENT_GFX_REGIGIGAS                  241
 
-#define NUM_OBJ_EVENT_GFX                        241
+#define NUM_OBJ_EVENT_GFX                        242
 
 
 // These are dynamic object gfx ids.

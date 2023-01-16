@@ -203,10 +203,10 @@ static const u8 sMapName_MeteorPeak[] = _("METEOR PEAK");
 static const u8 sMapName_Route135[] = _("ROUTE 135");
 static const u8 sMapName_MtMeteor[] = _("MT. METEOR");
 static const u8 sMapName_CratercrestTown[] = _("CRATERCREST TOWN");
-static const u8 sMapName_LittlerootWoods[] = _("");
-static const u8 sMapName_DragonsDen[] = _("");
-static const u8 sMapName_ForgottenPlant[] = _("");
-static const u8 sMapName_DecrepitCastle[] = _("");
+static const u8 sMapName_LittlerootWoods[] = _("SLATEROOT FOREST");
+static const u8 sMapName_DragonsDen[] = _("DRAGONS DEN");
+static const u8 sMapName_ForgottenPlant[] = _("FORGOTTEN PLANT");
+static const u8 sMapName_DecrepitCastle[] = _("DECREPIT CASTLE");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ABANDONED_SHIP]             = {6, 14, 1, 1, sMapName_AbandonedShip},

@@ -35,7 +35,8 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
-    "gMapGroup_IndoorCratercrest"
+    "gMapGroup_IndoorCratercrest",
+    "gMapGroup_IndoorMeteorPeak"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -444,7 +445,8 @@
     "DecrepitCastle_1F",
     "DecrepitCastle_B1F",
     "DecrepitCastle_B2F",
-    "DecrepitCastle_B3F"
+    "DecrepitCastle_B3F",
+    "SlaterootForest"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -637,6 +639,13 @@
     "Route124_DivingTreasureHuntersHouse"
   ],
   "gMapGroup_IndoorCratercrest": [
-
+    "CratercrestTown_SpecialShop",
+    "CratercrestTown_PokemonCenter_1F",
+    "CratercrestTown_PokemonCenter_2F",
+    "CratercrestTown_House1",
+    "CratercrestTown_House2"
+  ],
+  "gMapGroup_IndoorMeteorPeak": [
+    "MeteorPeak_RestHouse"
   ]
 }

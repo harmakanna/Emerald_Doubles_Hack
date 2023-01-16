@@ -1075,3 +1075,17 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/DecrepitCastle_B2F/scripts.inc"
 
 	.include "data/maps/DecrepitCastle_B3F/scripts.inc"
+
+	.include "data/maps/SlaterootForest/scripts.inc"
+
+	.include "data/maps/CratercrestTown_SpecialShop/scripts.inc"
+
+	.include "data/maps/CratercrestTown_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/CratercrestTown_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/CratercrestTown_House1/scripts.inc"
+
+	.include "data/maps/CratercrestTown_House2/scripts.inc"
+
+	.include "data/maps/MeteorPeak_RestHouse/scripts.inc"

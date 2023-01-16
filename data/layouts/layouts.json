@@ -2914,7 +2914,7 @@
     {
       "id": "LAYOUT_JAGGED_PASS",
       "name": "JaggedPass_Layout",
-      "width": 30,
+      "width": 33,
       "height": 46,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
@@ -4540,6 +4540,76 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/DecrepitCastle_B3F/border.bin",
       "blockdata_filepath": "data/layouts/DecrepitCastle_B3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SLATEROOT_FOREST",
+      "name": "SlaterootForest_Layout",
+      "width": 32,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/SlaterootForest/border.bin",
+      "blockdata_filepath": "data/layouts/SlaterootForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRATERCREST_TOWN_SPECIAL_SHOP",
+      "name": "CratercrestTown_SpecialShop_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/CratercrestTown_SpecialShop/border.bin",
+      "blockdata_filepath": "data/layouts/CratercrestTown_SpecialShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRATERCREST_TOWN_POKEMON_CENTER_1F",
+      "name": "CratercrestTown_PokemonCenter_1F_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/CratercrestTown_PokemonCenter_1F/border.bin",
+      "blockdata_filepath": "data/layouts/CratercrestTown_PokemonCenter_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRATERCREST_TOWN_POKEMON_CENTER_2F",
+      "name": "CratercrestTown_PokemonCenter_2F_Layout",
+      "width": 14,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/CratercrestTown_PokemonCenter_2F/border.bin",
+      "blockdata_filepath": "data/layouts/CratercrestTown_PokemonCenter_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRATERCREST_TOWN_HOUSE1",
+      "name": "CratercrestTown_House1_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/CratercrestTown_House1/border.bin",
+      "blockdata_filepath": "data/layouts/CratercrestTown_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRATERCREST_TOWN_HOUSE2",
+      "name": "CratercrestTown_House2_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/CratercrestTown_House2/border.bin",
+      "blockdata_filepath": "data/layouts/CratercrestTown_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_PEAK_REST_HOUSE",
+      "name": "MeteorPeak_RestHouse_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/MeteorPeak_RestHouse/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorPeak_RestHouse/map.bin"
     }
   ]
 }

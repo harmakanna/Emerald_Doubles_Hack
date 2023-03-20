@@ -232,10 +232,8 @@ static u8 ChooseWildMonIndex_WaterRock(void)
         return 5;
     else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_5 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_6)
         return 6;
-    else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_6 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_7)
-        return 7;
     else
-        return 8;
+        return 7;
 }
 
 // FISH_WILD_COUNT

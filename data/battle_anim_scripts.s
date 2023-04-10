@@ -782,7 +782,7 @@ gBattleAnims_Moves::
 	.4byte Move_POUNCE
 	.4byte Move_SOUL_DANCE
 	.4byte Move_GLACIER_SMASH
-	.4byte Move_MYSTIC_ROOM
+@ .4byte Move_MYSTIC_ROOM
 	.4byte Move_VOLTAIC_DANCE
 	.4byte Move_COUNT @ cannot be reached, because last move is Eerie Spell
 
@@ -1966,7 +1966,7 @@ Move_GLACIER_SMASH:
 	restorebg
 	waitbgfadein
 	end
-	
+
 Move_FORCE_PALM:
 	loadspritegfx ANIM_TAG_SHADOW_BALL
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
@@ -7676,7 +7676,7 @@ Move_SOUL_DANCE::
 	launchtask AnimTask_BlendBattleAnimPal 0xa 0x5 ANIM_PAL_BG 0x1 0xc 0x0 0x14be
 	waitforvisualfinish
 	end
-	
+
 Move_VOLTAIC_DANCE::
 	loadspritegfx ANIM_TAG_SPARK_2
 	delay 0
@@ -7713,7 +7713,7 @@ Move_VOLTAIC_DANCE::
 	waitforvisualfinish
 	waitforvisualfinish
 	end
-	
+
 Move_FREEZE_SHOCK::
 	loadspritegfx ANIM_TAG_SPARK
 	loadspritegfx ANIM_TAG_SPARK_2
@@ -17865,7 +17865,7 @@ Move_GRUDGE:
 	waitbgfadein
 	clearmonbg ANIM_ATTACKER
 	end
-	
+
 Move_CAMOUFLAGE:
 	monbg ANIM_ATK_PARTNER
 	splitbgprio ANIM_ATTACKER

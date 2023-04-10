@@ -908,7 +908,7 @@
 #define SPECIES_ALTARIA_MEGA                 903
 #define SPECIES_BANETTE_MEGA                 904
 
-#define FORMS_START SPECIES_CALYREX
+#define FORMS_START SPECIES_BANETTE_MEGA
 
 // Megas
 #define SPECIES_VENUSAUR_MEGA                FORMS_START + 1

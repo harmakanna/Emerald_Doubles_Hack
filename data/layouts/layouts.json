@@ -4610,6 +4610,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/MeteorPeak_RestHouse/border.bin",
       "blockdata_filepath": "data/layouts/MeteorPeak_RestHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_AWAKENING_WOOD",
+      "name": "AwakeningWoods_Layout",
+      "width": 85,
+      "height": 65,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/AwakeningWoods/border.bin",
+      "blockdata_filepath": "data/layouts/AwakeningWoods/map.bin"
     }
   ]
 }

@@ -82,6 +82,82 @@ EventScript_BattleKecleon::
 	release
 	end
 
+
+AwakeningWoods_EventScript_Kecleon1:: @ 82722DB
+	lock
+	faceplayer
+	setvar VAR_0x8009, 0
+	goto EventScript_KecleonPostGame
+	end
+
+AwakeningWoods_EventScript_Kecleon2:: @ 82722DB
+	lock
+	faceplayer
+	setvar VAR_0x8009, 1
+	goto EventScript_KecleonPostGame
+	end
+
+AwakeningWoods_EventScript_Kecleon3:: @ 82722DB
+	lock
+	faceplayer
+	setvar VAR_0x8009, 2
+	goto EventScript_KecleonPostGame
+	end
+
+AwakeningWoods_EventScript_Kecleon4:: @ 82722DB
+	lock
+	faceplayer
+	setvar VAR_0x8009, 3
+	goto EventScript_KecleonPostGame
+	end
+
+AwakeningWoods_EventScript_Kecleon5:: @ 82722DB
+	lock
+	faceplayer
+	setvar VAR_0x8009, 4
+	goto EventScript_KecleonPostGame
+	end
+
+EventScript_KecleonPostGame:: @ 8272336
+	checkitem ITEM_DEVON_SCOPE, 1
+	compare VAR_RESULT, 1
+	goto_if_eq EventScript_AskUseDevonScopePostGame
+	msgbox Kecleon_Text_SomethingUnseeable, MSGBOX_DEFAULT
+	release
+	end
+
+EventScript_AskUseDevonScopePostGame:: @ 8272350
+	msgbox Kecleon_Text_WantToUseDevonScope, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq EventScript_BattleKecleonPostGame
+	release
+	end
+
+EventScript_BattleKecleonPostGame:: @ 8272365
+	msgbox Kecleon_Text_UseDevonScopeMonAttacked, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
+	waitmovement 0
+	applymovement VAR_LAST_TALKED, Movement_KecleonAppears
+	waitmovement 0
+	waitse
+	playmoncry SPECIES_KECLEON, 2
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_KECLEON, 68, ITEM_NONE
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq EventScript_RemoveKecleon
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq EventScript_RemoveKecleon
+	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
+	goto_if_eq EventScript_RemoveKecleon
+	release
+	end
+
 EventScript_RemoveKecleon::
 	goto Common_EventScript_RemoveStaticPokemon
 	end

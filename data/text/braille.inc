@@ -123,7 +123,7 @@ DragonsDen_Braille_SoarToTheSky:
 	.braille "GO REACH\n"
 	.braille "FOR THE SKY.$"
 
-ForgottenPlant_Braille_CastYourLure
+ForgottenPlant_Braille_CastYourLure:
   brailleformat 3, 0, 25, 19, 6, 3
   .braille "CAST YOUR LURE\n"
 	.braille "RIGHT WHERE\n"

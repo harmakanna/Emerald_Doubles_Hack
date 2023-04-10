@@ -577,6 +577,7 @@ gStdScripts_End::
 	.include "data/maps/MtMeteor_1F_2R/scripts.inc"
 	.include "data/maps/MtMeteor_2F_2R/scripts.inc"
 	.include "data/maps/MeteorPeak/scripts.inc"
+	.include "data/maps/AwakeningWoods/scripts.inc"
 	.include "data/scripts/std_msgbox.inc"
 	.include "data/scripts/trainer_battle.inc"
 	.include "data/scripts/new_game.inc"

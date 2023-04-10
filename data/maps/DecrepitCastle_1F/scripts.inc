@@ -8,10 +8,10 @@ DecrepitCastle_1F_OnTransition:
 	end
 
 DecrepitCastle_1F_OnLoad:
-	call_if_unset FLAG_SYS_DECREPIT_CASTLE_PUZZLE_COMPLETED, Decrepit_Castle_1F_EventScript_HideRegiEntrance
+	call_if_unset FLAG_SYS_DECREPIT_CASTLE_PUZZLE_COMPLETED, DecrepitCastle_1F_EventScript_HideRegiEntrance
 	end
 
-Decrepit_Castle_1F_EventScript_HideRegiEntrance::
+DecrepitCastle_1F_EventScript_HideRegiEntrance::
 	setmetatile 7, 19, METATILE_Cave_EntranceCover, TRUE
 	setmetatile 8, 19, METATILE_Cave_EntranceCover, TRUE
 	setmetatile 9, 19, METATILE_Cave_EntranceCover, TRUE
@@ -20,15 +20,15 @@ Decrepit_Castle_1F_EventScript_HideRegiEntrance::
 	setmetatile 9, 20, METATILE_Cave_SealedChamberBraille_Mid, TRUE
 	return
 
-Decrepit_Castle_1F_EventScript_CaveEntranceMiddle::
+DecrepitCastle_1F_EventScript_CaveEntranceMiddle::
 	lockall
-	goto_if_set FLAG_SYS_DECREPIT_CASTLE_PUZZLE_COMPLETED, Decrepit_Castle_1F_EventScript_BigHoleInWall
+	goto_if_set FLAG_SYS_DECREPIT_CASTLE_PUZZLE_COMPLETED, DecrepitCastle_1F_EventScript_BigHoleInWall
 	braillemessage DecrepitCastle_Braille_FiveComeTogether
 	special BrailleDecrepitCastleCheck
 	goto DecrepitCastle_1F_EventScript_CloseBrailleMsg
 	end
 
-Decrepit_Castle_1F_EventScript_BigHoleInWall::
+DecrepitCastle_1F_EventScript_BigHoleInWall::
 	msgbox gText_BigHoleInTheWall, MSGBOX_DEFAULT
 	releaseall
 	end

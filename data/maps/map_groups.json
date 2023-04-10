@@ -446,7 +446,8 @@
     "DecrepitCastle_B1F",
     "DecrepitCastle_B2F",
     "DecrepitCastle_B3F",
-    "SlaterootForest"
+    "SlaterootForest",
+    "AwakeningWoods"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

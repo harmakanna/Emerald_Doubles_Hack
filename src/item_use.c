@@ -7,6 +7,7 @@
 #include "berry.h"
 #include "berry_powder.h"
 #include "bike.h"
+#include "braille_puzzles.h"
 #include "coins.h"
 #include "data.h"
 #include "event_data.h"
@@ -266,8 +267,10 @@ void ItemUseOutOfBattle_Rod(u8 taskId)
     }
     else if (ShouldDoBrailleRegielekiPuzzle())
     {
-        sItemUseOnFieldCB = SetUpPuzzleEffectRegieleki;
-        SetUpItemUseOnFieldCallback(taskId);
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = SetUpPuzzleEffectRegieleki;
+        //sItemUseOnFieldCB = SetUpPuzzleEffectRegieleki;
+        //SetUpItemUseOnFieldCallback(taskId);
     }
     else
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);

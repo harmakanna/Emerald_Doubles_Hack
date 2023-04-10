@@ -1,0 +1,356 @@
+{
+  "id": "MAP_AWAKENING_WOODS",
+  "name": "AwakeningWoods",
+  "layout": "LAYOUT_AWAKENING_WOOD",
+  "music": "MUS_CAVE_OF_ORIGIN",
+  "region_map_section": "MAPSEC_AWAKENING_WOOD",
+  "requires_flash": false,
+  "weather": "WEATHER_RAIN",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
+      "x": 29,
+      "y": 45,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_Kecleon1",
+      "flag": "FLAG_HIDE_AWAKENING_WOOD_KECLEON_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
+      "x": 43,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_Kecleon2",
+      "flag": "FLAG_HIDE_AWAKENING_WOOD_KECLEON_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
+      "x": 71,
+      "y": 43,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_Kecleon2",
+      "flag": "FLAG_HIDE_AWAKENING_WOOD_KECLEON_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
+      "x": 48,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_Kecleon4",
+      "flag": "FLAG_HIDE_AWAKENING_WOOD_KECLEON_4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
+      "x": 56,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_Kecleon5",
+      "flag": "FLAG_HIDE_AWAKENING_WOOD_KECLEON_5"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 68,
+      "y": 52,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_ItemOldGateau",
+      "flag": "FLAG_ITEM_AWAKENING_WOOD_OLD_GATEAU"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 57,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_ItemStick",
+      "flag": "FLAG_ITEM_AWAKENING_WOOD_STICK"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 35,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_ItemDampRock",
+      "flag": "FLAG_ITEM_AWAKENING_WOOD_DAMP_ROCK"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 41,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_ItemHeatRock",
+      "flag": "FLAG_ITEM_AWAKENING_WOOD_HEAT_ROCK"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 44,
+      "y": 48,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_ItemIcyRock",
+      "flag": "FLAG_ITEM_AWAKENING_WOOD_ICY_ROCK"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 79,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AwakeningWoods_EventScript_ItemSmoothRock",
+      "flag": "FLAG_ITEM_AWAKENING_WOOD_SMOOTH_ROCK"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 84,
+      "y": 62,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE119",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 83,
+      "y": 62,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE119",
+      "dest_warp_id": 3
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 9,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_RainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 8,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_RainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 9,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 8,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 15,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 15,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 15,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 35,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 35,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 69,
+      "y": 46,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 68,
+      "y": 45,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 38,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_RainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 67,
+      "y": 37,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_RainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 69,
+      "y": 45,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_RainTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 68,
+      "y": 44,
+      "elevation": 0,
+      "var": "0",
+      "var_value": "0",
+      "script": "AwakeningWoods_EventScript_RainTrigger"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 33,
+      "y": 59,
+      "elevation": 3,
+      "item": "ITEM_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_AWAKENING_WOOD_REVIVE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 78,
+      "y": 4,
+      "elevation": 3,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_AWAKENING_WOOD_MAX_REVIVE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 59,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_FULL_RESTORE",
+      "flag": "FLAG_HIDDEN_ITEM_AWAKENING_WOOD_FULL_RESTORE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 61,
+      "y": 12,
+      "elevation": 3,
+      "item": "ITEM_MASTER_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_AWAKENING_WOOD_MASTER_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 83,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_MAX_ELIXIR",
+      "flag": "FLAG_HIDDEN_ITEM_AWAKENING_WOOD_MAX_ELIXER"
+    }
+  ]
+}

@@ -9,6 +9,7 @@
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
 #include "bg.h"
+#include "braille_puzzles.h"
 #include "contest.h"
 #include "data.h"
 #include "decompress.h"

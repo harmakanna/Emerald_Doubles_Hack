@@ -10,7 +10,7 @@ Route115_OnLoad:
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_EventScript_PlaceTilesRoute115East
 	end
 
-Route123_EventScript_CloseDragonsDen::
+Route115_EventScript_CloseDragonsDen::
 	setmetatile 9, 8, METATILE_General_RockWall_RockBase, TRUE
 	setmetatile 9, 9, METATILE_General_RockWall_SandBase, TRUE
 	return

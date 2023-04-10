@@ -650,12 +650,12 @@
 #define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           (FLAG_HIDDEN_ITEMS_START + 0x6D)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
+#define FLAG_HIDDEN_ITEM_AWAKENING_WOOD_REVIVE               (FLAG_HIDDEN_ITEMS_START + 0x70)
+#define FLAG_HIDDEN_ITEM_AWAKENING_WOOD_MAX_REVIVE           (FLAG_HIDDEN_ITEMS_START + 0x71)
+#define FLAG_HIDDEN_ITEM_AWAKENING_WOOD_FULL_RESTORE         (FLAG_HIDDEN_ITEMS_START + 0x72)
+#define FLAG_HIDDEN_ITEM_AWAKENING_WOOD_MASTER_BALL          (FLAG_HIDDEN_ITEMS_START + 0x73)
+#define FLAG_HIDDEN_ITEM_AWAKENING_WOOD_MAX_ELIXER           (FLAG_HIDDEN_ITEMS_START + 0x74)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
@@ -734,11 +734,11 @@
 #define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_HIDE_AWAKENING_WOOD_KECLEON_1                          0x2B7
+#define FLAG_HIDE_AWAKENING_WOOD_KECLEON_2                          0x2B8
+#define FLAG_HIDE_AWAKENING_WOOD_KECLEON_3                          0x2B9
+#define FLAG_HIDE_AWAKENING_WOOD_KECLEON_4                          0x2BA
+#define FLAG_HIDE_AWAKENING_WOOD_KECLEON_5                          0x2BB
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
@@ -1217,12 +1217,12 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
+#define FLAG_ITEM_AWAKENING_WOOD_DAMP_ROCK                          0x493
+#define FLAG_ITEM_AWAKENING_WOOD_HEAT_ROCK                          0x494
+#define FLAG_ITEM_AWAKENING_WOOD_ICY_ROCK                           0x495
+#define FLAG_ITEM_AWAKENING_WOOD_SMOOTH_ROCK                        0x496
+#define FLAG_ITEM_AWAKENING_WOOD_OLD_GATEAU                         0x497
+#define FLAG_ITEM_AWAKENING_WOOD_STICK                              0x498
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
@@ -1504,9 +1504,9 @@
 #define FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED         (SYSTEM_FLAGS + 0x85)
 #define FLAG_LANDMARK_DRAGONS_DEN                   (SYSTEM_FLAGS + 0x86)
 #define FLAG_LANDMARK_FORGOTTEN_PLANT               (SYSTEM_FLAGS + 0x87)
-#define FLAG_LANDMARK_DECREPIT_CASTLE               (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_SYS_DECREPIT_CASTLE_PUZZLE_COMPLETED   (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
+#define FLAG_LANDMARK_DECREPIT_CASTLE               (SYSTEM_FLAGS + 0x88)
+#define FLAG_SYS_DECREPIT_CASTLE_PUZZLE_COMPLETED   (SYSTEM_FLAGS + 0x89)
+#define FLAG_LANDMARK_AWAKENING_WOOD               (SYSTEM_FLAGS + 0x8A)
 #define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
 #define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag

@@ -9322,6 +9322,12 @@ static const union AnimCmd sAnim_OBSTAGOON_HOENNIAN_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_SKIDDO_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_GOGOAT_HOENNIAN_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -9367,6 +9373,118 @@ static const union AnimCmd sAnim_PHIONE_HOENNIAN_1[] =
 {
     ANIMCMD_FRAME(0, 30),
     ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MIENFOO_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MIENSHAO_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DIANCIE_HOENNIAN_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_ANNIHILAPE_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_KINGAMBIT_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CETODDLE_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CETITAN_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FARIGIRAF_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_SHROODLE_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_GRAFAIAI_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_WATTREL_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_KILOWATTREL_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_VAROOM_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_REVAVROOM_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_TINKATINK_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_TINKATUFF_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_TINKATON_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_SQUAWKABILLY_1[] =
+{
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
@@ -14729,6 +14847,11 @@ static const union AnimCmd *const sAnims_OBSTAGOON_HOENNIAN[] ={
     sAnim_OBSTAGOON_HOENNIAN_1,
 };
 
+static const union AnimCmd *const sAnims_SKIDDO_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SKIDDO_HOENNIAN_1,
+};
+
 static const union AnimCmd *const sAnims_GOGOAT_HOENNIAN[] ={
     sAnim_GeneralFrame0,
     sAnim_GOGOAT_HOENNIAN_1,
@@ -14757,6 +14880,96 @@ static const union AnimCmd *const sAnims_CHATOT_HOENNIAN[] ={
 static const union AnimCmd *const sAnims_PHIONE_HOENNIAN[] ={
     sAnim_GeneralFrame0,
     sAnim_PHIONE_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_MIENFOO_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_MIENFOO_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_MIENSHAO_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_MIENSHAO_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_DIANCIE_HOENNIAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DIANCIE_HOENNIAN_1,
+};
+
+static const union AnimCmd *const sAnims_ANNIHILAPE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_ANNIHILAPE_1,
+};
+
+static const union AnimCmd *const sAnims_KINGAMBIT[] ={
+    sAnim_GeneralFrame0,
+    sAnim_KINGAMBIT_1,
+};
+
+static const union AnimCmd *const sAnims_CETODDLE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_CETODDLE_1,
+};
+
+static const union AnimCmd *const sAnims_CETITAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_CETITAN_1,
+};
+
+static const union AnimCmd *const sAnims_FARIGIRAF[] ={
+    sAnim_GeneralFrame0,
+    sAnim_FARIGIRAF_1,
+};
+
+static const union AnimCmd *const sAnims_SHROODLE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SHROODLE_1,
+};
+
+static const union AnimCmd *const sAnims_GRAFAIAI[] ={
+    sAnim_GeneralFrame0,
+    sAnim_GRAFAIAI_1,
+};
+
+static const union AnimCmd *const sAnims_WATTREL[] ={
+    sAnim_GeneralFrame0,
+    sAnim_WATTREL_1,
+};
+
+static const union AnimCmd *const sAnims_KILOWATTREL[] ={
+    sAnim_GeneralFrame0,
+    sAnim_KILOWATTREL_1,
+};
+
+static const union AnimCmd *const sAnims_VAROOM[] ={
+    sAnim_GeneralFrame0,
+    sAnim_VAROOM_1,
+};
+
+static const union AnimCmd *const sAnims_REVAVROOM[] ={
+    sAnim_GeneralFrame0,
+    sAnim_REVAVROOM_1,
+};
+
+static const union AnimCmd *const sAnims_TINKATINK[] ={
+    sAnim_GeneralFrame0,
+    sAnim_TINKATINK_1,
+};
+
+static const union AnimCmd *const sAnims_TINKATUFF[] ={
+    sAnim_GeneralFrame0,
+    sAnim_TINKATUFF_1,
+};
+
+static const union AnimCmd *const sAnims_TINKATON[] ={
+    sAnim_GeneralFrame0,
+    sAnim_TINKATON_1,
+};
+
+static const union AnimCmd *const sAnims_SQUAWKABILLY[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SQUAWKABILLY_1,
 };
 
 #define ANIM_CMD(name)             [SPECIES_##name] = sAnims_##name
@@ -15972,12 +16185,34 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD_FULL(CALYREX_ICE_RIDER, sAnims_CALYREX),
     ANIM_CMD_FULL(CALYREX_SHADOW_RIDER, sAnims_CALYREX),
     ANIM_CMD(OBSTAGOON_HOENNIAN),
+    ANIM_CMD(SKIDDO_HOENNIAN),
     ANIM_CMD(GOGOAT_HOENNIAN),
     ANIM_CMD(CARBINK_HOENNIAN),
     ANIM_CMD(SEEL_HOENNIAN),
     ANIM_CMD(DEWGONG_HOENNIAN),
     ANIM_CMD(CHATOT_HOENNIAN),
     ANIM_CMD(PHIONE_HOENNIAN),
+    ANIM_CMD(MIENFOO_HOENNIAN),
+    ANIM_CMD(MIENSHAO_HOENNIAN),
+    ANIM_CMD(DIANCIE_HOENNIAN),
+    ANIM_CMD(ANNIHILAPE),
+    ANIM_CMD(KINGAMBIT),
+    ANIM_CMD(CETODDLE),
+    ANIM_CMD(CETITAN),
+    ANIM_CMD(FARIGIRAF),
+    ANIM_CMD(SHROODLE),
+    ANIM_CMD(GRAFAIAI),
+    ANIM_CMD(WATTREL),
+    ANIM_CMD(KILOWATTREL),
+    ANIM_CMD(VAROOM),
+    ANIM_CMD(REVAVROOM),
+    ANIM_CMD(TINKATINK),
+    ANIM_CMD(TINKATUFF),
+    ANIM_CMD(TINKATON),
+    ANIM_CMD(SQUAWKABILLY),
+    ANIM_CMD(SQUAWKABILLY_BLUE, sAnims_SQUAWKABILLY),
+    ANIM_CMD(SQUAWKABILLY_WHITE, sAnims_SQUAWKABILLY),
+    ANIM_CMD(SQUAWKABILLY_YELLOW, sAnims_SQUAWKABILLY),
     ANIM_CMD(EGG),
 };
 

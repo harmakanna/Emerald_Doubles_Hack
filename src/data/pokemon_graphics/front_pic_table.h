@@ -1273,13 +1273,37 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
     SPECIES_SPRITE(CALYREX_SHADOW_RIDER, gMonFrontPic_CalyrexShadowRider),
 
     SPECIES_SPRITE(OBSTAGOON_HOENNIAN, gMonFrontPic_ObstagoonHoennian),
+    SPECIES_SPRITE(SKIDDO_HOENNIAN, gMonFrontPic_SkiddoHoennian),
     SPECIES_SPRITE(GOGOAT_HOENNIAN, gMonFrontPic_GogoatHoennian),
     SPECIES_SPRITE(CARBINK_HOENNIAN, gMonFrontPic_CarbinkHoennian),
     SPECIES_SPRITE(SEEL_HOENNIAN, gMonFrontPic_SeelHoennian),
     SPECIES_SPRITE(DEWGONG_HOENNIAN, gMonFrontPic_DewgongHoennian),
     SPECIES_SPRITE(CHATOT_HOENNIAN, gMonFrontPic_ChatotHoennian),
     SPECIES_SPRITE(PHIONE_HOENNIAN, gMonFrontPic_PhioneHoennian),
-    
+    SPECIES_SPRITE(MIENFOO_HOENNIAN, gMonFrontPic_MienfooHoennian),
+    SPECIES_SPRITE(MIENSHAO_HOENNIAN, gMonFrontPic_MienshaoHoennain),
+    SPECIES_SPRITE(DIANCIE_HOENNIAN, gMonFrontPic_DiancieHoennian),
+
+    SPECIES_SPRITE(ANNIHILAPE, gMonFrontPic_Annihilape),
+    SPECIES_SPRITE(KINGAMBIT, gMonFrontPic_Kingambit),
+    SPECIES_SPRITE(CETODDLE, gMonFrontPic_Cetoddle),
+    SPECIES_SPRITE(CETITAN, gMonFrontPic_Cetitan),
+    SPECIES_SPRITE(FARIGIRAF, gMonFrontPic_Farigiraf),
+    SPECIES_SPRITE(SHROODLE, gMonFrontPic_Shroodle),
+    SPECIES_SPRITE(GRAFAIAI, gMonFrontPic_Grafaiai),
+    SPECIES_SPRITE(WATTREL, gMonFrontPic_Wattrel),
+    SPECIES_SPRITE(KILOWATTREL, gMonFrontPic_Kilowattrel),
+    SPECIES_SPRITE(VAROOM, gMonFrontPic_Varoom),
+    SPECIES_SPRITE(REVAVROOM, gMonFrontPic_Revavroom),
+    SPECIES_SPRITE(TINKATINK, gMonFrontPic_Tinkatink),
+    SPECIES_SPRITE(TINKATUFF, gMonFrontPic_Tinkatuff),
+    SPECIES_SPRITE(TINKATON, gMonFrontPic_Tinkaton),
+    SPECIES_SPRITE(SQUAWKABILLY, gMonFrontPic_Squawkabilly),
+
+    SPECIES_SPRITE(SQUAWKABILLY_BLUE, gMonFrontPic_SquawkabillyBlue),
+    SPECIES_SPRITE(SQUAWKABILLY_WHITE, gMonFrontPic_SquawkabillyWhite),
+    SPECIES_SPRITE(SQUAWKABILLY_YELLOW, gMonFrontPic_SquawkabillyYellow),
+
     SPECIES_SPRITE(EGG, gMonFrontPic_Egg),
 };
 

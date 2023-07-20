@@ -4410,6 +4410,12 @@ const u16 gEggMoves[] = {
         MOVE_PSYCHO_SHIFT,
         MOVE_HEAL_PULSE),
 
+    egg_moves(SKIDDO_HOENNIAN,
+        MOVE_DEFENSE_CURL,
+        MOVE_ROLLOUT,
+        MOVE_MILK_DRINK,
+        MOVE_GRASSY_TERRAIN),
+
     egg_moves(SEEL_HOENNIAN,
         MOVE_LICK,
         MOVE_PERISH_SONG,
@@ -4440,6 +4446,58 @@ const u16 gEggMoves[] = {
         MOVE_DEFOG,
         MOVE_AIR_CUTTER,
         MOVE_BOOMBURST),
+
+    egg_moves(MIENFOO_HOENNIAN,
+        MOVE_ENDURE,
+        MOVE_VITAL_THROW,
+        MOVE_BATON_PASS,
+        MOVE_SMELLING_SALTS,
+        MOVE_LOW_KICK,
+        MOVE_FEINT,
+        MOVE_ME_FIRST,
+        MOVE_KNOCK_OFF,
+        MOVE_ALLY_SWITCH),
+
+    egg_moves(CETODDLE,
+        MOVE_BELLY_DRUM,
+        MOVE_ENTRAINMENT,
+        MOVE_ICICLE_CRASH,
+        MOVE_SUPERPOWER,
+        MOVE_YAWN),
+
+    egg_moves(SHROODLE,
+        MOVE_COPYCAT,
+        MOVE_CROSS_POISON,
+        MOVE_PARTING_SHOT,
+        MOVE_SUPER_FANG,
+        MOVE_SWAGGER,
+        MOVE_TOXIC),
+
+    egg_moves(WATTREL,
+        MOVE_ENDEAVOR,
+        MOVE_FEATHER_DANCE,
+        MOVE_SPIT_UP,
+        MOVE_STOCKPILE,
+        MOVE_SWALLOW,
+        MOVE_WEATHER_BALL),
+
+    egg_moves(VAROOM,
+        MOVE_HAZE,
+        MOVE_PARTING_SHOT,
+        MOVE_SELF_DESTRUCT,
+        MOVE_TORMENT,
+        MOVE_TOXIC),
+
+    egg_moves(TINKATINK,
+        MOVE_FEINT,
+        MOVE_ICE_HAMMER,
+        MOVE_QUASH),
+
+    egg_moves(SQUAWKABILLY,
+        MOVE_DOUBLE_EDGE,
+        MOVE_FINAL_GAMBIT,
+        MOVE_FLATTER,
+        MOVE_PARTING_SHOT),
 
     EGG_MOVES_TERMINATOR
 };

@@ -25050,6 +25050,55 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)),
 
+    [SPECIES_MIENFOO_HOENNIAN]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
+                                            | TMHM(TM45_ATTRACT)
+                                            | TMHM(TM31_BRICK_BREAK)
+                                            | TMHM(TM08_BULK_UP)
+                                            | TMHM(TM04_CALM_MIND)
+                                            | TMHM(TM28_DIG)
+                                            | TMHM(TM32_DOUBLE_TEAM)
+                                            | TMHM(TM42_FACADE)
+                                            | TMHM(TM01_FOCUS_PUNCH)
+                                            | TMHM(TM21_FRUSTRATION)
+                                            | TMHM(TM10_HIDDEN_POWER)
+                                            | TMHM(TM17_PROTECT)
+                                            | TMHM(TM18_RAIN_DANCE)
+                                            | TMHM(TM33_REFLECT)
+                                            | TMHM(TM44_REST)
+                                            | TMHM(TM27_RETURN)
+                                            | TMHM(HM06_ROCK_SMASH)
+                                            | TMHM(TM39_ROCK_TOMB)
+                                            | TMHM(TM43_SECRET_POWER)
+                                            | TMHM(HM04_STRENGTH)
+                                            | TMHM(TM11_SUNNY_DAY)
+                                            | TMHM(TM12_TAUNT)
+                                            | TMHM(TM06_TOXIC)),
+
+    [SPECIES_MIENSHAO_HOENNIAN]    = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
+                                            | TMHM(TM45_ATTRACT)
+                                            | TMHM(TM31_BRICK_BREAK)
+                                            | TMHM(TM08_BULK_UP)
+                                            | TMHM(TM04_CALM_MIND)
+                                            | TMHM(TM28_DIG)
+                                            | TMHM(TM32_DOUBLE_TEAM)
+                                            | TMHM(TM42_FACADE)
+                                            | TMHM(TM01_FOCUS_PUNCH)
+                                            | TMHM(TM21_FRUSTRATION)
+                                            | TMHM(TM10_HIDDEN_POWER)
+                                            | TMHM(TM15_HYPER_BEAM)
+                                            | TMHM(TM17_PROTECT)
+                                            | TMHM(TM18_RAIN_DANCE)
+                                            | TMHM(TM33_REFLECT)
+                                            | TMHM(TM44_REST)
+                                            | TMHM(TM27_RETURN)
+                                            | TMHM(HM06_ROCK_SMASH)
+                                            | TMHM(TM39_ROCK_TOMB)
+                                            | TMHM(TM43_SECRET_POWER)
+                                            | TMHM(HM04_STRENGTH)
+                                            | TMHM(TM11_SUNNY_DAY)
+                                            | TMHM(TM12_TAUNT)
+                                            | TMHM(TM06_TOXIC)),
+
     [SPECIES_PHIONE_HOENNIAN]      = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                             | TMHM(HM08_DIVE)
                                             | TMHM(TM32_DOUBLE_TEAM)
@@ -25068,4 +25117,36 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(HM07_WATERFALL)
                                             | TMHM(TM03_WATER_PULSE)),
+
+    [SPECIES_DIANCIE_HOENNIAN]    = TMHM_LEARNSET(),
+
+    [SPECIES_ANNIHILAPE]    = TMHM_LEARNSET(),
+
+    [SPECIES_KINGAMBIT]    = TMHM_LEARNSET(),
+
+    [SPECIES_CETODDLE]    = TMHM_LEARNSET(),
+
+    [SPECIES_CETITAN]    = TMHM_LEARNSET(),
+
+    [SPECIES_FARIGIRAF]    = TMHM_LEARNSET(),
+
+    [SPECIES_SHROODLE]    = TMHM_LEARNSET(),
+
+    [SPECIES_GRAFAIAI]    = TMHM_LEARNSET(),
+
+    [SPECIES_WATTREL]    = TMHM_LEARNSET(),
+
+    [SPECIES_KILOWATTREL]    = TMHM_LEARNSET(),
+
+    [SPECIES_VAROOM]    = TMHM_LEARNSET(),
+
+    [SPECIES_REVAVROOM]    = TMHM_LEARNSET(),
+
+    [SPECIES_TINKATINK]    = TMHM_LEARNSET(),
+
+    [SPECIES_TINKATUFF]    = TMHM_LEARNSET(),
+
+    [SPECIES_TINKATON]    = TMHM_LEARNSET(),
+
+    [SPECIES_SQUAWKABILLY]    = TMHM_LEARNSET(),
 };

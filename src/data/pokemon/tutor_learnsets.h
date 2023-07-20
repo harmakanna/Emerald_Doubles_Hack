@@ -10705,6 +10705,15 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_THUNDER_PUNCH)
                                             | TUTOR(MOVE_THUNDER_WAVE)),
 
+    [SPECIES_SKIDDO_HOENNIAN]       = TUTOR_LEARNSET(TUTOR(MOVE_DEFENSE_CURL)
+                                            | TUTOR(MOVE_DOUBLE_EDGE)
+                                            | TUTOR(MOVE_ROCK_SLIDE)
+                                            | TUTOR(MOVE_ROLLOUT)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)),
+
     [SPECIES_GOGOAT_HOENNIAN]        = TUTOR_LEARNSET(TUTOR(MOVE_DOUBLE_EDGE)
                                             | TUTOR(MOVE_ROCK_SLIDE)
                                             | TUTOR(MOVE_SLEEP_TALK)
@@ -10749,6 +10758,25 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SWAGGER)
                                             | TUTOR(MOVE_SWIFT)),
 
+    [SPECIES_MIENFOO_HOENNIAN]       = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_PSYCH_UP)
+                                            | TUTOR(MOVE_ROCK_SLIDE)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_SWORDS_DANCE)),
+
+    [SPECIES_MIENSHAO_HOENNIAN]      = TUTOR_LEARNSET(TUTOR(MOVE_PSYCH_UP)
+                                            | TUTOR(MOVE_ROCK_SLIDE)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_SWORDS_DANCE)),
+
     [SPECIES_PHIONE_HOENNIAN]        = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
                                             | TUTOR(MOVE_ICY_WIND)
                                             | TUTOR(MOVE_MUD_SLAP)
@@ -10758,4 +10786,140 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SUBSTITUTE)
                                             | TUTOR(MOVE_SWAGGER)
                                             | TUTOR(MOVE_SWIFT)),
+
+    [SPECIES_DIANCIE_HOENNIAN]       = TUTOR_LEARNSET(TUTOR(MOVE_EXPLOSION)
+                                            | TUTOR(MOVE_PSYCH_UP)
+                                            | TUTOR(MOVE_ROCK_SLIDE)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)),
+
+    [SPECIES_ANNIHILAPE]             = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
+                                            | TUTOR(MOVE_COUNTER)
+                                            | TUTOR(MOVE_DEFENSE_CURL)
+                                            | TUTOR(MOVE_DOUBLE_EDGE)
+                                            | TUTOR(MOVE_DYNAMIC_PUNCH)
+                                            | TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_FIRE_PUNCH)
+                                            | TUTOR(MOVE_ICE_PUNCH)
+                                            | TUTOR(MOVE_MEGA_KICK)
+                                            | TUTOR(MOVE_MEGA_PUNCH)
+                                            | TUTOR(MOVE_METRONOME)
+                                            | TUTOR(MOVE_MIMIC)
+                                            | TUTOR(MOVE_MUD_SLAP)
+                                            | TUTOR(MOVE_PSYCH_UP)
+                                            | TUTOR(MOVE_ROCK_SLIDE)
+                                            | TUTOR(MOVE_SEISMIC_TOSS)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_THUNDER_PUNCH)),
+
+    [SPECIES_KINGAMBIT]              = TUTOR_LEARNSET(TUTOR(MOVE_FURY_CUTTER)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWORDS_DANCE)
+                                            | TUTOR(MOVE_THUNDER_WAVE)),
+
+    [SPECIES_CETODDLE]               = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
+                                            | TUTOR(MOVE_DOUBLE_EDGE)
+                                            | TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_ICY_WIND)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)),
+
+    [SPECIES_CETITAN]                = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
+                                            | TUTOR(MOVE_DOUBLE_EDGE)
+                                            | TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_ICY_WIND)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)),
+
+    [SPECIES_SHROODLE]               = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_METRONOME)
+                                            | TUTOR(MOVE_MUD_SLAP)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWORDS_DANCE)),
+
+    [SPECIES_GRAFAIAI]               = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_METRONOME)
+                                            | TUTOR(MOVE_MUD_SLAP)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWORDS_DANCE)),
+
+   [SPECIES_WATTREL]                 = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE))
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_THUNDER_WAVE)),
+
+  [SPECIES_KILOWATTREL]              = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE))
+                                           | TUTOR(MOVE_SLEEP_TALK)
+                                           | TUTOR(MOVE_SNORE)
+                                           | TUTOR(MOVE_SUBSTITUTE)
+                                           | TUTOR(MOVE_SWIFT)
+                                           | TUTOR(MOVE_THUNDER_WAVE)),
+
+  [SPECIES_VAROOM]                   = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
+                                           | TUTOR(MOVE_ENDURE)
+                                           | TUTOR(MOVE_SLEEP_TALK)
+                                           | TUTOR(MOVE_SNORE)
+                                           | TUTOR(MOVE_SUBSTITUTE)
+                                           | TUTOR(MOVE_SWAGGER)),
+
+  [SPECIES_REVAVROOM]                = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
+                                          | TUTOR(MOVE_ENDURE)
+                                          | TUTOR(MOVE_SLEEP_TALK)
+                                          | TUTOR(MOVE_SNORE)
+                                          | TUTOR(MOVE_SUBSTITUTE)
+                                          | TUTOR(MOVE_SWAGGER)),
+
+  [SPECIES_TINKATINK]                = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
+                                          | TUTOR(MOVE_METRONOME)
+                                          | TUTOR(MOVE_ROCK_SLIDE)
+                                          | TUTOR(MOVE_SLEEP_TALK)
+                                          | TUTOR(MOVE_SNORE)
+                                          | TUTOR(MOVE_SUBSTITUTE)
+                                          | TUTOR(MOVE_SWORDS_DANCE)
+                                          | TUTOR(MOVE_THUNDER_WAVE)),
+
+  [SPECIES_TINKATUFF]                = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
+                                          | TUTOR(MOVE_METRONOME)
+                                          | TUTOR(MOVE_ROCK_SLIDE)
+                                          | TUTOR(MOVE_SLEEP_TALK)
+                                          | TUTOR(MOVE_SNORE)
+                                          | TUTOR(MOVE_SUBSTITUTE)
+                                          | TUTOR(MOVE_SWORDS_DANCE)
+                                          | TUTOR(MOVE_THUNDER_WAVE)),
+
+  [SPECIES_TINKATON]                 = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
+                                          | TUTOR(MOVE_METRONOME)
+                                          | TUTOR(MOVE_ROCK_SLIDE)
+                                          | TUTOR(MOVE_SLEEP_TALK)
+                                          | TUTOR(MOVE_SNORE)
+                                          | TUTOR(MOVE_SUBSTITUTE)
+                                          | TUTOR(MOVE_SWORDS_DANCE)
+                                          | TUTOR(MOVE_THUNDER_WAVE)),
+
+  [SPECIES_SQUAWKABILLY]             = TUTOR_LEARNSET(TUTOR(MOVE_DOUBLE_EDGE)
+                                          | TUTOR(MOVE_ENDURE)
+                                          | TUTOR(MOVE_MIMIC)
+                                          | TUTOR(MOVE_SLEEP_TALK)
+                                          | TUTOR(MOVE_SNORE)
+                                          | TUTOR(MOVE_SUBSTITUTE)
+                                          | TUTOR(MOVE_SWAGGER)),
 };

@@ -3979,6 +3979,66 @@ Cry_Calyrex::
 	.incbin "sound/direct_sound_samples/cries/calyrex.bin"
 
 	.align 2
+Cry_Annihilape::
+	.incbin "sound/direct_sound_samples/cries/annihilape.bin"
+
+	.align 2
+Cry_Kingambit::
+	.incbin "sound/direct_sound_samples/cries/kingambit.bin"
+
+	.align 2
+Cry_Cetoddle::
+	.incbin "sound/direct_sound_samples/cries/cetoddle.bin"
+
+	.align 2
+Cry_Cetitan::
+	.incbin "sound/direct_sound_samples/cries/cetitan.bin"
+
+	.align 2
+Cry_Farigiraf::
+	.incbin "sound/direct_sound_samples/cries/farigiraf.bin"
+
+	.align 2
+Cry_Shroodle::
+	.incbin "sound/direct_sound_samples/cries/shroodle.bin"
+
+	.align 2
+Cry_Grafaiai::
+	.incbin "sound/direct_sound_samples/cries/grafaiai.bin"
+
+	.align 2
+Cry_Wattrel::
+	.incbin "sound/direct_sound_samples/cries/wattrel.bin"
+
+	.align 2
+Cry_Kilowattrel::
+	.incbin "sound/direct_sound_samples/cries/kilowattrel.bin"
+
+	.align 2
+Cry_Varoom::
+	.incbin "sound/direct_sound_samples/cries/varoom.bin"
+
+	.align 2
+Cry_Revavroom::
+	.incbin "sound/direct_sound_samples/cries/revavroom.bin"
+
+	.align 2
+Cry_Tinkatink::
+	.incbin "sound/direct_sound_samples/cries/tinkatink.bin"
+
+	.align 2
+Cry_Tinkatuff::
+	.incbin "sound/direct_sound_samples/cries/tinkatuff.bin"
+
+	.align 2
+Cry_Tinkaton::
+	.incbin "sound/direct_sound_samples/cries/tinkaton.bin"
+
+	.align 2
+Cry_Squawkabilly::
+	.incbin "sound/direct_sound_samples/cries/squawkabilly.bin"
+
+	.align 2
 Cry_VenusaurMega::
 	.incbin "sound/direct_sound_samples/cries/mega_venusaur.bin"
 

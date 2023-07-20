@@ -899,6 +899,22 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_GLASTRIER] = sGlastrierLevelUpLearnset,
     [SPECIES_SPECTRIER] = sSpectrierLevelUpLearnset,
     [SPECIES_CALYREX] = sCalyrexLevelUpLearnset,
+    // Gen 9
+    [SPECIES_ANNIHILAPE] = sAnnihilapeLevelUpLearnset,
+    [SPECIES_KINGAMBIT] = sKingambitLevelUpLearnset,
+    [SPECIES_CETODDLE] = sCetoddleLevelUpLearnset,
+    [SPECIES_CETITAN] = sCetitanLevelUpLearnset,
+    [SPECIES_FARIGIRAF] = sFarigirafLevelUpLearnset,
+    [SPECIES_SHROODLE] = sShroodleLevelUpLearnset,
+    [SPECIES_GRAFAIAI] = sGrafaiaiLevelUpLearnset,
+    [SPECIES_WATTREL] = sWattrelLevelUpLearnset,
+    [SPECIES_KILOWATTREL] = sKilowattrelLevelUpLearnset,
+    [SPECIES_VAROOM] = sVaroomLevelUpLearnset,
+    [SPECIES_REVAVROOM] = sRevavroomLevelUpLearnset,
+    [SPECIES_TINKATINK] = sTinkatinkLevelUpLearnset,
+    [SPECIES_TINKATUFF] = sTinkatuffLevelUpLearnset,
+    [SPECIES_TINKATON] = sTinkatonLevelUpLearnset,
+    [SPECIES_SQUAWKABILLY] = sSquawkabillyLevelUpLearnset,
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurLevelUpLearnset,
     [SPECIES_CHARIZARD_MEGA_X] = sCharizardLevelUpLearnset,
@@ -1272,12 +1288,21 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER] = sCalyrexIceRiderLevelUpLearnset,
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexShadowRiderLevelUpLearnset,
+    // Squawkabilly
+    [SPECIES_SQUAWKABILLY_BLUE] = sSquawkabillyLevelUpLearnset,
+    [SPECIES_SQUAWKABILLY_YELLOW] = sSquawkabillyLevelUpLearnset,
+    [SPECIES_SQUAWKABILLY_WHITE] = sSquawkabillyLevelUpLearnset,
     // Hoennian Forms
     [SPECIES_OBSTAGOON_HOENNIAN] = sObstagoonHoennianLevelUpLearnset,
+    [SPECIES_SKIDDO_HOENNIAN] = sSkiddoHoennianLevelUpLearnset,
     [SPECIES_GOGOAT_HOENNIAN] = sGogoatHoennianLevelUpLearnset,
     [SPECIES_CARBINK_HOENNIAN] = sCarbinkHoennianLevelUpLearnset,
     [SPECIES_SEEL_HOENNIAN] = sSeelHoennianLevelUpLearnset,
     [SPECIES_DEWGONG_HOENNIAN] = sDewgongHoennianLevelUpLearnset,
     [SPECIES_CHATOT_HOENNIAN] = sChatotHoennianLevelUpLearnset,
     [SPECIES_PHIONE_HOENNIAN] = sPhioneHoennianLevelUpLearnset,
+    [SPECIES_MIENFOO_HOENNIAN] = sMienfooHoennianLevelUpLearnset,
+    [SPECIES_MIENSHAO_HOENNIAN] = sMienshaoHoennianLevelUpLearnset,
+    [SPECIES_DIANCIE_HOENNIAN] = sDiancieHoennianLevelUpLearnset,
+
 };

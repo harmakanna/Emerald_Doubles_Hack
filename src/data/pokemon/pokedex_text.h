@@ -5383,3 +5383,91 @@ const u8 gCalyrexPokedexText[] = _(
     "providing healing and blessings. It\n"
     "reigned over the Galar region in times\n"
     "of yore.");
+
+const u8 gAnnihilapePokedexText[] = _(
+    "When its anger rose past a critical point,\n"
+    "this Pokémon gained power that is\n"
+    "unfettered by the limits of its physical\n"
+    "body.");
+
+const u8 gKingambitPokedexText[] = _(
+    "It may command a massive army in battle,\n"
+    "but Kingambit is not skilled at devising\n"
+    "strategies. It just uses brute strength\n"
+    "to keep pushing.");
+
+const u8 gCetoddlePokedexText[] = _(
+    "This species left the ocean and began\n"
+    "living on land a long time ago. It seems\n"
+    "to be closely related to Wailmer.");
+
+const u8 gCetitanPokedexText[] = _(
+    "This Pokémon wanders snowy, icy areas.\n"
+    "It protects its body with powerful\n"
+    "muscles and a thick layer of fat under\n"
+    "its skin.");
+
+const u8 gFarigirafPokedexText[] = _(
+    "Now that the brain waves from the head\n"
+    "and tail are synced up, the psychic power\n"
+    "of this Pokémon is 10 times stronger than\n"
+    "Girafarig's.");
+
+const u8 gShroodlePokedexText[] = _(
+    "To keep enemies away from its territory,\n"
+    "Shroodle paints markings around its nest\n"
+    "using a poisonous liquid with an acrid\n"
+    "odor.");
+
+const u8 gGrafaiaiPokedexText[] = _(
+    "Each Grafaiai paints its own individual\n"
+    "pattern, and it will paint the same\n"
+    "pattern over and over again throughout\n"
+    "its life.");
+
+const u8 gWattrelPokedexText[] = _(
+    "When its wings catch the wind, the bones\n"
+    "within produce electricity. This Pokémon\n"
+    "dives into the ocean, catching prey by\n"
+    "electrocuting them.");
+
+const u8 gKilowattrelPokedexText[] = _(
+    "Kilowattrel inflates its throat sac to\n"
+    "amplify its electricity. By riding\n"
+    "the wind, this Pokémon can fly over\n"
+    "430 miles in one day.";
+
+const u8 gVaroomPokedexText[] = _(
+    "The steel section is Varoom's actual body.\n"
+    "This Pokémon clings to rocks and converts\n"
+    "the minerals within into energy to fuel\n"
+    "its activities.");
+
+const u8 gRevavroomPokedexText[] = _(
+    "Revavroom viciously threatens others with\n"
+    "the sound of its exhaust. It sticks its\n"
+    "tongue out from its cylindrical mouth\n"
+    "and sprays toxic fluids.");
+
+const u8 gTinkatinkPokedexText[] = _(
+    "It swings its handmade hammer around to\n"
+    "protect itself, but the hammer is often\n"
+    "stolen by Pokémon that eat metal.");
+
+const u8 gTinkatuffPokedexText[] = _(
+    "This Pokémon will attack groups of\n"
+    "Pawniard and Bisharp, gathering metal\n"
+    "from them in order to create a large\n"
+    "and sturdy hammer.");
+
+const u8 gTinkatonPokedexText[] = _(
+    "Tinkaton will sneak up on sleeping\n"
+    "Skarmory and startle them awake. It\n"
+    "will then use the strong feathers\n"
+    "left behind to augment its hammer.");
+
+const u8 gSquawkabillyPokedexText[] = _(
+    "This Pokémon settles in forests nearby\n"
+    "big cities. They are constantly fighting\n"
+    "for turf against Hoenn's native Chatot\n"
+    "population.");

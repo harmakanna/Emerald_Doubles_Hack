@@ -908,7 +908,22 @@
 #define SPECIES_ALTARIA_MEGA                 903
 #define SPECIES_BANETTE_MEGA                 904
 
-#define FORMS_START SPECIES_BANETTE_MEGA
+#define SPECIES_ANNIHILAPE                   905
+#define SPECIES_KINGAMBIT                    906
+#define SPECIES_CETODDLE                     907
+#define SPECIES_CETITAN                      908
+#define SPECIES_FARIGIRAF                    909
+#define SPECIES_SHROODLE                     910
+#define SPECIES_GRAFAIAI                     911
+#define SPECIES_WATTREL                      912
+#define SPECIES_KILOWATTREL                  913
+#define SPECIES_VAROOM                       914
+#define SPECIES_REVAVROOM                    915
+#define SPECIES_TINKATINK                    916
+#define SPECIES_TINKATUFF                    917
+#define SPECIES_TINKATON                     918
+#define SPECIES_SQUAWKABILLY                 919
+#define FORMS_START SPECIES_SQUAWKABILLY
 
 // Megas
 #define SPECIES_VENUSAUR_MEGA                FORMS_START + 1
@@ -936,15 +951,15 @@
 #define SPECIES_BLAZIKEN_MEGA                FORMS_START + 23
 #define SPECIES_SWAMPERT_MEGA                FORMS_START + 24
 #define SPECIES_GARDEVOIR_MEGA               FORMS_START + 25
-//#define SPECIES_SABLEYE_MEGA                 FORMS_START + 26
-//#define SPECIES_MAWILE_MEGA                  FORMS_START + 27
+#define SPECIES_SABLEYE_MEGA_EVO             FORMS_START + 26 //Names altered to MEGA_EVO to prevent conflict with Pokemon-ified mega evos. Unused
+#define SPECIES_MAWILE_MEGA_EVO              FORMS_START + 27 //Unused
 #define SPECIES_AGGRON_MEGA                  FORMS_START + 28
 #define SPECIES_MEDICHAM_MEGA                FORMS_START + 29
 #define SPECIES_MANECTRIC_MEGA               FORMS_START + 30
-//#define SPECIES_SHARPEDO_MEGA                FORMS_START + 31
-//#define SPECIES_CAMERUPT_MEGA                FORMS_START + 32
-//#define SPECIES_ALTARIA_MEGA                 FORMS_START + 33
-//#define SPECIES_BANETTE_MEGA                 FORMS_START + 34
+#define SPECIES_SHARPEDO_MEGA_EVO            FORMS_START + 31 //Unused
+#define SPECIES_CAMERUPT_MEGA_EVO            FORMS_START + 32 //Unused
+#define SPECIES_ALTARIA_MEGA_EVO             FORMS_START + 33 //Unused
+#define SPECIES_BANETTE_MEGA_EVO             FORMS_START + 34 //Unused
 #define SPECIES_ABSOL_MEGA                   FORMS_START + 35
 #define SPECIES_GLALIE_MEGA                  FORMS_START + 36
 #define SPECIES_SALAMENCE_MEGA               FORMS_START + 37
@@ -1348,16 +1363,24 @@
 #define SPECIES_CALYREX_ICE_RIDER            FORMS_START + 307
 #define SPECIES_CALYREX_SHADOW_RIDER         FORMS_START + 308
 
-// Hoennian Forms
-#define SPECIES_OBSTAGOON_HOENNIAN           FORMS_START + 309
-#define SPECIES_GOGOAT_HOENNIAN              FORMS_START + 310
-#define SPECIES_CARBINK_HOENNIAN             FORMS_START + 311
-#define SPECIES_SEEL_HOENNIAN                FORMS_START + 312
-#define SPECIES_DEWGONG_HOENNIAN             FORMS_START + 313
-#define SPECIES_CHATOT_HOENNIAN              FORMS_START + 314
-#define SPECIES_PHIONE_HOENNIAN              FORMS_START + 315
+//Squawkabilly
+#define SPECIES_SQUAWKABILLY_BLUE            FORMS_START + 309
+#define SPECIES_SQUAWKABILLY_WHITE           FORMS_START + 310
+#define SPECIES_SQUAWKABILLY_YELLOW          FORMS_START + 311
 
-#define SPECIES_EGG SPECIES_PHIONE_HOENNIAN + 1
+// Hoennian Forms
+#define SPECIES_OBSTAGOON_HOENNIAN           FORMS_START + 312
+#define SPECIES_GOGOAT_HOENNIAN              FORMS_START + 313
+#define SPECIES_CARBINK_HOENNIAN             FORMS_START + 314
+#define SPECIES_SEEL_HOENNIAN                FORMS_START + 315
+#define SPECIES_DEWGONG_HOENNIAN             FORMS_START + 316
+#define SPECIES_CHATOT_HOENNIAN              FORMS_START + 317
+#define SPECIES_PHIONE_HOENNIAN              FORMS_START + 318
+#define SPECIES_MIENFOO_HOENNIAN             FORMS_START + 319
+#define SPECIES_MIENSHAO_HOENNIAN            FORMS_START + 320
+#define SPECIES_DIANCIE_HOENNIAN             FORMS_START + 321
+
+#define SPECIES_EGG SPECIES_DIANCIE_HOENNIAN + 1
 #define NUM_SPECIES SPECIES_EGG
 
 #endif  // GUARD_CONSTANTS_SPECIES_H

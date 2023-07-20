@@ -898,6 +898,21 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_GLASTRIER] = _("Glastrier"),
     [SPECIES_SPECTRIER] = _("Spectrier"),
     [SPECIES_CALYREX] = _("Calyrex"),
+    [SPECIES_ANNIHILAPE] = _("Annihilape"),
+    [SPECIES_KINGAMBIT] = _("Kingambit"),
+    [SPECIES_CETODDLE] = _("Cetoddle"),
+    [SPECIES_CETITAN] = _("Cetitan"),
+    [SPECIES_FARIGIRAF] = _("Farigiraf"),
+    [SPECIES_SHROODLE] = _("Shroodle"),
+    [SPECIES_GRAFAIAI] = _("Grafaiai"),
+    [SPECIES_WATTREL] = _("Wattrel"),
+    [SPECIES_KILOWATTREL] = _("Kilowattrel"),
+    [SPECIES_VAROOM] = _("Varoom"),
+    [SPECIES_REVAVROOM] = _("Revavroom"),
+    [SPECIES_TINKATINK] = _("Tinkatink"),
+    [SPECIES_TINKATUFF] = _("Tinkatuff"),
+    [SPECIES_TINKATON] = _("Tinkaton"),
+    [SPECIES_SQUAWKABILLY] = _("Squawkabilly"),
 
     // Megas
     [SPECIES_VENUSAUR_MEGA] = _("Venusaur"),
@@ -1274,12 +1289,20 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER] = _("Calyrex"),
     [SPECIES_CALYREX_SHADOW_RIDER] = _("Calyrex"),
+    // Squawkabilly
+    [SPECIES_SQUAWKABILLY_BLUE] = _("Squawkabilly"),
+    [SPECIES_SQUAWKABILLY_WHITE] = _("Squawkabilly"),
+    [SPECIES_SQUAWKABILLY_YELLOW] = _("Squawkabilly"),
     // Hoennian Forms
     [SPECIES_OBSTAGOON_HOENNIAN] = _("Obstagoon"),
+    [SPECIES_SKIDDO_HOENNIAN] = _("H-Skiddo"),
     [SPECIES_GOGOAT_HOENNIAN] = _("H-Gogoat"),
     [SPECIES_CARBINK_HOENNIAN] = _("H-Carbink"),
     [SPECIES_SEEL_HOENNIAN] = _("H-Seel"),
     [SPECIES_DEWGONG_HOENNIAN] = _("H-Dewgong"),
     [SPECIES_CHATOT_HOENNIAN] = _("H-Chatot"),
     [SPECIES_PHIONE_HOENNIAN] = _("H-Phione"),
+    [SPECIES_MIENFOO_HOENNIAN] = _("H-Mienfoo"),
+    [SPECIES_MIENSHAO_HOENNIAN] = _("H-Mienshao"),
+    [SPECIES_DIANCIE_HOENNIAN] = _("H-Diancie"),
 };

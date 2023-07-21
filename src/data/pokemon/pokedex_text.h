@@ -5435,7 +5435,7 @@ const u8 gKilowattrelPokedexText[] = _(
     "Kilowattrel inflates its throat sac to\n"
     "amplify its electricity. By riding\n"
     "the wind, this Pokémon can fly over\n"
-    "430 miles in one day.";
+    "430 miles in one day.");
 
 const u8 gVaroomPokedexText[] = _(
     "The steel section is Varoom's actual body.\n"

@@ -1281,7 +1281,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(CHATOT_HOENNIAN, gMonShinyPalette_ChatotHoennian),
     SPECIES_SHINY_PAL(PHIONE_HOENNIAN, gMonShinyPalette_PhioneHoennian),
     SPECIES_SHINY_PAL(MIENFOO_HOENNIAN, gMonShinyPalette_MienfooHoennian),
-    SPECIES_SHINY_PAL(MIENSHAO_HOENNIAN, gMonShinyPalette_MienshaoHoennain),
+    SPECIES_SHINY_PAL(MIENSHAO_HOENNIAN, gMonShinyPalette_MienshaoHoennian),
     SPECIES_SHINY_PAL(DIANCIE_HOENNIAN, gMonShinyPalette_DiancieHoennian),
 
     SPECIES_SHINY_PAL(ANNIHILAPE, gMonShinyPalette_Annihilape),
@@ -1299,7 +1299,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(TINKATUFF, gMonShinyPalette_Tinkatuff),
     SPECIES_SHINY_PAL(TINKATON, gMonShinyPalette_Tinkaton),
     SPECIES_SHINY_PAL(SQUAWKABILLY, gMonShinyPalette_Squawkabilly),
-    
+
     SPECIES_SHINY_PAL(SQUAWKABILLY_BLUE, gMonShinyPalette_SquawkabillyBlue),
     SPECIES_SHINY_PAL(SQUAWKABILLY_WHITE, gMonShinyPalette_SquawkabillyWhite),
     SPECIES_SHINY_PAL(SQUAWKABILLY_YELLOW, gMonShinyPalette_SquawkabillyYellow),

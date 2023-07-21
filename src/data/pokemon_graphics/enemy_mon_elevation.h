@@ -265,7 +265,7 @@ const u8 gEnemyMonElevation[NUM_SPECIES] =
     [SPECIES_POLTEAGEIST_ANTIQUE] = 12,
     [SPECIES_ETERNATUS_ETERNAMAX] = 13,
     //Hoennian Forms
-    [SPECIES_CARBINK] = 4,
+    [SPECIES_CARBINK_HOENNIAN] = 4,
     [SPECIES_PHIONE_HOENNIAN] = 11,
     //Gen 9
 };

@@ -9693,3 +9693,9 @@ BattleScript_MagicianActivates::
 	call BattleScript_AbilityPopUp
 	call BattleScript_ItemSteal
 	return
+
+BattleScript_WindPowerActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNCHARGINGPOWER
+	waitmessage B_WAIT_TIME_LONG
+	return

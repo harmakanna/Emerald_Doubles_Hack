@@ -10860,14 +10860,14 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SWAGGER)
                                             | TUTOR(MOVE_SWORDS_DANCE)),
 
-   [SPECIES_WATTREL]                 = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE))
+   [SPECIES_WATTREL]                 = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
                                             | TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)
                                             | TUTOR(MOVE_SUBSTITUTE)
                                             | TUTOR(MOVE_SWIFT)
                                             | TUTOR(MOVE_THUNDER_WAVE)),
 
-  [SPECIES_KILOWATTREL]              = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE))
+  [SPECIES_KILOWATTREL]              = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
                                            | TUTOR(MOVE_SLEEP_TALK)
                                            | TUTOR(MOVE_SNORE)
                                            | TUTOR(MOVE_SUBSTITUTE)

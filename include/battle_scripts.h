@@ -423,5 +423,6 @@ extern const u8 BattleScript_MagicianActivates[];
 extern const u8 BattleScript_BeakBlastSetUp[];
 extern const u8 BattleScript_BeakBlastBurn[];
 extern const u8 BattleScript_DefDownSpeedUp[];
+extern const u8 BattleScript_WindPowerActivates[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

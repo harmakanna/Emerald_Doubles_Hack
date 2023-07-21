@@ -886,7 +886,7 @@ static const u16 sZygardeFormSpeciesIdTable[] = {
 static const u16 sDiancieFormSpeciesIdTable[] = {
     SPECIES_DIANCIE,
     SPECIES_DIANCIE_MEGA,
-    SPECIES_DIANCIE_HOENNIAN
+    SPECIES_DIANCIE_HOENNIAN,
     FORM_SPECIES_END,
 };
 

@@ -1256,7 +1256,7 @@ const u8 *const gMonIconTable[] =
     [SPECIES_SHROODLE] = gMonIcon_Shroodle,
     [SPECIES_GRAFAIAI] = gMonIcon_Grafaiai,
     [SPECIES_WATTREL] = gMonIcon_Wattrel,
-    [SPECIES_KILOWATTREL] - gMonIcon_Kilowattrel,
+    [SPECIES_KILOWATTREL] = gMonIcon_Kilowattrel,
     [SPECIES_VAROOM] = gMonIcon_Varoom,
     [SPECIES_REVAVROOM] = gMonIcon_Revavroom,
     [SPECIES_TINKATINK] = gMonIcon_Tinkatink,

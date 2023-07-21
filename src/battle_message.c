@@ -741,9 +741,11 @@ static const u8 sText_TargetTooHeavy[] = _("But the target\nwas too heavy!");
 static const u8 sText_MeteorBeamCharging[] = _("{B_ATK_NAME_WITH_PREFIX} is overflowing\nwith space energy!");
 static const u8 sText_HeatingUpBeak[] = _("{B_ATK_NAME_WITH_PREFIX} started\nheating up its beak!");
 static const u8 sText_CourtChange[] = _("{B_ATK_NAME_WITH_PREFIX} swapped the battle\neffects affecting each side!");
+static const u8 sText_SupremeOverlord[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} gained power from\ntheir fallen allies!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
+    [STRINGID_SUPREMEOVERLORDACTIVATES - BATTLESTRINGS_TABLE_START] = sText_SupremeOverlord,
     [STRINGID_COURTCHANGE - BATTLESTRINGS_TABLE_START] = sText_CourtChange,
     [STRINGID_HEATUPBEAK - BATTLESTRINGS_TABLE_START] = sText_HeatingUpBeak,
     [STRINGID_METEORBEAMCHARGING - BATTLESTRINGS_TABLE_START] = sText_MeteorBeamCharging,
@@ -1412,6 +1414,7 @@ const u16 gSwitchInAbilityStringIds[] =
     [B_MSG_SWITCHIN_CURIOUS_MEDICINE] = STRINGID_CURIOUSMEDICINEENTERS,
     [B_MSG_SWITCHIN_PASTEL_VEIL] = STRINGID_PASTELVEILENTERS,
     [B_MSG_SWITCHIN_NEUTRALIZING_GAS] = STRINGID_NEUTRALIZINGGASENTERS,
+    [B_MSG_SWITCHIN_SUPREME_OVERLORD] = STRINGID_SUPREMEOVERLORDACTIVATES,
 };
 
 const u16 gMissStringIds[] =

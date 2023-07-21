@@ -4141,6 +4141,7 @@ static u8 ForewarnChooseMove(u32 battler)
 
 u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 moveArg)
 {
+    struct Pokemon *party;
     u8 effect = 0;
     u32 speciesAtk, speciesDef;
     u32 pidAtk, pidDef;
@@ -4388,6 +4389,24 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
             {
                 ForewarnChooseMove(battler);
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_FOREWARN;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
+        case ABILITY_SUPREME_OVERLORD:
+            if(!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gSpecialStatuses[battler].supremeOverlordBoost = 1;
+                for (i = 0; i < PARTY_SIZE; i++)
+                {
+                    if (GetMonData(&party[i], MON_DATA_HP) == 0
+                     && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_EGG)
+                    {
+                        gSpecialStatuses[battler].supremeOverlordBoost += 0.1;
+                    }
+                }
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_SUPREME_OVERLORD;
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
                 effect++;
@@ -5517,8 +5536,21 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 }
             }
             break;
+        case ABILITY_WIND_POWER:
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             && TARGET_TURN_DAMAGED
+             && IsBattlerAlive(battler)
+             && !(gStatuses3[gBattlerTarget] & STATUS3_CHARGED_UP)
+             && gBattleMoves[move].flags & FLAG_WIND)
+             {
+                 if (gDisableStructs[gBattlerTarget].chargeTimer && --gDisableStructs[gBattlerTarget].chargeTimer == 0)
+                     gStatuses3[gBattlerTarget] &= ~STATUS3_CHARGED_UP;
+                 BattleScriptPushCursor();
+                 gBattlescriptCurrInstr = BattleScript_WindPowerActivates;
+                 effect++;
+             }
+            break;
         }
-        break;
     case ABILITYEFFECT_MOVE_END_ATTACKER: // Same as above, but for attacker
         switch (gLastUsedAbility)
         {
@@ -8369,6 +8401,10 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
     case ABILITY_TECHNICIAN:
         if (basePower <= 60)
            MulModifier(&modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_SUPREME_OVERLORD:
+        if(gSpecialStatuses[battlerAtk].supremeOverlordBoost)
+            MulModifier(&modifier, UQ_4_12(gSpecialStatuses[battlerAtk].supremeOverlordBoost));
         break;
     case ABILITY_FLARE_BOOST:
         if (gBattleMons[battlerAtk].status1 & STATUS1_BURN && IS_MOVE_SPECIAL(move))

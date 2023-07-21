@@ -13059,10 +13059,7 @@ static void Cmd_trygetintimidatetarget(void)
 {
     u8 side;
 
-    if (gBattleMons[gActiveBattler].ability == ABILITY_INTIMIDATE)
-      gBattleScripting.battler = gBattleStruct->intimidateBattler;
-    if (gBattleMons[gActiveBattler].ability == ABILITY_PSYCH_OUT)
-      gBattleScripting.battler = gBattleStruct->psychOutBattler;
+    gBattleScripting.battler = gBattleStruct->intimidateBattler;
     side = GetBattlerSide(gBattleScripting.battler);
 
     PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gBattleMons[gBattleScripting.battler].ability)

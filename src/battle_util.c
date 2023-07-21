@@ -2581,7 +2581,7 @@ enum
     ENDTURN_POISON,
     ENDTURN_BAD_POISON,
     ENDTURN_BURN,
-    ENDTURN_FREEZE,
+//ENDTURN_FREEZE,
     ENDTURN_NIGHTMARES,
     ENDTURN_CURSE,
     ENDTURN_WRAP,
@@ -2791,7 +2791,7 @@ u8 DoBattlerEndTurnEffects(void)
             }
             gBattleStruct->turnEffectsTracker++;
             break;
-        case ENDTURN_FREEZE:  // freeze
+        /*case ENDTURN_FREEZE:  // freeze
             if ((gBattleMons[gActiveBattler].status1 & STATUS1_FREEZE)
                 && gBattleMons[gActiveBattler].hp != 0)
             {
@@ -2804,7 +2804,7 @@ u8 DoBattlerEndTurnEffects(void)
                 effect++;
             }
             gBattleStruct->turnEffectsTracker++;
-            break;
+            break;*/
         case ENDTURN_NIGHTMARES:  // spooky nightmares
             if ((gBattleMons[gActiveBattler].status2 & STATUS2_NIGHTMARE)
                 && gBattleMons[gActiveBattler].hp != 0)
@@ -3470,7 +3470,7 @@ u8 AtkCanceller_UnableToUseMove(void)
             }
             gBattleStruct->atkCancellerTracker++;
             break;
-        /*case CANCELLER_FROZEN: // check being frozen
+        case CANCELLER_FROZEN: // check being frozen
             if (gBattleMons[gBattlerAttacker].status1 & STATUS1_FREEZE && !(gBattleMoves[gCurrentMove].flags & FLAG_THAW_USER))
             {
                 if (Random() % 5)
@@ -3488,7 +3488,7 @@ u8 AtkCanceller_UnableToUseMove(void)
                 effect = 2;
             }
             gBattleStruct->atkCancellerTracker++;
-            break;*/ //Commented out since new mons don't become inactionable from freeze
+            break; //Commented out since new mons don't become inactionable from freeze
         case CANCELLER_TRUANT: // truant
             if (GetBattlerAbility(gBattlerAttacker) == ABILITY_TRUANT && gDisableStructs[gBattlerAttacker].truantCounter)
             {
@@ -3675,7 +3675,7 @@ u8 AtkCanceller_UnableToUseMove(void)
             }
             gBattleStruct->atkCancellerTracker++;
             break;
-        /*case CANCELLER_THAW: // move thawing
+        case CANCELLER_THAW: // move thawing
             if (gBattleMons[gBattlerAttacker].status1 & STATUS1_FREEZE)
             {
                 if (!(gBattleMoves[gCurrentMove].effect == EFFECT_BURN_UP && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_FIRE)))
@@ -3688,7 +3688,7 @@ u8 AtkCanceller_UnableToUseMove(void)
                 effect = 2;
             }
             gBattleStruct->atkCancellerTracker++;
-            break;*/ //commented out due to new freeze effect
+            break; //commented out due to new freeze effect
         case CANCELLER_POWDER_MOVE:
             if ((gBattleMoves[gCurrentMove].flags & FLAG_POWDER) && (gBattlerAttacker != gBattlerTarget))
             {
@@ -4295,14 +4295,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
         case ABILITY_SLOW_START:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
-                if (gDisableStructs[battler].slowStartTimer != 0)
-                {
-                    //gDisableStructs[battler].slowStartTimer = 3;
-                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_SLOWSTART;
-                    gSpecialStatuses[battler].switchInAbilityDone = TRUE;
-                    BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
-                    effect++;
-                }
+                gDisableStructs[battler].slowStartTimer = 3;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_SLOWSTART;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
             }
             break;
         case ABILITY_UNNERVE:

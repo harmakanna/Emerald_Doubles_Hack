@@ -5167,7 +5167,7 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
-        /*case MOVEEND_DEFROST: // defrosting check
+        case MOVEEND_DEFROST: // defrosting check
             if (gBattleMons[gBattlerTarget].status1 & STATUS1_FREEZE
                 && gBattleMons[gBattlerTarget].hp != 0 && gBattlerAttacker != gBattlerTarget
                 && gSpecialStatuses[gBattlerTarget].specialDmg
@@ -5182,7 +5182,7 @@ static void Cmd_moveend(void)
                 effect = TRUE;
             }
             gBattleScripting.moveendState++;
-            break;*/ //Can no longer defrost
+            break; //Can no longer defrost
         case MOVEEND_SYNCHRONIZE_TARGET: // target synchronize
             if (AbilityBattleEffects(ABILITYEFFECT_SYNCHRONIZE, gBattlerTarget, 0, 0, 0))
                 effect = TRUE;

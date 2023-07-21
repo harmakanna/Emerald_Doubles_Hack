@@ -94,7 +94,7 @@ struct DisableStruct
     u8 mimickedMoves:4;
     u8 rechargeTimer;
     u8 autotomizeCount;
-    u8 slowStartTimer:3;
+    u8 slowStartTimer;
     u8 embargoTimer;
     u8 magnetRiseTimer;
     u8 telekinesisTimer;

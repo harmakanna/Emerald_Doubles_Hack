@@ -4654,8 +4654,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee = {
-    .titleTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_EEVEE,
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -4666,7 +4666,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee = {
     .disableReflectionPaletteLoad = FALSE,
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = OamTables_32x32,
+    .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_Eevee,
     .affineAnims = gDummySpriteAffineAnimTable,

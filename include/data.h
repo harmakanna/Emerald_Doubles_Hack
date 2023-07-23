@@ -52,24 +52,36 @@ struct TrainerMonCustomized
     bool8 isShiny : 1;
 };
 
-struct TrainerMon
+struct TrainerMonNoItemDefaultMoves
 {
     u16 iv;
-    u8 nickname[POKEMON_NAME_LENGTH + 1];
+    u8 lvl;
+    u16 species;
+};
+
+struct TrainerMonItemDefaultMoves
+{
+    u16 iv;
+    u8 lvl;
+    u16 species;
+    u16 heldItem;
+};
+
+struct TrainerMonNoItemCustomMoves
+{
+    u16 iv;
+    u8 lvl;
+    u16 species;
+    u16 moves[MAX_MON_MOVES];
+};
+
+struct TrainerMonItemCustomMoves
+{
+    u16 iv;
     u8 lvl;
     u16 species;
     u16 heldItem;
     u16 moves[MAX_MON_MOVES];
-    u8 hiddenPower:5;
-    u8 difficulty:3;
-    u8 build:3;
-    u8 ball:5;
-    u16 ability:2;
-    u16 friendship:2;
-    u16 gender:2;
-    u16 shiny:1;
-    u16 nature:5;
-    u16 unused:4;
 };
 
 #define NO_ITEM_DEFAULT_MOVES(party) { .NoItemDefaultMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = 0

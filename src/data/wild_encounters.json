@@ -7,30 +7,82 @@
         {
           "type": "land_mons",
           "encounter_rates": [
-            20, 20, 10, 10, 10, 5, 5, 5, 5, 4, 4, 1, 1
+            20,
+            20,
+            10,
+            10,
+            10,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            1,
+            1
           ]
         },
         {
           "type": "water_mons",
           "encounter_rates": [
-            30, 20, 20, 10, 10, 5, 4, 1
+            30,
+            20,
+            20,
+            10,
+            10,
+            5,
+            4,
+            1
           ]
         },
         {
           "type": "rock_smash_mons",
           "encounter_rates": [
-            15, 15, 15, 15, 30, 5, 4, 1
+            15,
+            15,
+            15,
+            15,
+            30,
+            5,
+            4,
+            1
           ]
         },
         {
           "type": "fishing_mons",
           "encounter_rates": [
-            70, 30, 30, 30, 20, 20, 30, 30, 20, 15, 4, 1
+            70,
+            30,
+            30,
+            30,
+            20,
+            20,
+            30,
+            30,
+            20,
+            15,
+            4,
+            1
           ],
           "groups": {
-            "old_rod": [0, 1],
-            "good_rod": [2, 3, 4, 5],
-            "super_rod": [6, 7, 8, 9, 10, 11]
+            "old_rod": [
+              0,
+              1
+            ],
+            "good_rod": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "super_rod": [
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
           }
         }
       ],
@@ -12597,7 +12649,8 @@
                 "min_level": 10,
                 "max_level": 10,
                 "species": "SPECIES_ZUBAT"
-              }, {
+              },
+              {
                 "min_level": 10,
                 "max_level": 10,
                 "species": "SPECIES_ZUBAT"

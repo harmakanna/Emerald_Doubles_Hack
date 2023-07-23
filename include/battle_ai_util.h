@@ -5,11 +5,12 @@
 #define AI_IS_FASTER   0
 #define AI_IS_SLOWER   1
 
-#define FOE(battler) ((battler ^ BIT_SIDE) & BIT_SIDE)
+#define FOE(battler) ((BATTLE_OPPOSITE(battler)) & BIT_SIDE)
 
 bool32 AI_RandLessThan(u8 val);
 void RecordLastUsedMoveByTarget(void);
-bool32 IsBattlerAIControlled(u32 battlerId);
+bool32 BattlerHasAi(u32 battlerId);
+bool32 IsAiBattlerAware(u32 battlerId);
 void ClearBattlerMoveHistory(u8 battlerId);
 void RecordLastUsedMoveBy(u32 battlerId, u32 move);
 void RecordKnownMove(u8 battlerId, u32 move);
@@ -20,6 +21,7 @@ void ClearBattlerItemEffectHistory(u8 battlerId);
 void SaveBattlerData(u8 battlerId);
 void SetBattlerData(u8 battlerId);
 void RestoreBattlerData(u8 battlerId);
+u16 GetAIChosenMove(u8 battlerId);
 
 bool32 WillAIStrikeFirst(void);
 u32 GetTotalBaseStat(u32 species);
@@ -27,13 +29,13 @@ bool32 IsTruantMonVulnerable(u32 battlerAI, u32 opposingBattler);
 bool32 AtMaxHp(u8 battler);
 u32 GetHealthPercentage(u8 battler);
 bool32 IsBattlerTrapped(u8 battler, bool8 switching);
-u8 AI_WhoStrikesFirst(u8 battlerAI, u8 battler2);
+u8 AI_WhoStrikesFirst(u8 battlerAI, u8 battler2, u16 consideredMove);
 bool32 CanTargetFaintAi(u8 battlerDef, u8 battlerAtk);
 bool32 CanMoveFaintBattler(u16 move, u8 battlerDef, u8 battlerAtk, u8 nHits);
 bool32 CanTargetFaintAiWithMod(u8 battlerDef, u8 battlerAtk, s32 hpMod, s32 dmgMod);
 s32 AI_GetAbility(u32 battlerId);
 u16 AI_GetHoldEffect(u32 battlerId);
-u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 atkAbility, u16 defAbility, u8 atkHoldEffect, u8 defHoldEffect, u16 move);
+u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 move);
 bool32 DoesBattlerIgnoreAbilityChecks(u16 atkAbility, u16 move);
 bool32 AI_WeatherHasEffect(void);
 bool32 CanAIFaintTarget(u8 battlerAtk, u8 battlerDef, u8 numHits);
@@ -45,7 +47,7 @@ bool32 HasDamagingMoveOfType(u8 battlerId, u8 type);
 u32 GetBattlerSecondaryDamage(u8 battlerId);
 bool32 BattlerWillFaintFromWeather(u8 battler, u16 ability);
 bool32 BattlerWillFaintFromSecondaryDamage(u8 battler, u16 ability);
-bool32 ShouldTryOHKO(u8 battlerAtk, u8 battlerDef, u16 atkAbility, u16 defAbility, u32 accuracy, u16 move);
+bool32 ShouldTryOHKO(u8 battlerAtk, u8 battlerDef, u16 atkAbility, u16 defAbility, u16 move);
 bool32 ShouldUseRecoilMove(u8 battlerAtk, u8 battlerDef, u32 recoilDmg, u8 moveIndex);
 u16 GetBattlerSideSpeedAverage(u8 battler);
 bool32 ShouldAbsorb(u8 battlerAtk, u8 battlerDef, u16 move, s32 damage);
@@ -61,6 +63,7 @@ s8 GetAbilityRating(u16 ability);
 bool32 AI_IsAbilityOnSide(u32 battlerId, u32 ability);
 bool32 AI_MoveMakesContact(u32 ability, u32 holdEffect, u16 move);
 u32 AI_GetBattlerMoveTargetType(u8 battlerId, u16 move);
+bool32 ShouldUseZMove(u8 activeId, u8 targetId, u16 chosenMove);
 
 // stat stage checks
 bool32 AnyStatIsRaised(u8 battlerId);
@@ -81,11 +84,12 @@ bool32 ShouldLowerEvasion(u8 battlerAtk, u8 battlerDef, u16 defAbility);
 // move checks
 bool32 IsAffectedByPowder(u8 battler, u16 ability, u16 holdEffect);
 bool32 MovesWithSplitUnusable(u32 attacker, u32 target, u32 split);
-s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef);
+s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef, u8 *effectiveness, bool32 considerZPower);
+u32 GetNoOfHitsToKO(u32 dmg, s32 hp);
 u8 GetMoveDamageResult(u16 move);
 u32 GetCurrDamageHpPercent(u8 battlerAtk, u8 battlerDef);
 u16 AI_GetTypeEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef);
-u8 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef);
+u32 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef);
 u16 *GetMovesArray(u32 battler);
 bool32 IsConfusionMoveEffect(u16 moveEffect);
 bool32 HasMove(u32 battlerId, u32 move);
@@ -109,6 +113,7 @@ bool32 IsEncoreEncouragedEffect(u16 moveEffect);
 void ProtectChecks(u8 battlerAtk, u8 battlerDef, u16 move, u16 predictedMove, s16 *score);
 bool32 ShouldSetSandstorm(u8 battler, u16 ability, u16 holdEffect);
 bool32 ShouldSetHail(u8 battler, u16 ability, u16 holdEffect);
+bool32 ShouldSetSnow(u8 battler, u16 ability, u16 holdEffect);
 bool32 ShouldSetRain(u8 battlerAtk, u16 ability, u16 holdEffect);
 bool32 ShouldSetSun(u8 battlerAtk, u16 atkAbility, u16 holdEffect);
 bool32 HasSleepMoveWithLowAccuracy(u8 battlerAtk, u8 battlerDef);
@@ -127,6 +132,7 @@ bool32 IsSemiInvulnerable(u8 battlerDef, u16 move);
 
 // status checks
 bool32 AI_CanBeBurned(u8 battler, u16 ability);
+bool32 AI_CanGetFrostbite(u8 battler, u16 ability);
 bool32 AI_CanBeConfused(u8 battler, u16 ability);
 bool32 AI_CanSleep(u8 battler, u16 ability);
 bool32 IsBattlerIncapacitated(u8 battler, u16 ability);
@@ -137,14 +143,16 @@ bool32 AI_CanParalyze(u8 battlerAtk, u8 battlerDef, u16 defAbility, u16 move, u1
 bool32 AI_CanConfuse(u8 battlerAtk, u8 battlerDef, u16 defAbility, u8 battlerAtkPartner, u16 move, u16 partnerMove);
 bool32 ShouldBurnSelf(u8 battler, u16 ability);
 bool32 AI_CanBurn(u8 battlerAtk, u8 battlerDef, u16 defAbility, u8 battlerAtkPartner, u16 move, u16 partnerMove);
-bool32 AI_CanBeInfatuated(u8 battlerAtk, u8 battlerDef, u16 defAbility, u8 atkGender, u8 defGender);
+bool32 AI_CanGiveFrostbite(u8 battlerAtk, u8 battlerDef, u16 defAbility, u8 battlerAtkPartner, u16 move, u16 partnerMove);
+bool32 AI_CanBeInfatuated(u8 battlerAtk, u8 battlerDef, u16 defAbility);
 bool32 AnyPartyMemberStatused(u8 battlerId, bool32 checkSoundproof);
 u32 ShouldTryToFlinch(u8 battlerAtk, u8 battlerDef, u16 atkAbility, u16 defAbility, u16 move);
 bool32 ShouldTrap(u8 battlerAtk, u8 battlerDef, u16 move);
 bool32 IsWakeupTurn(u8 battler);
+bool32 AI_IsBattlerAsleepOrComatose(u8 battlerId);
 
 // partner logic
-u16 GetAllyChosenMove(void);
+u16 GetAllyChosenMove(u8 battlerId);
 bool32 IsValidDoubleBattle(u8 battlerAtk);
 bool32 IsTargetingPartner(u8 battlerAtk, u8 battlerDef);
 bool32 DoesPartnerHaveSameMoveEffect(u8 battlerAtkPartner, u8 battlerDef, u16 move, u16 partnerMove);
@@ -166,10 +174,11 @@ bool32 SideHasMoveSplit(u8 battlerId, u8 split);
 
 // score increases
 void IncreaseStatUpScore(u8 battlerAtk, u8 battlerDef, u8 statId, s16 *score);
-void IncreasePoisonScore(u8 battlerAtk, u8 battlerdef, u16 move, s16 *score);
-void IncreaseBurnScore(u8 battlerAtk, u8 battlerdef, u16 move, s16 *score);
+void IncreasePoisonScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score);
+void IncreaseBurnScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score);
 void IncreaseParalyzeScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score);
 void IncreaseSleepScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score);
 void IncreaseConfusionScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score);
+void IncreaseFrostbiteScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score);
 
 #endif //GUARD_BATTLE_AI_UTIL_H

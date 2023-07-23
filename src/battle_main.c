@@ -35,7 +35,6 @@
 #include "pokeball.h"
 #include "pokedex.h"
 #include "pokemon.h"
-#include "pokemon_iv_spreads.h"
 #include "random.h"
 #include "recorded_battle.h"
 #include "roamer.h"
@@ -2039,8 +2038,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 {
                     SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
                     SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
-                    SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
+                break;
             }
             case F_TRAINER_PARTY_EVERYTHING_CUSTOMIZED:
             {

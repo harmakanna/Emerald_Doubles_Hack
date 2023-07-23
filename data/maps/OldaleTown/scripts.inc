@@ -281,6 +281,7 @@ OldaleTown_EventScript_RivalFinish::
 	waitmovement 0
 	removeobject LOCALID_RIVAL
 	setvar VAR_OLDALE_RIVAL_STATE, 2
+	setvar VAR_ROUTE101_STATE, 3
 	setflag FLAG_HIDE_OLDALE_TOWN_RIVAL
 	releaseall
 	end
@@ -398,4 +399,3 @@ OldaleTown_Text_BrendanLetsGoBack:
 OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
-

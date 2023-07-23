@@ -16,6 +16,7 @@
 #include "random.h"
 #include "util.h"
 #include "constants/abilities.h"
+#include "constants/battle_ai.h"
 #include "constants/item_effects.h"
 #include "constants/battle_move_effects.h"
 #include "constants/items.h"
@@ -616,18 +617,7 @@ bool32 ShouldSwitch(void)
     s32 availableToSwitch;
     bool32 hasAceMon = FALSE;
 
-    if (gBattleMons[gActiveBattler].status2 & (STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION))
-        return FALSE;
-    if (gStatuses3[gActiveBattler] & STATUS3_ROOTED)
-        return FALSE;
-    if (IsAbilityPreventingEscape(gActiveBattler))
-        return FALSE;
-    if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
-        return FALSE;
-
-    availableToSwitch = 0;
-
-    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+    if (!(gBattleResources->ai->aiFlags & (AI_FLAG_DO_NOT_SWITCH | AI_FLAG_PRESERVE_ORDER)))
     {
         battlerIn1 = gActiveBattler;
         if (gAbsentBattlerFlags & gBitTable[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))])
@@ -878,6 +868,23 @@ static u32 GetBestMonTypeMatchup(struct Pokemon *party, int firstId, int lastId,
     return PARTY_SIZE;
 }
 
+static u32 GetPreservedOrderMon(struct Pokemon *party, int firstId, int lastId, u8 invalidMons, u32 opposingBattler)
+{
+    int i, j;
+    int bestDmg = 0;
+    int bestMonId = PARTY_SIZE;
+
+    for (i = firstId; i < lastId; i++)
+    {
+        if (gBitTable[i] & invalidMons)
+            continue;
+        else
+            return i;
+    }
+
+    return bestMonId;
+}
+
 static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 invalidMons, u32 opposingBattler)
 {
     int i, j;
@@ -975,6 +982,12 @@ u8 GetMostSuitableMonToSwitchInto(void)
         {
             aliveCount++;
         }
+    }
+
+    if (gBattleResources->ai->aiFlags & AI_FLAG_PRESERVE_ORDER)
+    {
+        bestMonId = GetPreservedOrderMon(party, firstId, lastId, invalidMons, aliveCount);
+        return bestMonId;
     }
 
     bestMonId = GetBestMonBatonPass(party, firstId, lastId, invalidMons, aliveCount);

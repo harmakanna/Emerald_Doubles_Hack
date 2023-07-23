@@ -4,6 +4,7 @@
 .set LOCALID_BALL_CYNDAQUIL, 4
 .set LOCALID_BALL_TOTODILE, 5
 .set LOCALID_BALL_CHIKORITA, 6
+.set LOCALID_EEVEE, 7
 
 LittlerootTown_ProfessorBirchsLab_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_ProfessorBirchsLab_OnTransition
@@ -120,12 +121,35 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	waitfanfare
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveEevee
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter::
 	setvar VAR_0x8004, 0
 	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveEevee
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveEevee::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_EeveeJoins MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedEevee MSGBOX_DEFAULT
+	givemon SPECIES_EEVEE, 3, ITEM_NONE
+	waitfanfare
+	bufferspeciesname 0, SPECIES_EEVEE
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedEevee
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedEevee
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedEevee::
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_EEVEE
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_EEVEE
+	closemessage
+	fadescreen FADE_FROM_BLACK
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
 	end
 
@@ -689,7 +713,13 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 	.string "There's a lot of love there.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
-	.string "PROF. BIRCH: So, {PLAYER}{KUN}.\p"
+	.string "PROF. BIRCH: Wow, this little guy\n"
+	.string "followed us all the way back!\p"
+	.string "... ... ...\n"
+	.string "... ... ...\p"
+	.string "... ... ...\n"
+	.string "... ... ...\p"
+	.string "So, {PLAYER}{KUN}.\p"
 	.string "I've heard so much about you from\n"
 	.string "your father.\p"
 	.string "I've heard that you don't have your\n"
@@ -733,6 +763,19 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "in tall grass again somewhere…\p"
 	.string "If you or your POKéMON get tired,\n"
 	.string "you should get some rest at home.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_EeveeRest:
+	.string "Prof. Birch: Alright, it seems like\n"
+	.string "Eevee's doing a lot better after a\l"
+	.string "quick rest!\p"
+	.string "Eevee: Vi!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_EeveeJoins:
+	.string "Eevee looks like it wants to come with\n"
+	.string "you.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ReceivedEevee:
+	.string "Eevee joined {PLAYER}'s team'!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "PROF. BIRCH: Oh, hi, {PLAYER}{KUN}!\p"

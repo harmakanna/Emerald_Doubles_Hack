@@ -209,14 +209,19 @@ static u8 ChooseWildMonIndex_Land(void)
         wildMonIndex = 9;
     else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_9 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_10)
         wildMonIndex = 10;
-    else
+    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_10 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_11)
         wildMonIndex = 11;
+    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_10 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_11)
+        wildMonIndex = 12;
+    else
+        wildMonIndex = 13;
+
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = 11 - wildMonIndex;
+        wildMonIndex = 13 - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -236,14 +241,23 @@ static u8 ChooseWildMonIndex_WaterRock(void)
         wildMonIndex = 2;
     else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_3)
         wildMonIndex = 3;
-    else
+    else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_3 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_4)
         wildMonIndex = 4;
+    else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_4 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_5)
+        wildMonIndex = 5;
+    else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_5 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_6)
+        wildMonIndex = 6;
+    else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_6 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_7)
+        wildMonIndex = 7;
+    else
+        wildMonIndex = 8;
+
 
     if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
         swap = TRUE;
 
     if (swap)
-        wildMonIndex = 4 - wildMonIndex;
+        wildMonIndex = 8 - wildMonIndex;
 
     return wildMonIndex;
 }
@@ -277,14 +291,14 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
             wildMonIndex = 3;
         if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_3 && rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_4)
             wildMonIndex = 4;
+        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_4 && rand < ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_SLOT_5)
+            wildMonIndex = 5;
 
         if (swap)
-            wildMonIndex = 6 - wildMonIndex;
+            wildMonIndex = 7 - wildMonIndex;
         break;
     case SUPER_ROD:
-        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_5)
-            wildMonIndex = 5;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_5 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6)
+        if (rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6)
             wildMonIndex = 6;
         if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_7)
             wildMonIndex = 7;
@@ -292,9 +306,13 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
             wildMonIndex = 8;
         if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_8 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_9)
             wildMonIndex = 9;
+        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_9 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_10)
+            wildMonIndex = 10;
+        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_10 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_11)
+            wildMonIndex = 11;
 
         if (swap)
-            wildMonIndex = 14 - wildMonIndex;
+            wildMonIndex = 17 - wildMonIndex;
         break;
     }
     return wildMonIndex;
@@ -457,7 +475,7 @@ static void CreateWildMon(u16 species, u8 level)
         else
             gender = MON_FEMALE;
 
-        CreateMonWithGenderNatureLetter(&gEnemyParty[0], species, level, USE_RANDOM_IVS, gender, PickWildMonNature(), 0);
+        CreateMonWithGenderNatureLetter(&gEnemyParty[0], species, level, 32, gender, PickWildMonNature(), 0);
         return;
     }
 

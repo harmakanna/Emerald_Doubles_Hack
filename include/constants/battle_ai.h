@@ -59,6 +59,8 @@
 #define AI_FLAG_SMART_SWITCHING       (1 << 15)  // AI includes a lot more switching checks
 #define AI_FLAG_ACE_POKEMON           (1 << 16)  // AI has an Ace Pokemon. The last Pokemon in the party will not be used until it's the last one remaining.
 #define AI_FLAG_OMNISCIENT            (1 << 17)  // AI has full knowledge of player moves, abilities, hold items
+#define AI_FLAG_DO_NOT_SWITCH         (1 << 18)  // AI does not ever switch when battling
+#define AI_FLAG_PRESERVE_ORDER        (1 << 19)  // AI will send out new Pokemon in the order that they are set
 
 // 'other' ai logic flags
 #define AI_FLAG_ROAMING               (1 << 29)

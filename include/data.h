@@ -99,6 +99,7 @@ union TrainerMonPtr
     const struct TrainerMonCustomized *EverythingCustomized;
 };
 
+
 struct Trainer
 {
     /*0x00*/ u32 aiFlags;

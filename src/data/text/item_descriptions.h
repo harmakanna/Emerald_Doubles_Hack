@@ -108,7 +108,7 @@ static const u8 sHeavyBallDesc[] = _(
     "Pokémon.");
 
 static const u8 sDreamBallDesc[] = _(
-#if defined(BATTLE_ENGINE) && B_DREAM_BALL_MODIFIER >= GEN_8
+#if B_DREAM_BALL_MODIFIER >= GEN_8
     "A Ball that works\n"
     "well on sleeping\n"
     "Pokémon.");
@@ -634,7 +634,7 @@ static const u8 sEscapeRopeDesc[] = _(
 
 // Battle items
 static const u8 sXAttackDesc[] = _(
-#if defined(BATTLE_ENGINE) && B_X_ITEMS_BUFF >= GEN_7
+#if B_X_ITEMS_BUFF >= GEN_7
     "Sharply raises stat\n"
     "Attack during\n"
     "one battle.");
@@ -645,7 +645,7 @@ static const u8 sXAttackDesc[] = _(
 #endif
 
 static const u8 sXDefenseDesc[] = _(
-#if defined(BATTLE_ENGINE) && B_X_ITEMS_BUFF >= GEN_7
+#if B_X_ITEMS_BUFF >= GEN_7
     "Sharply raises stat\n"
     "Defense during\n"
     "one battle.");
@@ -656,7 +656,7 @@ static const u8 sXDefenseDesc[] = _(
 #endif
 
 static const u8 sXSpAtkDesc[] = _(
-#if defined(BATTLE_ENGINE) && B_X_ITEMS_BUFF >= GEN_7
+#if B_X_ITEMS_BUFF >= GEN_7
     "Sharply raises stat\n"
     "Sp. Atk during\n"
     "one battle.");
@@ -667,7 +667,7 @@ static const u8 sXSpAtkDesc[] = _(
 #endif
 
 static const u8 sXSpDefDesc[] = _(
-#if defined(BATTLE_ENGINE) && B_X_ITEMS_BUFF >= GEN_7
+#if B_X_ITEMS_BUFF >= GEN_7
     "Sharply raises stat\n"
     "Sp. Def during\n"
     "one battle.");
@@ -678,7 +678,7 @@ static const u8 sXSpDefDesc[] = _(
 #endif
 
 static const u8 sXSpeedDesc[] = _(
-#if defined(BATTLE_ENGINE) && B_X_ITEMS_BUFF >= GEN_7
+#if B_X_ITEMS_BUFF >= GEN_7
     "Sharply raises stat\n"
     "Speed during\n"
     "one battle.");
@@ -689,7 +689,7 @@ static const u8 sXSpeedDesc[] = _(
 #endif
 
 static const u8 sXAccuracyDesc[] = _(
-#if defined(BATTLE_ENGINE) && B_X_ITEMS_BUFF >= GEN_7
+#if B_X_ITEMS_BUFF >= GEN_7
     "Sharply raises move\n"
     "accuracy during\n"
     "one battle.");
@@ -1304,6 +1304,21 @@ static const u8 sEverstoneDesc[] = _(
     "A wondrous hold\n"
     "item that prevents\n"
     "evolution.");
+
+static const u8 sBlackAuguriteDesc[] = _(
+    "A black stone that\n"
+    "makes some Pokémon\n"
+    "evolve.");;
+
+static const u8 sLinkingCordDesc[] = _(
+    "A mysterious string\n"
+    "that makes some\n"
+    "Pokémon evolve.");
+
+static const u8 sPeatBlockDesc[] = _(
+    "A block of material\n"
+    "that makes some\n"
+    "Pokémon evolve.");
 
 // Nectars
 static const u8 sRedNectarDesc[] = _(
@@ -2075,7 +2090,7 @@ static const u8 sDeepSeaToothDesc[] = _(
     "of Clamperl.");
 
 static const u8 sSoulDewDesc[] = _(
-#if defined(BATTLE_ENGINE) && B_SOUL_DEW_BOOST >= GEN_7
+#if B_SOUL_DEW_BOOST >= GEN_7
     "Powers up Latios' &\n"
     "Latias' Psychic and\n"
     "Dragon-type moves.");
@@ -2410,7 +2425,7 @@ static const u8 sSootheBellDesc[] = _(
     "calms spirits and\n"
     "fosters friendship.");
 
-#if defined(BATTLE_ENGINE) && B_MENTAL_HERB >= GEN_5
+#if B_MENTAL_HERB >= GEN_5
 static const u8 sMentalHerbDesc[] = _(
     "Snaps Pokémon out\n"
     "of move-binding\n"
@@ -2639,8 +2654,8 @@ static const u8 sProtectivePadsDesc[] = _(
 
 static const u8 sThroatSprayDesc[] = _(
     "Raises Sp. Atk. if\n"
-    "a Pokémon is hit by\n"
-    "a sound-based move.");
+    "the holder uses a\n"
+    "sound-based move.");
 
 static const u8 sEjectPackDesc[] = _(
     "Forces the user to\n"
@@ -3620,7 +3635,7 @@ static const u8 sPokeRadarDesc[] = _(
 
 static const u8 sPokeblockCaseDesc[] = _(
     "A case for holding\n"
-    "Pokéblocks made with\n"
+    "{POKEBLOCK}s made with\n"
     "a Berry Blender.");
 
 static const u8 sSootSackDesc[] = _(
@@ -3797,3 +3812,108 @@ static const u8 sSapphireDesc[] = _(
     "A brilliant blue gem\n"
     "that symbolizes\n"
     "honesty.");
+
+static const u8 sAbilityShieldDesc[] = _(
+    "Ability changes are\n"
+    "prevented for this\n"
+    "items's holder.");
+
+static const u8 sClearAmuletDesc[] = _(
+    "Stat lowering is\n"
+    "prevented for this\n"
+    "items's holder.");
+
+static const u8 sPunchingGloveDesc[] = _(
+    "Powers up punching\n"
+    "moves and removes\n"
+    "their contact.");
+
+static const u8 sCovertCloakDesc[] = _(
+    "Protects the holder\n"
+    "from secondary\n"
+    "move effects.");
+
+static const u8 sLoadedDiceDesc[] = _(
+    "Rolls high numbers.\n"
+    "Multihit strikes\n"
+    "hit more times.");
+
+static const u8 sAuspiciousArmorDesc[] = _(
+    "Armor inhabited by\n"
+    "auspicious wishes.\n"
+    "Causes evolution.");
+
+static const u8 sBoosterEnergyDesc[] = _(
+    "Encapsuled energy\n"
+    "ups Pokémon with\n"
+    "certain Abilities.");
+
+static const u8 sBigBambooShootDesc[] = _(
+    "A large and rare\n"
+    "bamboo shoot. Best\n"
+    "sold to gourmands.");
+
+static const u8 sGimmighoulCoinDesc[] = _(
+    "Gimmighoul hoard\n"
+    "and treasure these\n"
+    "curious coins.");
+
+static const u8 sLeadersCrestDesc[] = _(
+    "A shard of an old\n"
+    "blade of some sort.\n"
+    "Held by Bisharp.");
+
+static const u8 sMaliciousArmorDesc[] = _(
+    "Armor inhabited by\n"
+    "malicious will.\n"
+    "Causes evolution.");
+
+static const u8 sMirrorHerbDesc[] = _(
+    "Mirrors an enemy's\n"
+    "stat increases\n"
+    "but only once.");
+
+static const u8 sScrollOfDarknessDesc[] = _(
+    "A peculiar scroll\n"
+    "with secrets of\n"
+    "the dark path.");
+
+static const u8 sScrollOfWatersDesc[] = _(
+    "A peculiar scroll\n"
+    "with secrets of\n"
+    "the water path.");
+
+static const u8 sTeraOrbDesc[] = _(
+    "Energy charges can\n"
+    "be used to cause\n"
+    "Terastallization.");
+
+static const u8 sTinyBambooShootDesc[] = _(
+    "A small and rare\n"
+    "bamboo shoot. Best\n"
+    "sold to gourmands.");
+
+static const u8 sTeraShardDesc[] = _(
+    "These shards may\n"
+    "form when a Tera\n"
+    "Pokémon faints.");
+
+static const u8 sAdamantCrystalDesc[] = _(
+    "A large, glowing gem\n"
+    "that lets Dialga\n"
+    "change form.");
+
+static const u8 sGriseousCoreDesc[] = _(
+    "A large, glowing gem\n"
+    "that lets Giratina\n"
+    "change form.");
+
+static const u8 sLustrousGlobeDesc[] = _(
+    "A large, glowing gem\n"
+    "that lets Palkia\n"
+    "change form.");
+
+static const u8 sBerserkGene[] = _(
+    "Sharply boosts\n"
+    "Attack, but causes\n"
+    "lasting confusion.");

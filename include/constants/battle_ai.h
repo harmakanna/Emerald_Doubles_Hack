@@ -15,11 +15,13 @@
 #define AI_TYPE_MOVE 4
 
 // type effectiveness
-#define AI_EFFECTIVENESS_x4     160
-#define AI_EFFECTIVENESS_x2     80
-#define AI_EFFECTIVENESS_x1     40
-#define AI_EFFECTIVENESS_x0_5   20
-#define AI_EFFECTIVENESS_x0_25  10
+#define AI_EFFECTIVENESS_x8     7
+#define AI_EFFECTIVENESS_x4     6
+#define AI_EFFECTIVENESS_x2     5
+#define AI_EFFECTIVENESS_x1     4
+#define AI_EFFECTIVENESS_x0_5   3
+#define AI_EFFECTIVENESS_x0_25  2
+#define AI_EFFECTIVENESS_x0_125 1
 #define AI_EFFECTIVENESS_x0     0
 
 // ai weather
@@ -28,6 +30,7 @@
 #define AI_WEATHER_RAIN 2
 #define AI_WEATHER_SANDSTORM 3
 #define AI_WEATHER_HAIL 4
+#define AI_WEATHER_SNOW 5
 
 // get_how_powerful_move_is
 #define MOVE_POWER_OTHER  0
@@ -54,8 +57,10 @@
 #define AI_FLAG_STALL                 (1 << 13)  // AI stalls battle and prefers secondary damage/trapping/etc. TODO not finished
 #define AI_FLAG_SCREENER              (1 << 14)  // AI prefers screening effects like reflect, mist, etc. TODO unfinished
 #define AI_FLAG_SMART_SWITCHING       (1 << 15)  // AI includes a lot more switching checks
-#define AI_FLAG_DO_NOT_SWITCH       (1 << 16)  // AI does not ever switch when battling
-#define AI_FLAG_PRESERVE_ORDER      (1 << 17)  // AI will send out new Pokemon in the order that they are set
+#define AI_FLAG_ACE_POKEMON           (1 << 16)  // AI has an Ace Pokemon. The last Pokemon in the party will not be used until it's the last one remaining.
+#define AI_FLAG_OMNISCIENT            (1 << 17)  // AI has full knowledge of player moves, abilities, hold items
+#define AI_FLAG_DO_NOT_SWITCH         (1 << 18)  // AI does not ever switch when battling
+#define AI_FLAG_PRESERVE_ORDER        (1 << 19)  // AI will send out new Pokemon in the order that they are set
 
 // 'other' ai logic flags
 #define AI_FLAG_ROAMING               (1 << 29)

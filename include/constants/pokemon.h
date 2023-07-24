@@ -91,103 +91,8 @@
 #define DEFAULT_STAT_STAGE 6
 #define MAX_STAT_STAGE    12
 
-#define ABILITY_SLOT_1 3
-#define ABILITY_SLOT_2 1
-#define ABILITY_HIDDEN 2
-
 // Shiny odds
 #define SHINY_ODDS 8 // Actual probability is SHINY_ODDS/65536
-
-// Flags for Get(Box)MonData / Set(Box)MonData
-#define MON_DATA_PERSONALITY        0
-#define MON_DATA_OT_ID              1
-#define MON_DATA_NICKNAME           2
-#define MON_DATA_LANGUAGE           3
-#define MON_DATA_SANITY_IS_BAD_EGG  4
-#define MON_DATA_SANITY_HAS_SPECIES 5
-#define MON_DATA_SANITY_IS_EGG      6
-#define MON_DATA_OT_NAME            7
-#define MON_DATA_MARKINGS           8
-#define MON_DATA_CHECKSUM           9
-#define MON_DATA_ENCRYPT_SEPARATOR 10
-#define MON_DATA_SPECIES           11
-#define MON_DATA_HELD_ITEM         12
-#define MON_DATA_MOVE1             13
-#define MON_DATA_MOVE2             14
-#define MON_DATA_MOVE3             15
-#define MON_DATA_MOVE4             16
-#define MON_DATA_PP1               17
-#define MON_DATA_PP2               18
-#define MON_DATA_PP3               19
-#define MON_DATA_PP4               20
-#define MON_DATA_PP_BONUSES        21
-#define MON_DATA_COOL              22
-#define MON_DATA_BEAUTY            23
-#define MON_DATA_CUTE              24
-#define MON_DATA_EXP               25
-#define MON_DATA_HP_EV             26
-#define MON_DATA_ATK_EV            27
-#define MON_DATA_DEF_EV            28
-#define MON_DATA_SPEED_EV          29
-#define MON_DATA_SPATK_EV          30
-#define MON_DATA_SPDEF_EV          31
-#define MON_DATA_FRIENDSHIP        32
-#define MON_DATA_SMART             33
-#define MON_DATA_POKERUS           34
-#define MON_DATA_MET_LOCATION      35
-#define MON_DATA_MET_LEVEL         36
-#define MON_DATA_MET_GAME          37
-#define MON_DATA_POKEBALL          38
-#define MON_DATA_HP_IV             39
-#define MON_DATA_ATK_IV            40
-#define MON_DATA_DEF_IV            41
-#define MON_DATA_SPEED_IV          42
-#define MON_DATA_SPATK_IV          43
-#define MON_DATA_SPDEF_IV          44
-#define MON_DATA_IS_EGG            45
-#define MON_DATA_ABILITY_NUM       46
-#define MON_DATA_TOUGH             47
-#define MON_DATA_SHEEN             48
-#define MON_DATA_OT_GENDER         49
-#define MON_DATA_COOL_RIBBON       50
-#define MON_DATA_BEAUTY_RIBBON     51
-#define MON_DATA_CUTE_RIBBON       52
-#define MON_DATA_SMART_RIBBON      53
-#define MON_DATA_TOUGH_RIBBON      54
-#define MON_DATA_STATUS            55
-#define MON_DATA_LEVEL             56
-#define MON_DATA_HP                57
-#define MON_DATA_MAX_HP            58
-#define MON_DATA_ATK               59
-#define MON_DATA_DEF               60
-#define MON_DATA_SPEED             61
-#define MON_DATA_SPATK             62
-#define MON_DATA_SPDEF             63
-#define MON_DATA_MAIL              64
-#define MON_DATA_SPECIES2          65
-#define MON_DATA_IVS               66
-#define MON_DATA_CHAMPION_RIBBON   67
-#define MON_DATA_WINNING_RIBBON    68
-#define MON_DATA_VICTORY_RIBBON    69
-#define MON_DATA_ARTIST_RIBBON     70
-#define MON_DATA_EFFORT_RIBBON     71
-#define MON_DATA_MARINE_RIBBON     72
-#define MON_DATA_LAND_RIBBON       73
-#define MON_DATA_SKY_RIBBON        74
-#define MON_DATA_COUNTRY_RIBBON    75
-#define MON_DATA_NATIONAL_RIBBON   76
-#define MON_DATA_EARTH_RIBBON      77
-#define MON_DATA_WORLD_RIBBON      78
-#define MON_DATA_UNUSED_RIBBONS    79
-#define MON_DATA_EVENT_LEGAL       80
-#define MON_DATA_KNOWN_MOVES       81
-#define MON_DATA_RIBBON_COUNT      82
-#define MON_DATA_RIBBONS           83
-#define MON_DATA_ATK2              84
-#define MON_DATA_DEF2              85
-#define MON_DATA_SPEED2            86
-#define MON_DATA_SPATK2            87
-#define MON_DATA_SPDEF2            88
 
 // Ribbon IDs used by TV and Pokénav
 #define CHAMPION_RIBBON       0
@@ -244,7 +149,6 @@
 #define OT_ID_PLAYER_ID       0
 #define OT_ID_PRESET          1
 #define OT_ID_RANDOM_NO_SHINY 2
-#define OT_ID_SHINY           3
 
 #define MON_GIVEN_TO_PARTY      0
 #define MON_GIVEN_TO_PC         1
@@ -278,6 +182,18 @@
 #define FRIENDSHIP_EVENT_FAINT_FIELD_PSN  7
 #define FRIENDSHIP_EVENT_FAINT_LARGE      8 // If opponent was >= 30 levels higher. See AdjustFriendshipOnBattleFaint
 
+// Constants for GetLeadMonFriendshipScore
+#define FRIENDSHIP_NONE        0
+#define FRIENDSHIP_1_TO_49     1
+#define FRIENDSHIP_50_TO_99    2
+#define FRIENDSHIP_100_TO_149  3
+#define FRIENDSHIP_150_TO_199  4
+#define FRIENDSHIP_200_TO_254  5
+#define FRIENDSHIP_MAX         6
+
+// Friendship value that the majority of species use. This was changed in Generation 8 to 50.
+#define STANDARD_FRIENDSHIP 70
+
 #define MAX_FRIENDSHIP  255
 #define MAX_SHEEN       255
 #define MAX_CONDITION   255
@@ -285,7 +201,11 @@
 #define MAX_PER_STAT_IVS 31
 #define MAX_IV_MASK 31
 #define USE_RANDOM_IVS (MAX_PER_STAT_IVS + 1)
+#if P_EV_CAP >= GEN_6
+#define MAX_PER_STAT_EVS 252
+#else
 #define MAX_PER_STAT_EVS 255
+#endif
 #define MAX_TOTAL_EVS 510
 #if I_VITAMIN_EV_CAP >= GEN_8
 #define EV_ITEM_RAISE_LIMIT MAX_PER_STAT_EVS
@@ -322,7 +242,9 @@
 #define FLAG_THAW_USER                            (1 << 25)
 #define FLAG_HIT_IN_SUBSTITUTE                    (1 << 26) // Hyperspace Fury
 #define FLAG_TWO_STRIKES                          (1 << 27) // A move with this flag will strike twice, and may apply its effect on each hit
-#define FLAG_WIND                                 (1 << 28)
+#define FLAG_THREE_STRIKES                        (1 << 28) // A move with this flag will strike thrice, and may apply its effect on each hit
+#define FLAG_WIND_MOVE                            (1 << 29)
+#define FLAG_SLICING_MOVE                         (1 << 30)
 
 // Split defines.
 #define SPLIT_PHYSICAL  0x0
@@ -352,9 +274,7 @@
 #define F_SUMMARY_SCREEN_FLIP_SPRITE 0x80
 
 // Evolution types
-#define EVO_MEGA_EVOLUTION                0xffff // Not an actual evolution, used to temporarily mega evolve in battle.
-#define EVO_MOVE_MEGA_EVOLUTION           0xfffe // Mega Evolution that checks for a move instead of held item.
-#define EVO_PRIMAL_REVERSION              0xfffd // Not an actual evolution, used to undergo primal reversion in battle.
+#define EVO_NONE                          0xffff // Not an actual evolution, used to generate offspring that can't evolve into the specified species, like regional forms.
 #define EVO_FRIENDSHIP                    1      // Pokémon levels up with friendship ≥ 220
 #define EVO_FRIENDSHIP_DAY                2      // Pokémon levels up during the day with friendship ≥ 220
 #define EVO_FRIENDSHIP_NIGHT              3      // Pokémon levels up at night with friendship ≥ 220
@@ -378,7 +298,7 @@
 #define EVO_ITEM_HOLD_DAY                 21     // Pokémon levels up, holds specified item at day
 #define EVO_ITEM_HOLD_NIGHT               22     // Pokémon levels up, holds specified item at night
 #define EVO_MOVE                          23     // Pokémon levels up, knows specified move
-#define EVO_MOVE_TYPE                     24     // Pokémon levels up, knows move with specified type
+#define EVO_FRIENDSHIP_MOVE_TYPE          24     // Pokémon levels up with friendship ≥ 220, knows move with specified type
 #define EVO_MAPSEC                        25     // Pokémon levels up on specified mapsec
 #define EVO_ITEM_MALE                     26     // specified item is used on a male Pokémon
 #define EVO_ITEM_FEMALE                   27     // specified item is used on a female Pokémon
@@ -393,6 +313,9 @@
 #define EVO_SCRIPT_TRIGGER_DMG            36     // Pokémon has specified HP below max, then player interacts trigger
 #define EVO_DARK_SCROLL                   37     // interacts with Scroll of Darkness
 #define EVO_WATER_SCROLL                  38     // interacts with Scroll of Waters
+#define EVO_ITEM_NIGHT                    39     // specified item is used on Pokémon, is night
+#define EVO_ITEM_DAY                      40     // specified item is used on Pokémon, is day
+#define EVO_ITEM_HOLD                     41     // Pokémon levels up, holds specified item
 
 #define EVOS_PER_MON 10
 
@@ -404,25 +327,22 @@
 #define EVO_MODE_BATTLE_SPECIAL    4
 #define EVO_MODE_OVERWORLD_SPECIAL 5
 
-// Form change types
-#define FORM_CHANGE_END         0
-#define FORM_ITEM_HOLD          1
-#define FORM_ITEM_USE           2
-#define FORM_MOVE               3
-#define FORM_WITHDRAW           4
-#define FORM_ITEM_HOLD_ABILITY  5
-#define FORM_ITEM_USE_TIME      6
-
-#define NUM_MALE_LINK_FACILITY_CLASSES   8
-#define NUM_FEMALE_LINK_FACILITY_CLASSES 8
-
 #define MON_PIC_WIDTH 64
 #define MON_PIC_HEIGHT 64
 #define MON_PIC_SIZE (MON_PIC_WIDTH * MON_PIC_HEIGHT / 2)
 
-#define BATTLE_ALIVE_EXCEPT_ACTIVE  0
-#define BATTLE_ALIVE_ATK_SIDE       1
-#define BATTLE_ALIVE_DEF_SIDE       2
+// Most pokemon have 2 frames (a default and an alternate for their animation).
+// There are 4 exceptions:
+// - Castform has 4 frames, 1 for each form
+// - Deoxys has 2 frames, 1 for each form
+// - Spinda has 1 frame, presumably to avoid the work of animating its spots
+// - Unown has 1 frame, presumably to avoid the work of animating all 28 of its forms
+#define MAX_MON_PIC_FRAMES 4
+
+#define BATTLE_ALIVE_EXCEPT_ACTIVE   0
+#define BATTLE_ALIVE_ATK_SIDE        1
+#define BATTLE_ALIVE_DEF_SIDE        2
+#define BATTLE_ALIVE_EXCEPT_ATTACKER 3
 
 #define SKIP_FRONT_ANIM (1 << 7)
 
@@ -431,13 +351,18 @@
 #define NUM_HIDDEN_ABILITY_SLOTS 1
 
 // Species Flags
-#define FLAG_LEGENDARY          (1 << 0)
-#define FLAG_MYTHICAL           (1 << 1)
-#define FLAG_ULTRA_BEAST        (1 << 2)
-#define FLAG_ALOLAN_FORM        (1 << 3)
-#define FLAG_GALARIAN_FORM      (1 << 4)
-#define FLAG_GENDER_DIFFERENCE  (1 << 5)
-#define FLAG_HOENNIAN_FORM      (1 << 6)
+#define SPECIES_FLAG_LEGENDARY          (1 << 0)
+#define SPECIES_FLAG_MYTHICAL           (1 << 1)
+#define SPECIES_FLAG_MEGA_EVOLUTION     (1 << 2)
+#define SPECIES_FLAG_PRIMAL_REVERSION   (1 << 3)
+#define SPECIES_FLAG_ULTRA_BEAST        (1 << 4)
+#define SPECIES_FLAG_ALOLAN_FORM        (1 << 5)
+#define SPECIES_FLAG_GALARIAN_FORM      (1 << 6)
+#define SPECIES_FLAG_HISUIAN_FORM       (1 << 7)
+#define SPECIES_FLAG_HOENNIAN_FORM      (1 << 8)
+#define SPECIES_FLAG_GENDER_DIFFERENCE  (1 << 9)
+#define SPECIES_FLAG_ALL_PERFECT_IVS    (1 << 10)
+#define SPECIES_FLAG_CANNOT_BE_TRADED   (1 << 11)
 
 #define LEGENDARY_PERFECT_IV_COUNT 3
 

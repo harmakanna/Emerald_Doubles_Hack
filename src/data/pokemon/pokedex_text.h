@@ -2355,6 +2355,7 @@ const u8 gChimechoPokedexText[] = _(
     "themselves using seven different and\n"
     "distinguishing cries.");
 
+#if P_GEN_4_POKEMON == TRUE
 const u8 gTurtwigPokedexText[] = _(
     "The shell on its back is made of soil. \n"
     "On a very healthy Turtwig, the shell \n"
@@ -2996,7 +2997,9 @@ const u8 gArceusPokedexText[] = _(
     "emerged from an egg and shaped all there\n"
     "is in this world, before the universe\n"
     "even existed.");
+#endif
 
+#if P_GEN_5_POKEMON == TRUE
 const u8 gVictiniPokedexText[] = _(
     "This Pokémon brings victory.\n"
     "It is said that Trainers with Victini\n"
@@ -3932,7 +3935,9 @@ const u8 gGenesectPokedexText[] = _(
     "feared as the strongest of hunters.\n"
     "Team Plasma altered it and attached\n"
     "a cannon to its back.");
+#endif
 
+#if P_GEN_6_POKEMON == TRUE
 const u8 gChespinPokedexText[] = _(
     "The quills on its head are usually soft.\n"
     "When it flexes them, the points become\n"
@@ -4364,7 +4369,9 @@ const u8 gVolcanionPokedexText[] = _(
     "on its back and disappears into the dense\n"
     "fog. It's said to live in mountains where\n"
     "humans do not tread.");
+#endif
 
+#if P_GEN_7_POKEMON == TRUE
 const u8 gRowletPokedexText[] = _(
     "This wary Pokémon uses photosynthesis\n"
     "to store up energy during the day, while\n"
@@ -4725,19 +4732,19 @@ const u8 gDhelmisePokedexText[] = _(
     "It maintains itself with new infusions of\n"
     "seabed detritus and seaweed.");
 
-const u8 gJangmooPokedexText[] = _(
+const u8 gJangmoOPokedexText[] = _(
     "It expresses its feelings by smacking its\n"
     "scales. Metallic sounds echo through the\n"
     "tall mountains where Jangmo-o live. They\n"
     "grow little by little battling one another.");
 
-const u8 gHakamooPokedexText[] = _(
+const u8 gHakamoOPokedexText[] = _(
     "It sheds and regrows its scales on a\n"
     "continuous basis. The scales become\n"
     "harder each time they're regrown. Its\n"
     "scaly punches tear its foes to shreds.");
 
-const u8 gKommooPokedexText[] = _(
+const u8 gKommoOPokedexText[] = _(
     "Its rigid scales function as offense and\n"
     "defense. In the past, its scales were\n"
     "processed and used to make weapons\n"
@@ -4885,7 +4892,9 @@ const u8 gMelmetalPokedexText[] = _(
     "Revered long ago for its capacity to create\n"
     "iron from nothing, for some reason it has\n"
     "come back to life after 3,000 years.");
+#endif
 
+#if P_GEN_8_POKEMON == TRUE
 const u8 gGrookeyPokedexText[] = _(
     "When it uses its special stick to strike up\n"
     "a beat, the sound waves produced carry\n"
@@ -5384,6 +5393,47 @@ const u8 gCalyrexPokedexText[] = _(
     "reigned over the Galar region in times\n"
     "of yore.");
 
+const u8 gWyrdeerPokedexText[] = _(
+    "The black orbs shine with an uncanny light\n"
+    "when it is erecting invisible barriers.\n"
+    "The fur shed from its beard retains heat\n"
+    "and is useful for winter clothing.");
+
+const u8 gKleavorPokedexText[] = _(
+    "A violent creature that fells trees with\n"
+    "its crude axes and shields itself with hard\n"
+    "stone. Should one encounter this Pokémon\n"
+    "in the wild, one's only recourse is to flee.");
+
+const u8 gUrsalunaPokedexText[] = _(
+    "Swampy terrain gives Ursaluna its burly\n"
+    "physique and newfound capacity to\n"
+    "manipulate peat at will.");
+
+const u8 gBasculegionPokedexText[] = _(
+    "Clads itself in the souls of comrades that\n"
+    "perished before fulfilling their goals of\n"
+    "journeying upstream. No other species in\n"
+    "all Hisui's rivers is Basculegion's equal.");
+
+const u8 gSneaslerPokedexText[] = _(
+    "Because of its wicked poison and daunting\n"
+    "physical prowess, no other species could\n"
+    "hope to best it on frozen highlands. It\n"
+    "prefers solitude and doesn't form packs.");
+
+const u8 gOverqwilPokedexText[] = _(
+    "Its lancelike spikes and savage\n"
+    "temperament have earned it the\n"
+    "nickname “Sea Fiend”.\n"
+    "It slurps up poison to nourish itself.");
+
+const u8 gEnamorusPokedexText[] = _(
+    "Its arrival brings an end to the\n"
+    "winter. According to legend, this\n"
+    "Pokémon's love gives rise to the\n"
+    "budding of fresh life across the land.");
+#endif
 const u8 gAnnihilapePokedexText[] = _(
     "When its anger rose past a critical point,\n"
     "this Pokémon gained power that is\n"

@@ -63,6 +63,8 @@
 #define MAP_UNDERWATER_ROUTE129 (54 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105 (55 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (56 | (0 << 8))
+#define MAP_CRATERCREST_TOWN    (57 | (0 << 8))
+#define MAP_ROUTE135            (58 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -400,6 +402,19 @@
 #define MAP_TERRA_CAVE_END                           (105 | (24 << 8))
 #define MAP_ALTERING_CAVE                            (106 | (24 << 8))
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (107 | (24 << 8))
+#define MAP_MT_METEOR_1F_1R                          (108 | (24 << 8))
+#define MAP_MT_METEOR_2F_1R                          (109 | (24 << 8))
+#define MAP_MT_METEOR_1F_2R                          (110 | (24 << 8))
+#define MAP_MT_METEOR_2F_2R                          (111 | (24 << 8))
+#define MAP_METEOR_PEAK                              (112 | (24 << 8))
+#define MAP_DRAGONS_DEN                              (113 | (24 << 8))
+#define MAP_FORGOTTEN_PLANT                          (114 | (24 << 8))
+#define MAP_DECREPIT_CASTLE_1F                       (115 | (24 << 8))
+#define MAP_DECREPIT_CASTLE_B1F                      (116 | (24 << 8))
+#define MAP_DECREPIT_CASTLE_B2F                      (117 | (24 << 8))
+#define MAP_DECREPIT_CASTLE_B3F                      (118 | (24 << 8))
+#define MAP_SLATEROOT_FOREST                         (119 | (24 << 8))
+#define MAP_AWAKENING_WOODS                          (120 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))
@@ -591,6 +606,16 @@
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
-#define MAP_GROUPS_COUNT 34
+// gMapGroup_IndoorCratercrest
+#define MAP_CRATERCREST_TOWN_SPECIAL_SHOP      (0 | (34 << 8))
+#define MAP_CRATERCREST_TOWN_POKEMON_CENTER_1F (1 | (34 << 8))
+#define MAP_CRATERCREST_TOWN_POKEMON_CENTER_2F (2 | (34 << 8))
+#define MAP_CRATERCREST_TOWN_HOUSE1            (3 | (34 << 8))
+#define MAP_CRATERCREST_TOWN_HOUSE2            (4 | (34 << 8))
+
+// gMapGroup_IndoorMeteorPeak
+#define MAP_METEOR_PEAK_REST_HOUSE (0 | (35 << 8))
+
+#define MAP_GROUPS_COUNT 36
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

@@ -115,3 +115,24 @@ AncientTomb_Braille_ShineInTheMiddle:
 	.braille "INHERIT OUR\n"
 	.braille "WILL, SHINE\n"
 	.braille "IN THE MIDDLE.$"
+
+DragonsDen_Braille_SoarToTheSky:
+  brailleformat 3, 0, 25, 19, 6, 3
+	.braille "AT THIS DEN'S\n"
+	.braille "ENTRANCE,\n"
+	.braille "GO REACH\n"
+	.braille "FOR THE SKY.$"
+
+ForgottenPlant_Braille_CastYourLure:
+  brailleformat 3, 0, 25, 19, 6, 3
+  .braille "CAST YOUR LURE\n"
+	.braille "RIGHT WHERE\n"
+	.braille "YOU ARE\n"
+	.braille "STANDING.$"
+
+DecrepitCastle_Braille_FiveComeTogether:
+  brailleformat 3, 0, 25, 19, 6, 3
+	.braille "WHEN FIVE COME\n"
+	.braille "TOGETHER,\n"
+	.braille "THE PATH WILL\n"
+	.braille "BE UNSEALED.$"

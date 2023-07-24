@@ -100,8 +100,8 @@
 #define MAPSEC_CINNABAR_ISLAND              0x60
 #define MAPSEC_INDIGO_PLATEAU               0x61
 #define MAPSEC_SAFFRON_CITY                 0x62
-#define MAPSEC_ROUTE_4_FLYDUP               0x63
-#define MAPSEC_ROUTE_10_FLYDUP              0x64
+#define MAPSEC_ROUTE_4_POKECENTER           0x63
+#define MAPSEC_ROUTE_10_POKECENTER          0x64
 #define MAPSEC_ROUTE_1                      0x65
 #define MAPSEC_ROUTE_2                      0x66
 #define MAPSEC_ROUTE_3                      0x67
@@ -214,8 +214,21 @@
 #define MAPSEC_ALTERING_CAVE                0xD2
 #define MAPSEC_NAVEL_ROCK                   0xD3
 #define MAPSEC_TRAINER_HILL                 0xD4
-#define MAPSEC_NONE                         0xD5
+#define MAPSEC_MT_METEOR                    0xD5
+#define MAPSEC_CRATERCREST_TOWN             0xD6
+#define MAPSEC_METEOR_PEAK                  0xD7
+#define MAPSEC_LITTLEROOT_WOODS             0xD8
+#define MAPSEC_ROUTE_135                    0xD9
+#define MAPSEC_ROUTE_136                    0xDA
+#define MAPSEC_DRAGONS_DEN                  0xDB
+#define MAPSEC_FORGOTTEN_PLANT              0xDC
+#define MAPSEC_DEWFORD_DUNES                0xDD
+#define MAPSEC_AWAKENING_WOOD               0xDE
+#define MAPSEC_RUIN_OUTSKIRTS               0xDF
+#define MAPSEC_NEW_ISLAND                   0xE0
+#define MAPSEC_DECREPIT_CASTLE              0xE1
 
+#define MAPSEC_NONE                         0xFC
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE
 #define METLOC_FATEFUL_ENCOUNTER            0xFF

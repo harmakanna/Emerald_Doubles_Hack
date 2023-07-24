@@ -1,8 +1,9 @@
+#include "config/battle.h"
+#include "config/item.h"
 #include "constants/global.h"
 #include "constants/apprentice.h"
 #include "constants/battle.h"
 #include "constants/battle_arena.h"
-#include "constants/battle_config.h"
 #include "constants/battle_dome.h"
 #include "constants/battle_factory.h"
 #include "constants/battle_frontier.h"
@@ -571,11 +572,19 @@ gStdScripts_End::
 	.include "data/maps/Route119_WeatherInstitute_2F/scripts.inc"
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
-
+  .include "data/maps/CratercrestTown/scripts.inc"
+	.include "data/maps/MtMeteor_1F_1R/scripts.inc"
+	.include "data/maps/MtMeteor_2F_1R/scripts.inc"
+	.include "data/maps/MtMeteor_1F_2R/scripts.inc"
+	.include "data/maps/MtMeteor_2F_2R/scripts.inc"
+	.include "data/maps/MeteorPeak/scripts.inc"
+	.include "data/maps/AwakeningWoods/scripts.inc"
 	.include "data/scripts/std_msgbox.inc"
 	.include "data/scripts/trainer_battle.inc"
 	.include "data/scripts/new_game.inc"
 	.include "data/scripts/hall_of_fame.inc"
+
+	.include "data/scripts/debug.inc"
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
@@ -1056,3 +1065,31 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/Route135/scripts.inc"
+
+	.include "data/maps/DragonsDen/scripts.inc"
+
+	.include "data/maps/ForgottenPlant/scripts.inc"
+
+	.include "data/maps/DecrepitCastle_1F/scripts.inc"
+
+	.include "data/maps/DecrepitCastle_B1F/scripts.inc"
+
+	.include "data/maps/DecrepitCastle_B2F/scripts.inc"
+
+	.include "data/maps/DecrepitCastle_B3F/scripts.inc"
+
+	.include "data/maps/SlaterootForest/scripts.inc"
+
+	.include "data/maps/CratercrestTown_SpecialShop/scripts.inc"
+
+	.include "data/maps/CratercrestTown_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/CratercrestTown_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/CratercrestTown_House1/scripts.inc"
+
+	.include "data/maps/CratercrestTown_House2/scripts.inc"
+
+	.include "data/maps/MeteorPeak_RestHouse/scripts.inc"

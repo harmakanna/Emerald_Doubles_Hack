@@ -2149,6 +2149,18 @@ static const struct SpriteFrameImage sPicTable_HoOh[] = {
     overworld_frame(gObjectEventPic_HoOh, 4, 4, 1),
 };
 
+const struct SpriteFrameImage sPicTable_Eevee[] = {
+    overworld_frame(gObjectEventPic_Eevee1, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Eevee2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Eevee3, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Eevee4, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Eevee5, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Eevee6, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Eevee7, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Eevee8, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Eevee9, 4, 4, 0),
+};
+
 static const struct SpriteFrameImage sPicTable_RubySapphireBrendan[] = {
     overworld_frame(gObjectEventPic_RubySapphireBrendanNormal, 2, 4, 0),
     overworld_frame(gObjectEventPic_RubySapphireBrendanNormal, 2, 4, 1),

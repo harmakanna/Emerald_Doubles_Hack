@@ -1,5 +1,6 @@
 #include "global.h"
 #include "event_data.h"
+#include "event_scripts.h"
 #include "field_camera.h"
 #include "field_effect.h"
 #include "script.h"
@@ -13,6 +14,8 @@
 #include "fldeff.h"
 
 EWRAM_DATA static bool8 sIsRegisteelPuzzle = 0;
+EWRAM_DATA static bool8 sIsRegidragoPuzzle = 0;
+EWRAM_DATA static bool8 sIsRegielekiPuzzle = 0;
 
 static const u8 sRegicePathCoords[][2] =
 {
@@ -57,6 +60,8 @@ static const u8 sRegicePathCoords[][2] =
 static void Task_SealedChamberShakingEffect(u8);
 static void DoBrailleRegirockEffect(void);
 static void DoBrailleRegisteelEffect(void);
+static void DoBrailleRegidragoEffect(void);
+static void DoBrailleRegielekiEffect(void);
 
 bool8 ShouldDoBrailleDigEffect(void)
 {
@@ -86,18 +91,18 @@ void DoBrailleDigEffect(void)
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_BRAILLE_DIG);
-    ScriptContext2_Disable();
+    UnlockPlayerFieldControls();
 }
 
 bool8 CheckRelicanthWailord(void)
 {
     // Emerald change: why did they flip it?
     // First comes Wailord
-    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_WAILORD)
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_WAILORD)
     {
         CalculatePlayerPartyCount();
         // Last comes Relicanth
-        if (GetMonData(&gPlayerParty[gPlayerPartyCount - 1], MON_DATA_SPECIES2, 0) == SPECIES_RELICANTH)
+        if (GetMonData(&gPlayerParty[gPlayerPartyCount - 1], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_RELICANTH)
             return TRUE;
     }
     return FALSE;
@@ -152,7 +157,7 @@ static void Task_SealedChamberShakingEffect(u8 taskId)
         if (task->tShakeCounter == task->tNumShakes)
         {
             DestroyTask(taskId);
-            EnableBothScriptContexts();
+            ScriptContext_Enable();
             InstallCameraPanAheadCallback();
         }
     }
@@ -213,7 +218,7 @@ static void DoBrailleRegirockEffect(void)
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED);
-    ScriptContext2_Disable();
+    UnlockPlayerFieldControls();
 }
 
 bool8 ShouldDoBrailleRegisteelEffect(void)
@@ -252,7 +257,97 @@ static void DoBrailleRegisteelEffect(void)
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED);
-    ScriptContext2_Disable();
+    UnlockPlayerFieldControls();
+}
+
+bool8 ShouldDoBrailleRegidragoEffect(void)
+{
+  if (!FlagGet(FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED) && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(DRAGONS_DEN) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(DRAGONS_DEN)))
+  {
+    if (gSaveBlock1Ptr->pos.x == 8 && gSaveBlock1Ptr->pos.y == 21)
+    {
+        sIsRegidragoPuzzle = TRUE;
+        return TRUE;
+    }
+  }
+}
+
+void SetUpPuzzleEffectRegidrago(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    FieldEffectStart(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+}
+
+void UseRegidragoHm_Callback(void)
+{
+    FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+    DoBrailleRegisteelEffect();
+}
+
+void DoBrailleRegidragoEffect(void)
+{
+    MapGridSetMetatileIdAt(7 + MAP_OFFSET, 19 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopLeft);
+    MapGridSetMetatileIdAt(8 + MAP_OFFSET, 19 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopMid);
+    MapGridSetMetatileIdAt(9 + MAP_OFFSET, 19 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopRight);
+    MapGridSetMetatileIdAt(7 + MAP_OFFSET, 20 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomLeft | MAPGRID_COLLISION_MASK);
+    MapGridSetMetatileIdAt(8 + MAP_OFFSET, 20 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomMid);
+    MapGridSetMetatileIdAt(9 + MAP_OFFSET, 20 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomRight | MAPGRID_COLLISION_MASK);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED);
+    UnlockPlayerFieldControls();
+}
+
+bool8 ShouldDoBrailleRegielekiPuzzle(void)
+{
+    if (!FlagGet(FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED)
+     && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FORGOTTEN_PLANT)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(FORGOTTEN_PLANT)))
+    {
+        if (gSaveBlock1Ptr->pos.x == 7 && gSaveBlock1Ptr->pos.y == 20)
+        {
+            sIsRegielekiPuzzle = TRUE;
+            return TRUE;
+        }
+        if (gSaveBlock1Ptr->pos.x == 8 && gSaveBlock1Ptr->pos.y == 20)
+        {
+            sIsRegielekiPuzzle = TRUE;
+            return TRUE;
+        }
+        if (gSaveBlock1Ptr->pos.x == 9 && gSaveBlock1Ptr->pos.y == 20)
+        {
+            sIsRegielekiPuzzle = TRUE;
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+void SetUpPuzzleEffectRegieleki(void)
+{
+    //gFieldEffectArguments[0] = ItemId_GetSecondaryId(gSpecialVar_ItemId);
+    FieldEffectStart(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+}
+
+void UseRegielekiItemUse_Callback(void)
+{
+    FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+    DoBrailleRegielekiEffect();
+}
+
+void DoBrailleRegielekiEffect(void)
+{
+    MapGridSetMetatileIdAt(7 + MAP_OFFSET, 19 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopLeft);
+    MapGridSetMetatileIdAt(8 + MAP_OFFSET, 19 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopMid);
+    MapGridSetMetatileIdAt(9 + MAP_OFFSET, 19 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopRight);
+    MapGridSetMetatileIdAt(7 + MAP_OFFSET, 20 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomLeft | MAPGRID_COLLISION_MASK);
+    MapGridSetMetatileIdAt(8 + MAP_OFFSET, 20 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomMid);
+    MapGridSetMetatileIdAt(9 + MAP_OFFSET, 20 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomRight | MAPGRID_COLLISION_MASK);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED);
+    UnlockPlayerFieldControls();
 }
 
 // theory: another commented out DoBrailleWait and Task_BrailleWait.
@@ -269,6 +364,16 @@ bool8 FldEff_UsePuzzleEffect(void)
     {
         gTasks[taskId].data[8] = (u32)UseRegisteelHm_Callback >> 16;
         gTasks[taskId].data[9] = (u32)UseRegisteelHm_Callback;
+    }
+    else if (sIsRegidragoPuzzle == TRUE)
+    {
+      gTasks[taskId].data[8] = (u32)UseRegidragoHm_Callback >> 16;
+      gTasks[taskId].data[9] = (u32)UseRegidragoHm_Callback;
+    }
+    else if (sIsRegielekiPuzzle == TRUE)
+    {
+      gTasks[taskId].data[8] = (u32)UseRegielekiItemUse_Callback >> 16;
+      gTasks[taskId].data[9] = (u32)UseRegielekiItemUse_Callback;
     }
     else
     {
@@ -336,4 +441,32 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
     }
 
     return FALSE;
+}
+
+bool8 BrailleDecrepitCastleCheck(void)
+{
+  int i, regiCount[5] = {0, 0, 0, 0, 0};
+  for (i = 0; i < PARTY_SIZE; i++)
+  {
+      u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+      if(species == SPECIES_REGICE)
+        regiCount[0] = 1;
+      else if(species == SPECIES_REGIROCK)
+        regiCount[1] = 1;
+      else if(species == SPECIES_REGISTEEL)
+        regiCount[2] = 1;
+      else if(species == SPECIES_REGIDRAGO)
+        regiCount[3] = 1;
+      else if(species == SPECIES_REGIELEKI)
+        regiCount[4] = 1;
+  }
+
+  for (i = 0; i < 5; i++)
+  {
+      if(regiCount[i] == 0)
+        return FALSE;
+  }
+
+  ScriptContext_SetupScript(DecrepitCastle_1F_EventScript_OpenRegiEntrance);
+  return TRUE;
 }

@@ -201,9 +201,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_RAZOR_WIND] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT | FLAG_WIND,
+            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT | FLAG_WIND_MOVE,
         #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_WIND,
+            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_WIND_MOVE,
         #endif
         .effect = EFFECT_TWO_TURNS_ATTACK,
         .power = 80,
@@ -4063,7 +4063,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         #if B_UPDATED_MOVE_DATA >= GEN_5
             .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_2X_IN_AIR | FLAG_WIND_MOVE,
         #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_2X_IN_AIR | FLAG_WIND,
+            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_2X_IN_AIR | FLAG_WIND_MOVE,
         #endif
         .effect = EFFECT_TWISTER,
         .power = 40,
@@ -14150,7 +14150,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = 0
     },
 
-    [MOVE_POUNCE] =
+    [MOVE_ROMP] =
     {
         .power = 40,
         .accuracy = 100,

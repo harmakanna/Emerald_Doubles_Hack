@@ -3260,7 +3260,7 @@ static const u8 sHydroSteamDescription[] = _(
     "This move's power increases\n"
     "under harsh sunlight.");
 
-static const u8 sPounceDescription[] = _(
+static const u8 sRompDescription[] = _(
     "Playfully jumps on the\n"
     "opposing Pokémon.");
 
@@ -4119,7 +4119,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MAGICAL_TORQUE - 1] = sMagicalTorqueDescription,
     [MOVE_PSYBLADE - 1] = sPsybladeDescription,
     [MOVE_HYDRO_STEAM - 1] = sHydroSteamDescription,
-    [MOVE_POUNCE - 1] = sPounceDescription,
+    [MOVE_ROMP - 1] = sRompDescription,
     [MOVE_SOUL_DANCE - 1] = sSoulDanceDescription,
     [MOVE_GLACIER_SMASH - 1] = sGlacierSmashDescription,
     [MOVE_MYSTIC_ROOM - 1] = sMysticRoomDescription,

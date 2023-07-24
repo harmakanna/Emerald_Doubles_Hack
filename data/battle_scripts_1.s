@@ -8776,46 +8776,60 @@ BattleScript_IntimidateInReverse:
 	call BattleScript_TryAdrenalineOrb
 	goto BattleScript_IntimidateLoopIncrement
 
-BattleScript_PsychOutActivatesEnd3::
-	call BattleScript_PausePsychOutActivates
-	end3
-
-BattleScript_PausePsychOutActivates:
-	pause B_WAIT_TIME_SHORT
 BattleScript_PsychOutActivates::
+	showabilitypopup BS_ATTACKER
+	pause B_WAIT_TIME_LONG
+	destroyabilitypopup
 	setbyte gBattlerTarget, 0
-	call BattleScript_AbilityPopUp
-BattleScript_PsychOutActivatesLoop:
-	setstatchanger STAT_SPATK, 1, TRUE
-	trygetintimidatetarget BattleScript_PsychOutActivatesReturn
-	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_PsychOutActivatesLoopIncrement
-	jumpifability BS_TARGET, ABILITY_CLEAR_BODY, BattleScript_PsychOutPrevented
-	jumpifability BS_TARGET, ABILITY_WHITE_SMOKE, BattleScript_PsychOutPrevented
+BattleScript_PsychOutLoop:
+	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_PsychOutLoopIncrement
+	jumpiftargetally BattleScript_PsychOutLoopIncrement
+	jumpifabsent BS_TARGET, BattleScript_PsychOutLoopIncrement
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_PsychOutLoopIncrement
+	jumpifability BS_TARGET, ABILITY_HYPER_CUTTER, BattleScript_PsychOutPrevented
 	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_PsychOutPrevented
 	jumpifability BS_TARGET, ABILITY_ANTICIPATION, BattleScript_PsychOutPrevented
 	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_PsychOutPrevented
 	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_PsychOutPrevented
-	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_PsychOutActivatesLoopIncrement
-	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_PsychOutActivatesLoopIncrement
+BattleScript_PsychOutEffect:
+	copybyte sBATTLER, gBattlerAttacker
+	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_PsychOutLoopIncrement
 	setgraphicalstatchangevalues
+	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_PsychOutContrary
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printstring STRINGID_PKMNCUTSSPATTACKWITH
+BattleScript_PsychOutEffect_WaitString:
 	waitmessage B_WAIT_TIME_LONG
+	copybyte sBATTLER, gBattlerTarget
 	call BattleScript_TryAdrenalineOrb
-BattleScript_PsychOutActivatesLoopIncrement:
+BattleScript_PsychOutLoopIncrement:
 	addbyte gBattlerTarget, 1
-	goto BattleScript_PsychOutActivatesLoop
-BattleScript_PsychOutActivatesReturn:
-	return
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_PsychOutLoop
+BattleScript_PsychOutEnd:
+	copybyte sBATTLER, gBattlerAttacker
+	destroyabilitypopup
+	pause B_WAIT_TIME_MED
+	end3
+
+BattleScript_PsychOutContrary:
+	call BattleScript_AbilityPopUpTarget
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_PsychOutContrary_WontIncrease
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	goto BattleScript_PsychOutEffect_WaitString
+BattleScript_PsychOutContrary_WontIncrease:
+	printstring STRINGID_TARGETSTATWONTGOHIGHER
+	goto BattleScript_PsychOutEffect_WaitString
+
 BattleScript_PsychOutPrevented:
-	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
+	pause B_WAIT_TIME_LONG
 	setbyte gBattleCommunication STAT_SPATK
-	stattextbuffer BS_ATTACKER
+	stattextbuffer BS_TARGET
 	printstring STRINGID_STATWASNOTLOWERED
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_TryAdrenalineOrb
-	goto BattleScript_PsychOutActivatesLoopIncrement
+	goto BattleScript_PsychOutLoopIncrement
 
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT

@@ -892,7 +892,7 @@ gBattleAnims_Moves::
 	.4byte Move_MENACING_MOONRAZE_MAELSTROM
 	.4byte Move_LIGHT_THAT_BURNS_THE_SKY
 	.4byte Move_SOUL_STEALING_7_STAR_STRIKE
-	.4byte Move_POUNCE
+	.4byte Move_ROMP
 	.4byte Move_SOUL_DANCE
 	.4byte Move_GLACIER_SMASH
 @ .4byte Move_MYSTIC_ROOM
@@ -7782,22 +7782,22 @@ Move_SOUL_DANCE::
 	fadetobg BG_GHOST
 	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
 	waitbgfadein
-	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x2 0x40 0x1
-	launchtask AnimTask_BlendBattleAnimPal 0xa 0x5 ANIM_PAL_DEF 0x1 0x0 0x9 0x1f
+	createvisualtask AnimTask_ShakeMon, 0x5, 0x5, ANIM_TARGET, 0x0, 0x2, 0x40, 0x1
+	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, 0x5, F_PAL_TARGET, 0x1, 0x0, 0x9, 0x1f
 	createvisualtask AnimTask_GrudgeFlames, 3
 	loopsewithpan SE_M_EMBER, SOUND_PAN_ATTACKER, 16, 4
 	delay 10
 	delay 80
 	playsewithpan SE_M_SACRED_FIRE2, SOUND_PAN_TARGET
-	launchtask AnimTask_BlendBattleAnimPal 0xa 0x5 ANIM_PAL_DEF 0x1 0x9 0x0 0x1f
-	launchtask AnimTask_BlendBattleAnimPal 0xa 0x5 ANIM_PAL_BG 0x1 0xc 0x0 0x14be
+	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, 0x5, F_PAL_TARGET, 0x1, 0x9, 0x0, 0x1f
+	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, 0x5, F_PAL_BG, 0x1, 0xc, 0x0, 0x14be
 	waitforvisualfinish
 	end
 
 Move_VOLTAIC_DANCE::
 	loadspritegfx ANIM_TAG_SPARK_2
 	delay 0
-	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x0 0x2 0x40 0x1
+	createvisualtask AnimTask_ShakeMon, 0x5, 0x5, ANIM_TARGET, 0x0, 0x2, 0x40, 0x1
 	createvisualtask AnimTask_BlendColorCycle, 2, 3, -31, 1, 5, 5, RGB(31, 31, 22)
 	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
 	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 32, 24, 190, 12, ANIM_ATTACKER, 1, 0
@@ -14804,7 +14804,7 @@ Move_TACKLE:
 	blendoff
 	end
 
-Move_POUNCE:
+Move_ROMP:
 	monbg ANIM_TARGET
 	setalpha 12, 8
 	loadspritegfx ANIM_TAG_MAGENTA_HEART

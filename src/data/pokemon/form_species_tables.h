@@ -782,6 +782,9 @@ static const u16 sMienfooFormSpeciesIdTable[] = {
 static const u16 sMienshaoFormSpeciesIdTable[] = {
     SPECIES_MIENSHAO,
     SPECIES_MIENSHAO_HOENNIAN,
+    FORM_SPECIES_END,
+};
+
 static const u16 sBraviaryFormSpeciesIdTable[] = {
     SPECIES_BRAVIARY,
     SPECIES_BRAVIARY_HISUIAN,
@@ -936,6 +939,9 @@ static const u16 sAegislashFormSpeciesIdTable[] = {
 static const u16 sCarbinkFormSpeciesIdTable[] = {
     SPECIES_CARBINK,
     SPECIES_CARBINK_HOENNIAN,
+    FORM_SPECIES_END,
+};
+
 static const u16 sSliggooFormSpeciesIdTable[] = {
     SPECIES_SLIGGOO,
     SPECIES_SLIGGOO_HISUIAN,

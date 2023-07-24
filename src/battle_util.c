@@ -9707,10 +9707,6 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
     // attacker's abilities
     switch (abilityAtk)
     {
-    case ABILITY_KEEN_EYE:
-        if (typeEffectivenessModifier >= UQ_4_12(2.0))
-            MulModifier(&finalModifier, UQ_4_12(1.15));
-        break;
     case ABILITY_TINTED_LENS:
         if (typeEffectivenessModifier <= UQ_4_12(0.5))
             MulModifier(&finalModifier, UQ_4_12(2.0));
@@ -11107,7 +11103,7 @@ void RemoveConfusionStatus(u8 battlerId)
 static bool8 CanBeInfinitelyConfused(u8 battlerId)
 {
     if  (gBattleMons[battlerId].ability == ABILITY_OWN_TEMPO
-         || GetBattlerAbility(otherSkyDropper) == ABILITY_FREE_SPIRIT
+         || gBattleMons[battlerId].ability == ABILITY_FREE_SPIRIT
          || IsBattlerTerrainAffected(battlerId, STATUS_FIELD_MISTY_TERRAIN)
          || gSideStatuses[GetBattlerSide(battlerId)] & SIDE_STATUS_SAFEGUARD)
     {

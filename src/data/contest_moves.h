@@ -6066,7 +6066,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
     [MOVE_PSYBLADE] = {0}, // TODO
 
     [MOVE_HYDRO_STEAM] = {0}, // TODO
-    [MOVE_POUNCE] =
+    [MOVE_ROMP] =
     {
         .effect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_CUTE,

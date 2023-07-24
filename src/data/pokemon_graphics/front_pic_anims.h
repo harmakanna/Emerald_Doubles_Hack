@@ -11808,10 +11808,6 @@ SINGLE_ANIMATION(LycanrocDusk);
 #if P_GEN_8_POKEMON == TRUE
 SINGLE_ANIMATION(EnamorusTherian);
 #endif
-SINGLE_ANIMATION(SquawkabillyBlue);
-SINGLE_ANIMATION(SquawkabillyWhite);
-SINGLE_ANIMATION(SquawkabillyYellow);
-
 SINGLE_ANIMATION(ObstagoonHoennian);
 SINGLE_ANIMATION(SkiddoHoennian);
 SINGLE_ANIMATION(GogoatHoennian);

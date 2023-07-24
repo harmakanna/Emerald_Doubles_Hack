@@ -81,6 +81,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_NONE, 0, SPECIES_EXEGGUTOR_ALOLAN}},
     [SPECIES_CUBONE]                = {{EVO_LEVEL, 28, SPECIES_MAROWAK},
                                        {EVO_MAPSEC, MAPSEC_MT_PYRE, SPECIES_MAROWAK_ALOLAN}},
+#if P_GEN_4_POKEMON == TRUE
     [SPECIES_LICKITUNG]             = {{EVO_MOVE, MOVE_ROLLOUT, SPECIES_LICKILICKY}},
 #endif
     [SPECIES_KOFFING]               = {{EVO_LEVEL, 35, SPECIES_WEEZING},
@@ -542,7 +543,6 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_WATER_SCROLL, 0, SPECIES_URSHIFU_RAPID_STRIKE_STYLE},
                                        {EVO_ITEM, ITEM_SCROLL_OF_WATERS, SPECIES_URSHIFU_RAPID_STRIKE_STYLE}},
 #endif
-                                       {EVO_WATER_SCROLL, 0, SPECIES_URSHIFU_RAPID_STRIKE_STYLE}},
     [SPECIES_CETODDLE]              = {{EVO_ITEM, ITEM_ICE_STONE, SPECIES_CETITAN}},
     [SPECIES_SHROODLE]              = {{EVO_LEVEL, 28, SPECIES_GRAFAIAI}},
     [SPECIES_WATTREL]               = {{EVO_LEVEL, 25, SPECIES_KILOWATTREL}},

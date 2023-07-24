@@ -41,7 +41,7 @@ void LoadPokedexAreaMapGfx(const struct PokedexAreaMapTemplate *template)
     ChangeBgX(template->bg, 0, BG_COORD_SET);
     ChangeBgY(template->bg, 0, BG_COORD_SET);
     SetBgAttribute(template->bg, BG_ATTR_PALETTEMODE, 1);
-    CpuCopy32(sPokedexAreaMap_Pal, &gPlttBufferUnfaded[0x70], sizeof(sPokedexAreaMap_Pal));
+    CpuCopy32(sPokedexAreaMap_Pal, &gPlttBufferUnfaded[BG_PLTT_ID(7)], sizeof(sPokedexAreaMap_Pal));
     *sPokedexAreaMapBgNum = template->bg;
 }
 
@@ -63,7 +63,7 @@ void FreePokedexAreaMapBgNum(void)
     TRY_FREE_AND_SET_NULL(sPokedexAreaMapBgNum);
 }
 
-void PokedexAreaMapChangeBgY(u32 a0)
+void PokedexAreaMapChangeBgY(u32 move)
 {
-    ChangeBgY(*sPokedexAreaMapBgNum, a0 * 0x100, BG_COORD_SET);
+    ChangeBgY(*sPokedexAreaMapBgNum, move * 0x100, BG_COORD_SET);
 }

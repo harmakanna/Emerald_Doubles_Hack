@@ -9,6 +9,7 @@
 #include "battle_pyramid.h"
 #include "battle_setup.h"
 #include "battle_tower.h"
+#include "battle_z_move.h"
 #include "data.h"
 #include "event_data.h"
 #include "evolution_scene.h"
@@ -41,6 +42,7 @@
 #include "constants/battle_frontier.h"
 #include "constants/battle_move_effects.h"
 #include "constants/battle_script_commands.h"
+#include "constants/form_change_types.h"
 #include "constants/hold_effects.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
@@ -48,7 +50,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
-#include "constants/battle_config.h"
+#include "constants/union_room.h"
 #include "constants/weather.h"
 
 struct SpeciesItem
@@ -62,9 +64,7 @@ static union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 perso
 static void EncryptBoxMon(struct BoxPokemon *boxMon);
 static void DecryptBoxMon(struct BoxPokemon *boxMon);
 static void Task_PlayMapChosenOrBattleBGM(u8 taskId);
-static u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move);
 static bool8 ShouldSkipFriendshipChange(void);
-static u8 SendMonToPC(struct Pokemon* mon);
 static void RemoveIVIndexFromList(u8 *ivs, u8 selectedIv);
 void TrySpecialOverworldEvo();
 
@@ -145,7 +145,9 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(RALTS),
     SPECIES_TO_HOENN(KIRLIA),
     SPECIES_TO_HOENN(GARDEVOIR),
+#if P_GEN_4_POKEMON == TRUE
     SPECIES_TO_HOENN(GALLADE),
+#endif
     SPECIES_TO_HOENN(SURSKIT),
     SPECIES_TO_HOENN(MASQUERAIN),
     SPECIES_TO_HOENN(SHROOMISH),
@@ -177,7 +179,9 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(GRAVELER),
     SPECIES_TO_HOENN(GOLEM),
     SPECIES_TO_HOENN(NOSEPASS),
+#if P_GEN_4_POKEMON == TRUE
     SPECIES_TO_HOENN(PROBOPASS),
+#endif
     SPECIES_TO_HOENN(SKITTY),
     SPECIES_TO_HOENN(DELCATTY),
     SPECIES_TO_HOENN(ZUBAT),
@@ -209,7 +213,9 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(MINUN),
     SPECIES_TO_HOENN(MAGNEMITE),
     SPECIES_TO_HOENN(MAGNETON),
+#if P_GEN_4_POKEMON == TRUE
     SPECIES_TO_HOENN(MAGNEZONE),
+#endif
     SPECIES_TO_HOENN(VOLTORB),
     SPECIES_TO_HOENN(ELECTRODE),
     SPECIES_TO_HOENN(ROTOM),
@@ -225,9 +231,13 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(CHERRIM),
     SPECIES_TO_HOENN(DODUO),
     SPECIES_TO_HOENN(DODRIO),
+#if P_GEN_4_POKEMON == TRUE
     SPECIES_TO_HOENN(BUDEW),
     SPECIES_TO_HOENN(ROSELIA),
     SPECIES_TO_HOENN(ROSERADE),
+#else
+    SPECIES_TO_HOENN(ROSELIA),
+#endif
     SPECIES_TO_HOENN(GULPIN),
     SPECIES_TO_HOENN(SWALOT),
     SPECIES_TO_HOENN(SUNKERN),
@@ -308,6 +318,7 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(BANETTE),
     SPECIES_TO_HOENN(DUSKULL),
     SPECIES_TO_HOENN(DUSCLOPS),
+#if P_GEN_4_POKEMON == TRUE
     SPECIES_TO_HOENN(DUSKNOIR),
     SPECIES_TO_HOENN(SCRAGGY),
     SPECIES_TO_HOENN(SCRAFTY),
@@ -316,6 +327,9 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(SLIGGOO),
     SPECIES_TO_HOENN(GOODRA),
     SPECIES_TO_HOENN(CHINGLING),
+#else
+    SPECIES_TO_HOENN(TROPIUS),
+#endif
     SPECIES_TO_HOENN(CHIMECHO),
     SPECIES_TO_HOENN(ABSOL),
     SPECIES_TO_HOENN(VULPIX),
@@ -342,7 +356,9 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(SCIZOR),
     SPECIES_TO_HOENN(RHYHORN),
     SPECIES_TO_HOENN(RHYDON),
+#if P_GEN_4_POKEMON == TRUE
     SPECIES_TO_HOENN(RHYPERIOR),
+#endif
     SPECIES_TO_HOENN(DRILBUR),
     SPECIES_TO_HOENN(EXCADRILL),
     SPECIES_TO_HOENN(LARVITAR),
@@ -352,7 +368,9 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(AVALUGG),
     SPECIES_TO_HOENN(SNORUNT),
     SPECIES_TO_HOENN(GLALIE),
+#if P_GEN_4_POKEMON == TRUE
     SPECIES_TO_HOENN(FROSLASS),
+#endif
     SPECIES_TO_HOENN(SPHEAL),
     SPECIES_TO_HOENN(SEALEO),
     SPECIES_TO_HOENN(WALREIN),
@@ -797,6 +815,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(RAYQUAZA),
     SPECIES_TO_NATIONAL(JIRACHI),
     SPECIES_TO_NATIONAL(DEOXYS),
+#if P_GEN_4_POKEMON == TRUE
     SPECIES_TO_NATIONAL(TURTWIG),
     SPECIES_TO_NATIONAL(GROTLE),
     SPECIES_TO_NATIONAL(TORTERRA),
@@ -904,6 +923,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(DARKRAI),
     SPECIES_TO_NATIONAL(SHAYMIN),
     SPECIES_TO_NATIONAL(ARCEUS),
+#endif
+#if P_GEN_5_POKEMON == TRUE
     SPECIES_TO_NATIONAL(VICTINI),
     SPECIES_TO_NATIONAL(SNIVY),
     SPECIES_TO_NATIONAL(SERVINE),
@@ -1060,6 +1081,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(KELDEO),
     SPECIES_TO_NATIONAL(MELOETTA),
     SPECIES_TO_NATIONAL(GENESECT),
+#endif
+#if P_GEN_6_POKEMON == TRUE
     SPECIES_TO_NATIONAL(CHESPIN),
     SPECIES_TO_NATIONAL(QUILLADIN),
     SPECIES_TO_NATIONAL(CHESNAUGHT),
@@ -1132,6 +1155,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(DIANCIE),
     SPECIES_TO_NATIONAL(HOOPA),
     SPECIES_TO_NATIONAL(VOLCANION),
+#endif
+#if P_GEN_7_POKEMON == TRUE
     SPECIES_TO_NATIONAL(ROWLET),
     SPECIES_TO_NATIONAL(DARTRIX),
     SPECIES_TO_NATIONAL(DECIDUEYE),
@@ -1220,6 +1245,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(ZERAORA),
     SPECIES_TO_NATIONAL(MELTAN),
     SPECIES_TO_NATIONAL(MELMETAL),
+#endif
+#if P_GEN_8_POKEMON == TRUE
     SPECIES_TO_NATIONAL(GROOKEY),
     SPECIES_TO_NATIONAL(THWACKEY),
     SPECIES_TO_NATIONAL(RILLABOOM),
@@ -1309,6 +1336,14 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(GLASTRIER),
     SPECIES_TO_NATIONAL(SPECTRIER),
     SPECIES_TO_NATIONAL(CALYREX),
+    SPECIES_TO_NATIONAL(WYRDEER),
+    SPECIES_TO_NATIONAL(KLEAVOR),
+    SPECIES_TO_NATIONAL(URSALUNA),
+    SPECIES_TO_NATIONAL(BASCULEGION),
+    SPECIES_TO_NATIONAL(SNEASLER),
+    SPECIES_TO_NATIONAL(OVERQWIL),
+    SPECIES_TO_NATIONAL(ENAMORUS),
+#endif
 
     // Megas
     [SPECIES_VENUSAUR_MEGA - 1] = NATIONAL_DEX_VENUSAUR,
@@ -1351,13 +1386,19 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_METAGROSS_MEGA - 1] = NATIONAL_DEX_METAGROSS,
     [SPECIES_LATIAS_MEGA - 1] = NATIONAL_DEX_LATIAS,
     [SPECIES_LATIOS_MEGA - 1] = NATIONAL_DEX_LATIOS,
+#if P_GEN_4_POKEMON == TRUE
     [SPECIES_LOPUNNY_MEGA - 1] = NATIONAL_DEX_LOPUNNY,
     [SPECIES_GARCHOMP_MEGA - 1] = NATIONAL_DEX_GARCHOMP,
     [SPECIES_LUCARIO_MEGA - 1] = NATIONAL_DEX_LUCARIO,
     [SPECIES_ABOMASNOW_MEGA - 1] = NATIONAL_DEX_ABOMASNOW,
     [SPECIES_GALLADE_MEGA - 1] = NATIONAL_DEX_GALLADE,
+#endif
+#if P_GEN_5_POKEMON == TRUE
     [SPECIES_AUDINO_MEGA - 1] = NATIONAL_DEX_AUDINO,
+#endif
+#if P_GEN_6_POKEMON == TRUE
     [SPECIES_DIANCIE_MEGA - 1] = NATIONAL_DEX_DIANCIE,
+#endif
     // Special Mega + Primals
     [SPECIES_RAYQUAZA_MEGA - 1] = NATIONAL_DEX_RAYQUAZA,
     [SPECIES_KYOGRE_PRIMAL - 1] = NATIONAL_DEX_KYOGRE,
@@ -1397,10 +1438,35 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_CORSOLA_GALARIAN - 1] = NATIONAL_DEX_CORSOLA,
     [SPECIES_ZIGZAGOON_GALARIAN - 1] = NATIONAL_DEX_ZIGZAGOON,
     [SPECIES_LINOONE_GALARIAN - 1] = NATIONAL_DEX_LINOONE,
+#if P_GEN_5_POKEMON == TRUE
     [SPECIES_DARUMAKA_GALARIAN - 1] = NATIONAL_DEX_DARUMAKA,
     [SPECIES_DARMANITAN_GALARIAN - 1] = NATIONAL_DEX_DARMANITAN,
     [SPECIES_YAMASK_GALARIAN - 1] = NATIONAL_DEX_YAMASK,
     [SPECIES_STUNFISK_GALARIAN - 1] = NATIONAL_DEX_STUNFISK,
+#endif
+//Hisuian Forms
+    [SPECIES_GROWLITHE_HISUIAN - 1] = NATIONAL_DEX_GROWLITHE,
+    [SPECIES_ARCANINE_HISUIAN - 1] = NATIONAL_DEX_ARCANINE,
+    [SPECIES_VOLTORB_HISUIAN - 1] = NATIONAL_DEX_VOLTORB,
+    [SPECIES_ELECTRODE_HISUIAN - 1] = NATIONAL_DEX_ELECTRODE,
+    [SPECIES_TYPHLOSION_HISUIAN - 1] = NATIONAL_DEX_TYPHLOSION,
+    [SPECIES_QWILFISH_HISUIAN - 1] = NATIONAL_DEX_QWILFISH,
+    [SPECIES_SNEASEL_HISUIAN - 1] = NATIONAL_DEX_SNEASEL,
+#if P_GEN_5_POKEMON == TRUE
+    [SPECIES_SAMUROTT_HISUIAN - 1] = NATIONAL_DEX_SAMUROTT,
+    [SPECIES_LILLIGANT_HISUIAN - 1] = NATIONAL_DEX_LILLIGANT,
+    [SPECIES_ZORUA_HISUIAN - 1] = NATIONAL_DEX_ZORUA,
+    [SPECIES_ZOROARK_HISUIAN - 1] = NATIONAL_DEX_ZOROARK,
+    [SPECIES_BRAVIARY_HISUIAN - 1] = NATIONAL_DEX_BRAVIARY,
+#endif
+#if P_GEN_6_POKEMON == TRUE
+    [SPECIES_SLIGGOO_HISUIAN - 1] = NATIONAL_DEX_SLIGGOO,
+    [SPECIES_GOODRA_HISUIAN - 1] = NATIONAL_DEX_GOODRA,
+    [SPECIES_AVALUGG_HISUIAN - 1] = NATIONAL_DEX_AVALUGG,
+#endif
+#if P_GEN_7_POKEMON == TRUE
+    [SPECIES_DECIDUEYE_HISUIAN - 1] = NATIONAL_DEX_DECIDUEYE,
+#endif
     //Hoennian Forms
     // Cosplay Pikachu
     [SPECIES_PIKACHU_COSPLAY - 1] = NATIONAL_DEX_PIKACHU,
@@ -1456,6 +1522,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_DEOXYS_ATTACK - 1] = NATIONAL_DEX_DEOXYS,
     [SPECIES_DEOXYS_DEFENSE - 1] = NATIONAL_DEX_DEOXYS,
     [SPECIES_DEOXYS_SPEED - 1] = NATIONAL_DEX_DEOXYS,
+#if P_GEN_4_POKEMON == TRUE
     // Burmy
     [SPECIES_BURMY_SANDY_CLOAK - 1] = NATIONAL_DEX_BURMY,
     [SPECIES_BURMY_TRASH_CLOAK - 1] = NATIONAL_DEX_BURMY,
@@ -1474,7 +1541,9 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_ROTOM_FROST - 1] = NATIONAL_DEX_ROTOM,
     [SPECIES_ROTOM_FAN - 1] = NATIONAL_DEX_ROTOM,
     [SPECIES_ROTOM_MOW - 1] = NATIONAL_DEX_ROTOM,
-    // Giratina
+    // Origin Forme
+    [SPECIES_DIALGA_ORIGIN - 1] = NATIONAL_DEX_DIALGA,
+    [SPECIES_PALKIA_ORIGIN - 1] = NATIONAL_DEX_PALKIA,
     [SPECIES_GIRATINA_ORIGIN - 1] = NATIONAL_DEX_GIRATINA,
     // Shaymin
     [SPECIES_SHAYMIN_SKY - 1] = NATIONAL_DEX_SHAYMIN,
@@ -1496,8 +1565,11 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_ARCEUS_DRAGON - 1] = NATIONAL_DEX_ARCEUS,
     [SPECIES_ARCEUS_DARK - 1] = NATIONAL_DEX_ARCEUS,
     [SPECIES_ARCEUS_FAIRY - 1] = NATIONAL_DEX_ARCEUS,
+#endif
+#if P_GEN_5_POKEMON == TRUE
     // Basculin
     [SPECIES_BASCULIN_BLUE_STRIPED - 1] = NATIONAL_DEX_BASCULIN,
+    [SPECIES_BASCULIN_WHITE_STRIPED - 1] = NATIONAL_DEX_BASCULIN,
     // Darmanitan
     [SPECIES_DARMANITAN_ZEN_MODE - 1] = NATIONAL_DEX_DARMANITAN,
     [SPECIES_DARMANITAN_ZEN_MODE_GALARIAN - 1] = NATIONAL_DEX_DARMANITAN,
@@ -1525,6 +1597,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_GENESECT_SHOCK_DRIVE - 1] = NATIONAL_DEX_GENESECT,
     [SPECIES_GENESECT_BURN_DRIVE - 1] = NATIONAL_DEX_GENESECT,
     [SPECIES_GENESECT_CHILL_DRIVE - 1] = NATIONAL_DEX_GENESECT,
+#endif
+#if P_GEN_6_POKEMON == TRUE
     // Greninja
     [SPECIES_GRENINJA_BATTLE_BOND - 1] = NATIONAL_DEX_GRENINJA,
     [SPECIES_GRENINJA_ASH - 1] = NATIONAL_DEX_GRENINJA,
@@ -1595,6 +1669,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_ZYGARDE_COMPLETE - 1] = NATIONAL_DEX_ZYGARDE,
     // Hoopa
     [SPECIES_HOOPA_UNBOUND - 1] = NATIONAL_DEX_HOOPA,
+#endif
+#if P_GEN_7_POKEMON == TRUE
     // Oricorio
     [SPECIES_ORICORIO_POM_POM - 1] = NATIONAL_DEX_ORICORIO,
     [SPECIES_ORICORIO_PAU - 1] = NATIONAL_DEX_ORICORIO,
@@ -1646,6 +1722,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     [SPECIES_NECROZMA_ULTRA - 1] = NATIONAL_DEX_NECROZMA,
     // Magearna
     [SPECIES_MAGEARNA_ORIGINAL_COLOR - 1] = NATIONAL_DEX_MAGEARNA,
+#endif
+#if P_GEN_8_POKEMON == TRUE
     // Cramorant
     [SPECIES_CRAMORANT_GULPING - 1] = NATIONAL_DEX_CRAMORANT,
     [SPECIES_CRAMORANT_GORGING - 1] = NATIONAL_DEX_CRAMORANT,
@@ -1683,6 +1761,9 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER - 1] = NATIONAL_DEX_CALYREX,
     [SPECIES_CALYREX_SHADOW_RIDER - 1] = NATIONAL_DEX_CALYREX,
+    [SPECIES_ENAMORUS_THERIAN - 1] = NATIONAL_DEX_ENAMORUS,
+    [SPECIES_BASCULEGION_FEMALE - 1] = NATIONAL_DEX_BASCULEGION,
+#endif
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -1729,7 +1810,9 @@ static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
     HOENN_TO_NATIONAL(RALTS),
     HOENN_TO_NATIONAL(KIRLIA),
     HOENN_TO_NATIONAL(GARDEVOIR),
+#if P_GEN_4_POKEMON == TRUE
     HOENN_TO_NATIONAL(GALLADE),
+#endif
     HOENN_TO_NATIONAL(SURSKIT),
     HOENN_TO_NATIONAL(MASQUERAIN),
     HOENN_TO_NATIONAL(SHROOMISH),
@@ -1761,7 +1844,9 @@ static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
     HOENN_TO_NATIONAL(GRAVELER),
     HOENN_TO_NATIONAL(GOLEM),
     HOENN_TO_NATIONAL(NOSEPASS),
+#if P_GEN_4_POKEMON == TRUE
     HOENN_TO_NATIONAL(PROBOPASS),
+#endif
     HOENN_TO_NATIONAL(SKITTY),
     HOENN_TO_NATIONAL(DELCATTY),
     HOENN_TO_NATIONAL(ZUBAT),
@@ -1793,7 +1878,9 @@ static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
     HOENN_TO_NATIONAL(MINUN),
     HOENN_TO_NATIONAL(MAGNEMITE),
     HOENN_TO_NATIONAL(MAGNETON),
+#if P_GEN_4_POKEMON == TRUE
     HOENN_TO_NATIONAL(MAGNEZONE),
+#endif
     HOENN_TO_NATIONAL(VOLTORB),
     HOENN_TO_NATIONAL(ELECTRODE),
     HOENN_TO_NATIONAL(ROTOM),
@@ -1809,9 +1896,13 @@ static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
     HOENN_TO_NATIONAL(CHERRIM),
     HOENN_TO_NATIONAL(DODUO),
     HOENN_TO_NATIONAL(DODRIO),
+#if P_GEN_4_POKEMON == TRUE
     HOENN_TO_NATIONAL(BUDEW),
     HOENN_TO_NATIONAL(ROSELIA),
     HOENN_TO_NATIONAL(ROSERADE),
+#else
+    HOENN_TO_NATIONAL(ROSELIA),
+#endif
     HOENN_TO_NATIONAL(GULPIN),
     HOENN_TO_NATIONAL(SWALOT),
     HOENN_TO_NATIONAL(SUNKERN),
@@ -1892,6 +1983,7 @@ static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
     HOENN_TO_NATIONAL(BANETTE),
     HOENN_TO_NATIONAL(DUSKULL),
     HOENN_TO_NATIONAL(DUSCLOPS),
+#if P_GEN_4_POKEMON == TRUE
     HOENN_TO_NATIONAL(DUSKNOIR),
     HOENN_TO_NATIONAL(SCRAGGY),
     HOENN_TO_NATIONAL(SCRAFTY),
@@ -1900,6 +1992,9 @@ static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
     HOENN_TO_NATIONAL(SLIGGOO),
     HOENN_TO_NATIONAL(GOODRA),
     HOENN_TO_NATIONAL(CHINGLING),
+#else
+    HOENN_TO_NATIONAL(TROPIUS),
+#endif
     HOENN_TO_NATIONAL(CHIMECHO),
     HOENN_TO_NATIONAL(ABSOL),
     HOENN_TO_NATIONAL(VULPIX),
@@ -1926,7 +2021,9 @@ static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
     HOENN_TO_NATIONAL(SCIZOR),
     HOENN_TO_NATIONAL(RHYHORN),
     HOENN_TO_NATIONAL(RHYDON),
+#if P_GEN_4_POKEMON == TRUE
     HOENN_TO_NATIONAL(RHYPERIOR),
+#endif
     HOENN_TO_NATIONAL(DRILBUR),
     HOENN_TO_NATIONAL(EXCADRILL),
     HOENN_TO_NATIONAL(LARVITAR),
@@ -1936,7 +2033,9 @@ static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
     HOENN_TO_NATIONAL(AVALUGG),
     HOENN_TO_NATIONAL(SNORUNT),
     HOENN_TO_NATIONAL(GLALIE),
+#if P_GEN_4_POKEMON == TRUE
     HOENN_TO_NATIONAL(FROSLASS),
+#endif
     HOENN_TO_NATIONAL(SPHEAL),
     HOENN_TO_NATIONAL(SEALEO),
     HOENN_TO_NATIONAL(WALREIN),
@@ -1994,62 +2093,58 @@ static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
 
 const struct SpindaSpot gSpindaSpotGraphics[] =
 {
-    {.x = 16, .y = 7, .image = INCBIN_U16("graphics/spinda_spots/spot_0.bin")},
-    {.x = 40, .y = 8, .image = INCBIN_U16("graphics/spinda_spots/spot_1.bin")},
-    {.x = 22, .y = 25, .image = INCBIN_U16("graphics/spinda_spots/spot_2.bin")},
-    {.x = 34, .y = 26, .image = INCBIN_U16("graphics/spinda_spots/spot_3.bin")}
+    {.x = 16, .y = 7, .image = INCBIN_U16("graphics/spinda_spots/spot_0.1bpp")},
+    {.x = 40, .y = 8, .image = INCBIN_U16("graphics/spinda_spots/spot_1.1bpp")},
+    {.x = 22, .y = 25, .image = INCBIN_U16("graphics/spinda_spots/spot_2.1bpp")},
+    {.x = 34, .y = 26, .image = INCBIN_U16("graphics/spinda_spots/spot_3.1bpp")}
 };
 
 #include "data/pokemon/item_effects.h"
 
 const s8 gNatureStatTable[NUM_NATURES][NUM_NATURE_STATS] =
-{
-                       // Atk Def Spd Sp.Atk Sp.Def
-    [NATURE_HARDY]   = {    0,  0,  0,     0,     0},
-    [NATURE_LONELY]  = {   +1, -1,  0,     0,     0},
-    [NATURE_BRAVE]   = {   +1,  0, -1,     0,     0},
-    [NATURE_ADAMANT] = {   +1,  0,  0,    -1,     0},
-    [NATURE_NAUGHTY] = {   +1,  0,  0,     0,    -1},
-    [NATURE_BOLD]    = {   -1, +1,  0,     0,     0},
-    [NATURE_DOCILE]  = {    0,  0,  0,     0,     0},
-    [NATURE_RELAXED] = {    0, +1, -1,     0,     0},
-    [NATURE_IMPISH]  = {    0, +1,  0,    -1,     0},
-    [NATURE_LAX]     = {    0, +1,  0,     0,    -1},
-    [NATURE_TIMID]   = {   -1,  0, +1,     0,     0},
-    [NATURE_HASTY]   = {    0, -1, +1,     0,     0},
-    [NATURE_SERIOUS] = {    0,  0,  0,     0,     0},
-    [NATURE_JOLLY]   = {    0,  0, +1,    -1,     0},
-    [NATURE_NAIVE]   = {    0,  0, +1,     0,    -1},
-    [NATURE_MODEST]  = {   -1,  0,  0,    +1,     0},
-    [NATURE_MILD]    = {    0, -1,  0,    +1,     0},
-    [NATURE_QUIET]   = {    0,  0, -1,    +1,     0},
-    [NATURE_BASHFUL] = {    0,  0,  0,     0,     0},
-    [NATURE_RASH]    = {    0,  0,  0,    +1,    -1},
-    [NATURE_CALM]    = {   -1,  0,  0,     0,    +1},
-    [NATURE_GENTLE]  = {    0, -1,  0,     0,    +1},
-    [NATURE_SASSY]   = {    0,  0, -1,     0,    +1},
-    [NATURE_CAREFUL] = {    0,  0,  0,    -1,    +1},
-    [NATURE_QUIRKY]  = {    0,  0,  0,     0,     0},
+{                      // Attack  Defense  Speed  Sp.Atk  Sp. Def
+    [NATURE_HARDY]   = {    0,      0,      0,      0,      0   },
+    [NATURE_LONELY]  = {   +1,     -1,      0,      0,      0   },
+    [NATURE_BRAVE]   = {   +1,      0,     -1,      0,      0   },
+    [NATURE_ADAMANT] = {   +1,      0,      0,     -1,      0   },
+    [NATURE_NAUGHTY] = {   +1,      0,      0,      0,     -1   },
+    [NATURE_BOLD]    = {   -1,     +1,      0,      0,      0   },
+    [NATURE_DOCILE]  = {    0,      0,      0,      0,      0   },
+    [NATURE_RELAXED] = {    0,     +1,     -1,      0,      0   },
+    [NATURE_IMPISH]  = {    0,     +1,      0,     -1,      0   },
+    [NATURE_LAX]     = {    0,     +1,      0,      0,     -1   },
+    [NATURE_TIMID]   = {   -1,      0,     +1,      0,      0   },
+    [NATURE_HASTY]   = {    0,     -1,     +1,      0,      0   },
+    [NATURE_SERIOUS] = {    0,      0,      0,      0,      0   },
+    [NATURE_JOLLY]   = {    0,      0,     +1,     -1,      0   },
+    [NATURE_NAIVE]   = {    0,      0,     +1,      0,     -1   },
+    [NATURE_MODEST]  = {   -1,      0,      0,     +1,      0   },
+    [NATURE_MILD]    = {    0,     -1,      0,     +1,      0   },
+    [NATURE_QUIET]   = {    0,      0,     -1,     +1,      0   },
+    [NATURE_BASHFUL] = {    0,      0,      0,      0,      0   },
+    [NATURE_RASH]    = {    0,      0,      0,     +1,     -1   },
+    [NATURE_CALM]    = {   -1,      0,      0,      0,     +1   },
+    [NATURE_GENTLE]  = {    0,     -1,      0,      0,     +1   },
+    [NATURE_SASSY]   = {    0,      0,     -1,      0,     +1   },
+    [NATURE_CAREFUL] = {    0,      0,      0,     -1,     +1   },
+    [NATURE_QUIRKY]  = {    0,      0,      0,      0,      0   },
 };
 
-#include "data/pokemon/tmhm_learnsets.h"
 #include "data/pokemon/trainer_class_lookups.h"
 #include "data/pokemon/experience_tables.h"
-#include "data/pokemon/base_stats.h"
+#include "data/pokemon/species_info.h"
 #include "data/pokemon/level_up_learnsets.h"
+#include "data/pokemon/teachable_learnsets.h"
 #include "data/pokemon/evolution.h"
 #include "data/pokemon/level_up_learnset_pointers.h"
+#include "data/pokemon/teachable_learnset_pointers.h"
 #include "data/pokemon/form_species_tables.h"
 #include "data/pokemon/form_species_table_pointers.h"
 #include "data/pokemon/form_change_tables.h"
 #include "data/pokemon/form_change_table_pointers.h"
 
 // SPECIES_NONE are ignored in the following two tables, so decrement before accessing these arrays to get the right result
-#if P_ENABLE_DEBUG == TRUE
 const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
-#else
-static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
-#endif
 {
     [SPECIES_BULBASAUR - 1]     = ANIM_V_JUMPS_H_JUMPS,
     [SPECIES_IVYSAUR - 1]       = ANIM_V_STRETCH,
@@ -2057,7 +2152,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_CHARMANDER - 1]    = ANIM_V_JUMPS_SMALL,
     [SPECIES_CHARMELEON - 1]    = ANIM_BACK_AND_LUNGE,
     [SPECIES_CHARIZARD - 1]     = ANIM_V_SHAKE,
-    [SPECIES_SQUIRTLE - 1]      = ANIM_SWING_CONCAVE,
+    [SPECIES_SQUIRTLE - 1]      = ANIM_V_JUMPS_SMALL,
     [SPECIES_WARTORTLE - 1]     = ANIM_SHRINK_GROW,
     [SPECIES_BLASTOISE - 1]     = ANIM_V_SHAKE_TWICE,
     [SPECIES_CATERPIE - 1]      = ANIM_SWING_CONCAVE,
@@ -2071,31 +2166,31 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_PIDGEOT - 1]       = ANIM_FRONT_FLIP,
     [SPECIES_RATTATA - 1]       = ANIM_RAPID_H_HOPS,
     [SPECIES_RATICATE - 1]      = ANIM_FIGURE_8,
-    [SPECIES_SPEAROW - 1]       = ANIM_RISING_WOBBLE,
+    [SPECIES_SPEAROW - 1]       = ANIM_H_JUMPS,
     [SPECIES_FEAROW - 1]        = ANIM_FIGURE_8,
-    [SPECIES_EKANS - 1]         = ANIM_H_STRETCH,
+    [SPECIES_EKANS - 1]         = ANIM_V_STRETCH,
     [SPECIES_ARBOK - 1]         = ANIM_V_STRETCH,
     [SPECIES_PIKACHU - 1]       = ANIM_FLASH_YELLOW,
-    [SPECIES_RAICHU - 1]        = ANIM_V_STRETCH,
+    [SPECIES_RAICHU - 1]        = ANIM_GROW_VIBRATE,
     [SPECIES_SANDSHREW - 1]     = ANIM_SWING_CONCAVE_FAST_SHORT,
-    [SPECIES_SANDSLASH - 1]     = ANIM_V_STRETCH,
+    [SPECIES_SANDSLASH - 1]     = ANIM_H_SHAKE,
     [SPECIES_NIDORAN_F - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_NIDORINA - 1]      = ANIM_V_STRETCH,
     [SPECIES_NIDOQUEEN - 1]     = ANIM_H_SHAKE,
     [SPECIES_NIDORAN_M - 1]     = ANIM_GROW_VIBRATE,
-    [SPECIES_NIDORINO - 1]      = ANIM_SHRINK_GROW,
+    [SPECIES_NIDORINO - 1]      = ANIM_V_STRETCH,
     [SPECIES_NIDOKING - 1]      = ANIM_H_SHAKE,
     [SPECIES_CLEFAIRY - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_CLEFABLE - 1]      = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL_SLOW,
+    [SPECIES_CLEFABLE - 1]      = ANIM_V_STRETCH,
     [SPECIES_VULPIX - 1]        = ANIM_V_STRETCH,
-    [SPECIES_NINETALES - 1]     = ANIM_V_SHAKE,
+    [SPECIES_NINETALES - 1]     = ANIM_GROW_VIBRATE,
     [SPECIES_JIGGLYPUFF - 1]    = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
     [SPECIES_WIGGLYTUFF - 1]    = ANIM_H_JUMPS,
     [SPECIES_ZUBAT - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_GOLBAT - 1]        = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_ODDISH - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_GLOOM - 1]         = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-    [SPECIES_VILEPLUME - 1]     = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
+    [SPECIES_VILEPLUME - 1]     = ANIM_V_SHAKE_TWICE,
     [SPECIES_PARAS - 1]         = ANIM_H_SLIDE_SLOW,
     [SPECIES_PARASECT - 1]      = ANIM_H_SHAKE,
     [SPECIES_VENONAT - 1]       = ANIM_V_JUMPS_H_JUMPS,
@@ -2109,17 +2204,17 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_MANKEY - 1]        = ANIM_H_JUMPS_V_STRETCH,
     [SPECIES_PRIMEAPE - 1]      = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
     [SPECIES_GROWLITHE - 1]     = ANIM_BACK_AND_LUNGE,
-    [SPECIES_ARCANINE - 1]      = ANIM_H_VIBRATE,
+    [SPECIES_ARCANINE - 1]      = ANIM_H_SHAKE,
     [SPECIES_POLIWAG - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_POLIWHIRL - 1]     = ANIM_H_JUMPS_V_STRETCH,
     [SPECIES_POLIWRATH - 1]     = ANIM_V_SHAKE_TWICE,
     [SPECIES_ABRA - 1]          = ANIM_H_JUMPS,
     [SPECIES_KADABRA - 1]       = ANIM_GROW_VIBRATE,
-    [SPECIES_ALAKAZAM - 1]      = ANIM_V_STRETCH,
+    [SPECIES_ALAKAZAM - 1]      = ANIM_GROW_VIBRATE,
     [SPECIES_MACHOP - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_MACHOKE - 1]       = ANIM_V_SHAKE,
     [SPECIES_MACHAMP - 1]       = ANIM_H_JUMPS,
-    [SPECIES_BELLSPROUT - 1]    = ANIM_V_STRETCH,
+    [SPECIES_BELLSPROUT - 1]    = ANIM_H_JUMPS,
     [SPECIES_WEEPINBELL - 1]    = ANIM_SWING_CONVEX,
     [SPECIES_VICTREEBEL - 1]    = ANIM_H_JUMPS_V_STRETCH,
     [SPECIES_TENTACOOL - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
@@ -2128,85 +2223,85 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_GRAVELER - 1]      = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
     [SPECIES_GOLEM - 1]         = ANIM_ROTATE_UP_SLAM_DOWN,
     [SPECIES_PONYTA - 1]        = ANIM_GLOW_ORANGE,
-    [SPECIES_RAPIDASH - 1]      = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_RAPIDASH - 1]      = ANIM_H_SHAKE,
     [SPECIES_SLOWPOKE - 1]      = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-    [SPECIES_SLOWBRO - 1]       = ANIM_SWING_CONCAVE,
+    [SPECIES_SLOWBRO - 1]       = ANIM_GROW_VIBRATE,
     [SPECIES_MAGNEMITE - 1]     = ANIM_TUMBLING_FRONT_FLIP_TWICE,
     [SPECIES_MAGNETON - 1]      = ANIM_FLASH_YELLOW,
     [SPECIES_FARFETCHD - 1]     = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
     [SPECIES_DODUO - 1]         = ANIM_H_SHAKE_SLOW,
-    [SPECIES_DODRIO - 1]        = ANIM_LUNGE_GROW,
-    [SPECIES_SEEL - 1]          = ANIM_SWING_CONCAVE,
+    [SPECIES_DODRIO - 1]        = ANIM_V_STRETCH,
+    [SPECIES_SEEL - 1]          = ANIM_H_STRETCH,
     [SPECIES_DEWGONG - 1]       = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_GRIMER - 1]        = ANIM_H_SLIDE_SLOW,
-    [SPECIES_MUK - 1]           = ANIM_DEEP_V_SQUISH_AND_BOUNCE,
+    [SPECIES_MUK - 1]           = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_SHELLDER - 1]      = ANIM_TWIST,
     [SPECIES_CLOYSTER - 1]      = ANIM_H_SLIDE_WOBBLE,
-    [SPECIES_GASTLY - 1]        = ANIM_GLOW_BLACK,
+    [SPECIES_GASTLY - 1]        = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
     [SPECIES_HAUNTER - 1]       = ANIM_FLICKER_INCREASING,
     [SPECIES_GENGAR - 1]        = ANIM_GROW_IN_STAGES,
-    [SPECIES_ONIX - 1]          = ANIM_RAPID_H_HOPS,
-    [SPECIES_DROWZEE - 1]       = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
-    [SPECIES_HYPNO - 1]         = ANIM_GROW_VIBRATE,
+    [SPECIES_ONIX - 1]          = ANIM_H_SHAKE,
+    [SPECIES_DROWZEE - 1]       = ANIM_V_STRETCH,
+    [SPECIES_HYPNO - 1]         = ANIM_H_SLIDE_SLOW,
     [SPECIES_KRABBY - 1]        = ANIM_H_SLIDE,
-    [SPECIES_KINGLER - 1]       = ANIM_ZIGZAG_SLOW,
+    [SPECIES_KINGLER - 1]       = ANIM_H_SLIDE_SLOW,
     [SPECIES_VOLTORB - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_ELECTRODE - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_EXEGGCUTE - 1]     = ANIM_H_SLIDE_SLOW,
     [SPECIES_EXEGGUTOR - 1]     = ANIM_H_JUMPS_V_STRETCH,
-    [SPECIES_CUBONE - 1]        = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
+    [SPECIES_CUBONE - 1]        = ANIM_V_JUMPS_SMALL,
     [SPECIES_MAROWAK - 1]       = ANIM_BOUNCE_ROTATE_TO_SIDES,
     [SPECIES_HITMONLEE - 1]     = ANIM_H_STRETCH,
     [SPECIES_HITMONCHAN - 1]    = ANIM_GROW_VIBRATE,
     [SPECIES_LICKITUNG - 1]     = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-    [SPECIES_KOFFING - 1]       = ANIM_SHRINK_GROW,
+    [SPECIES_KOFFING - 1]       = ANIM_V_SLIDE_WOBBLE_SMALL,
     [SPECIES_WEEZING - 1]       = ANIM_V_SLIDE,
     [SPECIES_RHYHORN - 1]       = ANIM_V_SHAKE,
-    [SPECIES_RHYDON - 1]        = ANIM_SHRINK_GROW,
-    [SPECIES_CHANSEY - 1]       = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_RHYDON - 1]        = ANIM_H_SHAKE,
+    [SPECIES_CHANSEY - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_TANGELA - 1]       = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
     [SPECIES_KANGASKHAN - 1]    = ANIM_V_STRETCH,
-    [SPECIES_HORSEA - 1]        = ANIM_TWIST,
+    [SPECIES_HORSEA - 1]        = ANIM_V_JUMPS_SMALL,
     [SPECIES_SEADRA - 1]        = ANIM_V_SLIDE,
-    [SPECIES_GOLDEEN - 1]       = ANIM_SWING_CONVEX,
+    [SPECIES_GOLDEEN - 1]       = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_SEAKING - 1]       = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_STARYU - 1]        = ANIM_TWIST_TWICE,
     [SPECIES_STARMIE - 1]       = ANIM_TWIST,
     [SPECIES_MR_MIME - 1]       = ANIM_H_SLIDE_SLOW,
     [SPECIES_SCYTHER - 1]       = ANIM_H_VIBRATE,
     [SPECIES_JYNX - 1]          = ANIM_V_STRETCH,
-    [SPECIES_ELECTABUZZ - 1]    = ANIM_FLASH_YELLOW,
+    [SPECIES_ELECTABUZZ - 1]    = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL_SLOW,
     [SPECIES_MAGMAR - 1]        = ANIM_H_SHAKE,
-    [SPECIES_PINSIR - 1]        = ANIM_GROW_VIBRATE,
+    [SPECIES_PINSIR - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_TAUROS - 1]        = ANIM_V_SHAKE_TWICE,
     [SPECIES_MAGIKARP - 1]      = ANIM_BOUNCE_ROTATE_TO_SIDES,
     [SPECIES_GYARADOS - 1]      = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
     [SPECIES_LAPRAS - 1]        = ANIM_V_STRETCH,
     [SPECIES_DITTO - 1]         = ANIM_CIRCULAR_STRETCH_TWICE,
     [SPECIES_EEVEE - 1]         = ANIM_V_STRETCH,
-    [SPECIES_VAPOREON - 1]      = ANIM_V_STRETCH,
-    [SPECIES_JOLTEON - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_FLAREON - 1]       = ANIM_V_STRETCH,
+    [SPECIES_VAPOREON - 1]      = ANIM_GLOW_BLUE,
+    [SPECIES_JOLTEON - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_FLAREON - 1]       = ANIM_V_SHAKE,
     [SPECIES_PORYGON - 1]       = ANIM_V_JUMPS_SMALL,
     [SPECIES_OMANYTE - 1]       = ANIM_V_SLIDE_WOBBLE_SMALL,
     [SPECIES_OMASTAR - 1]       = ANIM_GROW_VIBRATE,
     [SPECIES_KABUTO - 1]        = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_KABUTOPS - 1]      = ANIM_H_SHAKE,
     [SPECIES_AERODACTYL - 1]    = ANIM_V_SLIDE_SLOW,
-    [SPECIES_SNORLAX - 1]       = ANIM_SWING_CONCAVE,
+    [SPECIES_SNORLAX - 1]       = ANIM_V_STRETCH,
     [SPECIES_ARTICUNO - 1]      = ANIM_GROW_VIBRATE,
     [SPECIES_ZAPDOS - 1]        = ANIM_FLASH_YELLOW,
     [SPECIES_MOLTRES - 1]       = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_DRATINI - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_DRAGONAIR - 1]     = ANIM_V_SHAKE,
-    [SPECIES_DRAGONITE - 1]     = ANIM_V_SLIDE_SLOW,
+    [SPECIES_DRAGONAIR - 1]     = ANIM_GROW_VIBRATE,
+    [SPECIES_DRAGONITE - 1]     = ANIM_V_SHAKE,
     [SPECIES_MEWTWO - 1]        = ANIM_GROW_VIBRATE,
-    [SPECIES_MEW - 1]           = ANIM_SWING_CONVEX,
+    [SPECIES_MEW - 1]           = ANIM_ZIGZAG_SLOW,
     [SPECIES_CHIKORITA - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_BAYLEEF - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_MEGANIUM - 1]      = ANIM_V_STRETCH,
-    [SPECIES_CYNDAQUIL - 1]     = ANIM_V_JUMPS_SMALL,
-    [SPECIES_QUILAVA - 1]       = ANIM_V_STRETCH,
+    [SPECIES_MEGANIUM - 1]      = ANIM_GROW_VIBRATE,
+    [SPECIES_CYNDAQUIL - 1]     = ANIM_V_STRETCH,
+    [SPECIES_QUILAVA - 1]       = ANIM_H_STRETCH,
     [SPECIES_TYPHLOSION - 1]    = ANIM_V_SHAKE,
     [SPECIES_TOTODILE - 1]      = ANIM_H_JUMPS,
     [SPECIES_CROCONAW - 1]      = ANIM_H_SHAKE,
@@ -2216,7 +2311,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_HOOTHOOT - 1]      = ANIM_V_SLIDE_SLOW,
     [SPECIES_NOCTOWL - 1]       = ANIM_V_STRETCH,
     [SPECIES_LEDYBA - 1]        = ANIM_V_JUMPS_SMALL,
-    [SPECIES_LEDIAN - 1]        = ANIM_V_SLIDE_SLOW,
+    [SPECIES_LEDIAN - 1]        = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_SPINARAK - 1]      = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
     [SPECIES_ARIADOS - 1]       = ANIM_H_SHAKE,
     [SPECIES_CROBAT - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
@@ -2225,23 +2320,23 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_PICHU - 1]         = ANIM_V_JUMPS_BIG,
     [SPECIES_CLEFFA - 1]        = ANIM_V_JUMPS_SMALL,
     [SPECIES_IGGLYBUFF - 1]     = ANIM_SWING_CONCAVE_FAST,
-    [SPECIES_TOGEPI - 1]        = ANIM_SWING_CONCAVE,
+    [SPECIES_TOGEPI - 1]        = ANIM_V_JUMPS_BIG,
     [SPECIES_TOGETIC - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_NATU - 1]          = ANIM_H_JUMPS,
     [SPECIES_XATU - 1]          = ANIM_GROW_VIBRATE,
     [SPECIES_MAREEP - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_FLAAFFY - 1]       = ANIM_V_JUMPS_BIG,
+    [SPECIES_FLAAFFY - 1]       = ANIM_V_STRETCH,
     [SPECIES_AMPHAROS - 1]      = ANIM_FLASH_YELLOW,
-    [SPECIES_BELLOSSOM - 1]     = ANIM_SWING_CONCAVE,
+    [SPECIES_BELLOSSOM - 1]     = ANIM_H_SLIDE_SLOW,
     [SPECIES_MARILL - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_AZUMARILL - 1]     = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL_SLOW,
+    [SPECIES_AZUMARILL - 1]     = ANIM_SHRINK_GROW,
     [SPECIES_SUDOWOODO - 1]     = ANIM_H_SLIDE_SLOW,
     [SPECIES_POLITOED - 1]      = ANIM_H_JUMPS_V_STRETCH,
     [SPECIES_HOPPIP - 1]        = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_SKIPLOOM - 1]      = ANIM_RISING_WOBBLE,
     [SPECIES_JUMPLUFF - 1]      = ANIM_V_SLIDE_WOBBLE_SMALL,
     [SPECIES_AIPOM - 1]         = ANIM_H_JUMPS_V_STRETCH,
-    [SPECIES_SUNKERN - 1]       = ANIM_V_JUMPS_SMALL,
+    [SPECIES_SUNKERN - 1]       = ANIM_H_JUMPS,
     [SPECIES_SUNFLORA - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_YANMA - 1]         = ANIM_FIGURE_8,
     [SPECIES_WOOPER - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
@@ -2252,65 +2347,65 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_SLOWKING - 1]      = ANIM_SHRINK_GROW,
     [SPECIES_MISDREAVUS - 1]    = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_UNOWN - 1]         = ANIM_ZIGZAG_FAST,
-    [SPECIES_WOBBUFFET - 1]     = ANIM_DEEP_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GIRAFARIG - 1]     = ANIM_V_JUMPS_BIG,
+    [SPECIES_WOBBUFFET - 1]     = ANIM_GROW_VIBRATE,
+    [SPECIES_GIRAFARIG - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_PINECO - 1]        = ANIM_SWING_CONCAVE,
     [SPECIES_FORRETRESS - 1]    = ANIM_V_SHAKE,
     [SPECIES_DUNSPARCE - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_GLIGAR - 1]        = ANIM_SHRINK_GROW,
-    [SPECIES_STEELIX - 1]       = ANIM_H_SHAKE,
+    [SPECIES_STEELIX - 1]       = ANIM_V_SHAKE,
     [SPECIES_SNUBBULL - 1]      = ANIM_V_STRETCH,
     [SPECIES_GRANBULL - 1]      = ANIM_V_SHAKE,
     [SPECIES_QWILFISH - 1]      = ANIM_GROW_IN_STAGES,
     [SPECIES_SCIZOR - 1]        = ANIM_H_VIBRATE,
     [SPECIES_SHUCKLE - 1]       = ANIM_SWING_CONCAVE,
-    [SPECIES_HERACROSS - 1]     = ANIM_LUNGE_GROW,
-    [SPECIES_SNEASEL - 1]       = ANIM_H_STRETCH,
+    [SPECIES_HERACROSS - 1]     = ANIM_V_STRETCH,
+    [SPECIES_SNEASEL - 1]       = ANIM_H_JUMPS,
     [SPECIES_TEDDIURSA - 1]     = ANIM_V_STRETCH,
-    [SPECIES_URSARING - 1]      = ANIM_V_SHAKE,
+    [SPECIES_URSARING - 1]      = ANIM_H_SHAKE,
     [SPECIES_SLUGMA - 1]        = ANIM_V_STRETCH,
     [SPECIES_MAGCARGO - 1]      = ANIM_V_STRETCH,
     [SPECIES_SWINUB - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_PILOSWINE - 1]     = ANIM_H_SHAKE,
     [SPECIES_CORSOLA - 1]       = ANIM_H_SLIDE,
-    [SPECIES_REMORAID - 1]      = ANIM_V_JUMPS_SMALL,
+    [SPECIES_REMORAID - 1]      = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_OCTILLERY - 1]     = ANIM_V_STRETCH,
-    [SPECIES_DELIBIRD - 1]      = ANIM_V_JUMPS_SMALL,
+    [SPECIES_DELIBIRD - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_MANTINE - 1]       = ANIM_SWING_CONVEX,
-    [SPECIES_SKARMORY - 1]      = ANIM_V_STRETCH,
+    [SPECIES_SKARMORY - 1]      = ANIM_V_SHAKE,
     [SPECIES_HOUNDOUR - 1]      = ANIM_V_STRETCH,
     [SPECIES_HOUNDOOM - 1]      = ANIM_V_SHAKE,
     [SPECIES_KINGDRA - 1]       = ANIM_CIRCLE_INTO_BG,
     [SPECIES_PHANPY - 1]        = ANIM_H_JUMPS_V_STRETCH,
-    [SPECIES_DONPHAN - 1]       = ANIM_V_SHAKE_TWICE,
+    [SPECIES_DONPHAN - 1]       = ANIM_ROTATE_UP_SLAM_DOWN,
     [SPECIES_PORYGON2 - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_STANTLER - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SMEARGLE - 1]      = ANIM_H_JUMPS,
-    [SPECIES_TYROGUE - 1]       = ANIM_H_STRETCH,
+    [SPECIES_SMEARGLE - 1]      = ANIM_H_JUMPS_V_STRETCH,
+    [SPECIES_TYROGUE - 1]       = ANIM_BACK_AND_LUNGE,
     [SPECIES_HITMONTOP - 1]     = ANIM_H_VIBRATE,
     [SPECIES_SMOOCHUM - 1]      = ANIM_GROW_VIBRATE,
     [SPECIES_ELEKID - 1]        = ANIM_FLASH_YELLOW,
     [SPECIES_MAGBY - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_MILTANK - 1]       = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_BLISSEY - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_RAIKOU - 1]        = ANIM_FLASH_YELLOW,
+    [SPECIES_RAIKOU - 1]        = ANIM_V_STRETCH,
     [SPECIES_ENTEI - 1]         = ANIM_GROW_VIBRATE,
     [SPECIES_SUICUNE - 1]       = ANIM_V_SHAKE,
     [SPECIES_LARVITAR - 1]      = ANIM_V_JUMPS_SMALL,
-    [SPECIES_PUPITAR - 1]       = ANIM_V_SHAKE,
-    [SPECIES_TYRANITAR - 1]     = ANIM_H_SHAKE,
+    [SPECIES_PUPITAR - 1]       = ANIM_H_SHAKE,
+    [SPECIES_TYRANITAR - 1]     = ANIM_V_SHAKE,
     [SPECIES_LUGIA - 1]         = ANIM_GROW_IN_STAGES,
     [SPECIES_HO_OH - 1]         = ANIM_GROW_VIBRATE,
-    [SPECIES_CELEBI - 1]        = ANIM_RISING_WOBBLE,
+    [SPECIES_CELEBI - 1]        = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_TREECKO - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_GROVYLE - 1]       = ANIM_V_STRETCH,
     [SPECIES_SCEPTILE - 1]      = ANIM_V_SHAKE,
-    [SPECIES_TORCHIC - 1]       = ANIM_H_STRETCH,
+    [SPECIES_TORCHIC - 1]       = ANIM_V_JUMPS_SMALL,
     [SPECIES_COMBUSKEN - 1]     = ANIM_V_JUMPS_H_JUMPS,
     [SPECIES_BLAZIKEN - 1]      = ANIM_H_SHAKE,
     [SPECIES_MUDKIP - 1]        = ANIM_CIRCULAR_STRETCH_TWICE,
-    [SPECIES_MARSHTOMP - 1]     = ANIM_V_SLIDE,
-    [SPECIES_SWAMPERT - 1]      = ANIM_V_JUMPS_BIG,
+    [SPECIES_MARSHTOMP - 1]     = ANIM_V_STRETCH,
+    [SPECIES_SWAMPERT - 1]      = ANIM_H_SHAKE,
     [SPECIES_POOCHYENA - 1]     = ANIM_V_SHAKE,
     [SPECIES_MIGHTYENA - 1]     = ANIM_V_SHAKE,
     [SPECIES_ZIGZAGOON - 1]     = ANIM_H_SLIDE,
@@ -2323,7 +2418,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_LOTAD - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_LOMBRE - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_LUDICOLO - 1]      = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
-    [SPECIES_SEEDOT - 1]        = ANIM_BOUNCE_ROTATE_TO_SIDES,
+    [SPECIES_SEEDOT - 1]        = ANIM_V_JUMPS_H_JUMPS,
     [SPECIES_NUZLEAF - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_SHIFTRY - 1]       = ANIM_H_VIBRATE,
     [SPECIES_TAILLOW - 1]       = ANIM_V_JUMPS_BIG,
@@ -2332,7 +2427,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_PELIPPER - 1]      = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_RALTS - 1]         = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_KIRLIA - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GARDEVOIR - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_GARDEVOIR - 1]     = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_SURSKIT - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_MASQUERAIN - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_SHROOMISH - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
@@ -2344,12 +2439,12 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_NINJASK - 1]       = ANIM_H_SLIDE_SLOW,
     [SPECIES_SHEDINJA - 1]      = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_WHISMUR - 1]       = ANIM_H_SLIDE,
-    [SPECIES_LOUDRED - 1]       = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
+    [SPECIES_LOUDRED - 1]       = ANIM_SHRINK_GROW,
     [SPECIES_EXPLOUD - 1]       = ANIM_V_SHAKE_TWICE,
-    [SPECIES_MAKUHITA - 1]      = ANIM_SWING_CONCAVE,
+    [SPECIES_MAKUHITA - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_HARIYAMA - 1]      = ANIM_ROTATE_UP_TO_SIDES,
     [SPECIES_AZURILL - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_NOSEPASS - 1]      = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
+    [SPECIES_NOSEPASS - 1]      = ANIM_H_SLIDE_SLOW,
     [SPECIES_SKITTY - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_DELCATTY - 1]      = ANIM_V_STRETCH,
     [SPECIES_SABLEYE - 1]       = ANIM_GLOW_BLACK,
@@ -2361,10 +2456,10 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_MEDICHAM - 1]      = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_ELECTRIKE - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_MANECTRIC - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PLUSLE - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_MINUN - 1]         = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_PLUSLE - 1]        = ANIM_V_JUMPS_H_JUMPS,
+    [SPECIES_MINUN - 1]         = ANIM_V_JUMPS_H_JUMPS,
     [SPECIES_VOLBEAT - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ILLUMISE - 1]      = ANIM_BOUNCE_ROTATE_TO_SIDES,
+    [SPECIES_ILLUMISE - 1]      = ANIM_RISING_WOBBLE,
     [SPECIES_ROSELIA - 1]       = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_GULPIN - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_SWALOT - 1]        = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
@@ -2383,8 +2478,8 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_FLYGON - 1]        = ANIM_ZIGZAG_SLOW,
     [SPECIES_CACNEA - 1]        = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
     [SPECIES_CACTURNE - 1]      = ANIM_V_SLIDE,
-    [SPECIES_SWABLU - 1]        = ANIM_V_SLIDE,
-    [SPECIES_ALTARIA - 1]       = ANIM_H_STRETCH,
+    [SPECIES_SWABLU - 1]        = ANIM_GROW_VIBRATE,
+    [SPECIES_ALTARIA - 1]       = ANIM_V_STRETCH,
     [SPECIES_ZANGOOSE - 1]      = ANIM_GROW_VIBRATE,
     [SPECIES_SEVIPER - 1]       = ANIM_V_STRETCH,
     [SPECIES_LUNATONE - 1]      = ANIM_SWING_CONVEX_FAST,
@@ -2400,11 +2495,11 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_ANORITH - 1]       = ANIM_TWIST,
     [SPECIES_ARMALDO - 1]       = ANIM_V_SHAKE,
     [SPECIES_FEEBAS - 1]        = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
-    [SPECIES_MILOTIC - 1]       = ANIM_GLOW_BLUE,
+    [SPECIES_MILOTIC - 1]       = ANIM_CIRCULAR_STRETCH_TWICE,
     [SPECIES_CASTFORM - 1]      = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_KECLEON - 1]       = ANIM_FLICKER_INCREASING,
     [SPECIES_SHUPPET - 1]       = ANIM_V_SLIDE_WOBBLE,
-    [SPECIES_BANETTE - 1]       = ANIM_SWING_CONVEX,
+    [SPECIES_BANETTE - 1]       = ANIM_CIRCULAR_STRETCH_TWICE,
     [SPECIES_DUSKULL - 1]       = ANIM_ZIGZAG_FAST,
     [SPECIES_DUSCLOPS - 1]      = ANIM_H_VIBRATE,
     [SPECIES_TROPIUS - 1]       = ANIM_V_SHAKE,
@@ -2413,7 +2508,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_WYNAUT - 1]        = ANIM_H_JUMPS_V_STRETCH,
     [SPECIES_SNORUNT - 1]       = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_GLALIE - 1]        = ANIM_ZIGZAG_FAST,
-    [SPECIES_SPHEAL - 1]        = ANIM_SPIN,
+    [SPECIES_SPHEAL - 1]        = ANIM_V_STRETCH,
     [SPECIES_SEALEO - 1]        = ANIM_V_STRETCH,
     [SPECIES_WALREIN - 1]       = ANIM_H_SHAKE,
     [SPECIES_CLAMPERL - 1]      = ANIM_TWIST,
@@ -2421,364 +2516,363 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_GOREBYSS - 1]      = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_RELICANTH - 1]     = ANIM_TIP_MOVE_FORWARD,
     [SPECIES_LUVDISC - 1]       = ANIM_H_SLIDE_WOBBLE,
-    [SPECIES_BAGON - 1]         = ANIM_V_SHAKE_TWICE,
+    [SPECIES_BAGON - 1]         = ANIM_H_SHAKE,
     [SPECIES_SHELGON - 1]       = ANIM_V_SLIDE,
     [SPECIES_SALAMENCE - 1]     = ANIM_H_SHAKE,
     [SPECIES_BELDUM - 1]        = ANIM_H_SHAKE,
     [SPECIES_METANG - 1]        = ANIM_V_SLIDE,
     [SPECIES_METAGROSS - 1]     = ANIM_V_SHAKE,
     [SPECIES_REGIROCK - 1]      = ANIM_CIRCULAR_STRETCH_TWICE,
-    [SPECIES_REGICE - 1]        = ANIM_FOUR_PETAL,
+    [SPECIES_REGICE - 1]        = ANIM_H_SLIDE_SLOW,
     [SPECIES_REGISTEEL - 1]     = ANIM_GROW_VIBRATE,
-    [SPECIES_LATIAS - 1]        = ANIM_SWING_CONCAVE_FAST_SHORT,
-    [SPECIES_LATIOS - 1]        = ANIM_V_SHAKE,
+    [SPECIES_LATIAS - 1]        = ANIM_ZIGZAG_SLOW,
+    [SPECIES_LATIOS - 1]        = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
     [SPECIES_KYOGRE - 1]        = ANIM_SWING_CONCAVE_FAST_SHORT,
     [SPECIES_GROUDON - 1]       = ANIM_V_SHAKE,
     [SPECIES_RAYQUAZA - 1]      = ANIM_H_SHAKE,
-    [SPECIES_JIRACHI - 1]       = ANIM_SWING_CONVEX,
-    [SPECIES_DEOXYS - 1]        = ANIM_H_PIVOT,
+    [SPECIES_JIRACHI - 1]       = ANIM_RISING_WOBBLE,
+    [SPECIES_DEOXYS - 1]        = ANIM_GROW_VIBRATE,
 
     // Gen 4
-    [SPECIES_TURTWIG - 1]       = ANIM_V_SLIDE,
-    [SPECIES_GROTLE - 1]        = ANIM_H_SLIDE,
-    [SPECIES_TORTERRA - 1]      = ANIM_V_SHAKE,
+    [SPECIES_TURTWIG - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_GROTLE - 1]        = ANIM_V_STRETCH,
+    [SPECIES_TORTERRA - 1]      = ANIM_H_SHAKE,
     [SPECIES_CHIMCHAR - 1]      = ANIM_V_JUMPS_BIG,
-    [SPECIES_MONFERNO - 1]      = ANIM_H_SHAKE_SLOW,
-    [SPECIES_INFERNAPE - 1]     = ANIM_BACK_AND_LUNGE,
-    [SPECIES_PIPLUP - 1]        = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-    [SPECIES_PRINPLUP - 1]      = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-    [SPECIES_EMPOLEON - 1]      = ANIM_V_SHAKE_TWICE,
+    [SPECIES_MONFERNO - 1]      = ANIM_H_JUMPS_V_STRETCH,
+    [SPECIES_INFERNAPE - 1]     = ANIM_V_STRETCH,
+    [SPECIES_PIPLUP - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_PRINPLUP - 1]      = ANIM_V_STRETCH,
+    [SPECIES_EMPOLEON - 1]      = ANIM_V_STRETCH,
     [SPECIES_STARLY - 1]        = ANIM_V_STRETCH,
     [SPECIES_STARAVIA - 1]      = ANIM_V_STRETCH,
-    [SPECIES_STARAPTOR - 1]     = ANIM_H_STRETCH,
-    [SPECIES_BIDOOF - 1]        = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-    [SPECIES_BIBAREL - 1]       = ANIM_GROW,
-    [SPECIES_KRICKETOT - 1]     = ANIM_V_SHAKE,
-    [SPECIES_KRICKETUNE - 1]    = ANIM_V_SHAKE,
-    [SPECIES_SHINX - 1]         = ANIM_V_STRETCH,
-    [SPECIES_LUXIO - 1]         = ANIM_V_STRETCH,
+    [SPECIES_STARAPTOR - 1]     = ANIM_V_SHAKE,
+    [SPECIES_BIDOOF - 1]        = ANIM_H_SLIDE_SLOW,
+    [SPECIES_BIBAREL - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_KRICKETOT - 1]     = ANIM_H_JUMPS,
+    [SPECIES_KRICKETUNE - 1]    = ANIM_H_SLIDE_SLOW,
+    [SPECIES_SHINX - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_LUXIO - 1]         = ANIM_H_STRETCH,
     [SPECIES_LUXRAY - 1]        = ANIM_GLOW_YELLOW,
-    [SPECIES_BUDEW - 1]         = ANIM_SHRINK_GROW,
-    [SPECIES_ROSERADE - 1]      = ANIM_GLOW_PURPLE,
-    [SPECIES_CRANIDOS - 1]      = ANIM_V_SHAKE_TWICE,
+    [SPECIES_BUDEW - 1]         = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_ROSERADE - 1]      = ANIM_H_VIBRATE,
+    [SPECIES_CRANIDOS - 1]      = ANIM_V_STRETCH,
     [SPECIES_RAMPARDOS - 1]     = ANIM_V_SHAKE_TWICE,
     [SPECIES_SHIELDON - 1]      = ANIM_V_SHAKE,
-    [SPECIES_BASTIODON - 1]     = ANIM_H_SHAKE,
-    [SPECIES_BURMY - 1]         = ANIM_V_JUMPS_BIG,
-    [SPECIES_WORMADAM - 1]      = ANIM_V_JUMPS_BIG,
+    [SPECIES_BASTIODON - 1]     = ANIM_BACK_AND_LUNGE,
+    [SPECIES_BURMY - 1]         = ANIM_V_STRETCH,
+    [SPECIES_WORMADAM - 1]      = ANIM_SWING_CONVEX_FAST_SHORT,
     [SPECIES_MOTHIM - 1]        = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_COMBEE - 1]        = ANIM_V_SLIDE_WOBBLE,
-    [SPECIES_VESPIQUEN - 1]     = ANIM_GLOW_ORANGE,
+    [SPECIES_VESPIQUEN - 1]     = ANIM_LUNGE_GROW,
     [SPECIES_PACHIRISU - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_BUIZEL - 1]        = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_FLOATZEL - 1]      = ANIM_SHRINK_GROW,
-    [SPECIES_CHERUBI - 1]       = ANIM_DEEP_V_SQUISH_AND_BOUNCE,
+    [SPECIES_BUIZEL - 1]        = ANIM_GROW_VIBRATE,
+    [SPECIES_FLOATZEL - 1]      = ANIM_H_JUMPS_V_STRETCH,
+    [SPECIES_CHERUBI - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_CHERRIM - 1]       = ANIM_DEEP_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SHELLOS - 1]       = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-    [SPECIES_GASTRODON - 1]     = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_SHELLOS - 1]       = ANIM_V_STRETCH,
+    [SPECIES_GASTRODON - 1]     = ANIM_CIRCULAR_STRETCH_TWICE,
     [SPECIES_AMBIPOM - 1]       = ANIM_BACK_AND_LUNGE,
     [SPECIES_DRIFLOON - 1]      = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_DRIFBLIM - 1]      = ANIM_V_SLIDE_WOBBLE,
-    [SPECIES_BUNEARY - 1]       = ANIM_V_JUMPS_BIG,
+    [SPECIES_BUNEARY - 1]       = ANIM_H_JUMPS_V_STRETCH,
     [SPECIES_LOPUNNY - 1]       = ANIM_SHRINK_GROW,
-    [SPECIES_MISMAGIUS - 1]     = ANIM_SWING_CONVEX_FAST,
-    [SPECIES_HONCHKROW - 1]     = ANIM_GLOW_BLACK,
+    [SPECIES_MISMAGIUS - 1]     = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_HONCHKROW - 1]     = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_GLAMEOW - 1]       = ANIM_GROW_VIBRATE,
-    [SPECIES_PURUGLY - 1]       = ANIM_V_SHAKE,
+    [SPECIES_PURUGLY - 1]       = ANIM_V_STRETCH,
     [SPECIES_CHINGLING - 1]     = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_STUNKY - 1]        = ANIM_TIP_MOVE_FORWARD,
     [SPECIES_SKUNTANK - 1]      = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-    [SPECIES_BRONZOR - 1]       = ANIM_TWIST_TWICE,
+    [SPECIES_BRONZOR - 1]       = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_BRONZONG - 1]      = ANIM_V_SLIDE_WOBBLE_SMALL,
-    [SPECIES_BONSLY - 1]        = ANIM_V_JUMPS_SMALL,
-    [SPECIES_MIME_JR - 1]       = ANIM_H_SLIDE_SHRINK,
+    [SPECIES_BONSLY - 1]        = ANIM_BOUNCE_ROTATE_TO_SIDES,
+    [SPECIES_MIME_JR - 1]       = ANIM_H_SLIDE_SLOW,
     [SPECIES_HAPPINY - 1]       = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_CHATOT - 1]        = ANIM_V_SHAKE_TWICE,
     [SPECIES_SPIRITOMB - 1]     = ANIM_GROW_IN_STAGES,
-    [SPECIES_GIBLE - 1]         = ANIM_V_JUMPS_BIG,
+    [SPECIES_GIBLE - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_GABITE - 1]        = ANIM_V_STRETCH,
     [SPECIES_GARCHOMP - 1]      = ANIM_V_SHAKE_TWICE,
-    [SPECIES_MUNCHLAX - 1]      = ANIM_SHRINK_GROW,
-    [SPECIES_RIOLU - 1]         = ANIM_H_STRETCH,
-    [SPECIES_LUCARIO - 1]       = ANIM_H_SHAKE,
+    [SPECIES_MUNCHLAX - 1]      = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_RIOLU - 1]         = ANIM_RAPID_H_HOPS,
+    [SPECIES_LUCARIO - 1]       = ANIM_V_STRETCH,
     [SPECIES_HIPPOPOTAS - 1]    = ANIM_V_STRETCH,
-    [SPECIES_HIPPOWDON - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SKORUPI - 1]       = ANIM_V_SHAKE,
+    [SPECIES_HIPPOWDON - 1]     = ANIM_V_SHAKE_TWICE,
+    [SPECIES_SKORUPI - 1]       = ANIM_H_SLIDE_SLOW,
     [SPECIES_DRAPION - 1]       = ANIM_V_JUMPS_BIG,
-    [SPECIES_CROAGUNK - 1]      = ANIM_GLOW_PURPLE,
-    [SPECIES_TOXICROAK - 1]     = ANIM_V_SLIDE,
-    [SPECIES_CARNIVINE - 1]     = ANIM_H_SLIDE_WOBBLE,
-    [SPECIES_FINNEON - 1]       = ANIM_SWING_CONCAVE_FAST_SHORT,
-    [SPECIES_LUMINEON - 1]      = ANIM_GLOW_BLUE,
+    [SPECIES_CROAGUNK - 1]      = ANIM_RAPID_H_HOPS,
+    [SPECIES_TOXICROAK - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_CARNIVINE - 1]     = ANIM_FIGURE_8,
+    [SPECIES_FINNEON - 1]       = ANIM_V_SLIDE_WOBBLE_SMALL,
+    [SPECIES_LUMINEON - 1]      = ANIM_H_STRETCH,
     [SPECIES_MANTYKE - 1]       = ANIM_TWIST_TWICE,
-    [SPECIES_SNOVER - 1]        = ANIM_V_JUMPS_SMALL,
+    [SPECIES_SNOVER - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_ABOMASNOW - 1]     = ANIM_H_SHAKE,
-    [SPECIES_WEAVILE - 1]       = ANIM_H_SHAKE,
-    [SPECIES_MAGNEZONE - 1]     = ANIM_GLOW_YELLOW,
-    [SPECIES_LICKILICKY - 1]    = ANIM_ROTATE_UP_SLAM_DOWN,
-    [SPECIES_RHYPERIOR - 1]     = ANIM_LUNGE_GROW,
-    [SPECIES_TANGROWTH - 1]     = ANIM_GROW_IN_STAGES,
+    [SPECIES_WEAVILE - 1]       = ANIM_H_VIBRATE,
+    [SPECIES_MAGNEZONE - 1]     = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_LICKILICKY - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_RHYPERIOR - 1]     = ANIM_V_SHAKE_TWICE,
+    [SPECIES_TANGROWTH - 1]     = ANIM_H_STRETCH,
     [SPECIES_ELECTIVIRE - 1]    = ANIM_GLOW_YELLOW,
-    [SPECIES_MAGMORTAR - 1]     = ANIM_GLOW_RED,
-    [SPECIES_TOGEKISS - 1]      = ANIM_TIP_MOVE_FORWARD,
-    [SPECIES_YANMEGA - 1]       = ANIM_ZIGZAG_FAST,
-    [SPECIES_LEAFEON - 1]       = ANIM_V_JUMPS_SMALL,
+    [SPECIES_MAGMORTAR - 1]     = ANIM_V_STRETCH,
+    [SPECIES_TOGEKISS - 1]      = ANIM_SWING_CONVEX,
+    [SPECIES_YANMEGA - 1]       = ANIM_H_VIBRATE,
+    [SPECIES_LEAFEON - 1]       = ANIM_SHRINK_GROW,
     [SPECIES_GLACEON - 1]       = ANIM_V_STRETCH,
-    [SPECIES_GLISCOR - 1]       = ANIM_TWIST,
-    [SPECIES_MAMOSWINE - 1]     = ANIM_V_JUMPS_BIG,
-    [SPECIES_PORYGON_Z - 1]     = ANIM_V_SLIDE_WOBBLE,
-    [SPECIES_GALLADE - 1]       = ANIM_SHRINK_GROW,
-    [SPECIES_PROBOPASS - 1]     = ANIM_SWING_CONVEX_FAST,
-    [SPECIES_DUSKNOIR - 1]      = ANIM_GLOW_BLACK,
+    [SPECIES_GLISCOR - 1]       = ANIM_SWING_CONVEX,
+    [SPECIES_MAMOSWINE - 1]     = ANIM_BACK_AND_LUNGE,
+    [SPECIES_PORYGON_Z - 1]     = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
+    [SPECIES_GALLADE - 1]       = ANIM_H_VIBRATE,
+    [SPECIES_PROBOPASS - 1]     = ANIM_V_SLIDE,
+    [SPECIES_DUSKNOIR - 1]      = ANIM_H_SLIDE,
     [SPECIES_FROSLASS - 1]      = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_ROTOM - 1]         = ANIM_GLOW_YELLOW,
-    [SPECIES_UXIE - 1]          = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_UXIE - 1]          = ANIM_SWING_CONCAVE,
     [SPECIES_MESPRIT - 1]       = ANIM_H_SLIDE_WOBBLE,
-    [SPECIES_AZELF - 1]         = ANIM_H_SLIDE_WOBBLE,
-    [SPECIES_DIALGA - 1]        = ANIM_DEEP_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PALKIA - 1]        = ANIM_H_SHAKE,
-    [SPECIES_HEATRAN - 1]       = ANIM_GLOW_RED,
-    [SPECIES_REGIGIGAS - 1]     = ANIM_GROW_IN_STAGES,
-    [SPECIES_GIRATINA - 1]      = ANIM_V_SHAKE_TWICE,
+    [SPECIES_AZELF - 1]         = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_DIALGA - 1]        = ANIM_H_SHAKE,
+    [SPECIES_PALKIA - 1]        = ANIM_V_SHAKE,
+    [SPECIES_HEATRAN - 1]       = ANIM_GLOW_ORANGE,
+    [SPECIES_REGIGIGAS - 1]     = ANIM_V_SHAKE,
+    [SPECIES_GIRATINA - 1]      = ANIM_GROW_VIBRATE,
     [SPECIES_CRESSELIA - 1]     = ANIM_H_SLIDE_WOBBLE,
-    [SPECIES_PHIONE - 1]        = ANIM_H_SLIDE_WOBBLE,
-    [SPECIES_MANAPHY - 1]       = ANIM_V_STRETCH,
+    [SPECIES_PHIONE - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_MANAPHY - 1]       = ANIM_SWING_CONVEX,
     [SPECIES_DARKRAI - 1]       = ANIM_GLOW_BLACK,
-    [SPECIES_SHAYMIN - 1]       = ANIM_SHRINK_GROW,
-    [SPECIES_ARCEUS - 1]        = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_SHAYMIN - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ARCEUS - 1]        = ANIM_GROW_VIBRATE,
 
-    // Gen 5 Todo: Assign proper ones.
-    [SPECIES_VICTINI - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SNIVY - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SERVINE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SERPERIOR - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_TEPIG - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PIGNITE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_EMBOAR - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_OSHAWOTT - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_DEWOTT - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SAMUROTT - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PATRAT - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_WATCHOG - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_LILLIPUP - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_HERDIER - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_STOUTLAND - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PURRLOIN - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_LIEPARD - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PANSAGE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SIMISAGE - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PANSEAR - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SIMISEAR - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PANPOUR - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SIMIPOUR - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_MUNNA - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_MUSHARNA - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PIDOVE - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_TRANQUILL - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_UNFEZANT - 1]      = ANIM_V_STRETCH,
-    [SPECIES_BLITZLE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ZEBSTRIKA - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    // Gen 5
+    [SPECIES_VICTINI - 1]       = ANIM_H_JUMPS,
+    [SPECIES_SNIVY - 1]         = ANIM_V_STRETCH,
+    [SPECIES_SERVINE - 1]       = ANIM_V_STRETCH,
+    [SPECIES_SERPERIOR - 1]     = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_TEPIG - 1]         = ANIM_H_SLIDE,
+    [SPECIES_PIGNITE - 1]       = ANIM_V_STRETCH,
+    [SPECIES_EMBOAR - 1]        = ANIM_DEEP_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OSHAWOTT - 1]      = ANIM_H_JUMPS,
+    [SPECIES_DEWOTT - 1]        = ANIM_H_VIBRATE,
+    [SPECIES_SAMUROTT - 1]      = ANIM_V_SHAKE,
+    [SPECIES_PATRAT - 1]        = ANIM_V_STRETCH,
+    [SPECIES_WATCHOG - 1]       = ANIM_V_STRETCH,
+    [SPECIES_LILLIPUP - 1]      = ANIM_H_JUMPS,
+    [SPECIES_HERDIER - 1]       = ANIM_H_STRETCH,
+    [SPECIES_STOUTLAND - 1]     = ANIM_H_SLIDE,
+    [SPECIES_PURRLOIN - 1]      = ANIM_GROW_VIBRATE,
+    [SPECIES_LIEPARD - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_PANSAGE - 1]       = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_SIMISAGE - 1]      = ANIM_GROW_VIBRATE,
+    [SPECIES_PANSEAR - 1]       = ANIM_V_STRETCH,
+    [SPECIES_SIMISEAR - 1]      = ANIM_SWING_CONCAVE_FAST,
+    [SPECIES_PANPOUR - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_SIMIPOUR - 1]      = ANIM_H_STRETCH,
+    [SPECIES_MUNNA - 1]         = ANIM_RISING_WOBBLE,
+    [SPECIES_MUSHARNA - 1]      = ANIM_ROTATE_TO_SIDES_TWICE,
+    [SPECIES_PIDOVE - 1]        = ANIM_V_JUMPS_SMALL,
+    [SPECIES_TRANQUILL - 1]     = ANIM_V_STRETCH,
+    [SPECIES_UNFEZANT - 1]      = ANIM_SHRINK_GROW,
+    [SPECIES_BLITZLE - 1]       = ANIM_V_STRETCH,
+    [SPECIES_ZEBSTRIKA - 1]     = ANIM_BACK_AND_LUNGE,
     [SPECIES_ROGGENROLA - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_BOLDORE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GIGALITH - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_WOOBAT - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SWOOBAT - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_DRILBUR - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_EXCADRILL - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_AUDINO - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_BOLDORE - 1]       = ANIM_H_SLIDE_SLOW,
+    [SPECIES_GIGALITH - 1]      = ANIM_ROTATE_UP_SLAM_DOWN,
+    [SPECIES_WOOBAT - 1]        = ANIM_FOUR_PETAL,
+    [SPECIES_SWOOBAT - 1]       = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
+    [SPECIES_DRILBUR - 1]       = ANIM_SWING_CONCAVE_FAST_SHORT,
+    [SPECIES_EXCADRILL - 1]     = ANIM_H_SHAKE,
+    [SPECIES_AUDINO - 1]        = ANIM_V_STRETCH,
     [SPECIES_TIMBURR - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GURDURR - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_CONKELDURR - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_TYMPOLE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PALPITOAD - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SEISMITOAD - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_THROH - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SAWK - 1]          = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SEWADDLE - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SWADLOON - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_LEAVANNY - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_VENIPEDE - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_WHIRLIPEDE - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SCOLIPEDE - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_GURDURR - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_CONKELDURR - 1]    = ANIM_V_SHAKE_TWICE,
+    [SPECIES_TYMPOLE - 1]       = ANIM_H_JUMPS_V_STRETCH,
+    [SPECIES_PALPITOAD - 1]     = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_SEISMITOAD - 1]    = ANIM_H_JUMPS,
+    [SPECIES_THROH - 1]         = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_SAWK - 1]          = ANIM_GROW_VIBRATE,
+    [SPECIES_SEWADDLE - 1]      = ANIM_CIRCLE_INTO_BG,
+    [SPECIES_SWADLOON - 1]      = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_LEAVANNY - 1]      = ANIM_GROW_VIBRATE,
+    [SPECIES_VENIPEDE - 1]      = ANIM_H_SLIDE,
+    [SPECIES_WHIRLIPEDE - 1]    = ANIM_TIP_MOVE_FORWARD,
+    [SPECIES_SCOLIPEDE - 1]     = ANIM_H_SHAKE,
     [SPECIES_COTTONEE - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_WHIMSICOTT - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PETILIL - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_WHIMSICOTT - 1]    = ANIM_SHRINK_GROW,
+    [SPECIES_PETILIL - 1]       = ANIM_H_JUMPS_V_STRETCH,
     [SPECIES_LILLIGANT - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_BASCULIN - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_BASCULIN - 1]      = ANIM_TIP_MOVE_FORWARD,
     [SPECIES_SANDILE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_KROKOROK - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_KROOKODILE - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_DARUMAKA - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_DARMANITAN - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_MARACTUS - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_KROKOROK - 1]      = ANIM_V_STRETCH,
+    [SPECIES_KROOKODILE - 1]    = ANIM_SWING_CONCAVE_FAST_SHORT,
+    [SPECIES_DARUMAKA - 1]      = ANIM_SWING_CONCAVE,
+    [SPECIES_DARMANITAN - 1]    = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_MARACTUS - 1]      = ANIM_H_JUMPS_V_STRETCH,
     [SPECIES_DWEBBLE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_CRUSTLE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SCRAGGY - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_CRUSTLE - 1]       = ANIM_H_SLIDE_SLOW,
+    [SPECIES_SCRAGGY - 1]       = ANIM_V_STRETCH,
     [SPECIES_SCRAFTY - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SIGILYPH - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_YAMASK - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_COFAGRIGUS - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_TIRTOUGA - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_CARRACOSTA - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ARCHEN - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ARCHEOPS - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SIGILYPH - 1]      = ANIM_FIGURE_8,
+    [SPECIES_YAMASK - 1]        = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_COFAGRIGUS - 1]    = ANIM_GLOW_BLACK,
+    [SPECIES_TIRTOUGA - 1]      = ANIM_RISING_WOBBLE,
+    [SPECIES_CARRACOSTA - 1]    = ANIM_H_SHAKE_SLOW,
+    [SPECIES_ARCHEN - 1]        = ANIM_V_JUMPS_SMALL,
+    [SPECIES_ARCHEOPS - 1]      = ANIM_RISING_WOBBLE,
     [SPECIES_TRUBBISH - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GARBODOR - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ZORUA - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ZOROARK - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_GARBODOR - 1]      = ANIM_V_STRETCH,
+    [SPECIES_ZORUA - 1]         = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_ZOROARK - 1]       = ANIM_FLICKER_INCREASING,
     [SPECIES_MINCCINO - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_CINCCINO - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GOTHITA - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GOTHORITA - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GOTHITELLE - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SOLOSIS - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_DUOSION - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_REUNICLUS - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_DUCKLETT - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SWANNA - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_VANILLITE - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_VANILLISH - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_VANILLUXE - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_CINCCINO - 1]      = ANIM_V_SLIDE,
+    [SPECIES_GOTHITA - 1]       = ANIM_V_JUMPS_SMALL,
+    [SPECIES_GOTHORITA - 1]     = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_GOTHITELLE - 1]    = ANIM_GROW_VIBRATE,
+    [SPECIES_SOLOSIS - 1]       = ANIM_TWIST,
+    [SPECIES_DUOSION - 1]       = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_REUNICLUS - 1]     = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_DUCKLETT - 1]      = ANIM_V_STRETCH,
+    [SPECIES_SWANNA - 1]        = ANIM_V_STRETCH,
+    [SPECIES_VANILLITE - 1]     = ANIM_H_SLIDE,
+    [SPECIES_VANILLISH - 1]     = ANIM_GROW_VIBRATE,
+    [SPECIES_VANILLUXE - 1]     = ANIM_GROW_VIBRATE,
     [SPECIES_DEERLING - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_SAWSBUCK - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_EMOLGA - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_EMOLGA - 1]        = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_KARRABLAST - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ESCAVALIER - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_FOONGUS - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_AMOONGUSS - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_FRILLISH - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ESCAVALIER - 1]    = ANIM_BACK_AND_LUNGE,
+    [SPECIES_FOONGUS - 1]       = ANIM_SWING_CONCAVE_FAST,
+    [SPECIES_AMOONGUSS - 1]     = ANIM_H_SLIDE,
+    [SPECIES_FRILLISH - 1]      = ANIM_RISING_WOBBLE,
     [SPECIES_JELLICENT - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ALOMOMOLA - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_JOLTIK - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GALVANTULA - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_FERROSEED - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_FERROTHORN - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_KLINK - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_KLANG - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_KLINKLANG - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_TYNAMO - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ALOMOMOLA - 1]     = ANIM_SWING_CONCAVE,
+    [SPECIES_JOLTIK - 1]        = ANIM_H_SLIDE,
+    [SPECIES_GALVANTULA - 1]    = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
+    [SPECIES_FERROSEED - 1]     = ANIM_H_VIBRATE,
+    [SPECIES_FERROTHORN - 1]    = ANIM_V_SHAKE,
+    [SPECIES_KLINK - 1]         = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_KLANG - 1]         = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_KLINKLANG - 1]     = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_TYNAMO - 1]        = ANIM_V_SLIDE_WOBBLE_SMALL,
     [SPECIES_EELEKTRIK - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_EELEKTROSS - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ELGYEM - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_BEHEEYEM - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_LITWICK - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_LAMPENT - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_CHANDELURE - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_AXEW - 1]          = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_EELEKTROSS - 1]    = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL_SLOW,
+    [SPECIES_ELGYEM - 1]        = ANIM_RISING_WOBBLE,
+    [SPECIES_BEHEEYEM - 1]      = ANIM_GROW_VIBRATE,
+    [SPECIES_LITWICK - 1]       = ANIM_V_STRETCH,
+    [SPECIES_LAMPENT - 1]       = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_CHANDELURE - 1]    = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_AXEW - 1]          = ANIM_H_SHAKE,
     [SPECIES_FRAXURE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_HAXORUS - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_HAXORUS - 1]       = ANIM_H_SHAKE,
     [SPECIES_CUBCHOO - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_BEARTIC - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_CRYOGONAL - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_SHELMET - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ACCELGOR - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_BEARTIC - 1]       = ANIM_H_SHAKE,
+    [SPECIES_CRYOGONAL - 1]     = ANIM_SHRINK_GROW,
+    [SPECIES_SHELMET - 1]       = ANIM_TWIST,
+    [SPECIES_ACCELGOR - 1]      = ANIM_H_JUMPS_V_STRETCH,
     [SPECIES_STUNFISK - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_MIENFOO - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_MIENFOO - 1]       = ANIM_H_VIBRATE,
     [SPECIES_MIENSHAO - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_DRUDDIGON - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GOLETT - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GOLURK - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_PAWNIARD - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_BISHARP - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_BOUFFALANT - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_RUFFLET - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_DRUDDIGON - 1]     = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL_SLOW,
+    [SPECIES_GOLETT - 1]        = ANIM_V_SHAKE,
+    [SPECIES_GOLURK - 1]        = ANIM_V_SHAKE_TWICE,
+    [SPECIES_PAWNIARD - 1]      = ANIM_H_VIBRATE,
+    [SPECIES_BISHARP - 1]       = ANIM_H_STRETCH,
+    [SPECIES_BOUFFALANT - 1]    = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_RUFFLET - 1]       = ANIM_V_STRETCH,
     [SPECIES_BRAVIARY - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_VULLABY - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_MANDIBUZZ - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_HEATMOR - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_DURANT - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_MANDIBUZZ - 1]     = ANIM_V_STRETCH,
+    [SPECIES_HEATMOR - 1]       = ANIM_H_SHAKE,
+    [SPECIES_DURANT - 1]        = ANIM_RAPID_H_HOPS,
     [SPECIES_DEINO - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ZWEILOUS - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_HYDREIGON - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_LARVESTA - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_VOLCARONA - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_COBALION - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_TERRAKION - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_VIRIZION - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_TORNADUS - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_THUNDURUS - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_RESHIRAM - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ZEKROM - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_LANDORUS - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ZWEILOUS - 1]      = ANIM_H_STRETCH,
+    [SPECIES_HYDREIGON - 1]     = ANIM_RISING_WOBBLE,
+    [SPECIES_LARVESTA - 1]      = ANIM_GLOW_ORANGE,
+    [SPECIES_VOLCARONA - 1]     = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_COBALION - 1]      = ANIM_V_STRETCH,
+    [SPECIES_TERRAKION - 1]     = ANIM_V_SHAKE_TWICE,
+    [SPECIES_VIRIZION - 1]      = ANIM_GROW_VIBRATE,
+    [SPECIES_TORNADUS - 1]      = ANIM_FIGURE_8,
+    [SPECIES_THUNDURUS - 1]     = ANIM_FIGURE_8,
+    [SPECIES_RESHIRAM - 1]      = ANIM_V_SHAKE,
+    [SPECIES_ZEKROM - 1]        = ANIM_V_SHAKE,
+    [SPECIES_LANDORUS - 1]      = ANIM_FIGURE_8,
     [SPECIES_KYUREM - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_KELDEO - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_MELOETTA - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GENESECT - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_MELOETTA - 1]      = ANIM_GROW_VIBRATE,
+    [SPECIES_GENESECT - 1]      = ANIM_H_VIBRATE,
 
     //Gen 6
-    [SPECIES_CHESPIN - 1]       = ANIM_H_JUMPS,
-    [SPECIES_QUILLADIN - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_CHESNAUGHT - 1]    = ANIM_V_SHAKE_TWICE,
+    [SPECIES_CHESPIN - 1]       = ANIM_V_JUMPS_SMALL,
+    [SPECIES_QUILLADIN - 1]     = ANIM_LUNGE_GROW,
+    [SPECIES_CHESNAUGHT - 1]    = ANIM_GROW_IN_STAGES,
     [SPECIES_FENNEKIN - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_BRAIXEN - 1]       = ANIM_SHAKE_GLOW_RED_SLOW,
-    [SPECIES_DELPHOX - 1]       = ANIM_V_STRETCH,
-    [SPECIES_FROAKIE - 1]       = ANIM_H_JUMPS_V_STRETCH,
-    [SPECIES_FROGADIER - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_GRENINJA - 1]      = ANIM_SHRINK_GROW,
+    [SPECIES_BRAIXEN - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_DELPHOX - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_FROAKIE - 1]       = ANIM_H_JUMPS,
+    [SPECIES_FROGADIER - 1]     = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_GRENINJA - 1]      = ANIM_V_STRETCH,
     [SPECIES_BUNNELBY - 1]      = ANIM_V_JUMPS_SMALL,
-    [SPECIES_DIGGERSBY - 1]     = ANIM_V_SHAKE_TWICE,
-    [SPECIES_FLETCHLING - 1]    = ANIM_H_STRETCH,
-    [SPECIES_FLETCHINDER - 1]   = ANIM_GROW_VIBRATE,
-    [SPECIES_TALONFLAME - 1]    = ANIM_GROW_IN_STAGES,
-    [SPECIES_SCATTERBUG - 1]    = ANIM_H_JUMPS,
+    [SPECIES_DIGGERSBY - 1]     = ANIM_H_JUMPS_V_STRETCH,
+    [SPECIES_FLETCHLING - 1]    = ANIM_RAPID_H_HOPS,
+    [SPECIES_FLETCHINDER - 1]   = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_TALONFLAME - 1]    = ANIM_SWING_CONCAVE_FAST,
+    [SPECIES_SCATTERBUG - 1]    = ANIM_V_STRETCH,
     [SPECIES_SPEWPA - 1]        = ANIM_V_SHAKE,
-    [SPECIES_VIVILLON - 1]      = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_VIVILLON - 1]      = ANIM_ZIGZAG_SLOW,
     [SPECIES_LITLEO - 1]        = ANIM_BACK_AND_LUNGE,
-    [SPECIES_PYROAR - 1]        = ANIM_GROW_VIBRATE,
-    [SPECIES_FLABEBE - 1]       = ANIM_V_SLIDE_WOBBLE_SMALL,
-    [SPECIES_FLOETTE - 1]       = ANIM_SWING_CONVEX,
-    [SPECIES_FLORGES - 1]       = ANIM_V_SLIDE_SLOW,
-    [SPECIES_SKIDDO - 1]        = ANIM_H_STRETCH,
+    [SPECIES_PYROAR - 1]        = ANIM_V_SHAKE,
+    [SPECIES_FLABEBE - 1]       = ANIM_SWING_CONCAVE_FAST_SHORT,
+    [SPECIES_FLOETTE - 1]       = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_FLORGES - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_SKIDDO - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_GOGOAT - 1]        = ANIM_V_STRETCH,
-    [SPECIES_PANCHAM - 1]       = ANIM_V_JUMPS_SMALL,
-    [SPECIES_PANGORO - 1]       = ANIM_V_SHAKE_TWICE,
-    [SPECIES_FURFROU - 1]       = ANIM_H_STRETCH,
-    [SPECIES_ESPURR - 1]        = ANIM_H_STRETCH,
-    [SPECIES_MEOWSTIC - 1]      = ANIM_SHRINK_GROW,
+    [SPECIES_PANCHAM - 1]       = ANIM_H_STRETCH,
+    [SPECIES_PANGORO - 1]       = ANIM_BACK_AND_LUNGE,
+    [SPECIES_FURFROU - 1]       = ANIM_H_SLIDE,
+    [SPECIES_ESPURR - 1]        = ANIM_V_STRETCH,
+    [SPECIES_MEOWSTIC - 1]      = ANIM_GROW_VIBRATE,
     [SPECIES_HONEDGE - 1]       = ANIM_SWING_CONVEX,
-    [SPECIES_DOUBLADE - 1]      = ANIM_SWING_CONVEX,
+    [SPECIES_DOUBLADE - 1]      = ANIM_GROW_VIBRATE,
     [SPECIES_AEGISLASH - 1]     = ANIM_H_VIBRATE,
     [SPECIES_SPRITZEE - 1]      = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_AROMATISSE - 1]    = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_SWIRLIX - 1]       = ANIM_H_JUMPS_V_STRETCH,
-    [SPECIES_SLURPUFF - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SLURPUFF - 1]      = ANIM_V_STRETCH,
     [SPECIES_INKAY - 1]         = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_MALAMAR - 1]       = ANIM_CIRCULAR_STRETCH_TWICE,
-    [SPECIES_BINACLE - 1]       = ANIM_V_STRETCH,
-    [SPECIES_BARBARACLE - 1]    = ANIM_ROTATE_UP_SLAM_DOWN,
+    [SPECIES_BINACLE - 1]       = ANIM_H_SLIDE,
+    [SPECIES_BARBARACLE - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_SKRELP - 1]        = ANIM_V_SLIDE_WOBBLE_SMALL,
-    [SPECIES_DRAGALGE - 1]      = ANIM_SHRINK_GROW,
-    [SPECIES_CLAUNCHER - 1]     = ANIM_V_JUMPS_SMALL,
-    [SPECIES_CLAWITZER - 1]     = ANIM_BACK_AND_LUNGE,
-    [SPECIES_HELIOPTILE - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_HELIOLISK - 1]     = ANIM_GROW_VIBRATE,
+    [SPECIES_DRAGALGE - 1]      = ANIM_FRONT_FLIP,
+    [SPECIES_CLAUNCHER - 1]     = ANIM_TIP_MOVE_FORWARD,
+    [SPECIES_CLAWITZER - 1]     = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
+    [SPECIES_HELIOPTILE - 1]    = ANIM_GLOW_YELLOW,
+    [SPECIES_HELIOLISK - 1]     = ANIM_RAPID_H_HOPS,
     [SPECIES_TYRUNT - 1]        = ANIM_V_SHAKE,
-    [SPECIES_TYRANTRUM - 1]     = ANIM_H_SHAKE,
-    [SPECIES_AMAURA - 1]        = ANIM_V_STRETCH,
-    [SPECIES_AURORUS - 1]       = ANIM_V_SHAKE_TWICE,
-    [SPECIES_SYLVEON - 1]       = ANIM_H_STRETCH,
-    [SPECIES_HAWLUCHA - 1]      = ANIM_H_STRETCH,
-    [SPECIES_DEDENNE - 1]       = ANIM_V_JUMPS_SMALL,
-    [SPECIES_CARBINK - 1]       = ANIM_SWING_CONVEX,
-    [SPECIES_GOOMY - 1]         = ANIM_CIRCULAR_STRETCH_TWICE,
-    [SPECIES_SLIGGOO - 1]       = ANIM_H_SPRING_SLOW,
+    [SPECIES_TYRANTRUM - 1]     = ANIM_V_SHAKE,
+    [SPECIES_AMAURA - 1]        = ANIM_H_STRETCH,
+    [SPECIES_AURORUS - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_SYLVEON - 1]       = ANIM_SHRINK_GROW,
+    [SPECIES_HAWLUCHA - 1]      = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_DEDENNE - 1]       = ANIM_GLOW_YELLOW,
+    [SPECIES_CARBINK - 1]       = ANIM_ZIGZAG_SLOW,
+    [SPECIES_GOOMY - 1]         = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_SLIGGOO - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_GOODRA - 1]        = ANIM_V_SHAKE,
-    [SPECIES_KLEFKI - 1]        = ANIM_SWING_CONVEX,
-    [SPECIES_PHANTUMP - 1]      = ANIM_V_SLIDE_WOBBLE,
-    [SPECIES_TREVENANT - 1]     = ANIM_FLICKER_INCREASING,
-    [SPECIES_PUMPKABOO - 1]     = ANIM_H_SLIDE_WOBBLE,
-    [SPECIES_GOURGEIST - 1]     = ANIM_SWING_CONVEX,
-    [SPECIES_BERGMITE - 1]      = ANIM_V_SHAKE,
-    [SPECIES_AVALUGG - 1]       = ANIM_ROTATE_UP_SLAM_DOWN,
-    [SPECIES_NOIBAT - 1]        = ANIM_V_SLIDE_WOBBLE_SMALL,
-    [SPECIES_NOIVERN - 1]       = ANIM_GROW_VIBRATE,
-    [SPECIES_XERNEAS - 1]       = ANIM_GLOW_YELLOW,
-    [SPECIES_YVELTAL - 1]       = ANIM_SHAKE_GLOW_BLACK_SLOW,
-    [SPECIES_ZYGARDE - 1]       = ANIM_GROW_VIBRATE,
-    [SPECIES_DIANCIE - 1]       = ANIM_SWING_CONVEX,
+    [SPECIES_KLEFKI - 1]        = ANIM_FOUR_PETAL,
+    [SPECIES_PHANTUMP - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_TREVENANT - 1]     = ANIM_H_SLIDE_SLOW,
+    [SPECIES_PUMPKABOO - 1]     = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_GOURGEIST - 1]     = ANIM_SHRINK_GROW,
+    [SPECIES_BERGMITE - 1]      = ANIM_LUNGE_GROW,
+    [SPECIES_AVALUGG - 1]       = ANIM_V_SHAKE,
+    [SPECIES_NOIBAT - 1]        = ANIM_RISING_WOBBLE,
+    [SPECIES_NOIVERN - 1]       = ANIM_V_STRETCH,
+    [SPECIES_XERNEAS - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_YVELTAL - 1]       = ANIM_FRONT_FLIP,
+    [SPECIES_ZYGARDE - 1]       = ANIM_TIP_MOVE_FORWARD,
+    [SPECIES_DIANCIE - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_HOOPA - 1]         = ANIM_ZIGZAG_SLOW,
-    [SPECIES_VOLCANION - 1]     = ANIM_V_SHAKE,
-
+    [SPECIES_VOLCANION - 1]     = ANIM_V_SHAKE_TWICE,
     // Gen 7
     [SPECIES_ROWLET - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_DARTRIX - 1]       = ANIM_H_STRETCH,
@@ -2959,30 +3053,169 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_GLASTRIER - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_SPECTRIER - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_CALYREX - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_WYRDEER - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_KLEAVOR - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_URSALUNA - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_BASCULEGION - 1]   = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SNEASLER - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_OVERQWIL - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ENAMORUS - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_DEOXYS_ATTACK - 1]          = ANIM_GROW_VIBRATE,
+    [SPECIES_DEOXYS_DEFENSE - 1]         = ANIM_GROW_VIBRATE,
+    [SPECIES_DEOXYS_SPEED - 1]           = ANIM_GROW_VIBRATE,
 
-    // Forms
-    [SPECIES_ROTOM_HEAT - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ROTOM_FROST - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ROTOM_FAN - 1]       = ANIM_FIGURE_8,
-    [SPECIES_ROTOM_MOW - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ROTOM_WASH - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
-    [SPECIES_ARCEUS_FIGHTING - 1] = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_FLYING - 1]   = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_POISON - 1]   = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_GROUND - 1]   = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_ROCK - 1]     = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_BUG - 1]      = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_GHOST - 1]    = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_STEEL - 1]    = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_FIRE - 1]     = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_WATER - 1]    = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_GRASS - 1]    = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_ELECTRIC - 1] = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_PSYCHIC - 1]  = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_ICE - 1]      = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_DRAGON - 1]   = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_DARK - 1]     = ANIM_CIRCULAR_VIBRATE,
-    [SPECIES_ARCEUS_FAIRY - 1]    = ANIM_CIRCULAR_VIBRATE,
+    //Gen 4 Forms
+    [SPECIES_BURMY_SANDY_CLOAK - 1]      = ANIM_V_STRETCH,
+    [SPECIES_BURMY_TRASH_CLOAK - 1]      = ANIM_V_STRETCH,
+    [SPECIES_WORMADAM_SANDY_CLOAK - 1]   = ANIM_SWING_CONVEX_FAST_SHORT,
+    [SPECIES_WORMADAM_TRASH_CLOAK - 1]   = ANIM_SWING_CONVEX_FAST_SHORT,
+    [SPECIES_CHERRIM_SUNSHINE - 1] 	     = ANIM_RAPID_H_HOPS,
+    [SPECIES_SHELLOS_EAST_SEA - 1]       = ANIM_V_STRETCH,
+    [SPECIES_GASTRODON_EAST_SEA - 1]     = ANIM_CIRCULAR_STRETCH_TWICE,
+    [SPECIES_ROTOM_HEAT - 1]             = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ROTOM_WASH - 1]             = ANIM_V_JUMPS_SMALL,
+    [SPECIES_ROTOM_FROST - 1]            = ANIM_H_STRETCH,
+    [SPECIES_ROTOM_FAN - 1]              = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_ROTOM_MOW - 1]              = ANIM_TIP_MOVE_FORWARD,
+    [SPECIES_GIRATINA_ORIGIN - 1]        = ANIM_LUNGE_GROW,
+    [SPECIES_SHAYMIN_SKY - 1]            = ANIM_V_STRETCH,
+    [SPECIES_ARCEUS_FIGHTING - 1]        = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_FLYING - 1]          = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_POISON - 1]          = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_GROUND - 1]          = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_ROCK - 1]            = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_BUG - 1]             = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_GHOST - 1]           = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_STEEL - 1]           = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_FIRE - 1]            = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_WATER - 1]           = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_GRASS - 1]           = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_ELECTRIC - 1]        = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_PSYCHIC - 1]         = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_ICE - 1]             = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_DRAGON - 1]          = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_DARK - 1]            = ANIM_GROW_VIBRATE,
+    [SPECIES_ARCEUS_FAIRY - 1]           = ANIM_GROW_VIBRATE,
+    //Gen 5 Forms
+    [SPECIES_BASCULIN_BLUE_STRIPED - 1]   = ANIM_TIP_MOVE_FORWARD,
+    [SPECIES_DARMANITAN_ZEN_MODE - 1]     = ANIM_GROW_VIBRATE,
+    [SPECIES_DEERLING_SUMMER - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_DEERLING_AUTUMN - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_DEERLING_WINTER - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SAWSBUCK_SUMMER - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SAWSBUCK_AUTUMN - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SAWSBUCK_WINTER - 1]         = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_TORNADUS_THERIAN - 1]        = ANIM_V_STRETCH,
+    [SPECIES_THUNDURUS_THERIAN - 1]       = ANIM_RISING_WOBBLE,
+    [SPECIES_LANDORUS_THERIAN - 1]        = ANIM_CIRCULAR_VIBRATE,
+    [SPECIES_KYUREM_WHITE - 1]            = ANIM_H_SHAKE,
+    [SPECIES_KYUREM_BLACK - 1]            = ANIM_V_SHAKE,
+    [SPECIES_KELDEO_RESOLUTE - 1]         = ANIM_V_STRETCH,
+    [SPECIES_MELOETTA_PIROUETTE - 1]      = ANIM_H_SLIDE_SLOW,
+    [SPECIES_GENESECT_DOUSE_DRIVE - 1]    = ANIM_H_VIBRATE,
+    [SPECIES_GENESECT_SHOCK_DRIVE - 1]    = ANIM_H_VIBRATE,
+    [SPECIES_GENESECT_BURN_DRIVE - 1]     = ANIM_H_VIBRATE,
+    [SPECIES_GENESECT_CHILL_DRIVE - 1]    = ANIM_H_VIBRATE,
+    //Gen 6 Forms
+    [SPECIES_GRENINJA_ASH - 1]                 = ANIM_FLICKER_INCREASING,
+    [SPECIES_VIVILLON_POLAR - 1]               = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_TUNDRA - 1]              = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_CONTINENTAL - 1]         = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_GARDEN - 1]              = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_ELEGANT - 1]             = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_MEADOW - 1]              = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_MODERN - 1]              = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_MARINE - 1]              = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_ARCHIPELAGO - 1]         = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_HIGH_PLAINS - 1]         = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_SANDSTORM - 1]           = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_RIVER - 1]               = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_MONSOON - 1]             = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_SAVANNA - 1]             = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_SUN - 1]                 = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_OCEAN - 1]               = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_JUNGLE - 1]              = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_FANCY - 1]               = ANIM_ZIGZAG_SLOW,
+    [SPECIES_VIVILLON_POKE_BALL - 1]           = ANIM_ZIGZAG_SLOW,
+    [SPECIES_FLABEBE_YELLOW_FLOWER - 1]        = ANIM_SWING_CONCAVE_FAST_SHORT,
+    [SPECIES_FLABEBE_ORANGE_FLOWER - 1]        = ANIM_SWING_CONCAVE_FAST_SHORT,
+    [SPECIES_FLABEBE_BLUE_FLOWER - 1]          = ANIM_SWING_CONCAVE_FAST_SHORT,
+    [SPECIES_FLABEBE_WHITE_FLOWER - 1]         = ANIM_SWING_CONCAVE_FAST_SHORT,
+    [SPECIES_FLOETTE_YELLOW_FLOWER - 1]        = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_FLOETTE_ORANGE_FLOWER - 1]        = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_FLOETTE_BLUE_FLOWER - 1]          = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_FLOETTE_WHITE_FLOWER - 1]         = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_FLOETTE_ETERNAL_FLOWER - 1]       = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_FLORGES_YELLOW_FLOWER - 1]        = ANIM_GROW_VIBRATE,
+    [SPECIES_FLORGES_ORANGE_FLOWER - 1]        = ANIM_GROW_VIBRATE,
+    [SPECIES_FLORGES_BLUE_FLOWER - 1]          = ANIM_GROW_VIBRATE,
+    [SPECIES_FLORGES_WHITE_FLOWER - 1]         = ANIM_GROW_VIBRATE,
+    [SPECIES_FURFROU_HEART_TRIM - 1]           = ANIM_H_SLIDE,
+    [SPECIES_FURFROU_STAR_TRIM - 1]            = ANIM_H_SLIDE,
+    [SPECIES_FURFROU_DIAMOND_TRIM - 1]         = ANIM_H_SLIDE,
+    [SPECIES_FURFROU_DEBUTANTE_TRIM - 1]       = ANIM_H_SLIDE,
+    [SPECIES_FURFROU_MATRON_TRIM - 1]          = ANIM_H_SLIDE,
+    [SPECIES_FURFROU_DANDY_TRIM - 1]           = ANIM_H_SLIDE,
+    [SPECIES_FURFROU_LA_REINE_TRIM - 1]        = ANIM_H_SLIDE,
+    [SPECIES_FURFROU_KABUKI_TRIM - 1]          = ANIM_H_SLIDE,
+    [SPECIES_FURFROU_PHARAOH_TRIM - 1]         = ANIM_H_SLIDE,
+    [SPECIES_MEOWSTIC_FEMALE - 1]              = ANIM_GROW_VIBRATE,
+    [SPECIES_AEGISLASH_BLADE - 1]              = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
+    [SPECIES_PUMPKABOO_SMALL - 1]              = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_PUMPKABOO_LARGE - 1]              = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_PUMPKABOO_SUPER - 1]              = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_GOURGEIST_SMALL - 1]              = ANIM_SHRINK_GROW,
+    [SPECIES_GOURGEIST_LARGE - 1]              = ANIM_SHRINK_GROW,
+    [SPECIES_GOURGEIST_SUPER - 1]              = ANIM_SHRINK_GROW,
+    [SPECIES_XERNEAS_ACTIVE - 1]               = ANIM_GROW_VIBRATE,
+    [SPECIES_ZYGARDE_10 - 1]                   = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ZYGARDE_10_POWER_CONSTRUCT - 1]   = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_ZYGARDE_50_POWER_CONSTRUCT - 1]   = ANIM_TIP_MOVE_FORWARD,
+    [SPECIES_ZYGARDE_COMPLETE - 1]             = ANIM_GROW_VIBRATE,
+    [SPECIES_HOOPA_UNBOUND - 1]                = ANIM_GROW_IN_STAGES,
+    //Gen 7 Forms
+    [SPECIES_ORICORIO_POM_POM - 1]          = ANIM_V_SQUISH_AND_BOUNCE, //Todo
+    [SPECIES_ORICORIO_PAU - 1]              = ANIM_V_SQUISH_AND_BOUNCE, //Todo
+    [SPECIES_ORICORIO_SENSU - 1]            = ANIM_V_SQUISH_AND_BOUNCE, //Todo
+    [SPECIES_ROCKRUFF_OWN_TEMPO - 1]        = ANIM_V_STRETCH,
+    [SPECIES_LYCANROC_MIDNIGHT - 1]         = ANIM_V_SQUISH_AND_BOUNCE, //Todo
+    [SPECIES_LYCANROC_DUSK - 1]             = ANIM_V_SQUISH_AND_BOUNCE, //Todo
+    [SPECIES_WISHIWASHI_SCHOOL - 1]         = ANIM_V_SQUISH_AND_BOUNCE, //Todo
+    [SPECIES_SILVALLY_FIGHTING - 1]         = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_FLYING - 1]           = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_POISON - 1]           = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_GROUND - 1]           = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_ROCK - 1]             = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_BUG - 1]              = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_GHOST - 1]            = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_STEEL - 1]            = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_FIRE - 1]             = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_WATER - 1]            = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_GRASS - 1]            = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_ELECTRIC - 1]         = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_PSYCHIC - 1]          = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_ICE - 1]              = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_DRAGON - 1]           = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_DARK - 1]             = ANIM_V_SHAKE,
+    [SPECIES_SILVALLY_FAIRY - 1]            = ANIM_V_SHAKE,
+    [SPECIES_MINIOR_METEOR_ORANGE - 1]      = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_METEOR_YELLOW - 1]      = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_METEOR_GREEN - 1]       = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_METEOR_BLUE - 1]        = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_METEOR_INDIGO - 1]      = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_METEOR_VIOLET - 1]      = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_CORE_RED - 1]           = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_CORE_ORANGE - 1]        = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_CORE_YELLOW - 1]        = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_CORE_GREEN - 1]         = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_CORE_BLUE - 1]          = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_CORE_INDIGO - 1]        = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MINIOR_CORE_VIOLET - 1]        = ANIM_TUMBLING_FRONT_FLIP_TWICE,
+    [SPECIES_MIMIKYU_BUSTED - 1]            = ANIM_DEEP_V_SQUISH_AND_BOUNCE,
+    [SPECIES_NECROZMA_DUSK_MANE - 1]        = ANIM_V_SQUISH_AND_BOUNCE, //Todo
+    [SPECIES_NECROZMA_DAWN_WINGS - 1]       = ANIM_V_SQUISH_AND_BOUNCE, //Todo
+    [SPECIES_NECROZMA_ULTRA - 1]            = ANIM_V_SQUISH_AND_BOUNCE, //Todo
+    [SPECIES_MAGEARNA_ORIGINAL_COLOR - 1]   = ANIM_H_SLIDE_SLOW,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
@@ -3042,8 +3275,12 @@ static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
     [SPECIES_SALAMENCE - 1]  = 70,
     [SPECIES_KYOGRE - 1]     = 60,
     [SPECIES_RAYQUAZA - 1]   = 60,
+#if P_GEN_7_POKEMON == TRUE
     [SPECIES_TAPU_FINI - 1]  = 5,
+#endif
+#if P_GEN_4_POKEMON == TRUE
     [SPECIES_ROTOM_FAN - 1]  = 7,
+#endif
 };
 
 #define PP_UP_SHIFTS(val)           val,        (val) << 2,        (val) << 4,        (val) << 6
@@ -3077,7 +3314,9 @@ const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2] =
     {40, 10}, // +6, MAX_STAT_STAGE
 };
 
-const u16 gLinkPlayerFacilityClasses[NUM_MALE_LINK_FACILITY_CLASSES + NUM_FEMALE_LINK_FACILITY_CLASSES] =
+// The classes used by other players in the Union Room.
+// These should correspond with the overworld graphics in sUnionRoomObjGfxIds
+const u16 gUnionRoomFacilityClasses[NUM_UNION_ROOM_CLASSES * GENDER_COUNT] =
 {
     // Male classes
     FACILITY_CLASS_COOLTRAINER_M,
@@ -3088,7 +3327,7 @@ const u16 gLinkPlayerFacilityClasses[NUM_MALE_LINK_FACILITY_CLASSES + NUM_FEMALE
     FACILITY_CLASS_BUG_CATCHER,
     FACILITY_CLASS_PKMN_BREEDER_M,
     FACILITY_CLASS_GUITARIST,
-    // Female Classes
+    // Female classes
     FACILITY_CLASS_COOLTRAINER_F,
     FACILITY_CLASS_HEX_MANIAC,
     FACILITY_CLASS_PICNICKER,
@@ -3117,7 +3356,7 @@ const struct SpriteTemplate gBattlerSpriteTemplates[MAX_BATTLERS_COUNT] =
         .anims = NULL,
         .images = gBattlerPicTable_OpponentLeft,
         .affineAnims = gAffineAnims_BattleSpriteOpponentSide,
-        .callback = SpriteCb_WildMon,
+        .callback = SpriteCB_WildMon,
     },
     [B_POSITION_PLAYER_RIGHT] = {
         .tileTag = TAG_NONE,
@@ -3135,7 +3374,7 @@ const struct SpriteTemplate gBattlerSpriteTemplates[MAX_BATTLERS_COUNT] =
         .anims = NULL,
         .images = gBattlerPicTable_OpponentRight,
         .affineAnims = gAffineAnims_BattleSpriteOpponentSide,
-        .callback = SpriteCb_WildMon
+        .callback = SpriteCB_WildMon
     },
 };
 
@@ -3247,11 +3486,7 @@ static const u8 sGetMonDataEVConstants[] =
 // For stat-raising items
 static const u8 sStatsToRaise[] =
 {
-#ifndef ITEM_EXPANSION
-    STAT_ATK, STAT_ATK, STAT_SPEED, STAT_DEF, STAT_SPATK, STAT_ACC
-#else
     STAT_ATK, STAT_ATK, STAT_DEF, STAT_SPEED, STAT_SPATK, STAT_SPDEF, STAT_ACC
-#endif
 };
 
 // 3 modifiers each for how much to change friendship for different ranges
@@ -3269,10 +3504,12 @@ static const s8 sFriendshipEventModifiers[][3] =
     [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-5, -5, -10},
 };
 
+#define HM_MOVES_END 0xFFFF
+
 static const u16 sHMMoves[] =
 {
     MOVE_CUT, MOVE_FLY, MOVE_SURF, MOVE_STRENGTH, MOVE_FLASH,
-    MOVE_ROCK_SMASH, MOVE_WATERFALL, MOVE_DIVE, 0xFFFF
+    MOVE_ROCK_SMASH, MOVE_WATERFALL, MOVE_DIVE, HM_MOVES_END
 };
 
 static const struct SpeciesItem sAlteringCaveWildMonHeldItems[] =
@@ -3293,7 +3530,7 @@ static const struct OamData sOamData_64x64 =
     .y = 0,
     .affineMode = ST_OAM_AFFINE_OFF,
     .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = 0,
+    .mosaic = FALSE,
     .bpp = ST_OAM_4BPP,
     .shape = SPRITE_SHAPE(64x64),
     .x = 0,
@@ -3384,53 +3621,60 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     else
         personality = Random32();
 
-    SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
-
-    switch (otIdType)
+    // Determine original trainer ID
+    if (otIdType == OT_ID_RANDOM_NO_SHINY)
     {
-        case OT_ID_SHINY:
+        u32 shinyValue;
+        do
         {
-            value = HIHALF(personality) ^ LOHALF(personality);
+            // Choose random OT IDs until one that results in a non-shiny Pokémon
+            value = Random32();
+            shinyValue = GET_SHINY_VALUE(value, personality);
+        } while (shinyValue < SHINY_ODDS);
+    }
+    else if (otIdType == OT_ID_PRESET)
+    {
+        value = fixedOtId;
+    }
+    else // Player is the OT
+    {
+        value = gSaveBlock2Ptr->playerTrainerId[0]
+              | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+              | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+              | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+
+  #if P_FLAG_FORCE_NO_SHINY != 0
+        if (FlagGet(P_FLAG_FORCE_NO_SHINY))
+        {
+            while (GET_SHINY_VALUE(value, personality) < SHINY_ODDS)
+                personality = Random32();
         }
-        break;
-
-        case OT_ID_RANDOM_NO_SHINY:
+  #endif
+  #if P_FLAG_FORCE_SHINY != 0
+    #if P_FLAG_FORCE_NO_SHINY != 0
+        else
+    #endif
+        if (FlagGet(P_FLAG_FORCE_SHINY))
         {
-            u32 shinyValue = 0;
-            do
-            {
-                value = Random32();
-                shinyValue = HIHALF(value) ^ LOHALF(value) ^ HIHALF(personality) ^ LOHALF(personality);
-            } while (shinyValue < SHINY_ODDS);
+            while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS)
+                personality = Random32();
         }
-        break;
-
-        case OT_ID_PRESET:
+  #endif
+  #if P_FLAG_FORCE_SHINY != 0 || P_FLAG_FORCE_NO_SHINY != 0
+        else
+  #endif
         {
-            value = fixedOtId;
-        }
-        break;
-
-        default:
-        {
-            value = gSaveBlock2Ptr->playerTrainerId[0]
-                 | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
-                 | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
-                 | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
-
-#ifdef ITEM_SHINY_CHARM
+            u32 totalRerolls = 0;
             if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
+                totalRerolls += I_SHINY_CHARM_REROLLS;
+            if (LURE_STEP_COUNT != 0)
+                totalRerolls += 1;
+
+            while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS && totalRerolls > 0)
             {
-                u32 shinyValue;
-                u32 rolls = 0;
-                do
-                {
-                    personality = Random32();
-                    shinyValue = HIHALF(value) ^ LOHALF(value) ^ HIHALF(personality) ^ LOHALF(personality);
-                    rolls++;
-                } while (shinyValue >= SHINY_ODDS && rolls < I_SHINY_CHARM_REROLLS);
+                personality = Random32();
+                totalRerolls--;
             }
-#endif
         }
     }
 
@@ -3445,8 +3689,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     SetBoxMonData(boxMon, MON_DATA_LANGUAGE, &gGameLanguage);
     SetBoxMonData(boxMon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetBoxMonData(boxMon, MON_DATA_SPECIES, &species);
-    SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gBaseStats[species].growthRate][level]);
-    SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &gBaseStats[species].friendship);
+    SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
+    SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &gSpeciesInfo[species].friendship);
     value = GetCurrentRegionMapSectionId();
     SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
@@ -3485,53 +3729,62 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         iv = (value & (MAX_IV_MASK << 10)) >> 10;
         SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
 
-        #if P_LEGENDARY_PERFECT_IVS >= GEN_6
-            if (gBaseStats[species].flags & (FLAG_LEGENDARY | FLAG_MYTHICAL | FLAG_ULTRA_BEAST))
+        if (gSpeciesInfo[species].flags & SPECIES_FLAG_ALL_PERFECT_IVS)
+        {
+            iv = MAX_PER_STAT_IVS;
+            SetBoxMonData(boxMon, MON_DATA_HP_IV, &iv);
+            SetBoxMonData(boxMon, MON_DATA_ATK_IV, &iv);
+            SetBoxMonData(boxMon, MON_DATA_DEF_IV, &iv);
+            SetBoxMonData(boxMon, MON_DATA_SPEED_IV, &iv);
+            SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
+            SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
+        }
+    #if P_LEGENDARY_PERFECT_IVS >= GEN_6
+        else if (gSpeciesInfo[species].flags & (SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_MYTHICAL | SPECIES_FLAG_ULTRA_BEAST))
+        {
+            iv = MAX_PER_STAT_IVS;
+            // Initialize a list of IV indices.
+            for (i = 0; i < NUM_STATS; i++)
             {
-                iv = MAX_PER_STAT_IVS;
-                // Initialize a list of IV indices.
-                for (i = 0; i < NUM_STATS; i++)
-                {
-                    availableIVs[i] = i;
-                }
+                availableIVs[i] = i;
+            }
 
-                // Select the 3 IVs that will be perfected.
-                for (i = 0; i < LEGENDARY_PERFECT_IV_COUNT; i++)
+            // Select the 3 IVs that will be perfected.
+            for (i = 0; i < LEGENDARY_PERFECT_IV_COUNT; i++)
+            {
+                u8 index = Random() % (NUM_STATS - i);
+                selectedIvs[i] = availableIVs[index];
+                RemoveIVIndexFromList(availableIVs, index);
+            }
+            for (i = 0; i < LEGENDARY_PERFECT_IV_COUNT; i++)
+            {
+                switch (selectedIvs[i])
                 {
-                    u8 index = Random() % (NUM_STATS - i);
-                    selectedIvs[i] = availableIVs[index];
-                    RemoveIVIndexFromList(availableIVs, index);
-                }
-                for (i = 0; i < LEGENDARY_PERFECT_IV_COUNT; i++)
-                {
-                    switch (selectedIvs[i])
-                    {
-                        case STAT_HP:
-                            SetBoxMonData(boxMon, MON_DATA_HP_IV, &iv);
-                            break;
-                        case STAT_ATK:
-                            SetBoxMonData(boxMon, MON_DATA_ATK_IV, &iv);
-                            break;
-                        case STAT_DEF:
-                            SetBoxMonData(boxMon, MON_DATA_DEF_IV, &iv);
-                            break;
-                        case STAT_SPEED:
-                            SetBoxMonData(boxMon, MON_DATA_SPEED_IV, &iv);
-                            break;
-                        case STAT_SPATK:
-                            SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
-                            break;
-                        case STAT_SPDEF:
-                            SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
-                            break;
-                    }
+                case STAT_HP:
+                    SetBoxMonData(boxMon, MON_DATA_HP_IV, &iv);
+                    break;
+                case STAT_ATK:
+                    SetBoxMonData(boxMon, MON_DATA_ATK_IV, &iv);
+                    break;
+                case STAT_DEF:
+                    SetBoxMonData(boxMon, MON_DATA_DEF_IV, &iv);
+                    break;
+                case STAT_SPEED:
+                    SetBoxMonData(boxMon, MON_DATA_SPEED_IV, &iv);
+                    break;
+                case STAT_SPATK:
+                    SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
+                    break;
+                case STAT_SPDEF:
+                    SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
+                    break;
                 }
             }
-        #endif
-
+        }
+    #endif
     }
 
-    if (gBaseStats[species].abilities[1])
+    if (gSpeciesInfo[species].abilities[1])
     {
         value = personality & 1;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
@@ -3539,6 +3792,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 
     GiveBoxMonInitialMoveset(boxMon);
 }
+
 
 void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
 {
@@ -3553,16 +3807,9 @@ void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV,
     CreateMon(mon, species, level, fixedIV, TRUE, personality, OT_ID_PLAYER_ID, 0);
 }
 
-void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter, u8 otIdType)
+void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter)
 {
     u32 personality;
-    u8 genderRatio;
-
-    genderRatio = gBaseStats[species].genderRatio;
-
-// Infinite loop protection
-    if ((genderRatio == MON_MALE) || (genderRatio == MON_FEMALE) || (genderRatio == MON_GENDERLESS))
-       gender = genderRatio;
 
     if ((u8)(unownLetter - 1) < NUM_UNOWN_FORMS)
     {
@@ -3587,7 +3834,7 @@ void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level,
             || gender != GetGenderFromSpeciesAndPersonality(species, personality));
     }
 
-    CreateMon(mon, species, level, fixedIV, 1, personality, otIdType, 0);
+    CreateMon(mon, species, level, fixedIV, TRUE, personality, OT_ID_PLAYER_ID, 0);
 }
 
 // This is only used to create Wally's Ralts.
@@ -3721,7 +3968,7 @@ void CreateBattleTowerMon_HandleLevel(struct Pokemon *mon, struct BattleTowerPok
     if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_50)
         level = GetFrontierEnemyMonLevel(gSaveBlock2Ptr->frontier.lvlMode);
     else if (lvl50)
-        level = 50;
+        level = FRONTIER_MAX_LEVEL_50;
     else
         level = src->level;
 
@@ -3875,12 +4122,12 @@ void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerP
     GetMonData(mon, MON_DATA_NICKNAME, dest->nickname);
 }
 
-void CreateEventLegalMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
+static void CreateEventMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
 {
-    bool32 isEventLegal = TRUE;
+    bool32 isModernFatefulEncounter = TRUE;
 
     CreateMon(mon, species, level, fixedIV, hasFixedPersonality, fixedPersonality, otIdType, fixedOtId);
-    SetMonData(mon, MON_DATA_EVENT_LEGAL, &isEventLegal);
+    SetMonData(mon, MON_DATA_MODERN_FATEFUL_ENCOUNTER, &isModernFatefulEncounter);
 }
 
 // If FALSE, should load this game's Deoxys form. If TRUE, should load normal Deoxys form
@@ -3950,9 +4197,9 @@ u16 GetUnionRoomTrainerPic(void)
     else
         linkId = GetMultiplayerId() ^ 1;
 
-    arrId = gLinkPlayers[linkId].trainerId & 7;
-    arrId |= gLinkPlayers[linkId].gender << 3;
-    return FacilityClassToPicIndex(gLinkPlayerFacilityClasses[arrId]);
+    arrId = gLinkPlayers[linkId].trainerId % NUM_UNION_ROOM_CLASSES;
+    arrId |= gLinkPlayers[linkId].gender * NUM_UNION_ROOM_CLASSES;
+    return FacilityClassToPicIndex(gUnionRoomFacilityClasses[arrId]);
 }
 
 u16 GetUnionRoomTrainerClass(void)
@@ -3965,19 +4212,19 @@ u16 GetUnionRoomTrainerClass(void)
     else
         linkId = GetMultiplayerId() ^ 1;
 
-    arrId = gLinkPlayers[linkId].trainerId & 7;
-    arrId |= gLinkPlayers[linkId].gender << 3;
-    return gFacilityClassToTrainerClass[gLinkPlayerFacilityClasses[arrId]];
+    arrId = gLinkPlayers[linkId].trainerId % NUM_UNION_ROOM_CLASSES;
+    arrId |= gLinkPlayers[linkId].gender * NUM_UNION_ROOM_CLASSES;
+    return gFacilityClassToTrainerClass[gUnionRoomFacilityClasses[arrId]];
 }
 
-void CreateEventLegalEnemyMon(void)
+void CreateEnemyEventMon(void)
 {
     s32 species = gSpecialVar_0x8004;
     s32 level = gSpecialVar_0x8005;
     s32 itemId = gSpecialVar_0x8006;
 
     ZeroEnemyPartyMons();
-    CreateEventLegalMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    CreateEventMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
     if (itemId)
     {
         u8 heldItem[2];
@@ -4013,7 +4260,7 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
 
 #define CALC_STAT(base, iv, ev, statIndex, field)               \
 {                                                               \
-    u8 baseStat = gBaseStats[species].base;                     \
+    u8 baseStat = gSpeciesInfo[species].base;                   \
     s32 n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5; \
     u8 nature = GetNature(mon);                                 \
     n = ModifyStatByNature(nature, n, statIndex);               \
@@ -4048,7 +4295,7 @@ void CalculateMonStats(struct Pokemon *mon)
     }
     else
     {
-        s32 n = 2 * gBaseStats[species].baseHP + hpIV;
+        s32 n = 2 * gSpeciesInfo[species].baseHP + hpIV;
         newMaxHP = (((n + hpEV / 4) * level) / 100) + level + 10;
     }
 
@@ -4075,13 +4322,14 @@ void CalculateMonStats(struct Pokemon *mon)
     {
         if (currentHP == 0 && oldMaxHP == 0)
             currentHP = newMaxHP;
-        else if (currentHP != 0) {
-            // BUG: currentHP is unintentionally able to become <= 0 after the instruction below. This causes the pomeg berry glitch.
-            currentHP += newMaxHP - oldMaxHP;
-            #ifdef BUGFIX
+        else if (currentHP != 0)
+        {
+            if (newMaxHP > oldMaxHP)
+                currentHP += newMaxHP - oldMaxHP;
             if (currentHP <= 0)
                 currentHP = 1;
-            #endif
+            if (currentHP > newMaxHP)
+                currentHP = newMaxHP;
         }
         else
             return;
@@ -4108,7 +4356,7 @@ u8 GetLevelFromMonExp(struct Pokemon *mon)
     u32 exp = GetMonData(mon, MON_DATA_EXP, NULL);
     s32 level = 1;
 
-    while (level <= MAX_LEVEL && gExperienceTables[gBaseStats[species].growthRate][level] <= exp)
+    while (level <= MAX_LEVEL && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
         level++;
 
     return level - 1;
@@ -4120,7 +4368,7 @@ u8 GetLevelFromBoxMonExp(struct BoxPokemon *boxMon)
     u32 exp = GetBoxMonData(boxMon, MON_DATA_EXP, NULL);
     s32 level = 1;
 
-    while (level <= MAX_LEVEL && gExperienceTables[gBaseStats[species].growthRate][level] <= exp)
+    while (level <= MAX_LEVEL && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
         level++;
 
     return level - 1;
@@ -4131,7 +4379,7 @@ u16 GiveMoveToMon(struct Pokemon *mon, u16 move)
     return GiveMoveToBoxMon(&mon->box, move);
 }
 
-static u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move)
+u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move)
 {
     s32 i;
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -4170,6 +4418,17 @@ void SetMonMoveSlot(struct Pokemon *mon, u16 move, u8 slot)
 {
     SetMonData(mon, MON_DATA_MOVE1 + slot, &move);
     SetMonData(mon, MON_DATA_PP1 + slot, &gBattleMoves[move].pp);
+}
+
+static void SetMonMoveSlot_KeepPP(struct Pokemon *mon, u16 move, u8 slot)
+{
+    u8 ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES, NULL);
+    u8 currPP = GetMonData(mon, MON_DATA_PP1 + slot, NULL);
+    u8 newPP = CalculatePPWithBonus(move, ppBonuses, slot);
+    u8 finalPP = min(currPP, newPP);
+
+    SetMonData(mon, MON_DATA_MOVE1 + slot, &move);
+    SetMonData(mon, MON_DATA_PP1 + slot, &finalPP);
 }
 
 void SetBattleMonMoveSlot(struct BattlePokemon *mon, u16 move, u8 slot)
@@ -4314,6 +4573,13 @@ u8 CountAliveMonsInBattle(u8 caseId)
                 retVal++;
         }
         break;
+    case BATTLE_ALIVE_EXCEPT_ATTACKER:
+        for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+        {
+            if (i != gBattlerAttacker && !(gAbsentBattlerFlags & gBitTable[i]))
+                retVal++;
+        }
+        break;
     }
 
     return retVal;
@@ -4321,7 +4587,7 @@ u8 CountAliveMonsInBattle(u8 caseId)
 
 u8 GetDefaultMoveTarget(u8 battlerId)
 {
-    u8 opposing = BATTLE_OPPOSITE(GetBattlerPosition(battlerId) & BIT_SIDE);
+    u8 opposing = BATTLE_OPPOSITE(GET_BATTLER_SIDE(battlerId));
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_DOUBLE))
         return GetBattlerAtPosition(opposing);
@@ -4355,15 +4621,15 @@ u8 GetBoxMonGender(struct BoxPokemon *boxMon)
     u16 species = GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL);
     u32 personality = GetBoxMonData(boxMon, MON_DATA_PERSONALITY, NULL);
 
-    switch (gBaseStats[species].genderRatio)
+    switch (gSpeciesInfo[species].genderRatio)
     {
     case MON_MALE:
     case MON_FEMALE:
     case MON_GENDERLESS:
-        return gBaseStats[species].genderRatio;
+        return gSpeciesInfo[species].genderRatio;
     }
 
-    if (gBaseStats[species].genderRatio > (personality & 0xFF))
+    if (gSpeciesInfo[species].genderRatio > (personality & 0xFF))
         return MON_FEMALE;
     else
         return MON_MALE;
@@ -4371,15 +4637,15 @@ u8 GetBoxMonGender(struct BoxPokemon *boxMon)
 
 u8 GetGenderFromSpeciesAndPersonality(u16 species, u32 personality)
 {
-    switch (gBaseStats[species].genderRatio)
+    switch (gSpeciesInfo[species].genderRatio)
     {
     case MON_MALE:
     case MON_FEMALE:
     case MON_GENDERLESS:
-        return gBaseStats[species].genderRatio;
+        return gSpeciesInfo[species].genderRatio;
     }
 
-    if (gBaseStats[species].genderRatio > (personality & 0xFF))
+    if (gSpeciesInfo[species].genderRatio > (personality & 0xFF))
         return MON_FEMALE;
     else
         return MON_MALE;
@@ -4545,7 +4811,7 @@ static union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 perso
     return substruct;
 }
 
-u32 GetMonData(struct Pokemon *mon, s32 field, u8* data)
+u32 GetMonData(struct Pokemon *mon, s32 field, u8 *data)
 {
     u32 ret;
 
@@ -4869,10 +5135,10 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_UNUSED_RIBBONS:
         retVal = substruct3->unusedRibbons;
         break;
-    case MON_DATA_EVENT_LEGAL:
-        retVal = substruct3->eventLegal;
+    case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
+        retVal = substruct3->modernFatefulEncounter;
         break;
-    case MON_DATA_SPECIES2:
+    case MON_DATA_SPECIES_OR_EGG:
         retVal = substruct0->species;
         if (substruct0->species && (substruct3->isEgg || boxMon->isBadEgg))
             retVal = SPECIES_EGG;
@@ -4999,7 +5265,7 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg)
     case MON_DATA_MAIL:
         SET8(mon->mail);
         break;
-    case MON_DATA_SPECIES2:
+    case MON_DATA_SPECIES_OR_EGG:
         break;
     default:
         SetBoxMonData(&mon->box, field, data);
@@ -5253,8 +5519,8 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     case MON_DATA_UNUSED_RIBBONS:
         SET8(substruct3->unusedRibbons);
         break;
-    case MON_DATA_EVENT_LEGAL:
-        SET8(substruct3->eventLegal);
+    case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
+        SET8(substruct3->modernFatefulEncounter);
         break;
     case MON_DATA_IVS:
     {
@@ -5305,7 +5571,7 @@ u8 GiveMonToPlayer(struct Pokemon *mon)
     return MON_GIVEN_TO_PARTY;
 }
 
-static u8 SendMonToPC(struct Pokemon* mon)
+u8 SendMonToPC(struct Pokemon* mon)
 {
     s32 boxNo, boxPos;
 
@@ -5376,9 +5642,9 @@ u8 GetMonsStateToDoubles(void)
 
     for (i = 0; i < gPlayerPartyCount; i++)
     {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL) != SPECIES_EGG
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_EGG
          && GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) != 0
-         && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL) != SPECIES_NONE)
+         && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_NONE)
             aliveCount++;
     }
 
@@ -5392,7 +5658,7 @@ u8 GetMonsStateToDoubles_2(void)
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        u32 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL);
+        u32 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL);
         if (species != SPECIES_EGG && species != SPECIES_NONE
          && GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) != 0)
             aliveCount++;
@@ -5409,7 +5675,7 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
     int i;
 
     if (abilityNum < NUM_ABILITY_SLOTS)
-        gLastUsedAbility = gBaseStats[species].abilities[abilityNum];
+        gLastUsedAbility = gSpeciesInfo[species].abilities[abilityNum];
     else
         gLastUsedAbility = ABILITY_NONE;
 
@@ -5417,13 +5683,13 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
     {
         for (i = NUM_NORMAL_ABILITY_SLOTS; i < NUM_ABILITY_SLOTS && gLastUsedAbility == ABILITY_NONE; i++)
         {
-            gLastUsedAbility = gBaseStats[species].abilities[i];
+            gLastUsedAbility = gSpeciesInfo[species].abilities[i];
         }
     }
 
     for (i = 0; i < NUM_ABILITY_SLOTS && gLastUsedAbility == ABILITY_NONE; i++) // look for any non-empty ability
     {
-        gLastUsedAbility = gBaseStats[species].abilities[i];
+        gLastUsedAbility = gSpeciesInfo[species].abilities[i];
     }
 
     return gLastUsedAbility;
@@ -5575,8 +5841,8 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->spDefense = GetMonData(src, MON_DATA_SPDEF, NULL);
     dst->abilityNum = GetMonData(src, MON_DATA_ABILITY_NUM, NULL);
     dst->otId = GetMonData(src, MON_DATA_OT_ID, NULL);
-    dst->type1 = gBaseStats[dst->species].type1;
-    dst->type2 = gBaseStats[dst->species].type2;
+    dst->type1 = gSpeciesInfo[dst->species].types[0];
+    dst->type2 = gSpeciesInfo[dst->species].types[1];
     dst->type3 = TYPE_MYSTERY;
     dst->ability = GetAbilityBySpecies(dst->species, dst->abilityNum);
     GetMonData(src, MON_DATA_NICKNAME, nickname);
@@ -5628,6 +5894,21 @@ bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, 
     }                                                                                                   \
 }
 
+#if B_X_ITEMS_BUFF >= GEN_7
+    #define X_ITEM_STAGES 2
+#else
+    #define X_ITEM_STAGES 1
+#endif
+
+// EXP candies store an index for this table in their holdEffectParam.
+const u32 sExpCandyExperienceTable[] = {
+    [EXP_100 - 1] = 100,
+    [EXP_800 - 1] = 800,
+    [EXP_3000 - 1] = 3000,
+    [EXP_10000 - 1] = 10000,
+    [EXP_30000 - 1] = 30000,
+};
+
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
 bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex, bool8 usedByAI)
 {
@@ -5651,57 +5932,16 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     // Get item hold effect
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
     if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
-    {
-        if (gMain.inBattle)
-            holdEffect = gEnigmaBerries[gBattlerInMenuId].holdEffect;
-        else
-            holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
-    }
+        holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
     else
-    {
         holdEffect = ItemId_GetHoldEffect(heldItem);
-    }
-
-    // Get battler id (if relevant)
-    gPotentialItemEffectBattler = gBattlerInMenuId;
-    if (gMain.inBattle)
-    {
-        gActiveBattler = gBattlerInMenuId;
-        i = (GetBattlerSide(gActiveBattler) != B_SIDE_PLAYER);
-        while (i < gBattlersCount)
-        {
-            if (gBattlerPartyIndexes[i] == partyIndex)
-            {
-                battlerId = i;
-                break;
-            }
-            i += 2;
-        }
-    }
-    else
-    {
-        gActiveBattler = 0;
-        battlerId = MAX_BATTLERS_COUNT;
-    }
 
     // Skip using the item if it won't do anything
-    if (!ITEM_HAS_EFFECT(item))
-        return TRUE;
-    if (gItemEffectTable[item - ITEM_POTION] == NULL && item != ITEM_ENIGMA_BERRY_E_READER)
+    if (gItemEffectTable[item] == NULL && item != ITEM_ENIGMA_BERRY_E_READER)
         return TRUE;
 
     // Get item effect
-    if (item == ITEM_ENIGMA_BERRY_E_READER)
-    {
-        if (gMain.inBattle)
-            itemEffect = gEnigmaBerries[gActiveBattler].itemEffect;
-        else
-            itemEffect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
-    }
-    else
-    {
-        itemEffect = gItemEffectTable[item - ITEM_POTION];
-    }
+    itemEffect = GetItemEffect(item);
 
     // Do item effect
     for (i = 0; i < ITEM_EFFECT_ARG_START; i++)
@@ -5710,222 +5950,58 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         {
 
         // Handle ITEM0 effects (infatuation, Dire Hit, X Attack). ITEM0_SACRED_ASH is handled in party_menu.c
+        // Now handled in item battle scripts.
         case 0:
-            // Cure infatuation
-            if ((itemEffect[i] & ITEM0_INFATUATION)
-             && gMain.inBattle && battlerId != MAX_BATTLERS_COUNT && (gBattleMons[battlerId].status2 & STATUS2_INFATUATION))
-            {
-                gBattleMons[battlerId].status2 &= ~STATUS2_INFATUATION;
-                retVal = FALSE;
-            }
-
-            // Dire Hit
-            if ((itemEffect[i] & ITEM0_DIRE_HIT)
-             && !(gBattleMons[gActiveBattler].status2 & STATUS2_FOCUS_ENERGY))
-            {
-                gBattleMons[gActiveBattler].status2 |= STATUS2_FOCUS_ENERGY;
-                retVal = FALSE;
-            }
-        #ifndef ITEM_EXPANSION
-            // X Attack
-            if ((itemEffect[i] & ITEM0_X_ATTACK)
-             && gBattleMons[gActiveBattler].statStages[STAT_ATK] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_ATK] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_ATK] += itemEffect[i] & ITEM0_X_ATTACK;
-                if (gBattleMons[gActiveBattler].statStages[STAT_ATK] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_ATK] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-        #endif
             break;
 
         // Handle ITEM1 effects (in-battle stat boosting effects)
-        #ifndef ITEM_EXPANSION
+        // Now handled in item battle scripts.
         case 1:
-            // X Defend
-            if ((itemEffect[i] & ITEM1_X_DEFEND)
-             && gBattleMons[gActiveBattler].statStages[STAT_DEF] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_DEF] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_DEF] += (itemEffect[i] & ITEM1_X_DEFEND) >> 4;
-                if (gBattleMons[gActiveBattler].statStages[STAT_DEF] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_DEF] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-
-            // X Speed
-            if ((itemEffect[i] & ITEM1_X_SPEED)
-             && gBattleMons[gActiveBattler].statStages[STAT_SPEED] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPEED] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_SPEED] += itemEffect[i] & ITEM1_X_SPEED;
-                if (gBattleMons[gActiveBattler].statStages[STAT_SPEED] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPEED] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-            break;
-        // Handle ITEM2 effects (more stat boosting effects)
-        case 2:
-            // X Accuracy
-            if ((itemEffect[i] & ITEM2_X_ACCURACY)
-             && gBattleMons[gActiveBattler].statStages[STAT_ACC] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_ACC] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_ACC] += (itemEffect[i] & ITEM2_X_ACCURACY) >> 4;
-                if (gBattleMons[gActiveBattler].statStages[STAT_ACC] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_ACC] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-
-            // X Sp Attack
-            if ((itemEffect[i] & ITEM2_X_SPATK)
-             && gBattleMons[gActiveBattler].statStages[STAT_SPATK] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPATK] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_SPATK] += itemEffect[i] & ITEM2_X_SPATK;
-                if (gBattleMons[gActiveBattler].statStages[STAT_SPATK] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPATK] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-            break;
-        #else
-        // Handle ITEM1 effects (in-battle stat boosting effects)
-        case 1:
-            // X Attack
-            if ((itemEffect[i] & ITEM1_X_ATTACK)
-             && gBattleMons[gActiveBattler].statStages[STAT_ATK] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_ATK] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_ATK] += 1;
-                if (gBattleMons[gActiveBattler].statStages[STAT_ATK] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_ATK] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-
-            // X Defense
-            if ((itemEffect[i] & ITEM1_X_DEFENSE)
-             && gBattleMons[gActiveBattler].statStages[STAT_DEF] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_DEF] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_DEF] += 1;
-                if (gBattleMons[gActiveBattler].statStages[STAT_DEF] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_DEF] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-
-            // X Speed
-            if ((itemEffect[i] & ITEM1_X_SPEED)
-             && gBattleMons[gActiveBattler].statStages[STAT_SPEED] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPEED] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_SPEED] += 1;
-                if (gBattleMons[gActiveBattler].statStages[STAT_SPEED] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPEED] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-
-            // X Sp Attack
-            if ((itemEffect[i] & ITEM1_X_SPATK)
-             && gBattleMons[gActiveBattler].statStages[STAT_SPATK] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPATK] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_SPATK] += 1;
-                if (gBattleMons[gActiveBattler].statStages[STAT_SPATK] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPATK] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-
-            // X Sp Defense
-            if ((itemEffect[i] & ITEM1_X_SPDEF)
-             && gBattleMons[gActiveBattler].statStages[STAT_SPDEF] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPDEF] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_SPDEF] += 1;
-                if (gBattleMons[gActiveBattler].statStages[STAT_SPDEF] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_SPDEF] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
-
-            // X Accuracy
-            if ((itemEffect[i] & ITEM1_X_ACCURACY)
-             && gBattleMons[gActiveBattler].statStages[STAT_ACC] < MAX_STAT_STAGE)
-            {
-                if (B_X_ITEMS_BUFF >= GEN_7)
-                    gBattleMons[gActiveBattler].statStages[STAT_ACC] += 2;
-                else
-                    gBattleMons[gActiveBattler].statStages[STAT_ACC] += 1;
-                if (gBattleMons[gActiveBattler].statStages[STAT_ACC] > MAX_STAT_STAGE)
-                    gBattleMons[gActiveBattler].statStages[STAT_ACC] = MAX_STAT_STAGE;
-                retVal = FALSE;
-            }
             break;
         // Formerly used by the item effects of the X Sp. Atk and the X Accuracy
         case 2:
             break;
-        #endif
+
         // Handle ITEM3 effects (Guard Spec, Rare Candy, cure status)
         case 3:
-            // Guard Spec
-            if ((itemEffect[i] & ITEM3_GUARD_SPEC)
-             && gSideTimers[GetBattlerSide(gActiveBattler)].mistTimer == 0)
-            {
-                gSideTimers[GetBattlerSide(gActiveBattler)].mistTimer = 5;
-                retVal = FALSE;
-            }
-
-            // Rare Candy
+            // Rare Candy / EXP Candy
             if ((itemEffect[i] & ITEM3_LEVEL_UP)
              && GetMonData(mon, MON_DATA_LEVEL, NULL) != MAX_LEVEL)
             {
-                dataUnsigned = gExperienceTables[gBaseStats[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + 1];
-                SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
-                CalculateMonStats(mon);
-                retVal = FALSE;
+                u8 param = ItemId_GetHoldEffectParam(item);
+                dataUnsigned = 0;
+
+                if (param == 0) // Rare Candy
+                {
+                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + 1];
+                }
+                else if (param - 1 < ARRAY_COUNT(sExpCandyExperienceTable)) // EXP Candies
+                {
+                    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+                    dataUnsigned = sExpCandyExperienceTable[param - 1] + GetMonData(mon, MON_DATA_EXP, NULL);
+                    if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL])
+                        dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL];
+                }
+
+                if (dataUnsigned != 0) // Failsafe
+                {
+                    SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
+                    CalculateMonStats(mon);
+                    retVal = FALSE;
+                }
             }
 
             // Cure status
-            if ((itemEffect[i] & ITEM3_SLEEP)
-             && HealStatusConditions(mon, partyIndex, STATUS1_SLEEP, battlerId) == 0)
-            {
-                if (battlerId != MAX_BATTLERS_COUNT)
-                    gBattleMons[battlerId].status2 &= ~STATUS2_NIGHTMARE;
+            if ((itemEffect[i] & ITEM3_SLEEP) && HealStatusConditions(mon, partyIndex, STATUS1_SLEEP, battlerId) == 0)
                 retVal = FALSE;
-            }
             if ((itemEffect[i] & ITEM3_POISON) && HealStatusConditions(mon, partyIndex, STATUS1_PSN_ANY | STATUS1_TOXIC_COUNTER, battlerId) == 0)
                 retVal = FALSE;
             if ((itemEffect[i] & ITEM3_BURN) && HealStatusConditions(mon, partyIndex, STATUS1_BURN, battlerId) == 0)
                 retVal = FALSE;
-            if ((itemEffect[i] & ITEM3_FREEZE) && HealStatusConditions(mon, partyIndex, STATUS1_FREEZE, battlerId) == 0)
+            if ((itemEffect[i] & ITEM3_FREEZE) && HealStatusConditions(mon, partyIndex, STATUS1_FREEZE | STATUS1_FROSTBITE, battlerId) == 0)
                 retVal = FALSE;
             if ((itemEffect[i] & ITEM3_PARALYSIS) && HealStatusConditions(mon, partyIndex, STATUS1_PARALYSIS, battlerId) == 0)
                 retVal = FALSE;
-            if ((itemEffect[i] & ITEM3_CONFUSION)  // heal confusion
-             && gMain.inBattle && battlerId != MAX_BATTLERS_COUNT && (gBattleMons[battlerId].status2 & STATUS2_CONFUSION))
-            {
-                gBattleMons[battlerId].status2 &= ~STATUS2_CONFUSION;
-                retVal = FALSE;
-            }
             break;
 
         // Handle ITEM4 effects (Change HP/Atk EVs, HP heal, PP heal, PP up, Revive, and evolution stones)
@@ -5974,7 +6050,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             if (itemEffect[10] & ITEM10_IS_VITAMIN)
                                 evCap = EV_ITEM_RAISE_LIMIT;
                             else
-                                evCap = 252;
+                                evCap = MAX_PER_STAT_EVS;
 
                             if (dataSigned >= evCap)
                                 break;
@@ -6000,6 +6076,10 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                 break;
                             }
                             dataSigned += evChange;
+                            #if I_EV_LOWERING_BERRY_JUMP == GEN_4
+                            if (dataSigned > 100)
+                                dataSigned = 100;
+                            #endif
                             if (dataSigned < 0)
                                 dataSigned = 0;
                         }
@@ -6012,38 +6092,12 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         break;
 
                     case 2: // ITEM4_HEAL_HP
-                        // If Revive, update number of times revive has been used
-                        if (effectFlags & (ITEM4_REVIVE >> 2))
+                        // Check use validity.
+                        if ((effectFlags & (ITEM4_REVIVE >> 2) && GetMonData(mon, MON_DATA_HP, NULL) != 0)
+                              || (!(effectFlags & (ITEM4_REVIVE >> 2)) && GetMonData(mon, MON_DATA_HP, NULL) == 0))
                         {
-                            if (GetMonData(mon, MON_DATA_HP, NULL) != 0)
-                            {
-                                itemEffectParam++;
-                                break;
-                            }
-                            if (gMain.inBattle)
-                            {
-                                if (battlerId != MAX_BATTLERS_COUNT)
-                                {
-                                    gAbsentBattlerFlags &= ~gBitTable[battlerId];
-                                    CopyPlayerPartyMonToBattleData(battlerId, GetPartyIdFromBattlePartyId(gBattlerPartyIndexes[battlerId]));
-                                    if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER && gBattleResults.numRevivesUsed < 255)
-                                        gBattleResults.numRevivesUsed++;
-                                }
-                                else
-                                {
-                                    gAbsentBattlerFlags &= ~gBitTable[gActiveBattler ^ 2];
-                                    if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER && gBattleResults.numRevivesUsed < 255)
-                                        gBattleResults.numRevivesUsed++;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            if (GetMonData(mon, MON_DATA_HP, NULL) == 0)
-                            {
-                                itemEffectParam++;
-                                break;
-                            }
+                            itemEffectParam++;
+                            break;
                         }
 
                         // Get amount of HP to restore
@@ -6071,35 +6125,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         // Only restore HP if not at max health
                         if (GetMonData(mon, MON_DATA_MAX_HP, NULL) != GetMonData(mon, MON_DATA_HP, NULL))
                         {
-                            if (!usedByAI)
-                            {
-                                // Restore HP
-                                dataUnsigned = GetMonData(mon, MON_DATA_HP, NULL) + dataUnsigned;
-                                if (dataUnsigned > GetMonData(mon, MON_DATA_MAX_HP, NULL))
-                                    dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL);
-                                SetMonData(mon, MON_DATA_HP, &dataUnsigned);
-
-                                // Update battler (if applicable)
-                                if (gMain.inBattle && battlerId != MAX_BATTLERS_COUNT)
-                                {
-                                    gBattleMons[battlerId].hp = dataUnsigned;
-                                    if (!(effectFlags & (ITEM4_REVIVE >> 2)) && GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
-                                    {
-                                        if (gBattleResults.numHealingItemsUsed < 255)
-                                            gBattleResults.numHealingItemsUsed++;
-
-                                        temp2 = gActiveBattler;
-                                        gActiveBattler = battlerId;
-                                        BtlController_EmitGetMonData(BUFFER_A, REQUEST_ALL_BATTLE, 0);
-                                        MarkBattlerForControllerExec(gActiveBattler);
-                                        gActiveBattler = temp2;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                gBattleMoveDamage = -dataUnsigned;
-                            }
+                            // Restore HP
+                            dataUnsigned = GetMonData(mon, MON_DATA_HP, NULL) + dataUnsigned;
+                            if (dataUnsigned > GetMonData(mon, MON_DATA_MAX_HP, NULL))
+                                dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+                            SetMonData(mon, MON_DATA_HP, &dataUnsigned);
                             retVal = FALSE;
                         }
                         effectFlags &= ~(ITEM4_REVIVE >> 2);
@@ -6124,11 +6154,6 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                         dataUnsigned = CalculatePPWithBonus(moveId, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), temp2);
                                     }
                                     SetMonData(mon, MON_DATA_PP1 + temp2, &dataUnsigned);
-
-                                    // Heal battler PP too (if applicable)
-                                    if (gMain.inBattle && battlerId != MAX_BATTLERS_COUNT && MOVE_IS_PERMANENT(battlerId, temp2))
-                                        gBattleMons[battlerId].pp[temp2] = dataUnsigned;
-
                                     retVal = FALSE;
                                 }
                             }
@@ -6150,11 +6175,6 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                     dataUnsigned = CalculatePPWithBonus(moveId, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
                                 }
                                 SetMonData(mon, MON_DATA_PP1 + moveIndex, &dataUnsigned);
-
-                                // Heal battler PP too (if applicable)
-                                if (gMain.inBattle && battlerId != MAX_BATTLERS_COUNT && MOVE_IS_PERMANENT(battlerId, moveIndex))
-                                    gBattleMons[battlerId].pp[moveIndex] = dataUnsigned;
-
                                 retVal = FALSE;
                             }
                         }
@@ -6210,7 +6230,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             if (itemEffect[10] & ITEM10_IS_VITAMIN)
                                 evCap = EV_ITEM_RAISE_LIMIT;
                             else
-                                evCap = 252;
+                                evCap = MAX_PER_STAT_EVS;
 
                             if (dataSigned >= evCap)
                                 break;
@@ -6236,6 +6256,10 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                 break;
                             }
                             dataSigned += evChange;
+                            #if I_BERRY_EV_JUMP == GEN_4
+                            if (dataSigned > 100)
+                                dataSigned = 100;
+                            #endif
                             if (dataSigned < 0)
                                 dataSigned = 0;
                         }
@@ -6327,9 +6351,9 @@ u8 GetItemEffectParamOffset(u16 itemId, u8 effectByte, u8 effectBit)
 
     offset = ITEM_EFFECT_ARG_START;
 
-    temp = gItemEffectTable[itemId - ITEM_POTION];
+    temp = gItemEffectTable[itemId];
 
-    if (!temp && itemId != ITEM_ENIGMA_BERRY_E_READER)
+    if (temp != NULL && !temp && itemId != ITEM_ENIGMA_BERRY_E_READER)
         return 0;
 
     if (itemId == ITEM_ENIGMA_BERRY_E_READER)
@@ -6430,19 +6454,16 @@ u8 GetItemEffectParamOffset(u16 itemId, u8 effectByte, u8 effectBit)
     return offset;
 }
 
-static void BufferStatRoseMessage(s32 arg0)
+static void BufferStatRoseMessage(s32 statIdx)
 {
     gBattlerTarget = gBattlerInMenuId;
-    StringCopy(gBattleTextBuff1, gStatNamesTable[sStatsToRaise[arg0]]);
-    if (B_X_ITEMS_BUFF >= GEN_7)
-    {
-        StringCopy(gBattleTextBuff2, gText_StatSharply);
-        StringAppend(gBattleTextBuff2, gText_StatRose);
-    }
-    else
-    {
-        StringCopy(gBattleTextBuff2, gText_StatRose);
-    }
+    StringCopy(gBattleTextBuff1, gStatNamesTable[sStatsToRaise[statIdx]]);
+#if B_X_ITEMS_BUFF >= GEN_7
+    StringCopy(gBattleTextBuff2, gText_StatSharply);
+    StringAppend(gBattleTextBuff2, gText_StatRose);
+#else
+    StringCopy(gBattleTextBuff2, gText_StatRose);
+#endif
     BattleStringExpandPlaceholdersToDisplayedString(gText_DefendersStatRose);
 }
 
@@ -6460,37 +6481,11 @@ u8 *UseStatIncreaseItem(u16 itemId)
     }
     else
     {
-        itemEffect = gItemEffectTable[itemId - ITEM_POTION];
+        itemEffect = gItemEffectTable[itemId];
     }
 
     gPotentialItemEffectBattler = gBattlerInMenuId;
 
-#ifndef ITEM_EXPANSION
-    for (i = 0; i < 3; i++)
-    {
-        if (itemEffect[i] & (ITEM0_X_ATTACK | ITEM1_X_SPEED | ITEM2_X_SPATK))
-            BufferStatRoseMessage(i * 2);
-
-        if (itemEffect[i] & (ITEM0_DIRE_HIT | ITEM1_X_DEFEND | ITEM2_X_ACCURACY))
-        {
-            if (i != 0) // Dire Hit is the only ITEM0 above
-            {
-                BufferStatRoseMessage(i * 2 + 1);
-            }
-            else
-            {
-                gBattlerAttacker = gBattlerInMenuId;
-                BattleStringExpandPlaceholdersToDisplayedString(gText_PkmnGettingPumped);
-            }
-        }
-    }
-
-    if (itemEffect[3] & ITEM3_GUARD_SPEC)
-    {
-        gBattlerAttacker = gBattlerInMenuId;
-        BattleStringExpandPlaceholdersToDisplayedString(gText_PkmnShroudedInMist);
-    }
-#else
     if (itemEffect[0] & ITEM0_DIRE_HIT)
     {
         gBattlerAttacker = gBattlerInMenuId;
@@ -6524,7 +6519,6 @@ u8 *UseStatIncreaseItem(u16 itemId)
         gBattlerAttacker = gBattlerInMenuId;
         BattleStringExpandPlaceholdersToDisplayedString(gText_PkmnShroudedInMist);
     }
-#endif
 
     return gDisplayedStringBattle;
 }
@@ -6561,7 +6555,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
         partnerSpecies = GetMonData(tradePartner, MON_DATA_SPECIES, 0);
         partnerHeldItem = GetMonData(tradePartner, MON_DATA_HELD_ITEM, 0);
 
-        if (partnerHeldItem == ITEM_ENIGMA_BERRY)
+        if (partnerHeldItem == ITEM_ENIGMA_BERRY_E_READER)
             partnerHoldEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
         else
             partnerHoldEffect = ItemId_GetHoldEffect(partnerHeldItem);
@@ -6581,7 +6575,10 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
     // Prevent evolution with Everstone, unless we're just viewing the party menu with an evolution item
     if (holdEffect == HOLD_EFFECT_PREVENT_EVOLVE
         && mode != EVO_MODE_ITEM_CHECK
-        && (P_KADABRA_EVERSTONE < GEN_4 || species != SPECIES_KADABRA))
+    #if P_KADABRA_EVERSTONE >= GEN_4
+        && species != SPECIES_KADABRA
+    #endif
+    )
         return SPECIES_NONE;
 
     switch (mode)
@@ -6688,13 +6685,16 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 if (MonKnowsMove(mon, gEvolutionTable[species][i].param))
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
-            case EVO_MOVE_TYPE:
-                for (j = 0; j < 4; j++)
+            case EVO_FRIENDSHIP_MOVE_TYPE:
+                if (friendship >= 220)
                 {
-                    if (gBattleMoves[GetMonData(mon, MON_DATA_MOVE1 + j, NULL)].type == gEvolutionTable[species][i].param)
+                    for (j = 0; j < MAX_MON_MOVES; j++)
                     {
-                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                        break;
+                        if (gBattleMoves[GetMonData(mon, MON_DATA_MOVE1 + j, NULL)].type == gEvolutionTable[species][i].param)
+                        {
+                            targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                            break;
+                        }
                     }
                 }
                 break;
@@ -6714,8 +6714,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     for (j = 0; j < PARTY_SIZE; j++)
                     {
                         u16 currSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
-                        if (gBaseStats[currSpecies].type1 == TYPE_DARK
-                         || gBaseStats[currSpecies].type2 == TYPE_DARK)
+                        if (gSpeciesInfo[currSpecies].types[0] == TYPE_DARK
+                         || gSpeciesInfo[currSpecies].types[1] == TYPE_DARK)
                         {
                             targetSpecies = gEvolutionTable[species][i].targetSpecies;
                             break;
@@ -6744,21 +6744,21 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     u8 nature = GetNature(mon);
                     switch (nature)
                     {
-                        case NATURE_HARDY:
-                        case NATURE_BRAVE:
-                        case NATURE_ADAMANT:
-                        case NATURE_NAUGHTY:
-                        case NATURE_DOCILE:
-                        case NATURE_IMPISH:
-                        case NATURE_LAX:
-                        case NATURE_HASTY:
-                        case NATURE_JOLLY:
-                        case NATURE_NAIVE:
-                        case NATURE_RASH:
-                        case NATURE_SASSY:
-                        case NATURE_QUIRKY:
-                            targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                            break;
+                    case NATURE_HARDY:
+                    case NATURE_BRAVE:
+                    case NATURE_ADAMANT:
+                    case NATURE_NAUGHTY:
+                    case NATURE_DOCILE:
+                    case NATURE_IMPISH:
+                    case NATURE_LAX:
+                    case NATURE_HASTY:
+                    case NATURE_JOLLY:
+                    case NATURE_NAIVE:
+                    case NATURE_RASH:
+                    case NATURE_SASSY:
+                    case NATURE_QUIRKY:
+                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                        break;
                     }
                 }
                 break;
@@ -6768,21 +6768,29 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     u8 nature = GetNature(mon);
                     switch (nature)
                     {
-                        case NATURE_LONELY:
-                        case NATURE_BOLD:
-                        case NATURE_RELAXED:
-                        case NATURE_TIMID:
-                        case NATURE_SERIOUS:
-                        case NATURE_MODEST:
-                        case NATURE_MILD:
-                        case NATURE_QUIET:
-                        case NATURE_BASHFUL:
-                        case NATURE_CALM:
-                        case NATURE_GENTLE:
-                        case NATURE_CAREFUL:
-                            targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                            break;
+                    case NATURE_LONELY:
+                    case NATURE_BOLD:
+                    case NATURE_RELAXED:
+                    case NATURE_TIMID:
+                    case NATURE_SERIOUS:
+                    case NATURE_MODEST:
+                    case NATURE_MILD:
+                    case NATURE_QUIET:
+                    case NATURE_BASHFUL:
+                    case NATURE_CALM:
+                    case NATURE_GENTLE:
+                    case NATURE_CAREFUL:
+                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                        break;
                     }
+                }
+                break;
+            case EVO_ITEM_HOLD:
+                if (heldItem == gEvolutionTable[species][i].param)
+                {
+                    heldItem = 0;
+                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 }
                 break;
             }
@@ -6827,6 +6835,16 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 break;
             case EVO_ITEM_MALE:
                 if (GetMonGender(mon) == MON_MALE && gEvolutionTable[species][i].param == evolutionItem)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_ITEM_NIGHT:
+                RtcCalcLocalTime();
+                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && gEvolutionTable[species][i].param == evolutionItem)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_ITEM_DAY:
+                RtcCalcLocalTime();
+                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && gEvolutionTable[species][i].param == evolutionItem)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             }
@@ -7099,13 +7117,13 @@ u16 GetLinkTrainerFlankId(u8 linkPlayerId)
     return flankId;
 }
 
-s32 GetBattlerMultiplayerId(u16 a1)
+s32 GetBattlerMultiplayerId(u16 id)
 {
-    s32 id;
-    for (id = 0; id < MAX_LINK_PLAYERS; id++)
-        if (gLinkPlayers[id].id == a1)
+    s32 multiplayerId;
+    for (multiplayerId = 0; multiplayerId < MAX_LINK_PLAYERS; multiplayerId++)
+        if (gLinkPlayers[multiplayerId].id == id)
             break;
-    return id;
+    return multiplayerId;
 }
 
 u8 GetTrainerEncounterMusicId(u16 trainerOpponentId)
@@ -7168,7 +7186,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
     if (ShouldSkipFriendshipChange())
         return;
 
-    species = GetMonData(mon, MON_DATA_SPECIES2, 0);
+    species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, 0);
 
     if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
@@ -7228,7 +7246,7 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
     u8 bonus;
 
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, 0);
-    if (heldItem == ITEM_ENIGMA_BERRY)
+    if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
     {
         if (gMain.inBattle)
             holdEffect = gEnigmaBerries[0].holdEffect;
@@ -7263,39 +7281,39 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         {
         case STAT_HP:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_HP)
-                evIncrease = (gBaseStats[defeatedSpecies].evYield_HP + bonus) * multiplier;
+                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_HP + bonus) * multiplier;
             else
-                evIncrease = gBaseStats[defeatedSpecies].evYield_HP * multiplier;
+                evIncrease = gSpeciesInfo[defeatedSpecies].evYield_HP * multiplier;
             break;
         case STAT_ATK:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_ATK)
-                evIncrease = (gBaseStats[defeatedSpecies].evYield_Attack + bonus) * multiplier;
+                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_Attack + bonus) * multiplier;
             else
-                evIncrease = gBaseStats[defeatedSpecies].evYield_Attack * multiplier;
+                evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Attack * multiplier;
             break;
         case STAT_DEF:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_DEF)
-                evIncrease = (gBaseStats[defeatedSpecies].evYield_Defense + bonus) * multiplier;
+                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_Defense + bonus) * multiplier;
             else
-                evIncrease = gBaseStats[defeatedSpecies].evYield_Defense * multiplier;
+                evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Defense * multiplier;
             break;
         case STAT_SPEED:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_SPEED)
-                evIncrease = (gBaseStats[defeatedSpecies].evYield_Speed + bonus) * multiplier;
+                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_Speed + bonus) * multiplier;
             else
-                evIncrease = gBaseStats[defeatedSpecies].evYield_Speed * multiplier;
+                evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Speed * multiplier;
             break;
         case STAT_SPATK:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_SPATK)
-                evIncrease = (gBaseStats[defeatedSpecies].evYield_SpAttack + bonus) * multiplier;
+                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_SpAttack + bonus) * multiplier;
             else
-                evIncrease = gBaseStats[defeatedSpecies].evYield_SpAttack * multiplier;
+                evIncrease = gSpeciesInfo[defeatedSpecies].evYield_SpAttack * multiplier;
             break;
         case STAT_SPDEF:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_SPDEF)
-                evIncrease = (gBaseStats[defeatedSpecies].evYield_SpDefense + bonus) * multiplier;
+                evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_SpDefense + bonus) * multiplier;
             else
-                evIncrease = gBaseStats[defeatedSpecies].evYield_SpDefense * multiplier;
+                evIncrease = gSpeciesInfo[defeatedSpecies].evYield_SpDefense * multiplier;
             break;
         }
 
@@ -7484,12 +7502,12 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
     u8 nextLevel = GetMonData(mon, MON_DATA_LEVEL, 0) + 1;
     u32 expPoints = GetMonData(mon, MON_DATA_EXP, 0);
-    if (expPoints > gExperienceTables[gBaseStats[species].growthRate][MAX_LEVEL])
+    if (expPoints > gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL])
     {
-        expPoints = gExperienceTables[gBaseStats[species].growthRate][MAX_LEVEL];
+        expPoints = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL];
         SetMonData(mon, MON_DATA_EXP, &expPoints);
     }
-    if (nextLevel > MAX_LEVEL || expPoints < gExperienceTables[gBaseStats[species].growthRate][nextLevel])
+    if (nextLevel > MAX_LEVEL || expPoints < gExperienceTables[gSpeciesInfo[species].growthRate][nextLevel])
     {
         return FALSE;
     }
@@ -7500,40 +7518,53 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
     }
 }
 
-u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
-{
-    u16 species = GetMonData(mon, MON_DATA_SPECIES2, 0);
-    if (species == SPECIES_EGG)
-    {
-        return 0;
-    }
-    else if (tm < 32)
-    {
-        u32 mask = 1 << tm;
-        return gTMHMLearnsets[species][0] & mask;
-    }
-    else
-    {
-        u32 mask = 1 << (tm - 32);
-        return gTMHMLearnsets[species][1] & mask;
-    }
-}
-
-u32 CanSpeciesLearnTMHM(u16 species, u8 tm)
+u8 CanLearnTeachableMove(u16 species, u16 move)
 {
     if (species == SPECIES_EGG)
     {
-        return 0;
+        return FALSE;
     }
-    else if (tm < 32)
+    else if (species == SPECIES_MEW)
     {
-        u32 mask = 1 << tm;
-        return gTMHMLearnsets[species][0] & mask;
+        switch (move)
+        {
+        case MOVE_BADDY_BAD:
+        case MOVE_BLAST_BURN:
+        case MOVE_BOUNCY_BUBBLE:
+        case MOVE_BUZZY_BUZZ:
+        case MOVE_DRACO_METEOR:
+        case MOVE_DRAGON_ASCENT:
+        case MOVE_FIRE_PLEDGE:
+        case MOVE_FLOATY_FALL:
+        case MOVE_FREEZY_FROST:
+        case MOVE_FRENZY_PLANT:
+        case MOVE_GLITZY_GLOW:
+        case MOVE_GRASS_PLEDGE:
+        case MOVE_HYDRO_CANNON:
+        case MOVE_RELIC_SONG:
+        case MOVE_SAPPY_SEED:
+        case MOVE_SECRET_SWORD:
+        case MOVE_SIZZLY_SLIDE:
+        case MOVE_SPARKLY_SWIRL:
+        case MOVE_SPLISHY_SPLASH:
+        case MOVE_STEEL_BEAM:
+        case MOVE_VOLT_TACKLE:
+        case MOVE_WATER_PLEDGE:
+        case MOVE_ZIPPY_ZAP:
+            return FALSE;
+        default:
+            return TRUE;
+        }
     }
     else
     {
-        u32 mask = 1 << (tm - 32);
-        return gTMHMLearnsets[species][1] & mask;
+        u8 i;
+        for (i = 0; gTeachableLearnsets[species][i] != MOVE_UNAVAILABLE; i++)
+        {
+            if (gTeachableLearnsets[species][i] == move)
+                return TRUE;
+        }
+        return FALSE;
     }
 }
 
@@ -7592,7 +7623,7 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
     u16 learnedMoves[MAX_MON_MOVES];
     u16 moves[MAX_LEVEL_UP_MOVES];
     u8 numMoves = 0;
-    u16 species = GetMonData(mon, MON_DATA_SPECIES2, 0);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
     u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
     int i, j, k;
 
@@ -7761,7 +7792,7 @@ static void Task_PlayMapChosenOrBattleBGM(u8 taskId)
 
 const u32 *GetMonFrontSpritePal(struct Pokemon *mon)
 {
-    u16 species = GetMonData(mon, MON_DATA_SPECIES2, 0);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, 0);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, 0);
     return GetMonSpritePalFromSpeciesAndPersonality(species, otId, personality);
@@ -7777,14 +7808,14 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
     shinyValue = GET_SHINY_VALUE(otId, personality);
     if (shinyValue < SHINY_ODDS)
     {
-        if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+        if (ShouldShowFemaleDifferences(species, personality))
             return gMonShinyPaletteTableFemale[species].data;
         else
             return gMonShinyPaletteTable[species].data;
     }
     else
     {
-        if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+        if (ShouldShowFemaleDifferences(species, personality))
             return gMonPaletteTableFemale[species].data;
         else
             return gMonPaletteTable[species].data;
@@ -7793,7 +7824,7 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
 
 const struct CompressedSpritePalette *GetMonSpritePalStruct(struct Pokemon *mon)
 {
-    u16 species = GetMonData(mon, MON_DATA_SPECIES2, 0);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, 0);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, 0);
     return GetMonSpritePalStructFromOtIdPersonality(species, otId, personality);
@@ -7806,14 +7837,14 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
     shinyValue = GET_SHINY_VALUE(otId, personality);
     if (shinyValue < SHINY_ODDS)
     {
-        if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+        if (ShouldShowFemaleDifferences(species, personality))
             return &gMonShinyPaletteTableFemale[species];
         else
             return &gMonShinyPaletteTable[species];
     }
     else
     {
-        if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+        if (ShouldShowFemaleDifferences(species, personality))
             return &gMonPaletteTableFemale[species];
         else
             return &gMonPaletteTable[species];
@@ -7823,7 +7854,7 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
 bool32 IsHMMove2(u16 move)
 {
     int i = 0;
-    while (sHMMoves[i] != 0xFFFF)
+    while (sHMMoves[i] != HM_MOVES_END)
     {
         if (sHMMoves[i++] == move)
             return TRUE;
@@ -7833,7 +7864,7 @@ bool32 IsHMMove2(u16 move)
 
 bool8 IsMonSpriteNotFlipped(u16 species)
 {
-    return gBaseStats[species].noFlip;
+    return gSpeciesInfo[species].noFlip;
 }
 
 s8 GetMonFlavorRelation(struct Pokemon *mon, u8 flavor)
@@ -7931,7 +7962,7 @@ void SetWildMonHeldItem(void)
         u16 rnd;
         u16 species;
         u16 chanceNoItem = 45;
-        u16 chanceCommon = 95;
+        u16 chanceNotRare = 95;
         u16 count = (WILD_DOUBLE_BATTLE) ? 2 : 1;
         u16 i;
 
@@ -7940,7 +7971,7 @@ void SetWildMonHeldItem(void)
                 || GetMonAbility(&gPlayerParty[0]) == ABILITY_SUPER_LUCK))
         {
             chanceNoItem = 20;
-            chanceCommon = 80;
+            chanceNotRare = 80;
         }
 
         for (i = 0; i < count; i++)
@@ -7956,7 +7987,7 @@ void SetWildMonHeldItem(void)
                 if (alteringCaveId != 0)
                 {
                     // In active Altering Cave, use special item list
-                    if (rnd < chanceCommon)
+                    if (rnd < chanceNotRare)
                         continue;
                     SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &sAlteringCaveWildMonHeldItems[alteringCaveId].item);
                 }
@@ -7965,27 +7996,27 @@ void SetWildMonHeldItem(void)
                     // In inactive Altering Cave, use normal items
                     if (rnd < chanceNoItem)
                         continue;
-                    if (rnd < chanceCommon)
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
+                    if (rnd < chanceNotRare)
+                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
                     else
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gBaseStats[species].item2);
+                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
                 }
             }
             else
             {
-                if (gBaseStats[species].item1 == gBaseStats[species].item2 && gBaseStats[species].item1 != ITEM_NONE)
+                if (gSpeciesInfo[species].itemCommon == gSpeciesInfo[species].itemRare && gSpeciesInfo[species].itemCommon != ITEM_NONE)
                 {
                     // Both held items are the same, 100% chance to hold item
-                    SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
+                    SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
                 }
                 else
                 {
                     if (rnd < chanceNoItem)
                         continue;
-                    if (rnd < chanceCommon)
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
+                    if (rnd < chanceNotRare)
+                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
                     else
-                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gBaseStats[species].item2);
+                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
                 }
             }
         }
@@ -8030,7 +8061,7 @@ const u8 *GetTrainerPartnerName(void)
 }
 
 #define READ_PTR_FROM_TASK(taskId, dataId)                      \
-    (void*)(                                                    \
+    (void *)(                                                   \
     ((u16)(gTasks[taskId].data[dataId]) |                       \
     ((u16)(gTasks[taskId].data[dataId + 1]) << 16)))
 
@@ -8062,7 +8093,7 @@ static void Task_PokemonSummaryAnimateAfterDelay(u8 taskId)
     }
 }
 
-void BattleAnimateFrontSprite(struct Sprite* sprite, u16 species, bool8 noCry, u8 panMode)
+void BattleAnimateFrontSprite(struct Sprite *sprite, u16 species, bool8 noCry, u8 panMode)
 {
     if (gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
         DoMonFrontSpriteAnimation(sprite, species, noCry, panMode | SKIP_FRONT_ANIM);
@@ -8070,7 +8101,7 @@ void BattleAnimateFrontSprite(struct Sprite* sprite, u16 species, bool8 noCry, u
         DoMonFrontSpriteAnimation(sprite, species, noCry, panMode);
 }
 
-void DoMonFrontSpriteAnimation(struct Sprite* sprite, u16 species, bool8 noCry, u8 panModeAnimFlag)
+void DoMonFrontSpriteAnimation(struct Sprite *sprite, u16 species, bool8 noCry, u8 panModeAnimFlag)
 {
     s8 pan;
     switch (panModeAnimFlag & (u8)~SKIP_FRONT_ANIM) // Exclude anim flag to get pan mode
@@ -8117,7 +8148,7 @@ void DoMonFrontSpriteAnimation(struct Sprite* sprite, u16 species, bool8 noCry, 
     }
 }
 
-void PokemonSummaryDoMonAnimation(struct Sprite* sprite, u16 species, bool8 oneFrame)
+void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneFrame)
 {
     if (!oneFrame && HasTwoFramesAnimation(species))
         StartSpriteAnim(sprite, 1);
@@ -8145,7 +8176,7 @@ void StopPokemonAnimationDelayTask(void)
         DestroyTask(delayTaskId);
 }
 
-void BattleAnimateBackSprite(struct Sprite* sprite, u16 species)
+void BattleAnimateBackSprite(struct Sprite *sprite, u16 species)
 {
     if (gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
     {
@@ -8283,8 +8314,6 @@ static bool8 ShouldSkipFriendshipChange(void)
 #define ALLOC_FAIL_BUFFER (1 << 0)
 #define ALLOC_FAIL_STRUCT (1 << 1)
 #define GFX_MANAGER_ACTIVE 0xA3 // Arbitrary value
-#define GFX_MANAGER_SPR_SIZE (MON_PIC_SIZE * 4) // Only Castform uses more than MON_PIC_SIZE, despite not displaying its forms.
-#define GFX_MANAGER_NUM_FRAMES 4  // Only 2 frames are needed
 
 static void InitMonSpritesGfx_Battle(struct MonSpritesGfxManager* gfx)
 {
@@ -8331,7 +8360,7 @@ struct MonSpritesGfxManager *CreateMonSpritesGfxManager(u8 managerId, u8 mode)
     case MON_SPR_GFX_MODE_FULL_PARTY:
         gfx->numSprites = PARTY_SIZE + 1;
         gfx->numSprites2 = PARTY_SIZE + 1;
-        gfx->numFrames = GFX_MANAGER_NUM_FRAMES;
+        gfx->numFrames = MAX_MON_PIC_FRAMES;
         gfx->dataSize = 1;
         gfx->mode = MON_SPR_GFX_MODE_FULL_PARTY;
         break;
@@ -8340,14 +8369,14 @@ struct MonSpritesGfxManager *CreateMonSpritesGfxManager(u8 managerId, u8 mode)
     default:
         gfx->numSprites = MAX_BATTLERS_COUNT;
         gfx->numSprites2 = MAX_BATTLERS_COUNT;
-        gfx->numFrames = GFX_MANAGER_NUM_FRAMES;
+        gfx->numFrames = MAX_MON_PIC_FRAMES;
         gfx->dataSize = 1;
         gfx->mode = MON_SPR_GFX_MODE_NORMAL;
         break;
     }
 
     // Set up sprite / sprite pointer buffers
-    gfx->spriteBuffer = AllocZeroed(gfx->dataSize * GFX_MANAGER_SPR_SIZE * gfx->numSprites);
+    gfx->spriteBuffer = AllocZeroed(gfx->dataSize * MON_PIC_SIZE * MAX_MON_PIC_FRAMES * gfx->numSprites);
     gfx->spritePointers = AllocZeroed(gfx->numSprites * 32); // ? Only * 4 is necessary, perhaps they were thinking bits.
     if (gfx->spriteBuffer == NULL || gfx->spritePointers == NULL)
     {
@@ -8356,7 +8385,7 @@ struct MonSpritesGfxManager *CreateMonSpritesGfxManager(u8 managerId, u8 mode)
     else
     {
         for (i = 0; i < gfx->numSprites; i++)
-            gfx->spritePointers[i] = gfx->spriteBuffer + (gfx->dataSize * GFX_MANAGER_SPR_SIZE * i);
+            gfx->spritePointers[i] = gfx->spriteBuffer + (gfx->dataSize * MON_PIC_SIZE * MAX_MON_PIC_FRAMES * i);
     }
 
     // Set up sprite structs
@@ -8480,66 +8509,92 @@ u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg)
 }
 
 // Returns SPECIES_NONE if no form change is possible
-u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *mon, u16 method, u32 arg)
+u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, u16 method, u32 arg)
 {
-    u32 i;
+    u32 i, j;
     u16 targetSpecies = SPECIES_NONE;
-    u16 species = GetBoxMonData(mon, MON_DATA_SPECIES, NULL);
+    u16 species = GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL);
     const struct FormChange *formChanges = gFormChangeTablePointers[species];
     u16 heldItem;
     u32 ability;
 
     if (formChanges != NULL)
     {
-        heldItem = GetBoxMonData(mon, MON_DATA_HELD_ITEM, NULL);
-        ability = GetAbilityBySpecies(species, GetBoxMonData(mon, MON_DATA_ABILITY_NUM, NULL));
+        heldItem = GetBoxMonData(boxMon, MON_DATA_HELD_ITEM, NULL);
+        ability = GetAbilityBySpecies(species, GetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, NULL));
 
-        for (i = 0; formChanges[i].method != FORM_CHANGE_END; i++)
+        for (i = 0; formChanges[i].method != FORM_CHANGE_TERMINATOR; i++)
         {
-            if (method == formChanges[i].method)
+            if (method == formChanges[i].method && species != formChanges[i].targetSpecies)
             {
                 switch (method)
                 {
-                case FORM_ITEM_HOLD:
-                    if (heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE)
-                        targetSpecies = formChanges[i].targetSpecies;
-                    break;
-                case FORM_ITEM_USE:
-                    if (arg == formChanges[i].param1)
-                        targetSpecies = formChanges[i].targetSpecies;
-                    break;
-                case FORM_MOVE:
-                    if (BoxMonKnowsMove(mon, formChanges[i].param1) != formChanges[i].param2)
-                        targetSpecies = formChanges[i].targetSpecies;
-                    break;
-                case FORM_ITEM_HOLD_ABILITY:
+                case FORM_CHANGE_ITEM_HOLD:
                     if ((heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE)
-                        && ability == formChanges[i].param2)
+                     && (ability == formChanges[i].param2 || formChanges[i].param2 == ABILITY_NONE))
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
-                case FORM_ITEM_USE_TIME:
-                    RtcCalcLocalTime();
+                case FORM_CHANGE_ITEM_USE:
                     if (arg == formChanges[i].param1)
                     {
                         switch (formChanges[i].param2)
                         {
                         case DAY:
+                            RtcCalcLocalTime();
                             if (gLocalTime.hours >= 12 && gLocalTime.hours < 24)
                                 targetSpecies = formChanges[i].targetSpecies;
                             break;
                         case NIGHT:
+                            RtcCalcLocalTime();
                             if (gLocalTime.hours >= 0 && gLocalTime.hours < 12)
                                 targetSpecies = formChanges[i].targetSpecies;
                             break;
+                        default:
+                            targetSpecies = formChanges[i].targetSpecies;
+                            break;
                         }
                     }
+                    break;
+                case FORM_CHANGE_MOVE:
+                    if (BoxMonKnowsMove(boxMon, formChanges[i].param1) != formChanges[i].param2)
+                        targetSpecies = formChanges[i].targetSpecies;
+                    break;
+                case FORM_CHANGE_BEGIN_BATTLE:
+                case FORM_CHANGE_END_BATTLE:
+                    if (heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE)
+                        targetSpecies = formChanges[i].targetSpecies;
+                    break;
+                case FORM_CHANGE_END_BATTLE_TERRAIN:
+                    if (gBattleTerrain == formChanges[i].param1)
+                        targetSpecies = formChanges[i].targetSpecies;
+                    break;
+                case FORM_CHANGE_WITHDRAW:
+                case FORM_CHANGE_FAINT:
+                    targetSpecies = formChanges[i].targetSpecies;
                     break;
                 }
             }
         }
     }
 
-    return species != targetSpecies ? targetSpecies : SPECIES_NONE;
+    return targetSpecies;
+}
+
+bool32 DoesSpeciesHaveFormChangeMethod(u16 species, u16 method)
+{
+    u32 i, j;
+    const struct FormChange *formChanges = gFormChangeTablePointers[species];
+
+    if (formChanges != NULL)
+    {
+        for (i = 0; formChanges[i].method != FORM_CHANGE_TERMINATOR; i++)
+        {
+            if (method == formChanges[i].method && species != formChanges[i].targetSpecies)
+                return TRUE;
+        }
+    }
+
+    return FALSE;
 }
 
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
@@ -8615,4 +8670,116 @@ void TrySpecialOverworldEvo(void)
 
     sTriedEvolving = 0;
     SetMainCallback2(CB2_ReturnToField);
+}
+
+bool32 ShouldShowFemaleDifferences(u16 species, u32 personality)
+{
+    if (species >= NUM_SPECIES)
+        return FALSE;
+    return (gSpeciesInfo[species].flags & SPECIES_FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE;
+}
+
+bool32 TryFormChange(u32 monId, u32 side, u16 method)
+{
+    struct Pokemon *party = (side == B_SIDE_PLAYER) ? gPlayerParty : gEnemyParty;
+    u16 targetSpecies;
+
+    if (GetMonData(&party[monId], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_NONE
+     || GetMonData(&party[monId], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_EGG)
+        return FALSE;
+
+    targetSpecies = GetFormChangeTargetSpecies(&party[monId], method, 0);
+
+    if (targetSpecies == SPECIES_NONE && gBattleStruct != NULL)
+        targetSpecies = gBattleStruct->changedSpecies[side][monId];
+
+    if (targetSpecies != SPECIES_NONE)
+    {
+        TryToSetBattleFormChangeMoves(&party[monId], method);
+        SetMonData(&party[monId], MON_DATA_SPECIES, &targetSpecies);
+        CalculateMonStats(&party[monId]);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+void TryToSetBattleFormChangeMoves(struct Pokemon *mon, u16 method)
+{
+    int i, j;
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    const struct FormChange *formChanges = gFormChangeTablePointers[species];
+
+    if (formChanges == NULL
+        || (method != FORM_CHANGE_BEGIN_BATTLE && method != FORM_CHANGE_END_BATTLE))
+        return;
+
+    for (i = 0; formChanges[i].method != FORM_CHANGE_TERMINATOR; i++)
+    {
+        if (formChanges[i].method == method
+            && formChanges[i].param2
+            && formChanges[i].param3
+            && formChanges[i].targetSpecies != species)
+        {
+            u16 originalMove = formChanges[i].param2;
+            u16 newMove = formChanges[i].param3;
+
+            for (j = 0; j < MAX_MON_MOVES; j++)
+            {
+                u16 currMove = GetMonData(mon, MON_DATA_MOVE1 + j, NULL);
+                if (currMove == originalMove)
+                    SetMonMoveSlot_KeepPP(mon, newMove, j);
+            }
+            break;
+        }
+    }
+}
+
+u32 GetMonFriendshipScore(struct Pokemon *pokemon)
+{
+    u32 friendshipScore = GetMonData(pokemon, MON_DATA_FRIENDSHIP, NULL);
+
+    if (friendshipScore == MAX_FRIENDSHIP)
+        return FRIENDSHIP_MAX;
+    if (friendshipScore >= 200)
+        return FRIENDSHIP_200_TO_254;
+    if (friendshipScore >= 150)
+        return FRIENDSHIP_150_TO_199;
+    if (friendshipScore >= 100)
+        return FRIENDSHIP_100_TO_149;
+    if (friendshipScore >= 50)
+        return FRIENDSHIP_50_TO_99;
+    if (friendshipScore >= 1)
+        return FRIENDSHIP_1_TO_49;
+
+    return FRIENDSHIP_NONE;
+}
+
+void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
+{
+    struct PokemonSubstruct0 *old0, *new0;
+    struct PokemonSubstruct1 *old1, *new1;
+    struct PokemonSubstruct2 *old2, *new2;
+    struct PokemonSubstruct3 *old3, *new3;
+    struct BoxPokemon old;
+
+    old = *boxMon;
+    old0 = &(GetSubstruct(&old, old.personality, 0)->type0);
+    old1 = &(GetSubstruct(&old, old.personality, 1)->type1);
+    old2 = &(GetSubstruct(&old, old.personality, 2)->type2);
+    old3 = &(GetSubstruct(&old, old.personality, 3)->type3);
+
+    new0 = &(GetSubstruct(boxMon, personality, 0)->type0);
+    new1 = &(GetSubstruct(boxMon, personality, 1)->type1);
+    new2 = &(GetSubstruct(boxMon, personality, 2)->type2);
+    new3 = &(GetSubstruct(boxMon, personality, 3)->type3);
+
+    DecryptBoxMon(&old);
+    boxMon->personality = personality;
+    *new0 = *old0;
+    *new1 = *old1;
+    *new2 = *old2;
+    *new3 = *old3;
+    boxMon->checksum = CalculateBoxMonChecksum(boxMon);
+    EncryptBoxMon(boxMon);
 }

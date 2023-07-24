@@ -65,15 +65,15 @@
             1
           ],
           "groups": {
+            "old_rod": [
+              0,
+              1
+            ],
             "good_rod": [
               2,
               3,
               4,
               5
-            ],
-            "old_rod": [
-              0,
-              1
             ],
             "super_rod": [
               6,

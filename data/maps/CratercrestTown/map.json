@@ -14,9 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_MAGMA",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_METEOR_PEAK",
       "offset": -35,
-      "map": "MAP_METEOR_PEAK"
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -144,56 +144,56 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_CRATERCREST_TOWN_SPECIAL_SHOP",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_CRATERCREST_TOWN_POKEMON_CENTER_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 7,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_MT_METEOR_2F_2R",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     },
     {
       "x": 6,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_CRATERCREST_TOWN_HOUSE1",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 23,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_CRATERCREST_TOWN_HOUSE2",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 26,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_JAGGED_PASS",
-      "dest_warp_id": 0
+      "dest_warp_id": "4"
     },
     {
       "x": 26,
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_JAGGED_PASS",
-      "dest_warp_id": 0
+      "dest_warp_id": "5"
     },
     {
       "x": 21,
-      "y": 4,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_MAGMA_HIDEOUT_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

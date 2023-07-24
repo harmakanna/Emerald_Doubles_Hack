@@ -1710,6 +1710,78 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "map_section": "MAPSEC_AWAKENING_WOOD",
+      "name": "AWAKENING WOOD",
+      "x": 10,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_METEOR_PEAK",
+      "name": "METEOR PEAK",
+      "x": 3,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ROUTE_135",
+      "name": "ROUTE 135",
+      "x": 5,
+      "y": 11,
+      "width": 2,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MT_METEOR",
+      "name": "MT METEOR",
+      "x": 3,
+      "y": 2,
+      "width": 1,
+      "height": 3
+    },
+    {
+      "map_section": "MAPSEC_CRATERCREST_TOWN",
+      "name": "CRATERCREST TOWN",
+      "x": 4,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_LITTLEROOT_WOODS",
+      "name": "SLATEROOT FOREST",
+      "x": 6,
+      "y": 11,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_DRAGONS_DEN",
+      "name": "DRAGONS DEN",
+      "x": 0,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_FORGOTTEN_PLANT",
+      "name": "FORGOTTEN PLANT",
+      "x": 17,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_DECREPIT_CASTLE",
+      "name": "DECREPIT CASTLE",
+      "x": 3,
+      "y": 1,
+      "width": 1,
+      "height": 1
     }
   ]
 }

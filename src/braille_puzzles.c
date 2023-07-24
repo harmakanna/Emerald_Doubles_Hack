@@ -295,7 +295,7 @@ void DoBrailleRegidragoEffect(void)
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED);
-    ScriptContext2_Disable();
+    UnlockPlayerFieldControls();
 }
 
 bool8 ShouldDoBrailleRegielekiPuzzle(void)
@@ -347,7 +347,7 @@ void DoBrailleRegielekiEffect(void)
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED);
-    ScriptContext2_Disable();
+    UnlockPlayerFieldControls();
 }
 
 // theory: another commented out DoBrailleWait and Task_BrailleWait.
@@ -467,6 +467,6 @@ bool8 BrailleDecrepitCastleCheck(void)
         return FALSE;
   }
 
-  ScriptContext1_SetupScript(DecrepitCastle_1F_EventScript_OpenRegiEntrance);
+  ScriptContext_SetupScript(DecrepitCastle_1F_EventScript_OpenRegiEntrance);
   return TRUE;
 }

@@ -908,6 +908,29 @@
 #define SPECIES_OVERQWIL 904
 #define SPECIES_ENAMORUS 905
 
+#define SPECIES_SABLEYE_MEGA                 906
+#define SPECIES_MAWILE_MEGA                  907
+#define SPECIES_SHARPEDO_MEGA                908
+#define SPECIES_CAMERUPT_MEGA                909
+#define SPECIES_ALTARIA_MEGA                 910
+#define SPECIES_BANETTE_MEGA                 911
+
+#define SPECIES_ANNIHILAPE                   912
+#define SPECIES_KINGAMBIT                    913
+#define SPECIES_CETODDLE                     914
+#define SPECIES_CETITAN                      915
+#define SPECIES_FARIGIRAF                    916
+#define SPECIES_SHROODLE                     917
+#define SPECIES_GRAFAIAI                     918
+#define SPECIES_WATTREL                      919
+#define SPECIES_KILOWATTREL                  920
+#define SPECIES_VAROOM                       921
+#define SPECIES_REVAVROOM                    922
+#define SPECIES_TINKATINK                    923
+#define SPECIES_TINKATUFF                    924
+#define SPECIES_TINKATON                     925
+#define SPECIES_SQUAWKABILLY                 926
+
 // Megas
 #define SPECIES_VENUSAUR_MEGA                FORMS_START + 1
 #define SPECIES_CHARIZARD_MEGA_X             FORMS_START + 2
@@ -934,15 +957,15 @@
 #define SPECIES_BLAZIKEN_MEGA                FORMS_START + 23
 #define SPECIES_SWAMPERT_MEGA                FORMS_START + 24
 #define SPECIES_GARDEVOIR_MEGA               FORMS_START + 25
-#define SPECIES_SABLEYE_MEGA                 FORMS_START + 26
-#define SPECIES_MAWILE_MEGA                  FORMS_START + 27
+#define SPECIES_SABLEYE_MEGA_EVO             FORMS_START + 26 //Names altered to MEGA_EVO to prevent conflict with Pokemon-ified mega evos. Unused
+#define SPECIES_MAWILE_MEGA_EVO              FORMS_START + 27 //Unused
 #define SPECIES_AGGRON_MEGA                  FORMS_START + 28
 #define SPECIES_MEDICHAM_MEGA                FORMS_START + 29
 #define SPECIES_MANECTRIC_MEGA               FORMS_START + 30
-#define SPECIES_SHARPEDO_MEGA                FORMS_START + 31
-#define SPECIES_CAMERUPT_MEGA                FORMS_START + 32
-#define SPECIES_ALTARIA_MEGA                 FORMS_START + 33
-#define SPECIES_BANETTE_MEGA                 FORMS_START + 34
+#define SPECIES_SHARPEDO_MEGA_EVO            FORMS_START + 31 //Unused
+#define SPECIES_CAMERUPT_MEGA_EVO            FORMS_START + 32 //Unused
+#define SPECIES_ALTARIA_MEGA_EVO             FORMS_START + 33 //Unused
+#define SPECIES_BANETTE_MEGA_EVO             FORMS_START + 34 //Unused
 #define SPECIES_ABSOL_MEGA                   FORMS_START + 35
 #define SPECIES_GLALIE_MEGA                  FORMS_START + 36
 #define SPECIES_SALAMENCE_MEGA               FORMS_START + 37
@@ -1371,8 +1394,26 @@
 // Basculegion
 #define SPECIES_BASCULEGION_FEMALE           FORMS_START + 329
 
-#define FORMS_START SPECIES_ENAMORUS
-#define SPECIES_EGG SPECIES_BASCULEGION_FEMALE + 1
+//Squawkabilly
+#define SPECIES_SQUAWKABILLY_BLUE            FORMS_START + 330
+#define SPECIES_SQUAWKABILLY_WHITE           FORMS_START + 331
+#define SPECIES_SQUAWKABILLY_YELLOW          FORMS_START + 332
+
+// Hoennian Forms
+#define SPECIES_OBSTAGOON_HOENNIAN           FORMS_START + 333
+#define SPECIES_SKIDDO_HOENNIAN              FORMS_START + 334
+#define SPECIES_GOGOAT_HOENNIAN              FORMS_START + 335
+#define SPECIES_CARBINK_HOENNIAN             FORMS_START + 336
+#define SPECIES_SEEL_HOENNIAN                FORMS_START + 337
+#define SPECIES_DEWGONG_HOENNIAN             FORMS_START + 338
+#define SPECIES_CHATOT_HOENNIAN              FORMS_START + 339
+#define SPECIES_PHIONE_HOENNIAN              FORMS_START + 340
+#define SPECIES_MIENFOO_HOENNIAN             FORMS_START + 341
+#define SPECIES_MIENSHAO_HOENNIAN            FORMS_START + 342
+#define SPECIES_DIANCIE_HOENNIAN             FORMS_START + 343
+
+#define FORMS_START SPECIES_SQUAWKABILLY
+#define SPECIES_EGG SPECIES_DIANCIE_HOENNIAN + 1
 
 #define NUM_SPECIES SPECIES_EGG
 

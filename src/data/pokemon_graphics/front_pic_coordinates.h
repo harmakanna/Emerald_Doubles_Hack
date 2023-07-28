@@ -1340,6 +1340,151 @@ const struct MonCoords gMonFrontPicCoords[] =
     // Basculegion
     [SPECIES_BASCULEGION_FEMALE]           = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
 #endif
+    [SPECIES_OBSTAGOON_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(56, 64),
+        .y_offset = 0,
+    },
+    [SPECIES_SKIDDO_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(48, 56),
+        .y_offset = 7,
+    },
+    [SPECIES_GOGOAT_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(56, 64),
+        .y_offset = 2,
+    },
+    [SPECIES_CARBINK_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(48, 48),
+        .y_offset = 10,
+    },
+    [SPECIES_SEEL_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(56, 48),
+        .y_offset = 8,
+    },
+    [SPECIES_DEWGONG_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(64, 64),
+        .y_offset = 2,
+    },
+    [SPECIES_CHATOT_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(40, 48),
+        .y_offset = 11,
+    },
+    [SPECIES_PHIONE_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(56, 40),
+        .y_offset = 8,
+    },
+    [SPECIES_MIENFOO_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(40, 48),
+        .y_offset = 11,
+    },
+    [SPECIES_MIENSHAO_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(64, 56),
+        .y_offset = 4,
+    },
+    [SPECIES_DIANCIE_HOENNIAN] =
+    {
+        .size = MON_COORDS_SIZE(40, 64),
+        .y_offset = 1,
+    },
+    [SPECIES_ANNIHILAPE] =
+    {
+        .size = MON_COORDS_SIZE(64, 64),
+        .y_offset = 1,
+    },
+    [SPECIES_KINGAMBIT] =
+    {
+        .size = MON_COORDS_SIZE(64, 64),
+        .y_offset = 0,
+    },
+    [SPECIES_CETODDLE] =
+    {
+        .size = MON_COORDS_SIZE(64, 40),
+        .y_offset = 9,
+    },
+    [SPECIES_CETITAN] =
+    {
+        .size = MON_COORDS_SIZE(64, 48),
+        .y_offset = 2,
+    },
+    [SPECIES_FARIGIRAF] =
+    {
+        .size = MON_COORDS_SIZE(56, 64),
+        .y_offset = 0,
+    },
+    [SPECIES_SHROODLE] =
+    {
+        .size = MON_COORDS_SIZE(32, 32),
+        .y_offset = 11,
+    },
+    [SPECIES_GRAFAIAI] =
+    {
+        .size = MON_COORDS_SIZE(56, 48),
+        .y_offset = 2,
+    },
+    [SPECIES_WATTREL] =
+    {
+        .size = MON_COORDS_SIZE(40, 40),
+        .y_offset = 9,
+    },
+    [SPECIES_KILOWATTREL] =
+    {
+        .size = MON_COORDS_SIZE(56, 56),
+        .y_offset = 4,
+    },
+    [SPECIES_VAROOM] =
+    {
+        .size = MON_COORDS_SIZE(48, 40),
+        .y_offset = 10,
+    },
+    [SPECIES_REVAVROOM] =
+    {
+        .size = MON_COORDS_SIZE(64, 48),
+        .y_offset = 4,
+    },
+    [SPECIES_TINKATINK] =
+    {
+        .size = MON_COORDS_SIZE(48, 32),
+        .y_offset = 12,
+    },
+    [SPECIES_TINKATUFF] =
+    {
+        .size = MON_COORDS_SIZE(48, 48),
+        .y_offset = 8,
+    },
+    [SPECIES_TINKATON] =
+    {
+        .size = MON_COORDS_SIZE(64, 64),
+        .y_offset = 0,
+    },
+    [SPECIES_SQUAWKABILLY] =
+    {
+        .size = MON_COORDS_SIZE(40, 56),
+        .y_offset = 3,
+    },
+    [SPECIES_SQUAWKABILLY_BLUE] =
+    {
+        .size = MON_COORDS_SIZE(40, 56),
+        .y_offset = 3,
+    },
+    [SPECIES_SQUAWKABILLY_WHITE] =
+    {
+        .size = MON_COORDS_SIZE(40, 56),
+        .y_offset = 3,
+    },
+    [SPECIES_SQUAWKABILLY_YELLOW] =
+    {
+        .size = MON_COORDS_SIZE(40, 56),
+        .y_offset = 3,
+    },
     // Egg
     [SPECIES_EGG]                          = { .size = MON_COORDS_SIZE(24, 24), .y_offset = 20 },
 

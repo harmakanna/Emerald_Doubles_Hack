@@ -32098,6 +32098,66 @@ static const u16 sEnamorusTeachableLearnset[] = {
 };
 #endif
 
+static const u16 sAnnihilapeTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sKingambitTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCetoddleTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCetitanTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sFarigirafTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sShroodleTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sGrafaiaiTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sWattrelTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sKilowattrelTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sVaroomTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sRevavroomTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sTinkatinkTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sTinkatuffTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sTinkatonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sSquawkabillyTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sRattataAlolanTeachableLearnset[] = {
     MOVE_BLIZZARD,
     MOVE_CUT,
@@ -33541,3 +33601,47 @@ static const u16 sCalyrexShadowRiderTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif
+
+static const u16 sObstagoonHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sSkiddoHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sGogoatHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCarbinkHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sSeelHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDewgongHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sChatotHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sMienfooHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sMienshaoHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sPhioneHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sDiancieHoennianTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};

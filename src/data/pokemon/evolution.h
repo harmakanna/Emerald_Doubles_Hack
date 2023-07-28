@@ -36,6 +36,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_MEOWTH]                = {{EVO_LEVEL, 28, SPECIES_PERSIAN}},
     [SPECIES_PSYDUCK]               = {{EVO_LEVEL, 33, SPECIES_GOLDUCK}},
     [SPECIES_MANKEY]                = {{EVO_LEVEL, 28, SPECIES_PRIMEAPE}},
+    [SPECIES_PRIMEAPE]              = {{EVO_LEVEL, 45, SPECIES_ANNIHILAPE}},
     [SPECIES_GROWLITHE]             = {{EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE}},
     [SPECIES_GROWLITHE_HISUIAN]     = {{EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE_HISUIAN}},
     [SPECIES_POLIWAG]               = {{EVO_LEVEL, 25, SPECIES_POLIWHIRL}},
@@ -65,7 +66,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
 #endif
     [SPECIES_DODUO]                 = {{EVO_LEVEL, 31, SPECIES_DODRIO}},
     [SPECIES_SEEL]                  = {{EVO_LEVEL, 34, SPECIES_DEWGONG}},
-    [SPECIES_GRIMER]                = {{EVO_LEVEL, 38, SPECIES_MUK}},
+    [SPECIES_GRIMER]                = {{EVO_LEVEL, 35, SPECIES_MUK}},
     [SPECIES_SHELLDER]              = {{EVO_ITEM, ITEM_WATER_STONE, SPECIES_CLOYSTER}},
     [SPECIES_GASTLY]                = {{EVO_LEVEL, 25, SPECIES_HAUNTER}},
     [SPECIES_HAUNTER]               = {{EVO_TRADE, 0, SPECIES_GENGAR},
@@ -79,7 +80,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_EXEGGCUTE]             = {{EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR},
                                        {EVO_NONE, 0, SPECIES_EXEGGUTOR_ALOLAN}},
     [SPECIES_CUBONE]                = {{EVO_LEVEL, 28, SPECIES_MAROWAK},
-                                       {EVO_NONE, 0, SPECIES_MAROWAK_ALOLAN}},
+                                       {EVO_MAPSEC, MAPSEC_MT_PYRE, SPECIES_MAROWAK_ALOLAN}},
 #if P_GEN_4_POKEMON == TRUE
     [SPECIES_LICKITUNG]             = {{EVO_MOVE, MOVE_ROLLOUT, SPECIES_LICKILICKY}},
 #endif
@@ -114,18 +115,12 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_ITEM, ITEM_FIRE_STONE, SPECIES_FLAREON},
                                        {EVO_FRIENDSHIP_DAY, 0, SPECIES_ESPEON},
                                        {EVO_FRIENDSHIP_NIGHT, 0, SPECIES_UMBREON},
-                                    #if P_GEN_4_POKEMON == TRUE
-                                       {EVO_SPECIFIC_MAP, MAP_PETALBURG_WOODS, SPECIES_LEAFEON},
+                                       //{EVO_SPECIFIC_MAP, MAP_PETALBURG_WOODS, SPECIES_LEAFEON},
                                        {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LEAFEON},
-                                       {EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_GLACEON},
+                                       //{EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_GLACEON},
                                        {EVO_ITEM, ITEM_ICE_STONE, SPECIES_GLACEON},
-                                    #endif
-                                    #if P_GEN_6_POKEMON == TRUE
-                                       {EVO_FRIENDSHIP_MOVE_TYPE, TYPE_FAIRY, SPECIES_SYLVEON}
-                                    #endif
-                                       },
-    [SPECIES_PORYGON]               = {{EVO_TRADE_ITEM, ITEM_UPGRADE, SPECIES_PORYGON2},
-                                       {EVO_ITEM, ITEM_UPGRADE, SPECIES_PORYGON2}},
+                                       {EVO_ITEM, ITEM_SHINY_STONE, SPECIES_SYLVEON}},
+    [SPECIES_PORYGON]               = {{EVO_TRADE_ITEM, ITEM_UPGRADE, SPECIES_PORYGON2}},
     [SPECIES_OMANYTE]               = {{EVO_LEVEL, 40, SPECIES_OMASTAR}},
     [SPECIES_KABUTO]                = {{EVO_LEVEL, 40, SPECIES_KABUTOPS}},
     [SPECIES_DRATINI]               = {{EVO_LEVEL, 30, SPECIES_DRAGONAIR}},
@@ -165,6 +160,8 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_MURKROW]               = {{EVO_ITEM, ITEM_DUSK_STONE, SPECIES_HONCHKROW}},
     [SPECIES_MISDREAVUS]            = {{EVO_ITEM, ITEM_DUSK_STONE, SPECIES_MISMAGIUS}},
 #endif
+
+    [SPECIES_GIRAFARIG]             = {{EVO_MOVE, MOVE_TWIN_BEAM, SPECIES_FARIGIRAF}},
     [SPECIES_PINECO]                = {{EVO_LEVEL, 31, SPECIES_FORRETRESS}},
 #if P_GEN_4_POKEMON == TRUE
     [SPECIES_GLIGAR]                = {{EVO_ITEM_HOLD_NIGHT, ITEM_RAZOR_FANG, SPECIES_GLISCOR},
@@ -204,6 +201,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_MARSHTOMP]             = {{EVO_LEVEL, 36, SPECIES_SWAMPERT}},
     [SPECIES_POOCHYENA]             = {{EVO_LEVEL, 18, SPECIES_MIGHTYENA}},
     [SPECIES_ZIGZAGOON]             = {{EVO_LEVEL, 20, SPECIES_LINOONE}},
+    [SPECIES_LINOONE]               = {{EVO_LEVEL, 35, SPECIES_OBSTAGOON_HOENNIAN}},
     [SPECIES_WURMPLE]               = {{EVO_LEVEL_SILCOON, 7, SPECIES_SILCOON},
                                        {EVO_LEVEL_CASCOON, 7, SPECIES_CASCOON}},
     [SPECIES_SILCOON]               = {{EVO_LEVEL, 10, SPECIES_BEAUTIFLY}},
@@ -224,17 +222,20 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
 #if P_GEN_4_POKEMON == TRUE
     [SPECIES_NOSEPASS]              = {{EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_PROBOPASS}},
 #endif
+    [SPECIES_SABLEYE]               = {{EVO_ITEM, ITEM_MEGA_STONE, SPECIES_SABLEYE_MEGA}},
     [SPECIES_BARBOACH]              = {{EVO_LEVEL, 30, SPECIES_WHISCASH}},
     [SPECIES_CORPHISH]              = {{EVO_LEVEL, 30, SPECIES_CRAWDAUNT}},
     [SPECIES_FEEBAS]                = {{EVO_BEAUTY, 170, SPECIES_MILOTIC},
                                        {EVO_TRADE_ITEM, ITEM_PRISM_SCALE, SPECIES_MILOTIC},
                                        {EVO_ITEM, ITEM_PRISM_SCALE, SPECIES_MILOTIC}},
     [SPECIES_CARVANHA]              = {{EVO_LEVEL, 30, SPECIES_SHARPEDO}},
+    [SPECIES_SHARPEDO]              = {{EVO_ITEM, ITEM_MEGA_STONE, SPECIES_SHARPEDO_MEGA}},
     [SPECIES_TRAPINCH]              = {{EVO_LEVEL, 35, SPECIES_VIBRAVA}},
     [SPECIES_VIBRAVA]               = {{EVO_LEVEL, 45, SPECIES_FLYGON}},
     [SPECIES_MAKUHITA]              = {{EVO_LEVEL, 24, SPECIES_HARIYAMA}},
     [SPECIES_ELECTRIKE]             = {{EVO_LEVEL, 26, SPECIES_MANECTRIC}},
     [SPECIES_NUMEL]                 = {{EVO_LEVEL, 33, SPECIES_CAMERUPT}},
+    [SPECIES_CAMERUPT]              = {{EVO_ITEM, ITEM_MEGA_STONE, SPECIES_CAMERUPT_MEGA}},
     [SPECIES_SPHEAL]                = {{EVO_LEVEL, 32, SPECIES_SEALEO}},
     [SPECIES_SEALEO]                = {{EVO_LEVEL, 44, SPECIES_WALREIN}},
     [SPECIES_CACNEA]                = {{EVO_LEVEL, 32, SPECIES_CACTURNE}},
@@ -245,8 +246,10 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        },
     [SPECIES_AZURILL]               = {{EVO_FRIENDSHIP, 0, SPECIES_MARILL}},
     [SPECIES_SPOINK]                = {{EVO_LEVEL, 32, SPECIES_GRUMPIG}},
+    [SPECIES_MAWILE]                = {{EVO_ITEM, ITEM_MEGA_STONE, SPECIES_MAWILE_MEGA}},
     [SPECIES_MEDITITE]              = {{EVO_LEVEL, 37, SPECIES_MEDICHAM}},
     [SPECIES_SWABLU]                = {{EVO_LEVEL, 35, SPECIES_ALTARIA}},
+    [SPECIES_ALTARIA]               = {{EVO_ITEM, ITEM_MEGA_STONE, SPECIES_ALTARIA_MEGA}},
     [SPECIES_WYNAUT]                = {{EVO_LEVEL, 15, SPECIES_WOBBUFFET}},
     [SPECIES_DUSKULL]               = {{EVO_LEVEL, 37, SPECIES_DUSCLOPS}},
 #if P_GEN_4_POKEMON == TRUE
@@ -264,6 +267,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_ITEM, ITEM_DEEP_SEA_TOOTH, SPECIES_HUNTAIL},
                                        {EVO_ITEM, ITEM_DEEP_SEA_SCALE, SPECIES_GOREBYSS}},
     [SPECIES_SHUPPET]               = {{EVO_LEVEL, 37, SPECIES_BANETTE}},
+    [SPECIES_BANETTE]               = {{EVO_ITEM, ITEM_MEGA_STONE, SPECIES_BANETTE_MEGA}},
     [SPECIES_ARON]                  = {{EVO_LEVEL, 32, SPECIES_LAIRON}},
     [SPECIES_LAIRON]                = {{EVO_LEVEL, 42, SPECIES_AGGRON}},
     [SPECIES_LILEEP]                = {{EVO_LEVEL, 40, SPECIES_CRADILY}},
@@ -304,7 +308,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_DRIFLOON]              = {{EVO_LEVEL, 28, SPECIES_DRIFBLIM}},
     [SPECIES_BUNEARY]               = {{EVO_FRIENDSHIP, 0, SPECIES_LOPUNNY}},
     [SPECIES_GLAMEOW]               = {{EVO_LEVEL, 38, SPECIES_PURUGLY}},
-    [SPECIES_CHINGLING]             = {{EVO_FRIENDSHIP_NIGHT, 0, SPECIES_CHIMECHO}},
+    [SPECIES_CHINGLING]             = {{EVO_LEVEL, 22, SPECIES_CHIMECHO}},
     [SPECIES_STUNKY]                = {{EVO_LEVEL, 34, SPECIES_SKUNTANK}},
     [SPECIES_BRONZOR]               = {{EVO_LEVEL, 33, SPECIES_BRONZONG}},
     [SPECIES_BONSLY]                = {{EVO_MOVE, MOVE_MIMIC, SPECIES_SUDOWOODO}},
@@ -398,6 +402,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_MIENFOO]               = {{EVO_LEVEL, 50, SPECIES_MIENSHAO}},
     [SPECIES_GOLETT]                = {{EVO_LEVEL, 43, SPECIES_GOLURK}},
     [SPECIES_PAWNIARD]              = {{EVO_LEVEL, 52, SPECIES_BISHARP}},
+    [SPECIES_BISHARP]               = {{EVO_ITEM, ITEM_LEADERS_CREST, SPECIES_KINGAMBIT}},
     [SPECIES_RUFFLET]               = {{EVO_LEVEL, 54, SPECIES_BRAVIARY},
                                        {EVO_NONE, 0, SPECIES_BRAVIARY_HISUIAN}},
     [SPECIES_VULLABY]               = {{EVO_LEVEL, 54, SPECIES_MANDIBUZZ}},
@@ -420,7 +425,8 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_LITLEO]                = {{EVO_LEVEL, 35, SPECIES_PYROAR}},
     [SPECIES_FLABEBE]               = {{EVO_LEVEL, 19, SPECIES_FLOETTE}},
     [SPECIES_FLOETTE]               = {{EVO_ITEM, ITEM_SHINY_STONE, SPECIES_FLORGES}},
-    [SPECIES_SKIDDO]                = {{EVO_LEVEL, 32, SPECIES_GOGOAT}},
+    [SPECIES_SKIDDO]                = {{EVO_LEVEL, 32, SPECIES_GOGOAT},
+                                       {EVO_SPECIFIC_MAP, MAP_MT_PYRE_EXTERIOR, SPECIES_GOGOAT_HOENNIAN}},
     [SPECIES_PANCHAM]               = {{EVO_LEVEL_DARK_TYPE_MON_IN_PARTY, 32, SPECIES_PANGORO}},
     [SPECIES_ESPURR]                = {{EVO_LEVEL_MALE, 25, SPECIES_MEOWSTIC},
                                        {EVO_LEVEL_FEMALE, 25, SPECIES_MEOWSTIC_FEMALE}},
@@ -463,7 +469,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_GRUBBIN]               = {{EVO_LEVEL, 20, SPECIES_CHARJABUG}},
     [SPECIES_CHARJABUG]             = {{EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_VIKAVOLT},
                                        {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VIKAVOLT}},
-    [SPECIES_CRABRAWLER]            = {{EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_CRABOMINABLE}},
+    [SPECIES_CRABRAWLER]            = {{EVO_MOVE, MOVE_ICE_PUNCH, SPECIES_CRABOMINABLE}},
     [SPECIES_CUTIEFLY]              = {{EVO_LEVEL, 25, SPECIES_RIBOMBEE}},
     [SPECIES_ROCKRUFF]              = {{EVO_LEVEL_DAY, 25, SPECIES_LYCANROC},
                                        {EVO_LEVEL_NIGHT, 25, SPECIES_LYCANROC_MIDNIGHT}},
@@ -485,6 +491,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_COSMOEM]               = {{EVO_LEVEL_DAY, 53, SPECIES_SOLGALEO},
                                        {EVO_LEVEL_NIGHT, 53, SPECIES_LUNALA}},
     [SPECIES_POIPOLE]               = {{EVO_MOVE, MOVE_DRAGON_PULSE, SPECIES_NAGANADEL}},
+    [SPECIES_MELTAN]                = {{EVO_LEVEL, 70, SPECIES_MELMETAL}},
 #endif
 #if P_GEN_8_POKEMON == TRUE
     [SPECIES_GROOKEY]               = {{EVO_LEVEL, 16, SPECIES_THWACKEY}},
@@ -527,7 +534,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_LEVEL, 0, SPECIES_ALCREMIE_RUBY_SWIRL},
                                        {EVO_LEVEL, 0, SPECIES_ALCREMIE_CARAMEL_SWIRL},
                                        {EVO_LEVEL, 0, SPECIES_ALCREMIE_RAINBOW_SWIRL}},
-    [SPECIES_SNOM]                  = {{EVO_FRIENDSHIP_NIGHT, 0, SPECIES_FROSMOTH}},
+    [SPECIES_SNOM]                  = {{EVO_LEVEL, 59, SPECIES_FROSMOTH}},
     [SPECIES_CUFANT]                = {{EVO_LEVEL, 34, SPECIES_COPPERAJAH}},
     [SPECIES_DREEPY]                = {{EVO_LEVEL, 50, SPECIES_DRAKLOAK}},
     [SPECIES_DRAKLOAK]              = {{EVO_LEVEL, 60, SPECIES_DRAGAPULT}},
@@ -536,6 +543,13 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_WATER_SCROLL, 0, SPECIES_URSHIFU_RAPID_STRIKE_STYLE},
                                        {EVO_ITEM, ITEM_SCROLL_OF_WATERS, SPECIES_URSHIFU_RAPID_STRIKE_STYLE}},
 #endif
+    [SPECIES_CETODDLE]              = {{EVO_ITEM, ITEM_ICE_STONE, SPECIES_CETITAN}},
+    [SPECIES_SHROODLE]              = {{EVO_LEVEL, 28, SPECIES_GRAFAIAI}},
+    [SPECIES_WATTREL]               = {{EVO_LEVEL, 25, SPECIES_KILOWATTREL}},
+    [SPECIES_VAROOM]                = {{EVO_LEVEL, 40, SPECIES_REVAVROOM}},
+    [SPECIES_TINKATINK]             = {{EVO_LEVEL, 24, SPECIES_TINKATUFF}},
+    [SPECIES_TINKATUFF]             = {{EVO_LEVEL, 38, SPECIES_TINKATON}},
+
     [SPECIES_RATTATA_ALOLAN]        = {{EVO_LEVEL_NIGHT, 20, SPECIES_RATICATE_ALOLAN}},
     [SPECIES_SANDSHREW_ALOLAN]      = {{EVO_ITEM, ITEM_ICE_STONE, SPECIES_SANDSLASH_ALOLAN}},
     [SPECIES_VULPIX_ALOLAN]         = {{EVO_ITEM, ITEM_ICE_STONE, SPECIES_NINETALES_ALOLAN}},
@@ -601,4 +615,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_SNEASEL_HISUIAN]       = {{EVO_ITEM_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER},
                                        {EVO_ITEM_HOLD_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER}},
 #endif
+    [SPECIES_SKIDDO_HOENNIAN]       = {{EVO_MAPSEC, MAPSEC_METEOR_PEAK, SPECIES_GOGOAT_HOENNIAN}},
+    [SPECIES_SEEL_HOENNIAN]         = {{EVO_LEVEL, 34, SPECIES_DEWGONG_HOENNIAN}},
+    [SPECIES_MIENFOO_HOENNIAN]      = {{EVO_LEVEL, 50, SPECIES_MIENSHAO_HOENNIAN}},
 };

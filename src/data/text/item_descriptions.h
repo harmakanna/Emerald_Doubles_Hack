@@ -1175,6 +1175,11 @@ static const u8 sDawnStoneDesc[] = _(
     "Makes certain\n"
     "species of Pokémon\n"
     "evolve.");
+    
+static const u8 sMegaStoneDesc[] = _(
+    "Makes certain\n"
+    "Pokémon permanently\n"
+    "Mega Evolve.");
 
 static const u8 sSweetAppleDesc[] = _(
     "A very sweet apple\n"
@@ -2634,8 +2639,8 @@ static const u8 sSafetyGogglesDesc[] = _(
 
 static const u8 sAdrenalineOrbDesc[] = _(
     "Boosts Speed if the\n"
-    "user is intimidated,\n"
-    "but only one time.");
+    "user is intimidated\n"
+    "or psyched out once.");
 
 static const u8 sTerrainExtenderDesc[] = _(
     "Extends the length\n"

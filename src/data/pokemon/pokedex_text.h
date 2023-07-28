@@ -1786,6 +1786,12 @@ const u8 gSableyePokedexText[] = _(
     "A Sableye lurks in darkness and is seen\n"
     "only rarely.");
 
+const u8 gSableyeMegaPokedexText[] = _(
+    "During battle, M-Sableye shelters itself\n"
+    "behind its massive jewel. It's said that\n"
+    "M-Sableye can steal a person's soul if they\n"
+    "stare at the gem too long.");
+
 const u8 gBarboachPokedexText[] = _(
     "Its body is covered with a slimy film.\n"
     "The film acts as a barrier to prevent germs\n"
@@ -1840,6 +1846,11 @@ const u8 gSharpedoPokedexText[] = _(
     "drag in water. Its speed tops out at over\n"
     "75 miles per hour.");
 
+const u8 gSharpedoMegaPokedexText[] = _(
+    "The moment it charges into its opponent,\n"
+    "sharp spikes pop out of M-Sharpedo's head,\n"
+    "leaving its opponent with deep wounds.");
+
 const u8 gTrapinchPokedexText[] = _(
     "Its big jaws crunch through boulders.\n"
     "Because its head is so big, it has a hard\n"
@@ -1893,6 +1904,12 @@ const u8 gCameruptPokedexText[] = _(
     "a volcano. Every 10 years, the volcanoes\n"
     "on its back erupt violently. Research is\n"
     "under way on the cause of eruption.");
+
+const u8 gCameruptMegaPokedexText[] = _(
+    "This Pokémon's volcano hump is very active,\n"
+    "erupting up to three times per day.\n"
+    "M-Camerupt uses the volcano on its back to\n"
+    "intimidate its foes.");
 
 const u8 gSphealPokedexText[] = _(
     "It is completely covered with plushy fur.\n"
@@ -1984,6 +2001,12 @@ const u8 gMawilePokedexText[] = _(
     "complacency with its adorable gestures,\n"
     "then chomps them with its huge jaws.");
 
+const u8 gMawileMegaPokedexText[] = _(
+    "Its two sets of jaws thrash about\n"
+    "violently as if they each had a will of\n"
+    "their own. One gnash from them can turn\n"
+    "a boulder to dust.");
+
 const u8 gMedititePokedexText[] = _(
     "It continually meditates for hours every\n"
     "day. As a result of rigorous and dedicated\n"
@@ -2007,6 +2030,12 @@ const u8 gAltariaPokedexText[] = _(
     "It flies among white clouds in the blue\n"
     "sky. It launches intensely hot fireballs\n"
     "from its mouth.");
+
+const u8 gAltariaMegaPokedexText[] = _(
+    "M-Altaria's cloud-like plumage protect it\n"
+    "from powerful blows. It is said that\n"
+    "M-Altaria blesses anyone lucky enough to\n"
+    "hear its beautiful warbling sonatas.");
 
 const u8 gWynautPokedexText[] = _(
     "A Wynaut loves to eat sweet fruits.\n"
@@ -2121,6 +2150,12 @@ const u8 gBanettePokedexText[] = _(
     "Pokémon. They are said to live in garbage\n"
     "dumps and wander about in search of the\n"
     "children that threw them away.");
+
+const u8 gBanetteMegaPokedexText[] = _(
+    "The grudge which M-Banette held in its\n"
+    "body became too great to hold, causing it\n"
+    "to spill out. This Pokémon takes out its\n"
+    "feelings on its opponents.");
 
 const u8 gSeviperPokedexText[] = _(
     "Seviper and Zangoose are eternal rivals.\n"
@@ -5399,3 +5434,90 @@ const u8 gEnamorusPokedexText[] = _(
     "Pokémon's love gives rise to the\n"
     "budding of fresh life across the land.");
 #endif
+const u8 gAnnihilapePokedexText[] = _(
+    "When its anger rose past a critical point,\n"
+    "this Pokémon gained power that is\n"
+    "unfettered by the limits of its physical\n"
+    "body.");
+
+const u8 gKingambitPokedexText[] = _(
+    "It may command a massive army in battle,\n"
+    "but Kingambit is not skilled at devising\n"
+    "strategies. It just uses brute strength\n"
+    "to keep pushing.");
+
+const u8 gCetoddlePokedexText[] = _(
+    "This species left the ocean and began\n"
+    "living on land a long time ago. It seems\n"
+    "to be closely related to Wailmer.");
+
+const u8 gCetitanPokedexText[] = _(
+    "This Pokémon wanders snowy, icy areas.\n"
+    "It protects its body with powerful\n"
+    "muscles and a thick layer of fat under\n"
+    "its skin.");
+
+const u8 gFarigirafPokedexText[] = _(
+    "Now that the brain waves from the head\n"
+    "and tail are synced up, the psychic power\n"
+    "of this Pokémon is 10 times stronger than\n"
+    "Girafarig's.");
+
+const u8 gShroodlePokedexText[] = _(
+    "To keep enemies away from its territory,\n"
+    "Shroodle paints markings around its nest\n"
+    "using a poisonous liquid with an acrid\n"
+    "odor.");
+
+const u8 gGrafaiaiPokedexText[] = _(
+    "Each Grafaiai paints its own individual\n"
+    "pattern, and it will paint the same\n"
+    "pattern over and over again throughout\n"
+    "its life.");
+
+const u8 gWattrelPokedexText[] = _(
+    "When its wings catch the wind, the bones\n"
+    "within produce electricity. This Pokémon\n"
+    "dives into the ocean, catching prey by\n"
+    "electrocuting them.");
+
+const u8 gKilowattrelPokedexText[] = _(
+    "Kilowattrel inflates its throat sac to\n"
+    "amplify its electricity. By riding\n"
+    "the wind, this Pokémon can fly over\n"
+    "430 miles in one day.");
+
+const u8 gVaroomPokedexText[] = _(
+    "The steel section is Varoom's actual body.\n"
+    "This Pokémon clings to rocks and converts\n"
+    "the minerals within into energy to fuel\n"
+    "its activities.");
+
+const u8 gRevavroomPokedexText[] = _(
+    "Revavroom viciously threatens others with\n"
+    "the sound of its exhaust. It sticks its\n"
+    "tongue out from its cylindrical mouth\n"
+    "and sprays toxic fluids.");
+
+const u8 gTinkatinkPokedexText[] = _(
+    "It swings its handmade hammer around to\n"
+    "protect itself, but the hammer is often\n"
+    "stolen by Pokémon that eat metal.");
+
+const u8 gTinkatuffPokedexText[] = _(
+    "This Pokémon will attack groups of\n"
+    "Pawniard and Bisharp, gathering metal\n"
+    "from them in order to create a large\n"
+    "and sturdy hammer.");
+
+const u8 gTinkatonPokedexText[] = _(
+    "Tinkaton will sneak up on sleeping\n"
+    "Skarmory and startle them awake. It\n"
+    "will then use the strong feathers\n"
+    "left behind to augment its hammer.");
+
+const u8 gSquawkabillyPokedexText[] = _(
+    "This Pokémon settles in forests nearby\n"
+    "big cities. They are constantly fighting\n"
+    "for turf against Hoenn's native Chatot\n"
+    "population.");

@@ -9513,6 +9513,96 @@ static const union AnimCmd sAnim_Enamorus_1[] =
 };
 #endif
 
+static const union AnimCmd sAnim_Annihilape_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Kingambit_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Cetoddle_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Cetitan_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Farigiraf_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Shroodle_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Grafaiai_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Wattrel_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Kilowattrel_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Varoom_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Revavroom_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Tinkatink_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Tinkatuff_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Tinkaton_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Squawkabilly_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_VenusaurMega_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -10487,6 +10577,72 @@ static const union AnimCmd sAnim_EnamorusTherian_1[] =
     ANIMCMD_END,
 };
 #endif
+
+static const union AnimCmd sAnim_ObstagoonHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_SkiddoHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_GogoatHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CarbinkHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_SeelHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DewgongHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_ChatotHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MienfooHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MienshaoHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_PhioneHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DiancieHoennian_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
 
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
@@ -11468,6 +11624,22 @@ SINGLE_ANIMATION(Sneasler);
 SINGLE_ANIMATION(Overqwil);
 SINGLE_ANIMATION(Enamorus);
 #endif
+SINGLE_ANIMATION(Annihilape);
+SINGLE_ANIMATION(Kingambit);
+SINGLE_ANIMATION(Cetoddle);
+SINGLE_ANIMATION(Cetitan);
+SINGLE_ANIMATION(Farigiraf);
+SINGLE_ANIMATION(Shroodle);
+SINGLE_ANIMATION(Grafaiai);
+SINGLE_ANIMATION(Wattrel);
+SINGLE_ANIMATION(Kilowattrel);
+SINGLE_ANIMATION(Varoom);
+SINGLE_ANIMATION(Revavroom);
+SINGLE_ANIMATION(Tinkatink);
+SINGLE_ANIMATION(Tinkatuff);
+SINGLE_ANIMATION(Tinkaton);
+SINGLE_ANIMATION(Squawkabilly);
+
 SINGLE_ANIMATION(VenusaurMega);
 SINGLE_ANIMATION(CHARIZARD_MEGA_X);
 SINGLE_ANIMATION(CHARIZARD_MEGA_Y);
@@ -11636,6 +11808,17 @@ SINGLE_ANIMATION(LycanrocDusk);
 #if P_GEN_8_POKEMON == TRUE
 SINGLE_ANIMATION(EnamorusTherian);
 #endif
+SINGLE_ANIMATION(ObstagoonHoennian);
+SINGLE_ANIMATION(SkiddoHoennian);
+SINGLE_ANIMATION(GogoatHoennian);
+SINGLE_ANIMATION(CarbinkHoennian);
+SINGLE_ANIMATION(SeelHoennian);
+SINGLE_ANIMATION(DewgongHoennian);
+SINGLE_ANIMATION(ChatotHoennian);
+SINGLE_ANIMATION(MienfooHoennian);
+SINGLE_ANIMATION(MienshaoHoennian);
+SINGLE_ANIMATION(PhioneHoennian);
+SINGLE_ANIMATION(DiancieHoennian);
 
 const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
 {
@@ -12555,6 +12738,21 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_OVERQWIL] = sAnims_Overqwil,
     [SPECIES_ENAMORUS] = sAnims_Enamorus,
 #endif
+    [SPECIES_ANNIHILAPE] = sAnims_Annihilape,
+    [SPECIES_KINGAMBIT] = sAnims_Kingambit,
+    [SPECIES_CETODDLE] = sAnims_Cetoddle,
+    [SPECIES_CETITAN] = sAnims_Cetitan,
+    [SPECIES_FARIGIRAF] = sAnims_Farigiraf,
+    [SPECIES_SHROODLE] = sAnims_Shroodle,
+    [SPECIES_GRAFAIAI] = sAnims_Grafaiai,
+    [SPECIES_WATTREL] = sAnims_Wattrel,
+    [SPECIES_KILOWATTREL] = sAnims_Kilowattrel,
+    [SPECIES_VAROOM] = sAnims_Varoom,
+    [SPECIES_REVAVROOM] = sAnims_Revavroom,
+    [SPECIES_TINKATINK] = sAnims_Tinkatink,
+    [SPECIES_TINKATUFF] = sAnims_Tinkatuff,
+    [SPECIES_TINKATON] = sAnims_Tinkaton,
+    [SPECIES_SQUAWKABILLY] = sAnims_Squawkabilly,
     [SPECIES_VENUSAUR_MEGA] = sAnims_VenusaurMega,
     [SPECIES_CHARIZARD_MEGA_X] = sAnims_CHARIZARD_MEGA_X,
     [SPECIES_CHARIZARD_MEGA_Y] = sAnims_CHARIZARD_MEGA_Y,
@@ -12908,5 +13106,20 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_ENAMORUS_THERIAN] = sAnims_EnamorusTherian,
     [SPECIES_BASCULEGION_FEMALE] = sAnims_Basculegion,
 #endif
+    [SPECIES_SQUAWKABILLY_BLUE] = sAnims_Squawkabilly,
+    [SPECIES_SQUAWKABILLY_WHITE] = sAnims_Squawkabilly,
+    [SPECIES_SQUAWKABILLY_YELLOW] = sAnims_Squawkabilly,
+    [SPECIES_OBSTAGOON_HOENNIAN] = sAnims_ObstagoonHoennian,
+    [SPECIES_SKIDDO_HOENNIAN] = sAnims_SkiddoHoennian,
+    [SPECIES_GOGOAT_HOENNIAN] = sAnims_GogoatHoennian,
+    [SPECIES_CARBINK_HOENNIAN] = sAnims_CarbinkHoennian,
+    [SPECIES_SEEL_HOENNIAN] = sAnims_SeelHoennian,
+    [SPECIES_DEWGONG_HOENNIAN] = sAnims_DewgongHoennian,
+    [SPECIES_CHATOT_HOENNIAN] = sAnims_ChatotHoennian,
+    [SPECIES_MIENFOO_HOENNIAN] = sAnims_MienfooHoennian,
+    [SPECIES_MIENSHAO_HOENNIAN] = sAnims_MienshaoHoennian,
+    [SPECIES_PHIONE_HOENNIAN] = sAnims_PhioneHoennian,
+    [SPECIES_DIANCIE_HOENNIAN] = sAnims_DiancieHoennian,
+
     [SPECIES_EGG]         = sAnims_Egg,
 };

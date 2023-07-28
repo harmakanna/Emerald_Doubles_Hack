@@ -2823,6 +2823,18 @@ const struct Item gItems[] =
         .flingPower = 80,
     },
 
+    [ITEM_MEGA_STONE] =
+    {
+        .name = _("Mega Stone"),
+        .itemId = ITEM_MEGA_STONE,
+        .price = 5000,
+        .description = sMegaStoneDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .flingPower = 80,
+    },
+
     [ITEM_SWEET_APPLE] =
     {
         .name = _("Sweet Apple"),

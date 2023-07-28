@@ -916,6 +916,21 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_OVERQWIL] = sOverqwilTeachableLearnset,
     [SPECIES_ENAMORUS] = sEnamorusTeachableLearnset,
 #endif
+    [SPECIES_ANNIHILAPE] = sAnnihilapeTeachableLearnset,
+    [SPECIES_KINGAMBIT] = sKingambitTeachableLearnset,
+    [SPECIES_CETODDLE] = sCetoddleTeachableLearnset,
+    [SPECIES_CETITAN] = sCetitanTeachableLearnset,
+    [SPECIES_FARIGIRAF] = sFarigirafTeachableLearnset,
+    [SPECIES_SHROODLE] = sShroodleTeachableLearnset,
+    [SPECIES_GRAFAIAI] = sGrafaiaiTeachableLearnset,
+    [SPECIES_WATTREL] = sWattrelTeachableLearnset,
+    [SPECIES_KILOWATTREL] = sKilowattrelTeachableLearnset,
+    [SPECIES_VAROOM] = sVaroomTeachableLearnset,
+    [SPECIES_REVAVROOM] = sRevavroomTeachableLearnset,
+    [SPECIES_TINKATINK] = sTinkatinkTeachableLearnset,
+    [SPECIES_TINKATUFF] = sTinkatuffTeachableLearnset,
+    [SPECIES_TINKATON] = sTinkatonTeachableLearnset,
+    [SPECIES_SQUAWKABILLY] = sSquawkabillyTeachableLearnset,
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurTeachableLearnset,
     [SPECIES_CHARIZARD_MEGA_X] = sCharizardTeachableLearnset,
@@ -1336,4 +1351,21 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_ENAMORUS_THERIAN] = sEnamorusTeachableLearnset,
     [SPECIES_BASCULEGION_FEMALE] = sBasculegionTeachableLearnset,
 #endif
+    //Squawkabilly
+    [SPECIES_SQUAWKABILLY_BLUE] = sSquawkabillyTeachableLearnset,
+    [SPECIES_SQUAWKABILLY_WHITE] = sSquawkabillyTeachableLearnset,
+    [SPECIES_SQUAWKABILLY_YELLOW] = sSquawkabillyTeachableLearnset,
+
+    //Hoennian Forms
+    [SPECIES_OBSTAGOON_HOENNIAN] = sObstagoonHoennianTeachableLearnset,
+    [SPECIES_SKIDDO_HOENNIAN] = sSkiddoHoennianTeachableLearnset,
+    [SPECIES_GOGOAT_HOENNIAN] = sGogoatHoennianTeachableLearnset,
+    [SPECIES_CARBINK_HOENNIAN] = sCarbinkHoennianTeachableLearnset,
+    [SPECIES_SEEL_HOENNIAN] = sSeelHoennianTeachableLearnset,
+    [SPECIES_DEWGONG_HOENNIAN] = sDewgongHoennianTeachableLearnset,
+    [SPECIES_CHATOT_HOENNIAN] = sChatotHoennianTeachableLearnset,
+    [SPECIES_MIENFOO_HOENNIAN] = sMienfooHoennianTeachableLearnset,
+    [SPECIES_MIENSHAO_HOENNIAN] = sMienshaoHoennianTeachableLearnset,
+    [SPECIES_PHIONE_HOENNIAN] = sPhioneHoennianTeachableLearnset,
+    [SPECIES_DIANCIE_HOENNIAN] = sDiancieHoennianTeachableLearnset,
 };

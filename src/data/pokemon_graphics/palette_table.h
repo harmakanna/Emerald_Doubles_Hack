@@ -1333,6 +1333,39 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(ENAMORUS_THERIAN, gMonPalette_EnamorusTherian),
     SPECIES_PAL(BASCULEGION_FEMALE, gMonPalette_BasculegionFemale),
 #endif
+
+    SPECIES_PAL(OBSTAGOON_HOENNIAN, gMonPalette_ObstagoonHoennian),
+    SPECIES_PAL(SKIDDO_HOENNIAN, gMonPalette_SkiddoHoennian),
+    SPECIES_PAL(GOGOAT_HOENNIAN, gMonPalette_GogoatHoennian),
+    SPECIES_PAL(CARBINK_HOENNIAN, gMonPalette_CarbinkHoennian),
+    SPECIES_PAL(SEEL_HOENNIAN, gMonPalette_SeelHoennian),
+    SPECIES_PAL(DEWGONG_HOENNIAN, gMonPalette_DewgongHoennian),
+    SPECIES_PAL(CHATOT_HOENNIAN, gMonPalette_ChatotHoennian),
+    SPECIES_PAL(PHIONE_HOENNIAN, gMonPalette_PhioneHoennian),
+    SPECIES_PAL(MIENFOO_HOENNIAN, gMonPalette_MienfooHoennian),
+    SPECIES_PAL(MIENSHAO_HOENNIAN, gMonPalette_MienshaoHoennian),
+    SPECIES_PAL(DIANCIE_HOENNIAN, gMonPalette_DiancieHoennian),
+
+    SPECIES_PAL(ANNIHILAPE, gMonPalette_Annihilape),
+    SPECIES_PAL(KINGAMBIT, gMonPalette_Kingambit),
+    SPECIES_PAL(CETODDLE, gMonPalette_Cetoddle),
+    SPECIES_PAL(CETITAN, gMonPalette_Cetitan),
+    SPECIES_PAL(FARIGIRAF, gMonPalette_Farigiraf),
+    SPECIES_PAL(SHROODLE, gMonPalette_Shroodle),
+    SPECIES_PAL(GRAFAIAI, gMonPalette_Grafaiai),
+    SPECIES_PAL(WATTREL, gMonPalette_Wattrel),
+    SPECIES_PAL(KILOWATTREL, gMonPalette_Kilowattrel),
+    SPECIES_PAL(VAROOM, gMonPalette_Varoom),
+    SPECIES_PAL(REVAVROOM, gMonPalette_Revavroom),
+    SPECIES_PAL(TINKATINK, gMonPalette_Tinkatink),
+    SPECIES_PAL(TINKATUFF, gMonPalette_Tinkatuff),
+    SPECIES_PAL(TINKATON, gMonPalette_Tinkaton),
+    SPECIES_PAL(SQUAWKABILLY, gMonPalette_Squawkabilly),
+
+    SPECIES_PAL(SQUAWKABILLY_BLUE, gMonPalette_SquawkabillyBlue),
+    SPECIES_PAL(SQUAWKABILLY_WHITE, gMonPalette_SquawkabillyWhite),
+    SPECIES_PAL(SQUAWKABILLY_YELLOW, gMonPalette_SquawkabillyYellow),
+
     SPECIES_PAL(EGG, gMonPalette_Egg),
 };
 

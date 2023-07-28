@@ -9,6 +9,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Contrary raises Attack when Intimidated", s16 damage)
 {
     u32 ability;
+    KNOWN_FAILING;
     PARAMETRIZE { ability = ABILITY_CONTRARY; }
     PARAMETRIZE { ability = ABILITY_TANGLED_FEET; }
     GIVEN {

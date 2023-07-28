@@ -101,8 +101,6 @@ Route114_EventScript_Nancy::
 
 Route114_EventScript_Steve::
 	trainerbattle_single TRAINER_STEVE_1, Route114_Text_SteveIntro, Route114_Text_SteveDefeat, Route114_EventScript_RegisterSteve
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route114_EventScript_RematchSteve
 	msgbox Route114_Text_StevePostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -115,15 +113,8 @@ Route114_EventScript_RegisterSteve::
 	release
 	end
 
-Route114_EventScript_RematchSteve::
-	trainerbattle_rematch TRAINER_STEVE_1, Route114_Text_SteveRematchIntro, Route114_Text_SteveRematchDefeat
-	msgbox Route114_Text_StevePostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route114_EventScript_Bernie::
 	trainerbattle_single TRAINER_BERNIE_1, Route114_Text_BernieIntro, Route114_Text_BernieDefeat, Route114_EventScript_RegisterBernie
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route114_EventScript_RematchBernie
 	msgbox Route114_Text_BerniePostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -134,11 +125,6 @@ Route114_EventScript_RegisterBernie::
 	msgbox Route114_Text_BernieRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_BERNIE_1
 	release
-	end
-
-Route114_EventScript_RematchBernie::
-	trainerbattle_rematch TRAINER_BERNIE_1, Route114_Text_BernieRematchIntro, Route114_Text_BernieRematchDefeat
-	msgbox Route114_Text_BerniePostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_Claude::
@@ -199,4 +185,3 @@ Route114_Text_FossilManiacsHouseSign:
 
 Route114_Text_LanettesHouse:
 	.string "LANETTE'S HOUSE$"
-

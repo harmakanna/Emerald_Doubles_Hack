@@ -858,8 +858,6 @@ Route104_EventScript_Billy::
 
 Route104_EventScript_Haley::
 	trainerbattle_single TRAINER_HALEY_1, Route104_Text_HaleyIntro, Route104_Text_HaleyDefeat, Route104_EventScript_TryRegisterHaleyAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchHaley
 	setvar VAR_0x8004, TRAINER_HALEY_1
 	specialvar VAR_RESULT, IsTrainerRegistered
 	goto_if_eq VAR_RESULT, FALSE, Route104_EventScript_TryRegisterHaley
@@ -892,15 +890,8 @@ Route104_EventScript_RegisterHaley::
 	release
 	end
 
-Route104_EventScript_RematchHaley::
-	trainerbattle_rematch TRAINER_HALEY_1, Route104_Text_HaleyRematchIntro, Route104_Text_HaleyRematchDefeat
-	msgbox Route104_Text_HaleyPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route104_EventScript_Winston::
 	trainerbattle_single TRAINER_WINSTON_1, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat, Route104_EventScript_TryRegisterWinstonAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchWinston
 	setvar VAR_0x8004, TRAINER_WINSTON_1
 	specialvar VAR_RESULT, IsTrainerRegistered
 	goto_if_eq VAR_RESULT, FALSE, Route104_EventScript_TryRegisterWinston
@@ -933,15 +924,8 @@ Route104_EventScript_RegisterWinston::
 	release
 	end
 
-Route104_EventScript_RematchWinston::
-	trainerbattle_rematch TRAINER_WINSTON_1, Route104_Text_WinstonRematchIntro, Route104_Text_WinstonRematchDefeat
-	msgbox Route104_Text_WinstonPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route104_EventScript_Cindy::
 	trainerbattle_single TRAINER_CINDY_1, Route104_Text_CindyIntro, Route104_Text_CindyDefeat, Route104_EventScript_TryRegisterCindyAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchCindy
 	setvar VAR_0x8004, TRAINER_CINDY_1
 	specialvar VAR_RESULT, IsTrainerRegistered
 	goto_if_eq VAR_RESULT, FALSE, Route104_EventScript_TryRegisterCindy
@@ -972,11 +956,6 @@ Route104_EventScript_RegisterCindy::
 	msgbox Route104_Text_CindyRegister1, MSGBOX_DEFAULT
 	register_matchcall TRAINER_CINDY_1
 	release
-	end
-
-Route104_EventScript_RematchCindy::
-	trainerbattle_rematch TRAINER_CINDY_1, Route104_Text_CindyRematchIntro, Route104_Text_CindyRematchDefeat
-	msgbox Route104_Text_CindyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_Gina::

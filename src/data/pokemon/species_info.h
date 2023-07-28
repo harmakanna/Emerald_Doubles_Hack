@@ -132,7 +132,7 @@
         .noFlip = FALSE,                                                 \
     }
 
-#define CHERRIM_OVERCAST_ATTRIBUTES\
+#define CHERRIM_ATTRIBUTES\
         .baseHP        = 70,    \
         .baseAttack    = 60,    \
         .baseDefense   = 100,   \
@@ -163,9 +163,9 @@
         .bodyColor = color,                              \
         .noFlip = FALSE                                 \
 
-#define CHERRIM_OVERCAST_SPECIES_INFO(color)          \
+#define CHERRIM_SPECIES_INFO(color)          \
     {                                       \
-        CHERRIM_OVERCAST_ATTRIBUTES,           \
+        CHERRIM_ATTRIBUTES,           \
         CHERRIM_MISC_INFO(BODY_COLOR_PURPLE), \
     }
 
@@ -10590,7 +10590,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_CHERRIM] = CHERRIM_OVERCAST_SPECIES_INFO(BODY_COLOR_PURPLE),
+    [SPECIES_CHERRIM] = CHERRIM_SPECIES_INFO(BODY_COLOR_PURPLE),
 
     [SPECIES_SHELLOS] = SHELLOS_SPECIES_INFO(BODY_COLOR_PURPLE),
 
@@ -24884,7 +24884,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggCycles = 20,
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_HYDRATION, ABILITY_ICE_BODY},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,

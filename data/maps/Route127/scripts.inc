@@ -57,10 +57,7 @@ Route127_EventScript_Athena::
 
 Route127_EventScript_Koji::
 	trainerbattle_single TRAINER_KOJI_1, Route127_Text_KojiIntro, Route127_Text_KojiDefeat, Route127_EventScript_RegisterKoji
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route127_EventScript_RematchKoji
-	msgbox Route127_Text_KojiPostBattle, MSGBOX_DEFAULT
-	release
+	msgbox Route127_Text_KojiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_RegisterKoji::
@@ -70,9 +67,3 @@ Route127_EventScript_RegisterKoji::
 	register_matchcall TRAINER_KOJI_1
 	release
 	end
-
-Route127_EventScript_RematchKoji::
-	trainerbattle_rematch TRAINER_KOJI_1, Route127_Text_KojiRematchIntro, Route127_Text_KojiRematchDefeat
-	msgbox Route127_Text_KojiPostRematch, MSGBOX_AUTOCLOSE
-	end
-

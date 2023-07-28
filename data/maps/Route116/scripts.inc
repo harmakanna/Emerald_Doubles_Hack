@@ -241,8 +241,6 @@ Route116_EventScript_Jose::
 
 Route116_EventScript_Jerry::
 	trainerbattle_single TRAINER_JERRY_1, Route116_Text_JerryIntro, Route116_Text_JerryDefeat, Route116_EventScript_TryRegisterJerryAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route116_EventScript_RematchJerry
 	setvar VAR_0x8004, TRAINER_JERRY_1
 	specialvar VAR_RESULT, IsTrainerRegistered
 	goto_if_eq VAR_RESULT, FALSE, Route116_EventScript_TryRegisterJerry
@@ -275,11 +273,6 @@ Route116_EventScript_RegisterJerry::
 	release
 	end
 
-Route116_EventScript_RematchJerry::
-	trainerbattle_rematch TRAINER_JERRY_1, Route116_Text_JerryRematchIntro, Route116_Text_JerryRematchDefeat
-	msgbox Route116_Text_JerryPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route116_EventScript_Clark::
 	trainerbattle_single TRAINER_CLARK, Route116_Text_ClarkIntro, Route116_Text_ClarkDefeat
 	msgbox Route116_Text_ClarkPostBattle, MSGBOX_AUTOCLOSE
@@ -292,8 +285,6 @@ Route116_EventScript_Janice::
 
 Route116_EventScript_Karen::
 	trainerbattle_single TRAINER_KAREN_1, Route116_Text_KarenIntro, Route116_Text_KarenDefeat, Route116_EventScript_TryRegisterKarenAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route116_EventScript_RematchKaren
 	setvar VAR_0x8004, TRAINER_KAREN_1
 	specialvar VAR_RESULT, IsTrainerRegistered
 	goto_if_eq VAR_RESULT, FALSE, Route116_EventScript_TryRegisterKaren
@@ -324,11 +315,6 @@ Route116_EventScript_RegisterKaren::
 	msgbox Route116_Text_KarenRegister1, MSGBOX_DEFAULT
 	register_matchcall TRAINER_KAREN_1
 	release
-	end
-
-Route116_EventScript_RematchKaren::
-	trainerbattle_rematch TRAINER_KAREN_1, Route116_Text_KarenRematchIntro, Route116_Text_KarenRematchDefeat
-	msgbox Route116_Text_KarenPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Sarah::
@@ -470,4 +456,3 @@ Route116_Text_TrainerTipsBagHasPockets:
 	.string "placed in the appropriate POCKETS.\p"
 	.string "No TRAINER can afford to be without\n"
 	.string "a BAG of their own.$"
-

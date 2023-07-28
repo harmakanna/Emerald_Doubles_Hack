@@ -211,7 +211,7 @@ static u8 ChooseWildMonIndex_Land(void)
         wildMonIndex = 10;
     else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_10 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_11)
         wildMonIndex = 11;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_10 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_11)
+    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_11 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_12)
         wildMonIndex = 12;
     else
         wildMonIndex = 13;

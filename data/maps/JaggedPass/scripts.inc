@@ -101,9 +101,7 @@ JaggedPass_EventScript_Eric::
 
 JaggedPass_EventScript_Diana::
 	trainerbattle_single TRAINER_DIANA_1, JaggedPass_Text_DianaIntro, JaggedPass_Text_DianaDefeat, JaggedPass_EventScript_RegisterDiana
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, JaggedPass_EventScript_DianaRematch
-	msgbox JaggedPass_Text_DianaPostBattle, MSGBOX_DEFAULT
+	msgbox JaggedPass_Text_DianaPostBattle, MSGBOX_AUTOCLOSE
 	release
 	end
 
@@ -114,17 +112,10 @@ JaggedPass_EventScript_RegisterDiana::
 	release
 	end
 
-JaggedPass_EventScript_DianaRematch::
-	trainerbattle_rematch TRAINER_DIANA_1, JaggedPass_Text_DianaRematchIntro, JaggedPass_Text_DianaRematchDefeat
-	msgbox JaggedPass_Text_DianaPostRematch, MSGBOX_AUTOCLOSE
-	end
 
 JaggedPass_EventScript_Ethan::
 	trainerbattle_single TRAINER_ETHAN_1, JaggedPass_Text_EthanIntro, JaggedPass_Text_EthanDefeat, JaggedPass_EventScript_RegisterEthan
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, JaggedPass_EventScript_EthanRematch
-	msgbox JaggedPass_Text_EthanPostBattle, MSGBOX_DEFAULT
-	release
+	msgbox JaggedPass_Text_EthanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 JaggedPass_EventScript_RegisterEthan::
@@ -132,11 +123,6 @@ JaggedPass_EventScript_RegisterEthan::
 	msgbox JaggedPass_Text_EthanRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_ETHAN_1
 	release
-	end
-
-JaggedPass_EventScript_EthanRematch::
-	trainerbattle_rematch TRAINER_ETHAN_1, JaggedPass_Text_EthanRematchIntro, JaggedPass_Text_EthanRematchDefeat
-	msgbox JaggedPass_Text_EthanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 JaggedPass_EventScript_Julio::
@@ -265,4 +251,3 @@ JaggedPass_Text_AutumnDefeat:
 JaggedPass_Text_AutumnPostBattle:
 	.string "What is that odd rock protrusion\n"
 	.string "a little up the hill from here?$"
-

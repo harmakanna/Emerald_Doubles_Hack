@@ -39,10 +39,7 @@ Route115_EventScript_MeteorFallsSign::
 
 Route115_EventScript_Timothy::
 	trainerbattle_single TRAINER_TIMOTHY_1, Route115_Text_TimothyIntro, Route115_Text_TimothyDefeat, Route115_EventScript_RegisterTimothy
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route115_EventScript_RematchTimothy
-	msgbox Route115_Text_TimothyPostBattle, MSGBOX_DEFAULT
-	release
+	msgbox Route115_Text_TimothyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_RegisterTimothy::
@@ -53,11 +50,6 @@ Route115_EventScript_RegisterTimothy::
 	release
 	end
 
-Route115_EventScript_RematchTimothy::
-	trainerbattle_rematch TRAINER_TIMOTHY_1, Route115_Text_TimothyRematchIntro, Route115_Text_TimothyRematchDefeat
-	msgbox Route115_Text_TimothyPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route115_EventScript_Koichi::
 	trainerbattle_single TRAINER_KOICHI, Route115_Text_KoichiIntro, Route115_Text_KoichiDefeat
 	msgbox Route115_Text_KoichiPostBattle, MSGBOX_AUTOCLOSE
@@ -65,10 +57,7 @@ Route115_EventScript_Koichi::
 
 Route115_EventScript_Nob::
 	trainerbattle_single TRAINER_NOB_1, Route115_Text_NobIntro, Route115_Text_NobDefeat, Route115_EventScript_RegisterNob
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route115_EventScript_RematchNob
-	msgbox Route115_Text_NobPostBattle, MSGBOX_DEFAULT
-	release
+	msgbox Route115_Text_NobPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_RegisterNob::
@@ -79,15 +68,8 @@ Route115_EventScript_RegisterNob::
 	release
 	end
 
-Route115_EventScript_RematchNob::
-	trainerbattle_rematch TRAINER_NOB_1, Route115_Text_NobRematchIntro, Route115_Text_NobRematchDefeat
-	msgbox Route115_Text_NobPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route115_EventScript_Cyndy::
 	trainerbattle_single TRAINER_CYNDY_1, Route115_Text_CyndyIntro, Route115_Text_CyndyDefeat, Route115_EventScript_RegisterCyndy
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route115_EventScript_RematchCyndy
 	msgbox Route115_Text_CyndyPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -98,11 +80,6 @@ Route115_EventScript_RegisterCyndy::
 	msgbox Route115_Text_CyndyRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_CYNDY_1
 	release
-	end
-
-Route115_EventScript_RematchCyndy::
-	trainerbattle_rematch TRAINER_CYNDY_1, Route115_Text_CyndyRematchIntro, Route115_Text_CyndyRematchDefeat
-	msgbox Route115_Text_CyndyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_Hector::

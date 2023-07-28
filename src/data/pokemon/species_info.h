@@ -24884,7 +24884,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggCycles = 20,
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_HYDRATION, ABILITY_ICE_BODY},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,

@@ -4604,7 +4604,7 @@
     {
       "id": "LAYOUT_METEOR_PEAK_REST_HOUSE",
       "name": "MeteorPeak_RestHouse_Layout",
-      "width": 10,
+      "width": 16,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",

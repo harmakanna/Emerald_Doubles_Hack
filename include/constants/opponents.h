@@ -572,12 +572,48 @@
 #define TRAINER_LEAF                        568
 #define TRAINER_BRENDAN_PLACEHOLDER         569
 #define TRAINER_MAY_PLACEHOLDER             570
+#define TRAINER_SMITH                       571
+#define TRAINER_IZZY                        572
+#define TRAINER_JEREMIAH                    573
+#define TRAINER_ADRIAN                      574
+#define TRAINER_LUCA                        575
+#define TRAINER_KRISTI                      576
+#define TRAINER_VANYA                       577
+#define TRAINER_LUNA                        578
+#define TRAINER_KINGSTON                    579
+#define TRAINER_AJAX                        580
+#define TRAINER_OPAL                        581
+#define TRAINER_DONOVAN                     582
+#define TRAINER_ROSS                        583
+#define TRAINER_VINNIE                      584
+#define TRAINER_MIRA                        585
+#define TRAINER_NOAH                        586
+#define TRAINER_AUSTIN                      587
+#define TRAINER_LANDON                      588
+#define TRAINER_ELIAS                       589
+#define TRAINER_HARPER                      590
+#define TRAINER_EVELYN                      591
+#define TRAINER_MILES                       592
+#define TRAINER_VLAD                        593
+#define TRAINER_ERIK                        594
+#define TRAINER_SASHA                       595
+#define TRAINER_LEO                         596
+#define TRAINER_SHAE                        597
+#define TRAINER_PEARL                       598
+#define TRAINER_MATEO                       599
+#define TRAINER_SHANIA                      600
+#define TRAINER_MARIANA                     601
+#define TRAINER_PATRICK                     602
+#define TRAINER_MILO                        603
+#define TRAINER_KATERINA                    604
+#define TRAINER_EMMA                        605
+#define TRAINER_ARTYOM                      606
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      571
+#define TRAINERS_COUNT                      607
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

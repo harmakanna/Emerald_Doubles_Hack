@@ -9091,6 +9091,34 @@ BattleScript_MoveHPDrain::
 	orhalfword gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE
 	goto BattleScript_MoveEnd
 
+BattleScript_SteamShowerActivates_PPLoss::
+	ppreduce
+BattleScript_SteamShowerActivates::
+	attackstring
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	tryhealquarterhealth BS_TARGET, BattleScript_SteamShower_TryCureStatus
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+	orhalfword gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE
+BattleScript_SteamShower_TryCureStatus:
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_SteamShowerCureStatus
+	goto BattleScript_SteamShowerTryRestoreAlly
+BattleScript_SteamShowerCureStatus:
+	curestatus BS_TARGET
+	updatestatusicon BS_TARGET
+	printstring STRINGID_PKMNSTATUSNORMAL
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_SteamShowerTryRestoreAlly::
+	jumpifbyte CMP_NOT_EQUAL, gBattleCommunication, 0x0, BattleScript_MoveEnd
+	addbyte gBattleCommunication, 1
+	jumpifnoally BS_TARGET, BattleScript_MoveEnd
+	setallytonexttarget BattleScript_SteamShowerActivates
+	goto BattleScript_MoveEnd
+
 BattleScript_MoveStatDrain_PPLoss::
 	ppreduce
 BattleScript_MoveStatDrain::

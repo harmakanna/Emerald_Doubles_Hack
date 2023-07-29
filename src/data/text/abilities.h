@@ -299,6 +299,9 @@ static const u8 sIcyPeltDescription[] = _("Ups Defense in hail.");
 static const u8 sFirePouchDescription[] = _("idk");
 static const u8 sSnowPlowDescription[] = _("Ups Ice moves in hail.");
 static const u8 sFreeSpiritDescription[] = _("Prevents status.");
+static const u8 sDryIceDescription[] = _("Frostbites foe on contact.");
+static const u8 sSteamShowerDescription[] = _("Water- and Fire- heals.");
+static const u8 sMudBathDescription[] = _("Sets mud sport on entry.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -612,6 +615,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FIRE_POUCH] = _("Fire Pouch"),
     [ABILITY_SNOW_PLOW] = _("Snow Plow"),
     [ABILITY_FREE_SPIRIT] = _("Free Spirit"),
+    [ABILITY_DRY_ICE] = _("Dry Ice"),
+    [ABILITY_STEAM_SHOWER] = _("Steam Shower"),
+    [ABILITY_MUD_BATH] = _("Mud Bath"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -925,6 +931,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FIRE_POUCH] = _("Fire Pouch"),
     [ABILITY_SNOW_PLOW] = _("Snow Plow"),
     [ABILITY_FREE_SPIRIT] = _("Free Spirit"),
+    [ABILITY_DRY_ICE] = _("Dry Ice"),
+    [ABILITY_STEAM_SHOWER] = _("Steam Shower"),
+    [ABILITY_MUD_BATH] = _("Mud Bath"),
 };
 #endif
 
@@ -1239,4 +1248,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_FIRE_POUCH] = sFirePouchDescription,
     [ABILITY_SNOW_PLOW] = sSnowPlowDescription,
     [ABILITY_FREE_SPIRIT] = sFreeSpiritDescription,
+    [ABILITY_DRY_ICE] = sDryIceDescription,
+    [ABILITY_STEAM_SHOWER] = sSteamShowerDescription,
+    [ABILITY_MUD_BATH] = sMudBathDescription,
 };

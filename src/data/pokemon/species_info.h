@@ -7698,10 +7698,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_EXPLOUD] =
     {
         .baseHP        = 104,
-        .baseAttack    = 91,
+        .baseAttack    = 101,
         .baseDefense   = 73,
         .baseSpeed     = 68,
-        .baseSpAttack  = 106,
+        .baseSpAttack  = 101,
         #if P_UPDATED_STATS >= GEN_6
             .baseSpDefense = 73,
         #else
@@ -8669,10 +8669,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_SEVIPER] =
     {
         .baseHP        = 73,
-        .baseAttack    = 105,
+        .baseAttack    = 100,
         .baseDefense   = 60,
         .baseSpeed     = 90,
-        .baseSpAttack  = 77,
+        .baseSpAttack  = 100,
         .baseSpDefense = 60,
         .types = { TYPE_POISON, TYPE_DARK},
         .catchRate = 90,
@@ -9133,13 +9133,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_TROPIUS] =
     {
-        .baseHP        = 99,
-        .baseAttack    = 78,
-        .baseDefense   = 83,
-        .baseSpeed     = 61,
-        .baseSpAttack  = 87,
-        .baseSpDefense = 87,
-        .types = { TYPE_GRASS, TYPE_DRAGON},
+        .baseHP        = 109,
+        .baseAttack    = 68,
+        .baseDefense   = 93,
+        .baseSpeed     = 51,
+        .baseSpAttack  = 107,
+        .baseSpDefense = 97,
+        .types = { TYPE_GRASS, TYPE_FLYING},
         .catchRate = 200,
         .expYield = 161,
         .evYield_HP        = 2,
@@ -9148,7 +9148,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
-        .abilities = {ABILITY_CHLOROPHYLL, ABILITY_SOLAR_POWER, ABILITY_HARVEST},
+        .abilities = {ABILITY_HARVEST, ABILITY_THICK_FAT, ABILITY_DRAGONS_MAW},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
     },

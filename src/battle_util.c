@@ -952,6 +952,7 @@ static const u8 sAbilitiesAffectedByMoldBreaker[] =
     [ABILITY_OBLIVIOUS] = 1,
     [ABILITY_OWN_TEMPO] = 1,
     [ABILITY_SAND_VEIL] = 1,
+    [ABILITY_SAND_SPIRIT] = 1,
     [ABILITY_SHELL_ARMOR] = 1,
     [ABILITY_SHIELD_DUST] = 1,
     [ABILITY_SIMPLE] = 1,
@@ -959,6 +960,8 @@ static const u8 sAbilitiesAffectedByMoldBreaker[] =
     [ABILITY_SNOW_CLOAK] = 1,
     [ABILITY_SOLID_ROCK] = 1,
     [ABILITY_SOUNDPROOF] = 1,
+    [ABILITY_SPIRIT_WARD] = 1,
+    [ABILITY_STEAM_SHOWER] = 1,
     [ABILITY_STICKY_HOLD] = 1,
     [ABILITY_STORM_DRAIN] = 1,
     [ABILITY_STURDY] = 1,
@@ -5103,6 +5106,15 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
             case ABILITY_EARTH_EATER:
                 if (moveType == TYPE_GROUND)
                     effect = 1;
+                break;
+            case ABILITY_STEAM_SHOWER:
+                if (moveType == TYPE_WATER || moveType == TYPE_FIRE)
+                {
+                    if ((gProtectStructs[gBattlerAttacker].notFirstStrike))
+                        gBattlescriptCurrInstr = BattleScript_SteamShowerActivates;
+                    else
+                        gBattlescriptCurrInstr = BattleScript_SteamShowerActivates_PPLoss;
+                }
                 break;
             }
 

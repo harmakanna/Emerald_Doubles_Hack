@@ -704,7 +704,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         // check ground immunities
         if (moveType == TYPE_GROUND
           && !IsBattlerGrounded(battlerDef)
-          && ((AI_DATA->abilities[battlerDef] == ABILITY_LEVITATE
+          && (((AI_DATA->abilities[battlerDef] == ABILITY_LEVITATE
+          || AI_DATA->abilities[battlerDef] == ABILITY_SKY_SONATA)
           && DoesBattlerIgnoreAbilityChecks(AI_DATA->abilities[battlerAtk], move))
           || AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_AIR_BALLOON
           || (gStatuses3[battlerDef] & (STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS)))
@@ -758,11 +759,16 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case ABILITY_WATER_ABSORB:
             case ABILITY_DRY_SKIN:
             case ABILITY_STORM_DRAIN:
+            case ABILITY_EVAPORATE:
                 if (moveType == TYPE_WATER)
                     RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_FLASH_FIRE:
                 if (moveType == TYPE_FIRE)
+                    RETURN_SCORE_MINUS(20);
+                break;
+            case ABILITY_STEAM_SHOWER:
+                if (moveType == TYPE_WATER || moveType == TYPE_FIRE)
                     RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_WONDER_GUARD:
@@ -1600,7 +1606,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;
             break;
         case EFFECT_MAGNITUDE:
-            if (AI_DATA->abilities[battlerDef] == ABILITY_LEVITATE)
+            if (AI_DATA->abilities[battlerDef] == ABILITY_LEVITATE || AI_DATA->abilities[battlerDef] == ABILITY_SKY_SONATA)
                 score -= 10;
             break;
         case EFFECT_PARTING_SHOT:
@@ -2851,6 +2857,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     break;
                 case ABILITY_WATER_ABSORB:
                 case ABILITY_DRY_SKIN:
+                case ABILITY_STEAM_SHOWER:
                     if (!(AI_THINKING_STRUCT->aiFlags & AI_FLAG_HP_AWARE))
                     {
                         RETURN_SCORE_MINUS(10);
@@ -3713,8 +3720,11 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             if (CountUsablePartyMons(battlerAtk) == 0)
                 break; // Can't switch
 
-            //if (switchAbility == ABILITY_INTIMIDATE && PartyHasMoveSplit(battlerDef, SPLIT_PHYSICAL))
-                //score += 7;
+            /*if (switchAbility == ABILITY_INTIMIDATE && PartyHasMoveSplit(battlerDef, SPLIT_PHYSICAL))
+                score += 7;
+
+            if (switchAbility == ABILITY_PSYCH_OUT && PartyHasMoveSplit(battlerDef, SPLIT_SPECIAL))
+                score += 7;*/
         }
         break;
     case EFFECT_BATON_PASS:
@@ -5140,6 +5150,19 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score--;
 
             if (AI_DATA->hpPercents[battlerDef] <= 50)
+                score++;
+        }
+        else if ((moveType == TYPE_WATER || moveType == TYPE_FIRE)
+        && AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_STEAM_SHOWER)
+        {
+            if (gStatuses3[battlerDef] & STATUS3_HEAL_BLOCK)
+                return 0;
+
+            if (CanTargetFaintAi(FOE(battlerAtk), BATTLE_PARTNER(battlerAtk))
+              || (CanTargetFaintAi(BATTLE_PARTNER(FOE(battlerAtk)), BATTLE_PARTNER(battlerAtk))))
+                score--;
+
+            if (AI_DATA->hpPercents[battlerDef] <= 50 || AI_DATA->hpPercents[battlerAtk] <= 50)
                 score++;
         }
     }

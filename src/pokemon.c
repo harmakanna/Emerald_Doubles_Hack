@@ -6998,6 +6998,38 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 if (evolutionItem == EVO_WATER_SCROLL)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
+            case EVO_JOLTEON_FORCED:
+                if (evolutionItem == EVO_JOLTEON_FORCED)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_VAPOREON_FORCED:
+                if (evolutionItem == EVO_VAPOREON_FORCED)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_FLAREON_FORCED:
+                if (evolutionItem == EVO_FLAREON_FORCED)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_ESPEON_FORCED:
+                if (evolutionItem == EVO_ESPEON_FORCED)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_UMBREON_FORCED:
+                if (evolutionItem == EVO_UMBREON_FORCED)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_LEAFEON_FORCED:
+                if (evolutionItem == EVO_LEAFEON_FORCED)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_GLACEON_FORCED:
+                if (evolutionItem == EVO_GLACEON_FORCED)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_SYLVEON_FORCED:
+                if (evolutionItem == EVO_SYLVEON_FORCED)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
             }
         }
         break;

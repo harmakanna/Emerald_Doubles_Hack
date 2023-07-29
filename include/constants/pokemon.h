@@ -316,8 +316,15 @@
 #define EVO_ITEM_NIGHT                    39     // specified item is used on Pokémon, is night
 #define EVO_ITEM_DAY                      40     // specified item is used on Pokémon, is day
 #define EVO_ITEM_HOLD                     41     // Pokémon levels up, holds specified item
-
-#define EVOS_PER_MON 10
+#define EVO_JOLTEON_FORCED                42
+#define EVO_VAPOREON_FORCED               43
+#define EVO_FLAREON_FORCED                44
+#define EVO_ESPEON_FORCED                 45
+#define EVO_UMBREON_FORCED                46
+#define EVO_LEAFEON_FORCED                47
+#define EVO_GLACEON_FORCED                48
+#define EVO_SYLVEON_FORCED                49
+#define EVOS_PER_MON 16
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL            0

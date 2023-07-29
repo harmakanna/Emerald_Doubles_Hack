@@ -8959,6 +8959,12 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
         if (moveType == TYPE_DRAGON)
             MulModifier(&modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_FIRE_POUCH:
+        if (moveType == TYPE_FIRE
+        && (gBattleWeather & B_WEATHER_RAIN || gBattleWeather & B_WEATHER_SANDSTORM || gBattleWeather & B_WEATHER_HAIL || gBattleWeather & B_WEATHER_HAIL)
+        && WEATHER_HAS_EFFECT)
+            MulModifier(&modifier, UQ_4_12(1.3));
+        break;
     case ABILITY_GORILLA_TACTICS:
         if (IS_MOVE_PHYSICAL(move))
             MulModifier(&modifier, UQ_4_12(1.5));
@@ -9302,11 +9308,8 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
     switch (GetBattlerAbility(battlerAtk))
     {
     case ABILITY_HUGE_POWER:
-        if (IS_MOVE_PHYSICAL(move))
-            MulModifier(&modifier, UQ_4_12(2.0));
-        break;
     case ABILITY_PURE_POWER:
-        if (IS_MOVE_SPECIAL(move))
+        if (IS_MOVE_PHYSICAL(move))
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
     case ABILITY_SLOW_START:
@@ -9677,7 +9680,7 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
         dmg = ApplyModifier(UQ_4_12(0.5), dmg);
 
     // check weather
-    dmg = ApplyWeatherDamageMultiplier(battlerAtk, move, moveType, dmg, holdEffectAtk, holdEffectDef);
+    dmg = ApplyWeatherDamageMultiplier(battlerAtk, move, moveType, dmg, holdEffectAtk, holdEffectDef, abilityAtk);
 
     // check stab
     if (IS_BATTLER_OF_TYPE(battlerAtk, moveType) && move != MOVE_STRUGGLE && move != MOVE_NONE)
@@ -10998,7 +11001,7 @@ bool32 IsBattlerWeatherAffected(u8 battlerId, u32 weatherFlags)
 }
 
 // Utility Umbrella holders take normal damage from what would be rain- and sun-weakened attacks.
-u32 ApplyWeatherDamageMultiplier(u8 battlerAtk, u16 move, u8 moveType, u32 dmg, u16 holdEffectAtk, u16 holdEffectDef)
+u32 ApplyWeatherDamageMultiplier(u8 battlerAtk, u16 move, u8 moveType, u32 dmg, u16 holdEffectAtk, u16 holdEffectDef, u32 abilityAtk)
 {
     if (WEATHER_HAS_EFFECT)
     {
@@ -11008,7 +11011,7 @@ u32 ApplyWeatherDamageMultiplier(u8 battlerAtk, u16 move, u8 moveType, u32 dmg, 
         {
             if (gBattleWeather & B_WEATHER_RAIN)
             {
-                if (moveType == TYPE_FIRE)
+                if (moveType == TYPE_FIRE && abilityAtk != ABILITY_FIRE_POUCH)
                     dmg = ApplyModifier(UQ_4_12(0.5), dmg);
                 else if (moveType == TYPE_WATER)
                     dmg = ApplyModifier(UQ_4_12(1.5), dmg);

@@ -75,7 +75,7 @@ Route121_EventScript_Vanessa::
 	end
 
 Route121_EventScript_Walter::
-	trainerbattle_single TRAINER_WALTER_1, Route121_Text_WalterIntro, Route121_Text_WalterDefeat, Route121_EventScript_RegisterWalter
+	trainerbattle_single TRAINER_WALTER_1, Route121_Text_WalterIntro, Route121_Text_WalterDefeat
 	msgbox Route121_Text_WalterPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -103,7 +103,7 @@ Route121_EventScript_Joy::
 	end
 
 Route121_EventScript_Jessica::
-	trainerbattle_single TRAINER_JESSICA_1, Route121_Text_JessicaIntro, Route121_Text_JessicaDefeat, Route121_EventScript_RegisterJessica
+	trainerbattle_single TRAINER_JESSICA_1, Route121_Text_JessicaIntro, Route121_Text_JessicaDefeat
 	msgbox Route121_Text_JessicaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -136,7 +136,7 @@ Route121_EventScript_Marcel::
 	end
 
 Route121_EventScript_Cristin::
-	trainerbattle_single TRAINER_CRISTIN_1, Route121_Text_CristinIntro, Route121_Text_CristinDefeat, Route121_EventScript_RegisterCristin
+	trainerbattle_single TRAINER_CRISTIN_1, Route121_Text_CristinIntro, Route121_Text_CristinDefeat
 	msgbox Route121_Text_CristinPostBattle, MSGBOX_AUTOCLOSE
 	end
 

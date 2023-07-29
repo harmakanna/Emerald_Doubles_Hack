@@ -240,10 +240,7 @@ Route116_EventScript_Jose::
 	end
 
 Route116_EventScript_Jerry::
-	trainerbattle_single TRAINER_JERRY_1, Route116_Text_JerryIntro, Route116_Text_JerryDefeat, Route116_EventScript_TryRegisterJerryAfterBattle
-	setvar VAR_0x8004, TRAINER_JERRY_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	goto_if_eq VAR_RESULT, FALSE, Route116_EventScript_TryRegisterJerry
+	trainerbattle_single TRAINER_JERRY_1, Route116_Text_JerryIntro, Route116_Text_JerryDefeat
 	msgbox Route116_Text_JerryPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -284,10 +281,7 @@ Route116_EventScript_Janice::
 	end
 
 Route116_EventScript_Karen::
-	trainerbattle_single TRAINER_KAREN_1, Route116_Text_KarenIntro, Route116_Text_KarenDefeat, Route116_EventScript_TryRegisterKarenAfterBattle
-	setvar VAR_0x8004, TRAINER_KAREN_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	goto_if_eq VAR_RESULT, FALSE, Route116_EventScript_TryRegisterKaren
+	trainerbattle_single TRAINER_KAREN_1, Route116_Text_KarenIntro, Route116_Text_KarenDefeat
 	msgbox Route116_Text_KarenPostBattle, MSGBOX_DEFAULT
 	release
 	end

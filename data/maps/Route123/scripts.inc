@@ -68,7 +68,7 @@ Route123_EventScript_Violet::
 	end
 
 Route123_EventScript_Cameron::
-	trainerbattle_single TRAINER_CAMERON_1, Route123_Text_CameronIntro, Route123_Text_CameronDefeat, Route123_EventScript_RegisterCameron
+	trainerbattle_single TRAINER_CAMERON_1, Route123_Text_CameronIntro, Route123_Text_CameronDefeat
 	msgbox Route123_Text_CameronPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -82,7 +82,7 @@ Route123_EventScript_RegisterCameron::
 	end
 
 Route123_EventScript_Jacki::
-	trainerbattle_single TRAINER_JACKI_1, Route123_Text_JackiIntro, Route123_Text_JackiDefeat, Route123_EventScript_RegisterJacki
+	trainerbattle_single TRAINER_JACKI_1, Route123_Text_JackiIntro, Route123_Text_JackiDefeat
 	msgbox Route123_Text_JackiPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -146,7 +146,7 @@ Route123_EventScript_Davis::
 	end
 
 Route123_EventScript_Fernando::
-	trainerbattle_single TRAINER_FERNANDO_1, Route123_Text_FernandoIntro, Route123_Text_FernandoDefeat, Route123_EventScript_RegisterFernando
+	trainerbattle_single TRAINER_FERNANDO_1, Route123_Text_FernandoIntro, Route123_Text_FernandoDefeat
 	msgbox Route123_Text_FernandoPostBattle, MSGBOX_DEFAULT
 	release
 	end

@@ -42,7 +42,7 @@ Route126_EventScript_Sienna::
 	end
 
 Route126_EventScript_Pablo::
-	trainerbattle_single TRAINER_PABLO_1, Route126_Text_PabloIntro, Route126_Text_PabloDefeat, Route126_EventScript_RegisterPablo
+	trainerbattle_single TRAINER_PABLO_1, Route126_Text_PabloIntro, Route126_Text_PabloDefeat
 	msgbox Route126_Text_PabloPostBattle, MSGBOX_AUTOCLOSE
 	end
 

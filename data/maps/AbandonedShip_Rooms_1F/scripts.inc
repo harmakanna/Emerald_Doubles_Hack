@@ -11,7 +11,7 @@ AbandonedShip_Rooms_1F_EventScript_Demetrius::
 	end
 
 AbandonedShip_Rooms_1F_EventScript_Thalia::
-	trainerbattle_single TRAINER_THALIA_1, AbandonedShip_Rooms_1F_Text_ThaliaIntro, AbandonedShip_Rooms_1F_Text_ThaliaDefeat, AbandonedShip_Rooms_1F_EventScript_RegisterThalia
+	trainerbattle_single TRAINER_THALIA_1, AbandonedShip_Rooms_1F_Text_ThaliaIntro, AbandonedShip_Rooms_1F_Text_ThaliaDefeat
 	msgbox AbandonedShip_Rooms_1F_Text_ThaliaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

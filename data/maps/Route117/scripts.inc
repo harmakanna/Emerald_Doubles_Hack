@@ -39,7 +39,7 @@ Route117_EventScript_DayCareSign::
 	end
 
 Route117_EventScript_Isaac::
-	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_RegisterIsaac
+	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat
 	msgbox Route117_Text_IsaacPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -52,7 +52,7 @@ Route117_EventScript_RegisterIsaac::
 	end
 
 Route117_EventScript_Lydia::
-	trainerbattle_single TRAINER_LYDIA_1, Route117_Text_LydiaIntro, Route117_Text_LydiaDefeat, Route117_EventScript_RegisterLydia
+	trainerbattle_single TRAINER_LYDIA_1, Route117_Text_LydiaIntro, Route117_Text_LydiaDefeat
 	msgbox Route117_Text_LydiaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -66,7 +66,7 @@ Route117_EventScript_RegisterLydia::
 	end
 
 Route117_EventScript_Dylan::
-	trainerbattle_single TRAINER_DYLAN_1, Route117_Text_DylanIntro, Route117_Text_DylanDefeat, Route117_EventScript_RegisterDylan
+	trainerbattle_single TRAINER_DYLAN_1, Route117_Text_DylanIntro, Route117_Text_DylanDefeat
 	msgbox Route117_Text_DylanPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -80,7 +80,7 @@ Route117_EventScript_RegisterDylan::
 	end
 
 Route117_EventScript_Maria::
-	trainerbattle_single TRAINER_MARIA_1, Route117_Text_MariaIntro, Route117_Text_MariaDefeat, Route117_EventScript_RegisterMaria
+	trainerbattle_single TRAINER_MARIA_1, Route117_Text_MariaIntro, Route117_Text_MariaDefeat
 	msgbox Route117_Text_MariaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -99,7 +99,7 @@ Route117_EventScript_Derek::
 	end
 
 Route117_EventScript_Anna::
-	trainerbattle_double TRAINER_ANNA_AND_MEG_1, Route117_Text_AnnaIntro, Route117_Text_AnnaDefeat, Route117_Text_AnnaNotEnoughMons, Route117_EventScript_RegisterAnna
+	trainerbattle_double TRAINER_ANNA_AND_MEG_1, Route117_Text_AnnaIntro, Route117_Text_AnnaDefeat, Route117_Text_AnnaNotEnoughMons
 	msgbox Route117_Text_AnnaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -111,7 +111,7 @@ Route117_EventScript_RegisterAnna::
 	end
 
 Route117_EventScript_Meg::
-	trainerbattle_double TRAINER_ANNA_AND_MEG_1, Route117_Text_MegIntro, Route117_Text_MegDefeat, Route117_Text_MegNotEnoughMons, Route117_EventScript_RegisterMeg
+	trainerbattle_double TRAINER_ANNA_AND_MEG_1, Route117_Text_MegIntro, Route117_Text_MegDefeat, Route117_Text_MegNotEnoughMons
 	msgbox Route117_Text_MegPostBattle, MSGBOX_DEFAULT
 	release
 	end

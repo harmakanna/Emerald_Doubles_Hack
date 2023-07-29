@@ -395,7 +395,7 @@ Route109_EventScript_Edmond::
 	end
 
 Route109_EventScript_Ricky::
-	trainerbattle_single TRAINER_RICKY_1, Route109_Text_RickyIntro, Route109_Text_RickyDefeated, Route109_EventScript_RickyRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_RICKY_1, Route109_Text_RickyIntro, Route109_Text_RickyDefeated
 	msgbox Route109_Text_RickyPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -409,7 +409,7 @@ Route109_EventScript_RickyRegisterMatchCallAfterBattle::
 	end
 
 Route109_EventScript_Lola::
-	trainerbattle_single TRAINER_LOLA_1, Route109_Text_LolaIntro, Route109_Text_LolaDefeated, Route109_EventScript_LolaRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_LOLA_1, Route109_Text_LolaIntro, Route109_Text_LolaDefeated
 	msgbox Route109_Text_LolaPostBattle, MSGBOX_DEFAULT
 	release
 	end

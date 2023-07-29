@@ -1,3 +1,7 @@
+Common_Text_NotEnoughMons:
+	.string "You do not have enough Pokémon\n"
+	.string "for a battle.\p"
+
 Route102_Text_CalvinIntro:
 	.string "If you have POKéMON with you, then\n"
 	.string "you're an official POKéMON TRAINER!\l"

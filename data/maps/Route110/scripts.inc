@@ -176,7 +176,7 @@ Route110_EventScript_Jaclyn::
 	end
 
 Route110_EventScript_Edwin::
-	trainerbattle_single TRAINER_EDWIN_1, Route110_Text_EdwinIntro, Route110_Text_EdwinDefeated, Route110_EventScript_EdwinRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_EDWIN_1, Route110_Text_EdwinIntro, Route110_Text_EdwinDefeated
 	msgbox Route110_Text_EdwinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -204,7 +204,7 @@ Route110_EventScript_Anthony::
 	end
 
 Route110_EventScript_Benjamin::
-	trainerbattle_single TRAINER_BENJAMIN_1, Route110_Text_BenjaminIntro, Route110_Text_BenjaminDefeated, Route110_EventScript_BenjaminRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_BENJAMIN_1, Route110_Text_BenjaminIntro, Route110_Text_BenjaminDefeated
 	msgbox Route110_Text_BenjaminPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -222,7 +222,7 @@ Route110_EventScript_Jasmine::
 	end
 
 Route110_EventScript_Abigail::
-	trainerbattle_single TRAINER_ABIGAIL_1, Route110_Text_AbigailIntro, Route110_Text_AbigailDefeated, Route110_EventScript_AbigailRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_ABIGAIL_1, Route110_Text_AbigailIntro, Route110_Text_AbigailDefeated
 	msgbox Route110_Text_AbigailPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -235,7 +235,7 @@ Route110_EventScript_AbigailRegisterMatchCallAfterBattle::
 	end
 
 Route110_EventScript_Isabel::
-	trainerbattle_single TRAINER_ISABEL_1, Route110_Text_IsabelIntro, Route110_Text_IsabelDefeated, Route110_EventScript_IsabelRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_ISABEL_1, Route110_Text_IsabelIntro, Route110_Text_IsabelDefeated
 	msgbox Route110_Text_IsabelPostBattle, MSGBOX_AUTOCLOSE
 	end
 

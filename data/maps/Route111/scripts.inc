@@ -457,7 +457,7 @@ Route111_EventScript_Becky::
 	end
 
 Route111_EventScript_Dusty::
-	trainerbattle_single TRAINER_DUSTY_1, Route111_Text_DustyIntro, Route111_Text_DustyDefeat, Route111_EventScript_RegisterDusty
+	trainerbattle_single TRAINER_DUSTY_1, Route111_Text_DustyIntro, Route111_Text_DustyDefeat
 	msgbox Route111_Text_DustyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -485,7 +485,7 @@ Route111_EventScript_Daisuke::
 	end
 
 Route111_EventScript_Wilton::
-	trainerbattle_single TRAINER_WILTON_1, Route111_Text_WiltonIntro, Route111_Text_WiltonDefeat, Route111_EventScript_RegisterWilton
+	trainerbattle_single TRAINER_WILTON_1, Route111_Text_WiltonIntro, Route111_Text_WiltonDefeat
 	msgbox Route111_Text_WiltonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -498,7 +498,7 @@ Route111_EventScript_RegisterWilton::
 	end
 
 Route111_EventScript_Brooke::
-	trainerbattle_single TRAINER_BROOKE_1, Route111_Text_BrookeIntro, Route111_Text_BrookeDefeat, Route111_EventScript_RegisterBrooke
+	trainerbattle_single TRAINER_BROOKE_1, Route111_Text_BrookeIntro, Route111_Text_BrookeDefeat
 	msgbox Route111_Text_BrookePostBattle, MSGBOX_AUTOCLOSE
 	end
 

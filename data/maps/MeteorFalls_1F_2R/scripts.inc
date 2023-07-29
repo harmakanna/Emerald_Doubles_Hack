@@ -2,7 +2,7 @@ MeteorFalls_1F_2R_MapScripts::
 	.byte 0
 
 MeteorFalls_1F_2R_EventScript_Nicolas::
-	trainerbattle_single TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasIntro, MeteorFalls_1F_2R_Text_NicolasDefeat, MeteorFalls_1F_2R_EventScript_RegisterNicolas
+	trainerbattle_single TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasIntro, MeteorFalls_1F_2R_Text_NicolasDefeat
 	msgbox MeteorFalls_1F_2R_Text_NicolasPostBattle, MSGBOX_AUTOCLOSE
 	release
 	end
@@ -16,7 +16,7 @@ MeteorFalls_1F_2R_EventScript_RegisterNicolas::
 	end
 
 MeteorFalls_1F_2R_EventScript_John::
-	trainerbattle_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnIntro, MeteorFalls_1F_2R_Text_JohnDefeat, MeteorFalls_1F_2R_Text_JohnNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJohn
+	trainerbattle_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnIntro, MeteorFalls_1F_2R_Text_JohnDefeat, MeteorFalls_1F_2R_Text_JohnNotEnoughMons
 	msgbox MeteorFalls_1F_2R_Text_JohnPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -27,7 +27,7 @@ MeteorFalls_1F_2R_EventScript_RegisterJohn::
 	end
 
 MeteorFalls_1F_2R_EventScript_Jay::
-	trainerbattle_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_Text_JayNotEnoughMons, MeteorFalls_1F_2R_EventScript_RegisterJay
+	trainerbattle_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayIntro, MeteorFalls_1F_2R_Text_JayDefeat, MeteorFalls_1F_2R_Text_JayNotEnoughMons
 	msgbox MeteorFalls_1F_2R_Text_JayPostBattle, MSGBOX_AUTOCLOSE
 	end
 

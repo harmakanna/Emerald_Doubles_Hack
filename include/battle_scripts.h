@@ -477,6 +477,7 @@ extern const u8 BattleScript_BerserkGeneRet[];
 extern const u8 BattleScript_TargetFormChangeWithStringNoPopup[];
 extern const u8 BattleScript_SteamShowerActivates[];
 extern const u8 BattleScript_SteamShowerActivates_PPLoss[];
+extern const u8 BattleScript_MudBathActivates[];
 
 // zmoves
 extern const u8 BattleScript_ZMoveActivateDamaging[];

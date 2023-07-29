@@ -15254,10 +15254,10 @@ static void Cmd_tryweatherformdatachange(void)
 static void Cmd_settypebasedhalvers(void)
 {
     CMD_ARGS(const u8 *failInstr);
-
     bool8 worked = FALSE;
+    gActiveBattler = gBattlerAttacker;
 
-    if (gBattleMoves[gCurrentMove].effect == EFFECT_MUD_SPORT)
+    if (gBattleMoves[gCurrentMove].effect == EFFECT_MUD_SPORT || GetBattlerAbility(gActiveBattler) == ABILITY_MUD_BATH)
     {
         #if B_SPORT_TURNS >= GEN_6
             if (!(gFieldStatuses & STATUS_FIELD_MUDSPORT))

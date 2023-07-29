@@ -10620,3 +10620,11 @@ BattleScript_EffectSnow::
 	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_STRONG_WINDS, BattleScript_MysteriousAirCurrentBlowsOn
 	setsnow
 	goto BattleScript_MoveWeatherChange
+
+BattleScript_MudBathActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	settypebasedhalvers BattleScript_ButItFailed
+	printfromtable gSportsUsedStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end3

@@ -6,6 +6,7 @@
 #include "dma3.h"
 #include "dynamic_placeholder_text_util.h"
 #include "event_data.h"
+#include "event_scripts.h"
 #include "field_screen_effect.h"
 #include "field_weather.h"
 #include "fldeff_misc.h"
@@ -9716,6 +9717,11 @@ bool32 AnyStorageMonWithMove(u16 moveId)
     return FALSE;
 }
 
+void CB2_PCStorageFromStartMenu(void)
+{
+    FlagSet(FLAG_SYS_PC_ACCESSED_VIA_MENU);
+    ScriptContext_SetupScript(EventScript_PC);
+}
 
 //------------------------------------------------------------------------------
 //  SECTION: Walda

@@ -248,6 +248,7 @@ extern const u8 gText_SaveFailed[];
 // menu texts
 extern const u8 gText_MenuPokedex[];
 extern const u8 gText_MenuPokemon[];
+extern const u8 gText_MenuPc[];
 extern const u8 gText_MenuBag[];
 extern const u8 gText_MenuPokenav[];
 extern const u8 gText_MenuPlayer[];
@@ -269,6 +270,7 @@ extern const u8 gText_BattlePyramidFloor[];
 
 extern const u8 gText_MenuOptionPokedex[];
 extern const u8 gText_MenuOptionPokemon[];
+extern const u8 gText_MenuOptionPc[];
 extern const u8 gText_MenuOptionBag[];
 extern const u8 gText_MenuOptionPokenav[];
 extern const u8 gText_MenuOptionSave[];

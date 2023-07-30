@@ -1,11 +1,23 @@
 EventScript_PC::
 	lockall
 	setvar VAR_0x8004, PC_LOCATION_OTHER
-	special DoPCTurnOnEffect
+	call_if_unset FLAG_SYS_PC_ACCESSED_VIA_MENU, EventScript_DoPCTurnOnEffect
 	playse SE_PC_ON
 	msgbox Text_BootUpPC, MSGBOX_DEFAULT
 	goto EventScript_PCMainMenu
 	end
+
+EventScript_DoPCTurnOnEffect::
+	special DoPCTurnOnEffect
+	return
+
+EventScript_DoPCTurnOffEffect::
+	special DoPCTurnOffEffect
+	return
+
+EventScript_UnsetAccessedViaMenuFlag::
+	clearflag FLAG_SYS_PC_ACCESSED_VIA_MENU
+	return
 
 EventScript_PCMainMenu::
 	message gText_WhichPCShouldBeAccessed
@@ -53,7 +65,8 @@ EventScript_AccessLanettesPC::
 EventScript_TurnOffPC::
 	setvar VAR_0x8004, PC_LOCATION_OTHER
 	playse SE_PC_OFF
-	special DoPCTurnOffEffect
+	call_if_unset FLAG_SYS_PC_ACCESSED_VIA_MENU, EventScript_DoPCTurnOffEffect
+	call_if_set FLAG_SYS_PC_ACCESSED_VIA_MENU, EventScript_UnsetAccessedViaMenuFlag
 	releaseall
 	end
 

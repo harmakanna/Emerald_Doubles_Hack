@@ -1382,8 +1382,8 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
+#define FLAG_SYS_ENABLE_PC_FROM_MENU                (SYSTEM_FLAGS + 0x21) // Flag which is set after obtaining your first pokemon.
+#define FLAG_SYS_PC_ACCESSED_VIA_MENU               (SYSTEM_FLAGS + 0x22) // Flag which is set and unset whenever the PC is accessed via menu. Prevents a screen effect from playing.
 #define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
 #define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag

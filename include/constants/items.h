@@ -986,7 +986,7 @@
 #define ITEM_CANDY_GYM_7 807 //Post-Tate&Liza
 #define ITEM_CANDY_GYM_8 808 //Post-Juan
 
-#define ITEMS_COUNT 808
+#define ITEMS_COUNT 809
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

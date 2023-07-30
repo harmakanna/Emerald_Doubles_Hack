@@ -1394,6 +1394,114 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
+    [ITEM_CANDY_GYM_1] =
+    {
+        .name = _("Rare Candy"),
+        .itemId = ITEM_CANDY_GYM_1,
+        .price = 25,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
+    },
+
+    [ITEM_CANDY_GYM_2] =
+    {
+        .name = _("Rare Candy"),
+        .itemId = ITEM_CANDY_GYM_2,
+        .price = 25,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
+    },
+
+    [ITEM_CANDY_GYM_3] =
+    {
+        .name = _("Rare Candy"),
+        .itemId = ITEM_CANDY_GYM_3,
+        .price = 25,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
+    },
+
+    [ITEM_CANDY_GYM_4] =
+    {
+        .name = _("Rare Candy"),
+        .itemId = ITEM_CANDY_GYM_4,
+        .price = 25,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
+    },
+
+    [ITEM_CANDY_GYM_5] =
+    {
+        .name = _("Rare Candy"),
+        .itemId = ITEM_CANDY_GYM_5,
+        .price = 25,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
+    },
+
+    [ITEM_CANDY_GYM_6] =
+    {
+        .name = _("Rare Candy"),
+        .itemId = ITEM_CANDY_GYM_6,
+        .price = 25,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
+    },
+
+    [ITEM_CANDY_CRATERCREST] =
+    {
+        .name = _("Rare Candy"),
+        .itemId = ITEM_CANDY_CRATERCREST,
+        .price = 25,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
+    },
+
+    [ITEM_CANDY_GYM_7] =
+    {
+        .name = _("Rare Candy"),
+        .itemId = ITEM_CANDY_GYM_7,
+        .price = 25,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
+    },
+
+    [ITEM_CANDY_GYM_8] =
+    {
+        .name = _("Rare Candy"),
+        .itemId = ITEM_CANDY_GYM_8,
+        .price = 25,
+        .description = sRareCandyDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
+    },
+
 // Medicinal Flutes
 
     [ITEM_BLUE_FLUTE] =

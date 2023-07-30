@@ -976,14 +976,15 @@
 
 //Newly added items
 #define ITEM_MEGA_STONE 799 //Used to evolve Sableye, Mawile, Sharpedo, Camerupt, Altaria, and Banette
-#define ITEM_LV15_CANDY 800 //Post-Roxanne
-#define ITEM_LV20_CANDY 801 //Post-Brawly
-#define ITEM_LV27_CANDY 802 //Post-Wattson
-#define ITEM_LV35_CANDY 803 //Post-Flannery
-#define ITEM_LV40_CANDY 804 //Post-Norman
-#define ITEM_LV50_CANDY 805 //Post-Winona
-#define ITEM_LV60_CANDY 806 //Post-Tate&Liza
-#define ITEM_LV70_CANDY 807 //Post-Juan
+#define ITEM_CANDY_GYM_1 800 //Post-Roxanne
+#define ITEM_CANDY_GYM_2 801 //Post-Brawly
+#define ITEM_CANDY_GYM_3 802 //Post-Wattson
+#define ITEM_CANDY_GYM_4 803 //Post-Flannery
+#define ITEM_CANDY_GYM_5 804 //Post-Norman
+#define ITEM_CANDY_GYM_6 805 //Post-Winona
+#define ITEM_CANDY_CRATERCREST 806 //Post-Cratercrest
+#define ITEM_CANDY_GYM_7 807 //Post-Tate&Liza
+#define ITEM_CANDY_GYM_8 808 //Post-Juan
 
 #define ITEMS_COUNT 808
 #define ITEM_FIELD_ARROW ITEMS_COUNT

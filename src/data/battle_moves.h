@@ -12861,7 +12861,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_LUNAR_BLESSING] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_LUNAR_BLESSING,
+        .effect = EFFECT_JUNGLE_HEALING, // EFFECT_LUNAR_BLESSING,
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
@@ -13013,7 +13013,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_SPIN_OUT] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_SPIN_OUT
+        .effect = EFFECT_SPIN_OUT, // EFFECT_SPIN_OUT
         .power = 100,
         .type = TYPE_STEEL,
         .accuracy = 100,
@@ -13137,7 +13137,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_DOODLE] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_DOODLE
+        .effect = EFFECT_DOODLE, // EFFECT_DOODLE
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -13448,8 +13448,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_RAGE_FIST] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_RAGE_FIST
-        .power = 50,
+        .effect = EFFECT_HIT, // EFFECT_RAGE_FIST
+        .power = 100,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 10,
@@ -13508,7 +13508,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_GIGATON_HAMMER] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_GIGATON_HAMMER
+        .effect = EFFECT_GIGATON_HAMMER, // EFFECT_GIGATON_HAMMER
         .power = 160,
         .type = TYPE_STEEL,
         .accuracy = 100,

@@ -1317,7 +1317,7 @@
 	.2byte \holdEffect
 	.4byte \jumpInstr
 	.endm
-	
+
 	.macro dostockpilestatchangeswearoff, battler:req, statChangeInstr:req
 	callnative BS_DoStockpileStatChangesWearOff
 	.byte \battler
@@ -1353,7 +1353,7 @@
 	.macro setsnow
 	callnative BS_SetSnow
 	.endm
-	
+
 	.macro setzeffect
 	callnative BS_SetZEffect
 	.endm
@@ -2076,7 +2076,7 @@
 	.macro swapsidestatuses
 	various BS_ATTACKER, VARIOUS_SWAP_SIDE_STATUSES
 	.endm
-	
+
 	.macro swapstats stat:req
 	various BS_ATTACKER, VARIOUS_SWAP_STATS
 	.byte \stat
@@ -2093,6 +2093,10 @@
 
 	.macro activateterrainchangeabilities battler:req
 	various \battler, VARIOUS_ACTIVATE_TERRAIN_CHANGE_ABILITIES
+	.endm
+
+	.macro trygigatonhammer failInstr:req
+	various BS_ATTACKER, VARIOUS_TRY_GIGATON_HAMMER
 	.endm
 
 	.macro trytrainerslidezmovemsg battler:req

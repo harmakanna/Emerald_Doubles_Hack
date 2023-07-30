@@ -11322,6 +11322,16 @@ static void Cmd_various(void)
         }
         break;
     }
+    case VARIOUS_TRY_GIGATON_HAMMER:
+    {
+        VARIOUS_ARGS(const u8 *failInstr);
+        if (gBattleMoves[gLastResultingMoves[gBattlerAttacker]].effect & EFFECT_GIGATON_HAMMER)
+            gBattlescriptCurrInstr = cmd->failInstr;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
+
     } // End of switch (cmd->id)
 
     gBattlescriptCurrInstr = cmd->nextInstr;

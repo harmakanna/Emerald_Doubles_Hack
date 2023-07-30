@@ -430,6 +430,9 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectRevivalBlessing         @ EFFECT_REVIVAL_BLESSING
 	.4byte BattleScript_EffectFrostbiteHit            @ EFFECT_FROSTBITE_HIT
 	.4byte BattleScript_EffectSnow                    @ EFFECT_SNOWSCAPE
+	.4byte BattleScript_EffectSpinOut                 @ EFFECT_SPIN_OUT
+	.4byte BattleScript_EffectDoodle                  @ EFFECT_DOODLE
+	.4byte BattleScript_EffectGigatonHammer           @ EFFECT_GIGATON_HAMMER
 
 BattleScript_EffectRevivalBlessing::
 	attackcanceler
@@ -5939,6 +5942,7 @@ BattleScript_EffectTrick::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectDoodle::
 BattleScript_EffectRolePlay::
 	attackcanceler
 	attackstring
@@ -5960,6 +5964,13 @@ BattleScript_EffectRolePlay::
 	printstring STRINGID_PKMNCOPIEDFOE
 	waitmessage B_WAIT_TIME_LONG
 	switchinabilities BS_ATTACKER
+	jumpifmove MOVE_DOODLE, BattleScript_DoodleTryCopyForAlly
+	goto BattleScript_MoveEnd
+BattleScript_DoodleTryCopyForAlly::
+	jumpifbyte CMP_NOT_EQUAL, gBattleCommunication, 0x0, BattleScript_MoveEnd
+	addbyte gBattleCommunication, 1
+	jumpifnoally BS_TARGET, BattleScript_MoveEnd
+	setallytonexttarget BattleScript_EffectDoodle
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectWish::
@@ -6260,6 +6271,10 @@ BattleScript_EffectOverheat::
 
 BattleScript_EffectHammerArm::
 	setmoveeffect MOVE_EFFECT_SPD_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	goto BattleScript_EffectHit
+
+BattleScript_EffectSpinOut::
+	setmoveeffect MOVE_EFFECT_SPD_MINUS_2 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
 	goto BattleScript_EffectHit
 
 BattleScript_EffectTickle::
@@ -10620,6 +10635,14 @@ BattleScript_EffectSnow::
 	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_STRONG_WINDS, BattleScript_MysteriousAirCurrentBlowsOn
 	setsnow
 	goto BattleScript_MoveWeatherChange
+
+BattleScript_EffectGigatonHammer::
+	trygigatonhammer BattleScript_CannotSelectGigatonHammer
+	goto BattleScript_EffectHit
+
+BattleScript_CannotSelectGigatonHammer:
+	printselectionstring STRINGID_CANNOTUSEGIGATONHAMMER
+	endselectionscript
 
 BattleScript_MudBathActivates::
 	pause B_WAIT_TIME_SHORT

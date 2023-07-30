@@ -2095,10 +2095,6 @@
 	various \battler, VARIOUS_ACTIVATE_TERRAIN_CHANGE_ABILITIES
 	.endm
 
-	.macro trygigatonhammer failInstr:req
-	various BS_ATTACKER, VARIOUS_TRY_GIGATON_HAMMER
-	.endm
-
 	.macro trytrainerslidezmovemsg battler:req
 	various \battler, VARIOUS_TRY_TRAINER_SLIDE_MSG_Z_MOVE
 	.endm

@@ -802,7 +802,7 @@ static const u8 sText_ItemCuredSpeciesStatus[] = _("{B_BUFF1} had\nits status he
 static const u8 sText_ItemRestoredSpeciesPP[] = _("{B_BUFF1} had its\nPP restored!");
 static const u8 sText_AtkTrappedDef[] = _("{B_ATK_NAME_WITH_PREFIX} trapped\nthe {B_DEF_NAME_WITH_PREFIX}!");
 static const u8 sText_MirrorHerbCopied[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} used its {B_LAST_ITEM}\nto mirror its opponent's stat changes!");
-static const u8 sText_CannotUseGigatonHammer[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} cannot use Gigaton Hammer\ntwice in a row!");
+static const u8 sText_CannotUseGigatonHammer[] = _("Gigaton Hammer can't be selected\ntwice in a row!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {

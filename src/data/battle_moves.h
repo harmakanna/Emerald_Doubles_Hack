@@ -13508,7 +13508,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_GIGATON_HAMMER] =
     {
-        .effect = EFFECT_GIGATON_HAMMER, // EFFECT_GIGATON_HAMMER
+        .effect = EFFECT_HIT, // The effect itself is handled by move limitations in battle_util.c, which checks if the previously used move was Gigaton Hammer
         .power = 160,
         .type = TYPE_STEEL,
         .accuracy = 100,

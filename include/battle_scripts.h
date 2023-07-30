@@ -478,6 +478,8 @@ extern const u8 BattleScript_TargetFormChangeWithStringNoPopup[];
 extern const u8 BattleScript_SteamShowerActivates[];
 extern const u8 BattleScript_SteamShowerActivates_PPLoss[];
 extern const u8 BattleScript_MudBathActivates[];
+extern const u8 BattleScript_CannotUseGigatonHammer[];
+extern const u8 BattleScript_CannotUseGigatonHammerInPalace[];
 
 // zmoves
 extern const u8 BattleScript_ZMoveActivateDamaging[];

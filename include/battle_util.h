@@ -15,8 +15,9 @@
 #define MOVE_LIMITATION_BELCH                   (1 << 11)
 #define MOVE_LIMITATION_THROAT_CHOP             (1 << 12)
 #define MOVE_LIMITATION_STUFF_CHEEKS            (1 << 13)
+#define MOVE_LIMITATION_GIGATON_HAMMER          (1 << 14)
 
-#define MOVE_LIMITATION_PLACEHOLDER             (1 << 15)
+#define MOVE_LIMITATION_PLACEHOLDER             (1 << 16)
 #define MOVE_LIMITATIONS_ALL                    0xFFFF
 
 #define ABILITYEFFECT_ON_SWITCHIN                0

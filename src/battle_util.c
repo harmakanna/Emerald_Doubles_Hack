@@ -1820,6 +1820,21 @@ u8 TrySetCantSelectMoveBattleScript(void)
         }
     }
 
+    if (move == MOVE_GIGATON_HAMMER && gLastMoves[gActiveBattler] == MOVE_GIGATON_HAMMER)
+    {
+        gCurrentMove = move;
+        if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
+        {
+            gPalaceSelectionBattleScripts[gActiveBattler] = BattleScript_CannotUseGigatonHammerInPalace;
+            gProtectStructs[gActiveBattler].palaceUnableToUseMove = TRUE;
+        }
+        else
+        {
+            gSelectionBattleScripts[gActiveBattler] = BattleScript_CannotUseGigatonHammer;
+            limitations++;
+        }
+    }
+
     gPotentialItemEffectBattler = gActiveBattler;
     if (HOLD_EFFECT_CHOICE(holdEffect) && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
     {
@@ -1952,6 +1967,8 @@ u8 CheckMoveLimitations(u8 battlerId, u8 unusableMoves, u16 check)
             unusableMoves |= gBitTable[i];
         // Stuff Cheeks
         else if (check & MOVE_LIMITATION_STUFF_CHEEKS && gBattleMons[battlerId].moves[i] == MOVE_STUFF_CHEEKS && ItemId_GetPocket(gBattleMons[gActiveBattler].item) != POCKET_BERRIES)
+            unusableMoves |= gBitTable[i];
+        else if (check & MOVE_LIMITATION_GIGATON_HAMMER && gBattleMons[battlerId].moves[i] == MOVE_GIGATON_HAMMER && gLastMoves[battlerId] == MOVE_GIGATON_HAMMER)
             unusableMoves |= gBitTable[i];
         // Gorilla Tactics
         else if (check & MOVE_LIMITATION_CHOICE_ITEM && GetBattlerAbility(battlerId) == ABILITY_GORILLA_TACTICS && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != gBattleMons[battlerId].moves[i])

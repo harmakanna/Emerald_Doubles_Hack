@@ -432,7 +432,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSnow                    @ EFFECT_SNOWSCAPE
 	.4byte BattleScript_EffectSpinOut                 @ EFFECT_SPIN_OUT
 	.4byte BattleScript_EffectDoodle                  @ EFFECT_DOODLE
-	.4byte BattleScript_EffectGigatonHammer           @ EFFECT_GIGATON_HAMMER
 
 BattleScript_EffectRevivalBlessing::
 	attackcanceler
@@ -10636,13 +10635,14 @@ BattleScript_EffectSnow::
 	setsnow
 	goto BattleScript_MoveWeatherChange
 
-BattleScript_EffectGigatonHammer::
-	trygigatonhammer BattleScript_CannotSelectGigatonHammer
-	goto BattleScript_EffectHit
-
-BattleScript_CannotSelectGigatonHammer:
+BattleScript_CannotUseGigatonHammer::
 	printselectionstring STRINGID_CANNOTUSEGIGATONHAMMER
+	waitmessage B_WAIT_TIME_SHORT
 	endselectionscript
+
+BattleScript_CannotUseGigatonHammerInPalace::
+	printstring STRINGID_CANNOTUSEGIGATONHAMMER
+	goto BattleScript_SelectingUnusableMoveInPalace
 
 BattleScript_MudBathActivates::
 	pause B_WAIT_TIME_SHORT

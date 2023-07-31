@@ -1175,7 +1175,7 @@ static const u8 sDawnStoneDesc[] = _(
     "Makes certain\n"
     "species of Pokémon\n"
     "evolve.");
-    
+
 static const u8 sMegaStoneDesc[] = _(
     "Makes certain\n"
     "Pokémon permanently\n"
@@ -2414,6 +2414,11 @@ static const u8 sExpShareDesc[] = _(
     "This device gives\n"
     "exp. to the other\n"
     "party member(s).");
+
+static const u8 sExpHoldDesc[] = _(
+    "A hold item that\n"
+    "gets exp. points\n"
+    "from battles.");
 
 static const u8 sQuickClawDesc[] = _(
     "A hold item that\n"

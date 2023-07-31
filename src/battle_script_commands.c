@@ -4426,7 +4426,7 @@ static void Cmd_getexp(void)
                 holdEffect = ItemId_GetHoldEffect(item);
 
             if ((holdEffect != HOLD_EFFECT_EXP_SHARE && !(gBattleStruct->sentInPokes & 1) && !FlagGet(FLAG_SYS_EXP_SHARE))
-             || GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPECIES2) == SPECIES_EGG)
+             || GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPECIES_OR_EGG) == SPECIES_EGG)
             {
                 *(&gBattleStruct->sentInPokes) >>= 1;
                 gBattleScripting.getexpState = 5;
@@ -4613,7 +4613,29 @@ static void Cmd_getexp(void)
             if (gBattleStruct->expGetterMonId < PARTY_SIZE)
                 gBattleScripting.getexpState = 2; // loop again
             else
-                gBattleScripting.getexpState = 6; // we're done
+            {
+                s32 totalMon = 0;
+                s32 viaSentIn = 0;
+                sentIn = gSentPokesToOpponent[(gBattlerFainted & 2) >> 1];
+                for (viaSentIn = 0, i = 0; i < PARTY_SIZE; i++)  // To see if every mon has seen battle
+                {
+                    if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE || GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
+                    || GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0)
+                        continue;
+                    totalMon++;
+                    if (gBitTable[i] & sentIn)
+                        viaSentIn++;
+                }
+                if (!gExpShareCheck && FlagGet(FLAG_SYS_EXP_SHARE) && totalMon>viaSentIn){
+                    gExpShareCheck = TRUE;
+                    gBattleStruct->expGetterMonId = 0;
+                    PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff3, 5, gExpShareExp);
+                    PrepareStringBattle(STRINGID_PKMNGAINEDEXPALL, gBattleStruct->expGetterBattlerId);
+                    gBattleScripting.getexpState = 2; // loop again
+                }
+                else
+                    gBattleScripting.getexpState = 6; // we're done
+            }
         }
         break;
     case 6: // increment instruction

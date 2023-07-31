@@ -44,7 +44,7 @@ Route124_EventScript_Chad::
 	end
 
 Route124_EventScript_Lila::
-	trainerbattle_double TRAINER_LILA_AND_ROY_1, Route124_Text_LilaIntro, Route124_Text_LilaDefeat, Route124_Text_LilaNotEnoughMons, Route124_EventScript_RegisterLila
+	trainerbattle_double TRAINER_LILA_AND_ROY_1, Route124_Text_LilaIntro, Route124_Text_LilaDefeat
 	msgbox Route124_Text_LilaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -55,7 +55,7 @@ Route124_EventScript_RegisterLila::
 	end
 
 Route124_EventScript_Roy::
-	trainerbattle_double TRAINER_LILA_AND_ROY_1, Route124_Text_RoyIntro, Route124_Text_RoyDefeat, Route124_Text_RoyNotEnoughMons, Route124_EventScript_RegisterRoy
+	trainerbattle_double TRAINER_LILA_AND_ROY_1, Route124_Text_RoyIntro, Route124_Text_RoyDefeat
 	msgbox Route124_Text_RoyPostBattle, MSGBOX_AUTOCLOSE
 	end
 

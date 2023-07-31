@@ -54,12 +54,12 @@ Route125_EventScript_RegisterErnest::
 	end
 
 Route125_EventScript_Kim::
-	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_KimIntro, Route125_Text_KimDefeat, Route125_Text_KimNotEnoughMons
+	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_KimIntro, Route125_Text_KimDefeat
 	msgbox Route125_Text_KimPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route125_EventScript_Iris::
-	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_IrisIntro, Route125_Text_IrisDefeat, Route125_Text_IrisNotEnoughMons
+	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_IrisIntro, Route125_Text_IrisDefeat
 	msgbox Route125_Text_IrisPostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -2593,11 +2593,11 @@ bool8 FldEff_FieldMoveShowMonInit(void)
 
 static void (*const sFieldMoveShowMonOutdoorsEffectFuncs[])(struct Task *) = {
     FieldMoveShowMonOutdoorsEffect_Init,
-    FieldMoveShowMonOutdoorsEffect_LoadGfx,
+    /*FieldMoveShowMonOutdoorsEffect_LoadGfx,
     FieldMoveShowMonOutdoorsEffect_CreateBanner,
     FieldMoveShowMonOutdoorsEffect_WaitForMon,
     FieldMoveShowMonOutdoorsEffect_ShrinkBanner,
-    FieldMoveShowMonOutdoorsEffect_RestoreBg,
+    FieldMoveShowMonOutdoorsEffect_RestoreBg,*/
     FieldMoveShowMonOutdoorsEffect_End,
 };
 
@@ -2761,11 +2761,11 @@ static void LoadFieldMoveOutdoorStreaksTilemap(u16 offs)
 
 static void (*const sFieldMoveShowMonIndoorsEffectFuncs[])(struct Task *) = {
     FieldMoveShowMonIndoorsEffect_Init,
-    FieldMoveShowMonIndoorsEffect_LoadGfx,
+    /*FieldMoveShowMonIndoorsEffect_LoadGfx,
     FieldMoveShowMonIndoorsEffect_SlideBannerOn,
     FieldMoveShowMonIndoorsEffect_WaitForMon,
     FieldMoveShowMonIndoorsEffect_RestoreBg,
-    FieldMoveShowMonIndoorsEffect_SlideBannerOff,
+    FieldMoveShowMonIndoorsEffect_SlideBannerOff,*/
     FieldMoveShowMonIndoorsEffect_End,
 };
 

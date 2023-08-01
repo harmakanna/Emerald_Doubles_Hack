@@ -3808,15 +3808,15 @@ Route125_Text_StanPostBattle:
 	.string "so I started swimming, too.$"
 
 Route125_Text_TanyaIntro:
-	.string "I'm tired of swimming.\n"
-	.string "Are you up for a battle with me?$"
+	.string "I love walking through the shallows\n"
+	.string "with my whole body submerged!$"
 
 Route125_Text_TanyaDefeat:
 	.string "You're too much!$"
 
 Route125_Text_TanyaPostBattle:
-	.string "Whew…\n"
-	.string "Which way is it to MOSSDEEP CITY?$"
+	.string "Have you ever tried\n"
+	.string "swimming in the shallows?$"
 
 Route125_Text_SharonIntro:
 	.string "How would you like to take on the\n"

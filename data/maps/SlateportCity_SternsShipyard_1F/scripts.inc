@@ -8,6 +8,7 @@ SlateportCity_SternsShipyard_1F_EventScript_Dock::
 	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_SternsShipyard_1F_EventScript_FerryReady
 	goto_if_set FLAG_BADGE07_GET, SlateportCity_SternsShipyard_1F_EventScript_BrineyJoined
 	goto_if_set FLAG_DELIVERED_DEVON_GOODS, SlateportCity_SternsShipyard_1F_EventScript_NeedVeteran
+	goto_if_unset FLAG_DEFEATED_DEWFORD_GYM, SlateportCity_SternsShipyard_1F_EventScript_GoDoSomethingElse
 	goto_if_set FLAG_DOCK_REJECTED_DEVON_GOODS, SlateportCity_SternsShipyard_1F_EventScript_GoFindStern
 	msgbox SlateportCity_SternsShipyard_1F_Text_CantMakeHeadsOrTails, MSGBOX_DEFAULT
 	applymovement LOCALID_DOCK, Common_Movement_FacePlayer
@@ -52,6 +53,18 @@ SlateportCity_SternsShipyard_1F_EventScript_NeedVeteran::
 	releaseall
 	end
 
+SlateportCity_SternsShipyard_1F_EventScript_GoDoSomethingElse::
+	msgbox SlateportCity_SternsShipyard_1F_Text_Hmm, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_DOCK, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox SlateportCity_SternsShipyard_1F_Text_GoDoSomethingElse, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_DOCK, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	releaseall
+	end
+
 SlateportCity_SternsShipyard_1F_EventScript_Scientist1::
 	msgbox SlateportCity_SternsShipyard_1F_Text_SeaIsLikeLivingThing, MSGBOX_NPC
 	end
@@ -63,6 +76,16 @@ SlateportCity_SternsShipyard_1F_EventScript_Scientist2::
 SlateportCity_SternsShipyard_1F_EventScript_Briney::
 	msgbox SlateportCity_SternsShipyard_1F_Text_DecidedToHelpDock, MSGBOX_NPC
 	end
+
+SlateportCity_SternsShipyard_1F_Text_Hmm::
+	.string "Hmm… This is proving tougher\n"
+	.string "than I expected…$"
+
+SlateportCity_SternsShipyard_1F_Text_GoDoSomethingElse::
+	.string "Oh, hi.\p"
+	.string "I'm busy right now.\p"
+	.string "Do you have anything else to do?\n"
+	.string "I'm going to be a while.$"
 
 SlateportCity_SternsShipyard_1F_Text_CantMakeHeadsOrTails:
 	.string "Umm… If this goes here, and that\n"
@@ -140,4 +163,3 @@ SlateportCity_SternsShipyard_1F_Text_SeaIsLikeLivingThing:
 SlateportCity_SternsShipyard_1F_Text_GetSeasickEasily:
 	.string "I get seasick real easily.\n"
 	.string "So I get to help out here instead.$"
-

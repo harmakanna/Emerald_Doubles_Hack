@@ -3630,10 +3630,10 @@ Route124_Text_JennyDefeat:
 	.string "I've gone and lost.$"
 
 Route124_Text_JennyPostBattle:
-	.string "While swimming, I noticed that some\n"
-	.string "POKéMON attack, and some just watch.\p"
-	.string "I guess POKéMON have personalities\n"
-	.string "of their own.$"
+	.string "This part of the sea is chock full of\n"
+	.string "diving holes and undersea tunnels.\p"
+	.string "It's super fun diving in and playing\n"
+	.string "with the POKéMON underwater!$"
 
 Route124_Text_JennyRegister:
 	.string "It's only on a whim, but maybe I'll get\n"

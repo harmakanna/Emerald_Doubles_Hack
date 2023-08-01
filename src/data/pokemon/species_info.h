@@ -25341,4 +25341,48 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_SQUAWKABILLY_YELLOW] = SQUAWKABILLY_SPECIES_INFO(BODY_COLOR_YELLOW, ABILITY_SHEER_FORCE),
 
     [SPECIES_SQUAWKABILLY_WHITE] = SQUAWKABILLY_SPECIES_INFO(BODY_COLOR_WHITE, ABILITY_SHEER_FORCE),
+
+    [SPECIES_TADBULB] =
+    {
+        .baseHP        = 61,
+        .baseAttack    = 31,
+        .baseDefense   = 41,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 59,
+        .baseSpDefense = 35,
+        .types = { TYPE_ELECTRIC, TYPE_ELECTRIC},
+        .catchRate = 190,
+        .expYield = 54,
+        .evYield_HP        = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = 50,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
+        .abilities = {ABILITY_OWN_TEMPO, ABILITY_STATIC, ABILITY_DAMP},
+        .bodyColor = BODY_COLOR_YELLOW,
+        .noFlip = FALSE,
+    },
+
+    [SPECIES_BELLIBOLT] =
+    {
+        .baseHP        = 109,
+        .baseAttack    = 64,
+        .baseDefense   = 91,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 103,
+        .baseSpDefense = 83,
+        .types = { TYPE_ELECTRIC, TYPE_ELECTRIC},
+        .catchRate = 50,
+        .expYield = 173,
+        .evYield_HP        = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = 50,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
+        .abilities = {ABILITY_ELECTROMORPHOSIS, ABILITY_STATIC, ABILITY_DAMP},
+        .bodyColor = BODY_COLOR_GREEN,
+        .noFlip = FALSE,
+    },
 };

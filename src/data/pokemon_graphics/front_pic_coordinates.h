@@ -1470,6 +1470,16 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = MON_COORDS_SIZE(40, 56),
         .y_offset = 3,
     },
+    [SPECIES_TADBULB] =
+    {
+        .size = MON_COORDS_SIZE(48, 48),
+        .y_offset = 17,
+    },
+    [SPECIES_BELLIBOLT] =
+    {
+        .size = MON_COORDS_SIZE(48, 56),
+        .y_offset = 0,
+    },
     [SPECIES_SQUAWKABILLY_BLUE] =
     {
         .size = MON_COORDS_SIZE(40, 56),

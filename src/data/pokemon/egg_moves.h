@@ -4511,5 +4511,10 @@ const u16 gEggMoves[] = {
         MOVE_FLATTER,
         MOVE_PARTING_SHOT),
 
+    egg_moves(TADBULB,
+        MOVE_MUDDY_WATER,
+        MOVE_PARABOLIC_CHARGE,
+        MOVE_SOAK),
+        
     EGG_MOVES_TERMINATOR
 };

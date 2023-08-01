@@ -1238,6 +1238,8 @@ const u32 gMonFrontPic_Squawkabilly[] = INCBIN_U32("graphics/pokemon/squawkabill
 const u32 gMonFrontPic_SquawkabillyBlue[] = INCBIN_U32("graphics/pokemon/squawkabilly/blue/front.4bpp.lz");
 const u32 gMonFrontPic_SquawkabillyWhite[] = INCBIN_U32("graphics/pokemon/squawkabilly/white/front.4bpp.lz");
 const u32 gMonFrontPic_SquawkabillyYellow[] = INCBIN_U32("graphics/pokemon/squawkabilly/yellow/front.4bpp.lz");
+const u32 gMonFrontPic_Tadbulb[] = INCBIN_U32("graphics/pokemon/tadbulb/front.4bpp.lz");
+const u32 gMonFrontPic_Bellibolt[] = INCBIN_U32("graphics/pokemon/bellibolt/front.4bpp.lz");
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 
 const u32 gMonBackPic_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/back.4bpp.lz");
@@ -2479,6 +2481,8 @@ const u32 gMonBackPic_Squawkabilly[] = INCBIN_U32("graphics/pokemon/squawkabilly
 const u32 gMonBackPic_SquawkabillyBlue[] = INCBIN_U32("graphics/pokemon/squawkabilly/blue/back.4bpp.lz");
 const u32 gMonBackPic_SquawkabillyWhite[] = INCBIN_U32("graphics/pokemon/squawkabilly/white/back.4bpp.lz");
 const u32 gMonBackPic_SquawkabillyYellow[] = INCBIN_U32("graphics/pokemon/squawkabilly/yellow/back.4bpp.lz");
+const u32 gMonBackPic_Tadbulb[] = INCBIN_U32("graphics/pokemon/tadbulb/back.4bpp.lz");
+const u32 gMonBackPic_Bellibolt[] = INCBIN_U32("graphics/pokemon/bellibolt/back.4bpp.lz");
 
 const u32 gMonPalette_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/normal.gbapal.lz");
 const u32 gMonPalette_DoubleQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/double/normal.gbapal.lz");
@@ -3740,6 +3744,8 @@ const u32 gMonPalette_Squawkabilly[] = INCBIN_U32("graphics/pokemon/squawkabilly
 const u32 gMonPalette_SquawkabillyBlue[] = INCBIN_U32("graphics/pokemon/squawkabilly/blue/normal.gbapal.lz");
 const u32 gMonPalette_SquawkabillyWhite[] = INCBIN_U32("graphics/pokemon/squawkabilly/white/normal.gbapal.lz");
 const u32 gMonPalette_SquawkabillyYellow[] = INCBIN_U32("graphics/pokemon/squawkabilly/yellow/normal.gbapal.lz");
+const u32 gMonPalette_Tadbulb[] = INCBIN_U32("graphics/pokemon/tadbulb/normal.gbapal.lz");
+const u32 gMonPalette_Bellibolt[] = INCBIN_U32("graphics/pokemon/bellibolt/normal.gbapal.lz");
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 
 const u32 gMonShinyPalette_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/shiny.gbapal.lz");
@@ -4996,6 +5002,8 @@ const u32 gMonShinyPalette_Squawkabilly[] = INCBIN_U32("graphics/pokemon/squawka
 const u32 gMonShinyPalette_SquawkabillyBlue[] = INCBIN_U32("graphics/pokemon/squawkabilly/blue/shiny.gbapal.lz");
 const u32 gMonShinyPalette_SquawkabillyWhite[] = INCBIN_U32("graphics/pokemon/squawkabilly/white/shiny.gbapal.lz");
 const u32 gMonShinyPalette_SquawkabillyYellow[] = INCBIN_U32("graphics/pokemon/squawkabilly/yellow/shiny.gbapal.lz");
+const u32 gMonShinyPalette_Tadbulb[] = INCBIN_U32("graphics/pokemon/tadbulb/shiny.gbapal.lz");
+const u32 gMonShinyPalette_Bellibolt[] = INCBIN_U32("graphics/pokemon/bellibolt/shiny.gbapal.lz");
 
 const u8 gMonIcon_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
 const u8 gMonIcon_Bulbasaur[] = INCBIN_U8("graphics/pokemon/bulbasaur/icon.4bpp");
@@ -6245,6 +6253,8 @@ const u8 gMonIcon_Squawkabilly[] = INCBIN_U8("graphics/pokemon/squawkabilly/icon
 const u8 gMonIcon_SquawkabillyBlue[] = INCBIN_U8("graphics/pokemon/squawkabilly/blue/icon.4bpp");
 const u8 gMonIcon_SquawkabillyWhite[] = INCBIN_U8("graphics/pokemon/squawkabilly/white/icon.4bpp");
 const u8 gMonIcon_SquawkabillyYellow[] = INCBIN_U8("graphics/pokemon/squawkabilly/yellow/icon.4bpp");
+const u8 gMonIcon_Tadbulb[] = INCBIN_U8("graphics/pokemon/tadbulb/icon.4bpp");
+const u8 gMonIcon_Bellibolt[] = INCBIN_U8("graphics/pokemon/bellibolt/icon.4bpp");
 const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
 
 const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/footprint.1bpp");
@@ -7178,3 +7188,5 @@ const u8 gMonFootprint_Tinkatink[] = INCBIN_U8("graphics/pokemon/tinkatink/footp
 const u8 gMonFootprint_Tinkatuff[] = INCBIN_U8("graphics/pokemon/tinkatuff/footprint.1bpp");
 const u8 gMonFootprint_Tinkaton[] = INCBIN_U8("graphics/pokemon/tinkaton/footprint.1bpp");
 const u8 gMonFootprint_Squawkabilly[] = INCBIN_U8("graphics/pokemon/squawkabilly/footprint.1bpp");
+const u8 gMonFootprint_Tadbulb[] = INCBIN_U8("graphics/pokemon/tadbulb/footprint.1bpp");
+const u8 gMonFootprint_Bellibolt[] = INCBIN_U8("graphics/pokemon/bellibolt/footprint.1bpp");

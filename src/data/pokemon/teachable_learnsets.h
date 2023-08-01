@@ -32158,6 +32158,14 @@ static const u16 sSquawkabillyTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sTadbulbTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sBelliboltTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sRattataAlolanTeachableLearnset[] = {
     MOVE_BLIZZARD,
     MOVE_CUT,

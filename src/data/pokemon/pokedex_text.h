@@ -5521,3 +5521,14 @@ const u8 gSquawkabillyPokedexText[] = _(
     "big cities. They are constantly fighting\n"
     "for turf against Hoenn's native Chatot\n"
     "population.");
+
+const u8 gTadbulbPokedexText[] = _(
+    "It floats using the electricity stored\n"
+    "in its body. When thunderclouds are\n"
+    "around, Tadbulb will float higher\n"
+    "off the ground.");
+const u8 gBelliboltPokedexText[] = _(
+    "When this Pokémon expands and contracts\n"
+    "its wobbly body, the belly-button\n"
+    "dynamo in its stomach produces a huge\n"
+    "amount of electricity.");

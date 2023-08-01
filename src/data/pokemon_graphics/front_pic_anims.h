@@ -9603,6 +9603,18 @@ static const union AnimCmd sAnim_Squawkabilly_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_Tadbulb_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Bellibolt_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_VenusaurMega_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -11639,6 +11651,8 @@ SINGLE_ANIMATION(Tinkatink);
 SINGLE_ANIMATION(Tinkatuff);
 SINGLE_ANIMATION(Tinkaton);
 SINGLE_ANIMATION(Squawkabilly);
+SINGLE_ANIMATION(Tadbulb);
+SINGLE_ANIMATION(Bellibolt);
 
 SINGLE_ANIMATION(VenusaurMega);
 SINGLE_ANIMATION(CHARIZARD_MEGA_X);
@@ -12753,6 +12767,8 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_TINKATUFF] = sAnims_Tinkatuff,
     [SPECIES_TINKATON] = sAnims_Tinkaton,
     [SPECIES_SQUAWKABILLY] = sAnims_Squawkabilly,
+    [SPECIES_TADBULB] = sAnims_Tadbulb,
+    [SPECIES_BELLIBOLT] = sAnims_Bellibolt,
     [SPECIES_VENUSAUR_MEGA] = sAnims_VenusaurMega,
     [SPECIES_CHARIZARD_MEGA_X] = sAnims_CHARIZARD_MEGA_X,
     [SPECIES_CHARIZARD_MEGA_Y] = sAnims_CHARIZARD_MEGA_Y,

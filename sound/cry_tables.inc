@@ -1454,6 +1454,8 @@ gCryTable::
 	cry Cry_Tinkatuff
 	cry Cry_Tinkaton
 	cry Cry_Squawkabilly
+	cry Cry_Tadbulb
+	cry Cry_Bellibolt
 
 	@ Megas
 	cry Cry_VenusaurMega
@@ -2135,6 +2137,10 @@ gCryTable::
 	cry Cry_Unown
 	cry Cry_Unown
 .endif
+	@ Squawkabilly
+	cry_reverse Cry_Squawkabilly
+	cry_reverse Cry_Squawkabilly
+	cry_reverse Cry_Squawkabilly
 	@ Hoennian Forms
 	cry Cry_Obstagoon
 	cry Cry_Skiddo
@@ -3590,6 +3596,24 @@ gCryTable_Reverse::
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
 .endif
+	cry_reverse Cry_Annihilape
+	cry_reverse Cry_Kingambit
+	cry_reverse Cry_Cetoddle
+	cry_reverse Cry_Cetitan
+	cry_reverse Cry_Farigiraf
+	cry_reverse Cry_Shroodle
+	cry_reverse Cry_Grafaiai
+	cry_reverse Cry_Wattrel
+	cry_reverse Cry_Kilowattrel
+	cry_reverse Cry_Varoom
+	cry_reverse Cry_Revavroom
+	cry_reverse Cry_Tinkatink
+	cry_reverse Cry_Tinkatuff
+	cry_reverse Cry_Tinkaton
+	cry_reverse Cry_Squawkabilly
+	cry_reverse Cry_Tadbulb
+	cry_reverse Cry_Bellibolt
+
 	@ Megas
 	cry_reverse Cry_VenusaurMega
 	cry_reverse Cry_CharizardMegaX

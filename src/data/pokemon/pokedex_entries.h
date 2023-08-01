@@ -11118,4 +11118,26 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 256,
         .trainerOffset = 0,
     },
+    [NATIONAL_DEX_TADBULB] =
+    {
+        .categoryName = _("EleTadpole"),
+        .height = 3,
+        .weight = 4,
+        .description = gTadbulbPokedexText,
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+    [NATIONAL_DEX_BELLIBOLT] =
+    {
+        .categoryName = _("EleFrog"),
+        .height = 12,
+        .weight = 1130,
+        .description = gBelliboltPokedexText,
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
 };

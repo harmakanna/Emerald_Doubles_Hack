@@ -930,6 +930,8 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_TINKATUFF] = _("Tinkatuff"),
     [SPECIES_TINKATON] = _("Tinkaton"),
     [SPECIES_SQUAWKABILLY] = _("Sqawkabily"),
+    [SPECIES_TADBULB] = _("Tadbulb"),
+    [SPECIES_BELLIBOLT] = _("Bellibolt"),
 
     // Megas
     [SPECIES_VENUSAUR_MEGA] = _("Venusaur"),

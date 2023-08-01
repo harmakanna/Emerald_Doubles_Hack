@@ -931,6 +931,8 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_TINKATUFF] = sTinkatuffTeachableLearnset,
     [SPECIES_TINKATON] = sTinkatonTeachableLearnset,
     [SPECIES_SQUAWKABILLY] = sSquawkabillyTeachableLearnset,
+    [SPECIES_TADBULB] = sTadbulbTeachableLearnset,
+    [SPECIES_BELLIBOLT] = sBelliboltTeachableLearnset,
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurTeachableLearnset,
     [SPECIES_CHARIZARD_MEGA_X] = sCharizardTeachableLearnset,

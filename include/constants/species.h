@@ -930,6 +930,8 @@
 #define SPECIES_TINKATUFF                    924
 #define SPECIES_TINKATON                     925
 #define SPECIES_SQUAWKABILLY                 926
+#define SPECIES_TADBULB                      927
+#define SPECIES_BELLIBOLT                    928
 
 // Megas
 #define SPECIES_VENUSAUR_MEGA                FORMS_START + 1
@@ -1412,7 +1414,7 @@
 #define SPECIES_MIENSHAO_HOENNIAN            FORMS_START + 342
 #define SPECIES_DIANCIE_HOENNIAN             FORMS_START + 343
 
-#define FORMS_START SPECIES_SQUAWKABILLY
+#define FORMS_START SPECIES_BELLIBOLT
 #define SPECIES_EGG SPECIES_DIANCIE_HOENNIAN + 1
 
 #define NUM_SPECIES SPECIES_EGG

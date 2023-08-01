@@ -1307,6 +1307,8 @@ extern const u32 gMonFrontPic_Squawkabilly[];
 extern const u32 gMonFrontPic_SquawkabillyBlue[];
 extern const u32 gMonFrontPic_SquawkabillyWhite[];
 extern const u32 gMonFrontPic_SquawkabillyYellow[];
+extern const u32 gMonFrontPic_Tadbulb[];
+extern const u32 gMonFrontPic_Bellibolt[];
 extern const u32 gMonFrontPic_Egg[];
 
 extern const u32 gMonBackPic_CircledQuestionMark[];
@@ -2548,6 +2550,8 @@ extern const u32 gMonBackPic_Squawkabilly[];
 extern const u32 gMonBackPic_SquawkabillyBlue[];
 extern const u32 gMonBackPic_SquawkabillyWhite[];
 extern const u32 gMonBackPic_SquawkabillyYellow[];
+extern const u32 gMonBackPic_Tadbulb[];
+extern const u32 gMonBackPic_Bellibolt[];
 
 extern const u32 gMonPalette_CircledQuestionMark[];
 extern const u32 gMonPalette_DoubleQuestionMark[];
@@ -3809,6 +3813,8 @@ extern const u32 gMonPalette_Squawkabilly[];
 extern const u32 gMonPalette_SquawkabillyBlue[];
 extern const u32 gMonPalette_SquawkabillyWhite[];
 extern const u32 gMonPalette_SquawkabillyYellow[];
+extern const u32 gMonPalette_Tadbulb[];
+extern const u32 gMonPalette_Bellibolt[];
 extern const u32 gMonPalette_Egg[];
 
 extern const u32 gMonShinyPalette_CircledQuestionMark[];
@@ -5065,6 +5071,8 @@ extern const u32 gMonShinyPalette_Squawkabilly[];
 extern const u32 gMonShinyPalette_SquawkabillyBlue[];
 extern const u32 gMonShinyPalette_SquawkabillyWhite[];
 extern const u32 gMonShinyPalette_SquawkabillyYellow[];
+extern const u32 gMonShinyPalette_Tadbulb[];
+extern const u32 gMonShinyPalette_Bellibolt[];
 
 extern const u8 gMonIcon_QuestionMark[];
 extern const u8 gMonIcon_Bulbasaur[];
@@ -6314,6 +6322,8 @@ extern const u8 gMonIcon_Squawkabilly[];
 extern const u8 gMonIcon_SquawkabillyBlue[];
 extern const u8 gMonIcon_SquawkabillyWhite[];
 extern const u8 gMonIcon_SquawkabillyYellow[];
+extern const u8 gMonIcon_Tadbulb[];
+extern const u8 gMonIcon_Bellibolt[];
 extern const u8 gMonIcon_Egg[];
 
 extern const u8 gMonFootprint_QuestionMark[];
@@ -7247,6 +7257,8 @@ extern const u8 gMonFootprint_Tinkatink[];
 extern const u8 gMonFootprint_Tinkatuff[];
 extern const u8 gMonFootprint_Tinkaton[];
 extern const u8 gMonFootprint_Squawkabilly[];
+extern const u8 gMonFootprint_Tadbulb[];
+extern const u8 gMonFootprint_Bellibolt[];
 
 // trainer sprites
 extern const u32 gTrainerFrontPic_Hiker[];

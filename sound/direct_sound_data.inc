@@ -4076,6 +4076,14 @@ Cry_Squawkabilly::
 	.incbin "sound/direct_sound_samples/cries/squawkabilly.bin"
 
 	.align 2
+Cry_Tadbulb::
+	.incbin "sound/direct_sound_samples/cries/tadbulb.bin"
+
+	.align 2
+Cry_Bellibolt::
+	.incbin "sound/direct_sound_samples/cries/bellibolt.bin"
+
+	.align 2
 Cry_VenusaurMega::
 	.incbin "sound/direct_sound_samples/cries/mega_venusaur.bin"
 

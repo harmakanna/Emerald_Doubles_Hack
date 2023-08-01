@@ -272,4 +272,5 @@ const u8 gEnemyMonElevation[NUM_SPECIES] =
     [SPECIES_CARBINK_HOENNIAN] = 4,
     [SPECIES_PHIONE_HOENNIAN] = 11,
     //Gen 9
+    [SPECIES_TADBULB] = 4
 };

@@ -66,6 +66,7 @@ JaggedPass_EventScript_OpenMagmaHideout::
 
 JaggedPass_EventScript_MagmaHideoutGuard::
 	lockall
+	goto_if_set FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD, JaggedPass_EventScript_OhNoImInTheWrongPlace
 	goto_if_set FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS, JaggedPass_EventScript_GuardDefeated
 	waitse
 	playse SE_PIN
@@ -91,6 +92,12 @@ JaggedPass_EventScript_GuardDefeated::
 	closemessage
 	applymovement LOCALID_HIDEOUT_GUARD, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	releaseall
+	end
+
+JaggedPass_EventScript_OhNoImInTheWrongPlace:
+	msgbox JaggedPass_Text_OhNoImInTheWrongPlace, MSGBOX_DEFAULT
+	closemessage
 	releaseall
 	end
 
@@ -224,6 +231,13 @@ JaggedPass_Text_GoWhereverYouWant:
 	.string "I admit it--you're strong!\p"
 	.string "Don't worry about me.\n"
 	.string "Go wherever you want!$"
+
+JaggedPass_Text_OhNoImInTheWrongPlace:
+	.string "Oh no!\p"
+	.string "I forgot we moved the hideout to\n"
+	.string "Cratercrest Town!\p"
+	.string "I think I get there through Mt. Meteor\n"
+	.string "right outside Rusturf Tunnel…$"
 
 JaggedPass_Text_BoulderShakingInResponseToEmblem:
 	.string "Oh! This boulder is shaking in response\n"

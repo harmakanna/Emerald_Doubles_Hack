@@ -507,7 +507,7 @@ MtChimney_EventScript_Grunt1::
 
 MtChimney_EventScript_Sawyer::
 	trainerbattle_single TRAINER_SAWYER_1, MtChimney_Text_SawyerIntro, MtChimney_Text_SawyerDefeat
-	msgbox MtChimney_Text_SawyerPostBattle, MSGBOX_DEFAULT
+	msgbox MtChimney_Text_SawyerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtChimney_EventScript_SawyerDefeated::

@@ -608,12 +608,14 @@
 #define TRAINER_KATERINA                    604
 #define TRAINER_EMMA                        605
 #define TRAINER_ARTYOM                      606
+#define TRAINER_GARRETT                     607
+#define TRAINER_ANYA                        608
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      607
+#define TRAINERS_COUNT                      609
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

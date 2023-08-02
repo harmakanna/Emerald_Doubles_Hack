@@ -56,7 +56,7 @@ Route105_EventScript_Josue::
 	end
 
 Route105_EventScript_Andres::
-	trainerbattle_single TRAINER_ANDRES_1, Route105_Text_AndresIntro, Route105_Text_AndresDefeated, Route105_EventScript_AndresRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_ANDRES_1, Route105_Text_AndresIntro, Route105_Text_AndresDefeated
 	msgbox Route105_Text_AndresPostBattle, MSGBOX_DEFAULT
 	release
 	end

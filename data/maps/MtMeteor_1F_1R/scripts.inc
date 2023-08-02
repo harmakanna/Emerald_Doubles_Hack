@@ -1,2 +1,12 @@
 MtMeteor_1F_1R_MapScripts::
 	.byte 0
+
+MtMeteor_1F_1R_EventScript_Kingston::
+	trainerbattle_single TRAINER_KINGSTON, MtMeteor_1F_1R_Text_KingstonIntro, MtMeteor_1F_1R_Text_KingstonDefeat
+	msgbox MtMeteor_1F_1R_Text_KingstonPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MtMeteor_1F_1R_EventScript_Opal::
+	trainerbattle_single TRAINER_OPAL, MtMeteor_1F_1R_Text_OpalIntro, MtMeteor_1F_1R_Text_OpalDefeat
+	msgbox MtMeteor_1F_1R_Text_OpalPostBattle, MSGBOX_AUTOCLOSE
+	end

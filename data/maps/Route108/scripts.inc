@@ -27,7 +27,7 @@ Route108_EventScript_Carolina::
 	end
 
 Route108_EventScript_Cory::
-	trainerbattle_single TRAINER_CORY_1, Route108_Text_CoryIntro, Route108_Text_CoryDefeated, Route108_EventScript_CoryRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_CORY_1, Route108_Text_CoryIntro, Route108_Text_CoryDefeated
 	msgbox Route108_Text_CoryPostBattle, MSGBOX_DEFAULT
 	release
 	end

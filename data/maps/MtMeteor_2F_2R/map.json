@@ -48,9 +48,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
+      "script": "MtMeteor_2F_2R_EventScript_Mira",
       "flag": "0"
     },
     {
@@ -61,9 +61,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
+      "script": "MtMeteor_2F_2R_EventScript_Vinnie",
       "flag": "0"
     },
     {
@@ -87,9 +87,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
+      "script": "MtMeteor_2F_2R_EventScript_Evelyn",
       "flag": "0"
     },
     {
@@ -100,9 +100,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MtMeteor_2F_2R_EventScript_Elias",
       "flag": "0"
     }
   ],
@@ -112,42 +112,42 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_METEOR_FALLS_1F_2R",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 36,
       "y": 29,
       "elevation": 0,
       "dest_map": "MAP_MT_METEOR_2F_1R",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 32,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_MT_METEOR_1F_2R",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 51,
       "y": 25,
       "elevation": 0,
       "dest_map": "MAP_MT_METEOR_1F_2R",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 15,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_MT_METEOR_1F_2R",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 52,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_MT_METEOR_2F_2R",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

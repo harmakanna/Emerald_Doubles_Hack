@@ -52,6 +52,41 @@ AwakeningWoods_EventScript_RemoveKecleon:: @ 81F5460
 	removeobject VAR_LAST_TALKED
 	return
 
+AwakeningWoods_EventScript_Shania::
+	trainerbattle_single TRAINER_SHANIA, AwakeningWoods_Text_ShaniaIntro, AwakeningWoods_Text_ShaniaDefeat
+	msgbox AwakeningWoods_Text_ShaniaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+AwakeningWoods_EventScript_Patrick::
+	trainerbattle_single TRAINER_PATRICK, AwakeningWoods_Text_PatrickIntro, AwakeningWoods_Text_PatrickDefeat
+	msgbox AwakeningWoods_Text_PatrickPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+AwakeningWoods_EventScript_Milo::
+	trainerbattle_single TRAINER_MILO, AwakeningWoods_Text_MiloIntro, AwakeningWoods_Text_MiloDefeat
+	msgbox AwakeningWoods_Text_MiloPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+AwakeningWoods_EventScript_Mariana::
+	trainerbattle_single TRAINER_MARIANA, AwakeningWoods_Text_MarianaIntro, AwakeningWoods_Text_MarianaDefeat
+	msgbox AwakeningWoods_Text_MarianaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+AwakeningWoods_EventScript_Katerina::
+	trainerbattle_single TRAINER_KATERINA, AwakeningWoods_Text_KaterinaIntro, AwakeningWoods_Text_KaterinaDefeat
+	msgbox AwakeningWoods_Text_KaterinaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+AwakeningWoods_EventScript_Emma::
+	trainerbattle_single TRAINER_EMMA, AwakeningWoods_Text_EmmaIntro, AwakeningWoods_Text_EmmaDefeat
+	msgbox AwakeningWoods_Text_EmmaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+AwakeningWoods_EventScript_Artyom::
+	trainerbattle_single TRAINER_ARTYOM, AwakeningWoods_Text_ArtyomIntro, AwakeningWoods_Text_ArtyomDefeat
+	msgbox AwakeningWoods_Text_ArtyomPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 AwakeningWoods_Text_PhoebeAboutTheForest:
 	.string "Phoebe: A really long time ago,\n"
 	.string "this forest was a part of\l"
@@ -75,24 +110,3 @@ AwakeningWoods_Text_PhoebeAboutTheForest:
 	.string "Pretty awesome, huh? It's the\n"
 	.string "perfect place to commune with\l"
 	.string "Pokémon!$"
-
-AwakeningWoods_Text_ShrineMysticalAura:
-	.string "The shrine gives off\n"
-	.string "a mystical aura.$"
-
-AwakeningWoods_Text_SeemsToBeASlot:
-	.string "There seems to be a slot for\n"
-	.string "a shrine offering…$"
-
-AwakeningWoods_Text_InsertPureIncense:
-	.string "Would you like to place the\n"
-	.string "Pure Incense in the slot?$"
-
-AwakeningWoods_Text_DidntInsertPureIncense:
-	.string "You didn't insert the Incense.\n"
-	.string "You feel a strange air of\l"
-	.string "disappointment…$"
-
-AwakeningWoods_Text_IncenseInShrine:
-	.string "The shrine seems strangely\n"
-	.string "revitalized…$"

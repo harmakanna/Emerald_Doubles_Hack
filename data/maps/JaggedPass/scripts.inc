@@ -66,6 +66,7 @@ JaggedPass_EventScript_OpenMagmaHideout::
 
 JaggedPass_EventScript_MagmaHideoutGuard::
 	lockall
+	goto_if_set FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD, JaggedPass_EventScript_OhNoImInTheWrongPlace
 	goto_if_set FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS, JaggedPass_EventScript_GuardDefeated
 	waitse
 	playse SE_PIN
@@ -94,13 +95,19 @@ JaggedPass_EventScript_GuardDefeated::
 	releaseall
 	end
 
+JaggedPass_EventScript_OhNoImInTheWrongPlace:
+	msgbox JaggedPass_Text_OhNoImInTheWrongPlace, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
 JaggedPass_EventScript_Eric::
 	trainerbattle_single TRAINER_ERIC, JaggedPass_Text_EricIntro, JaggedPass_Text_EricDefeat
 	msgbox JaggedPass_Text_EricPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 JaggedPass_EventScript_Diana::
-	trainerbattle_single TRAINER_DIANA_1, JaggedPass_Text_DianaIntro, JaggedPass_Text_DianaDefeat, JaggedPass_EventScript_RegisterDiana
+	trainerbattle_single TRAINER_DIANA_1, JaggedPass_Text_DianaIntro, JaggedPass_Text_DianaDefeat
 	msgbox JaggedPass_Text_DianaPostBattle, MSGBOX_AUTOCLOSE
 	release
 	end
@@ -114,7 +121,7 @@ JaggedPass_EventScript_RegisterDiana::
 
 
 JaggedPass_EventScript_Ethan::
-	trainerbattle_single TRAINER_ETHAN_1, JaggedPass_Text_EthanIntro, JaggedPass_Text_EthanDefeat, JaggedPass_EventScript_RegisterEthan
+	trainerbattle_single TRAINER_ETHAN_1, JaggedPass_Text_EthanIntro, JaggedPass_Text_EthanDefeat
 	msgbox JaggedPass_Text_EthanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -224,6 +231,13 @@ JaggedPass_Text_GoWhereverYouWant:
 	.string "I admit it--you're strong!\p"
 	.string "Don't worry about me.\n"
 	.string "Go wherever you want!$"
+
+JaggedPass_Text_OhNoImInTheWrongPlace:
+	.string "Oh no!\p"
+	.string "I forgot we moved the hideout to\n"
+	.string "Cratercrest Town!\p"
+	.string "I think I get there through Mt. Meteor\n"
+	.string "right outside Rusturf Tunnel…$"
 
 JaggedPass_Text_BoulderShakingInResponseToEmblem:
 	.string "Oh! This boulder is shaking in response\n"

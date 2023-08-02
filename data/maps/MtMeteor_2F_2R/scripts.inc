@@ -1,2 +1,22 @@
 MtMeteor_2F_2R_MapScripts::
 	.byte 0
+
+MtMeteor_2F_2R_EventScript_Vinnie::
+	trainerbattle_single TRAINER_VINNIE, MtMeteor_2F_2R_Text_VinnieIntro, MtMeteor_2F_2R_Text_VinnieDefeat
+	msgbox MtMeteor_2F_2R_Text_VinniePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MtMeteor_2F_2R_EventScript_Mira::
+	trainerbattle_single TRAINER_MIRA, MtMeteor_2F_2R_Text_MiraIntro, MtMeteor_2F_2R_Text_MiraDefeat
+	msgbox MtMeteor_2F_2R_Text_MiraPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MtMeteor_2F_2R_EventScript_Elias::
+	trainerbattle_single TRAINER_ELIAS, MtMeteor_2F_2R_Text_EliasIntro, MtMeteor_2F_2R_Text_EliasDefeat
+	msgbox MtMeteor_2F_2R_Text_EliasPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MtMeteor_2F_2R_EventScript_Evelyn::
+	trainerbattle_single TRAINER_EVELYN, MtMeteor_2F_2R_Text_EvelynIntro, MtMeteor_2F_2R_Text_EvelynDefeat
+	msgbox MtMeteor_2F_2R_Text_EvelynPostBattle, MSGBOX_AUTOCLOSE
+	end

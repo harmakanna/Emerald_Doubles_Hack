@@ -65,7 +65,7 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	call_if_eq VAR_0x8008, 1, MtPyre_Summit_EventScript_OldLadyApproachPlayer1
 	call_if_eq VAR_0x8008, 2, MtPyre_Summit_EventScript_OldLadyApproachPlayer2
 	msgbox MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis, MSGBOX_DEFAULT
-	giveitem ITEM_MAGMA_EMBLEM
+	setflag FLAG_HIDE_ROUTE_116_MAGMA_GRUNT
 	setflag FLAG_RECEIVED_RED_OR_BLUE_ORB
 	setflag FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD
 	releaseall
@@ -512,18 +512,19 @@ MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
 	.string "… … … … … …\p"
 	.string "Oh, yes. Was it TEAM MAGMA who came\n"
 	.string "and took the BLUE ORB first?\p"
-	.string "Well, in their haste, they left this\n"
-	.string "behind.\p"
-	.string "I couldn't imagine what exactly it\n"
-	.string "could be.\p"
-	.string "I would like you to have it.\n"
-	.string "Perhaps it will be useful in some way.$"
+	.string "Some magma grunts were mumbling\n"
+	.string "about moving their base location.\p"
+	.string "They said something about Cratercrest\n"
+	.string "Town?\p"
+	.string "You can reach Cratercrest via the Mt.\n"
+	.string "Meteor entrance outside Rusturf Tunnel.$"
 
 MtPyre_Summit_Text_OrbsHaveBeenTaken:
 	.string "The BLUE ORB and RED ORB taken by\n"
 	.string "those sinister men…\p"
-	.string "They must never be apart…\n"
-	.string "I fear something terrible will happen…$"
+	.string "They must never be apart…\p"
+	.string "You must go to Mt. Meteor\n"
+	.string "before something horrible happens…$"
 
 MtPyre_Summit_Text_GroudonKyogreAwakened:
 	.string "Oh, my goodness…\p"
@@ -622,4 +623,3 @@ MtPyre_Summit_Text_HoennTrioTale:
 	.string "becalmed the two enraged POKéMON.\p"
 	.string "Then, its duty done, the green POKéMON\n"
 	.string "flew off into the wild blue yonder…$"
-

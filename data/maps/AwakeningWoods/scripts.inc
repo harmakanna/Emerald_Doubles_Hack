@@ -79,7 +79,7 @@ AwakeningWoods_EventScript_Katerina::
 
 AwakeningWoods_EventScript_Emma::
 	trainerbattle_single TRAINER_EMMA, AwakeningWoods_Text_EmmaIntro, AwakeningWoods_Text_EmmaDefeat
-	msgbox AwakeningWoods_Text_ShaniaPostBattle, MSGBOX_AUTOCLOSE
+	msgbox AwakeningWoods_Text_EmmaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AwakeningWoods_EventScript_Artyom::

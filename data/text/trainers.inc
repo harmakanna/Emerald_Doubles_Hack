@@ -4784,6 +4784,91 @@ Route134_Text_HudsonPostBattle:
 	.string "My buddy's a timid fellow, so I'm\n"
 	.string "worried about him.$"
 
+Route135_Text_LucaIntro:
+	.string "There's so many rare POKéMON in\n"
+	.string "this forest…\p"
+	.string "Have you caught any?$"
+
+Route135_Text_LucaDefeat:
+	.string "Your POKéMON are so cool!$"
+
+Route135_Text_LucaPostBattle:
+	.string "There's supposedly a POKéMON only\n"
+	.string "spoken of in myth in one of HOENN's\l"
+	.string "many forests.\p"
+	.string "I wonder if it can be found here…$"
+
+Route135_Text_AdrianIntro:
+	.string "Don't you just love camping?\n"
+	.string "The campfires, singing songs,\l"
+	.string "roasting marshmallows…$"
+
+Route135_Text_AdrianDefeat:
+	.string "Darn, I burned my marshmallows!$"
+
+Route135_Text_AdrianPostBattle:
+	.string "My friends and I go to summer\n"
+	.string "camp every June.\p"
+	.string "It's always the highlight of\n"
+	.string "my vacation!$"
+
+Route135_Text_KristiIntro:
+	.string "Not many people like swimming\n"
+	.string "here because they think the water\l"
+	.string "is all mucky.\p"
+	.string "Well, I say to heck with that!$"
+
+Route135_Text_KristiDefeat:
+	.string "Hey, don't splash me with mud!$"
+
+Route135_Text_KristiPostBattle:
+	.string "I love swimming this beach\n"
+	.string "because of how close I feel\l"
+	.string "with nature!$"
+
+SlaterootForest_Text_SmithIntro:
+	.string "I've been hired for a controlled\n"
+	.string "burning of the leaves of these woods.\p"
+	.string "Don't assume I'm trying to start\n"
+	.string "a forest fire!$"
+
+SlaterootForest_Text_SmithDefeat:
+	.string "Yowch, I burnt my foot!$"
+
+SlaterootForest_Text_SmithPostBattle:
+	.string "Controlled burnings are an important\n"
+	.string "part of preventing wildfires.\p"
+	.string "Leave it to the professionals to get it\n"
+	.string "done!$"
+
+SlaterootForest_Text_IzzyIntro:
+	.string "This shade is perfect to set up a\n"
+	.string "picnic!$"
+
+SlaterootForest_Text_IzzyDefeat:
+	.string "I might have lost the battle, but\n"
+	.string "at least my POKéMON and I had fun!$"
+
+SlaterootForest_Text_IzzyPostBattle:
+	.string "When I grow up, I want to be a\n"
+	.string "POKéMON ranger!\p"
+	.string "They're so cool!$"
+
+SlaterootForest_Text_JeremiahIntro:
+	.string "Nothing beats river fishing on a\n"
+	.string "bright sunny morning!\p"
+	.string "Don't you agree?$"
+
+SlaterootForest_Text_JeremiahDefeat:
+	.string "No fair, my line got snagged\n"
+	.string "by a branch!$"
+
+SlaterootForest_Text_JeremiahPostBattle:
+	.string "The biodiversity of HOENN has\n"
+	.string "grown so much these past few years!\p"
+	.string "Have you noticed all the new species\n"
+	.string "from other regions?$"
+
 MtMeteor_1F_1R_Text_KingstonIntro:
 	.string "Some trainers test their skills in\n"
 	.string "Ever Grande City, but for me,\p"
@@ -4814,3 +4899,397 @@ MtMeteor_1F_1R_Text_OpalPostBattle:
 	.string "being surprised…\p"
 	.string "Fufufu… You younguns have changed\n"
 	.string "so much since my prime!$"
+
+MtMeteor_1F_2R_Text_DonovanIntro:
+	.string "This cave is chock full of Feebas!\n"
+	.string "It's perfect for sport!$"
+
+MtMeteor_1F_2R_Text_DonovanDefeat:
+	.string "I'm all FEEBASed out!"
+
+MtMeteor_1F_2R_Text_DonovanPostBattle:
+	.string "Before this cave opened up, Feebas\n"
+	.string "was a difficult POKéMON to find.\p"
+	.string "But now, you can fish 'em by\n"
+	.string "the dozen!$"
+
+MtMeteor_1F_2R_Text_VanyaIntro:
+	.string "When I'm here, I seek out Machokes\n"
+	.string "and grapple them into submission!\p"
+	.string "Just try to stop me!$"
+
+MtMeteor_1F_2R_Text_VanyaDefeat:
+	.string "Grappled like a Machoke!$"
+
+MtMeteor_1F_2R_Text_VanyaPostBattle:
+	.string "I'm not going to stop grappling\n"
+	.string "Machokes just because you beat me.$"
+
+MtMeteor_1F_2R_Text_AjaxIntro:
+	.string "The locales of Hoenn are all so\n"
+	.string "beautiful. How much of the region\l"
+	.string "have you seen?$"
+
+MtMeteor_1F_2R_Text_AjaxDefeat:
+	.string "I can tell from your strength that\n"
+	.string "you've gone all across Hoenn!$"
+
+MtMeteor_1F_2R_Text_AjaxPostBattle:
+	.string "The caves of Mt. Meteor connect\n"
+	.string "directly to Meteor Falls.\p"
+	.string "These rivers around us come\n"
+	.string "directly from the falls!$"
+
+MtMeteor_1F_2R_Text_RossIntro:
+	.string "Why aren't my Feebas evolving?\n"
+	.string "I've stuffed them full of POKEBLOCKs!$"
+
+MtMeteor_1F_2R_Text_RossDefeat:
+	.string "I wouldn't have had an issue if my\n"
+	.string "dang Feebas were Milotics!$"
+
+MtMeteor_1F_2R_Text_RossPostBattle:
+	.string "What? You're saying Feebas evolves\n"
+	.string "using Prism Scales?\p"
+	.string "Well I'll be a monkey's uncle,\n"
+	.string "Donovan lied to me!$"
+
+MtMeteor_1F_2R_Text_AustinIntro:
+	.string "Reaching the peak of Mt. Meteor is a\n"
+	.string "rite of passage for hikers.\p"
+	.string "Only the most dedicated reach the top!$"
+
+MtMeteor_1F_2R_Text_AustinDefeat:
+	.string "Urp…$"
+
+MtMeteor_1F_2R_Text_AustinPostBattle:
+	.string "I'm still a long way away from reaching\n"
+	.string "Meteor Peak.\p"
+	.string "But man… Just imagining the peak keeps\n"
+	.string "me motivated!$"
+
+MtMeteor_1F_2R_Text_NoahIntro:
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "What? I'm fishing here!$"
+
+MtMeteor_1F_2R_Text_NoahDefeat:
+	.string "You're gonna break my focus!$"
+
+MtMeteor_1F_2R_Text_NoahPostBattle:
+	.string "… … …\n"
+	.string "I'm trying to concentrate! Scram!$"
+
+MtMeteor_2F_1R_Text_MilesIntro:
+	.string "So many twists and turns…\n"
+	.string "I think I'm getting lost…$"
+
+MtMeteor_2F_1R_Text_MilesDefeat:
+	.string "I wish I had a flashlight!$"
+
+MtMeteor_2F_1R_Text_MilesPostBattle:
+	.string "I was underprepared when coming in…\n"
+	.string "Can I really call myself an ace trainer?$"
+
+MtMeteor_2F_1R_Text_LunaIntro:
+	.string "The caves here are so deep it can be\n"
+	.string "tough to see.\p"
+	.string "But for an Expert like me, I can navigate\n"
+	.string "Mt. Meteor with my eyes closed!$"
+
+MtMeteor_2F_1R_Text_LunaDefeat:
+	.string "Oh, crushing defeat!$"
+
+MtMeteor_2F_1R_Text_LunaPostBattle:
+	.string "I grew up in Cratercrest Town exploring\n"
+	.string "the peaks and valleys of this\l"
+	.string "mountain range.\p"
+	.string "Have you ever been to Cratercrest?$"
+
+MtMeteor_2F_1R_Text_HarperIntro:
+	.string "Every year, I make my pilgrimage to\n"
+	.string "Meteor Peak for a full month of training.\p"
+	.string "This pilgrimage will be my fiftieth!$"
+
+MtMeteor_2F_1R_Text_HarperDefeat:
+	.string "Such is the way of the pilgrimage!$"
+
+MtMeteor_2F_1R_Text_HarperPostBattle:
+	.string "Every year, I make my trek from Lilycove,\n"
+	.string "through Mt. Pyre, down to Mauville, and\l"
+	.string "up Mt. Meteor to the mountain's summit\p"
+	.string "It's an arduous journey, but my struggle\n"
+	.string "has honed my mind and body to its peak!$"
+
+MtMeteor_2F_1R_Text_LandonIntro:
+	.string "Before heading out on a tough hike, I\n"
+	.string "bake a fresh batch of granola!\l"
+	.string "It's loaded with nutrients!$"
+
+MtMeteor_2F_1R_Text_LandonDefeat:
+	.string "Oh no! I spilled my granola!$"
+
+MtMeteor_2F_1R_Text_LandonPostBattle:
+	.string "My granola… … …"
+
+MtMeteor_2F_2R_Text_VinnieIntro:
+	.string "The roar of the waterfalls echo through\n"
+	.string "the caves of Mt. Meteor!\p"
+	.string "There's no better backdrop to an intense\n"
+	.string "POKéMON battle!$"
+
+MtMeteor_2F_2R_Text_VinnieDefeat:
+	.string "The waterfalls will drown out the sting\n"
+	.string "of my defeat!$"
+
+MtMeteor_2F_2R_Text_VinniePostBattle:
+	.string "The path to the peak of the mountaion\n"
+	.string "is just up ahead.\p"
+	.string "Cratercrest Town acts as a rest stop\n"
+	.string "for the many people who climb the\l"
+	.string "mountain.$"
+
+MtMeteor_2F_2R_Text_MiraIntro:
+	.string "Mt. Meteor is the top-rated training\n"
+	.string "spot for trainers in the west.\p"
+	.string "Show me how strong you are!$"
+
+MtMeteor_2F_2R_Text_MiraDefeat:
+	.string "Snuffed like a light!$"
+
+MtMeteor_2F_2R_Text_MiraPostBattle:
+	.string "As a resident of Fallarbor Town\n"
+	.string "I find it near impossible to travel\l"
+	.string "to Victory Road for battle./p"
+	.string "Us westerners come here for our own\n"
+	.string "mini-Victory Road.$"
+
+MtMeteor_2F_2R_Text_EliasIntro:
+	.string "The closer you are to the Falls,\n"
+	.string "the better the fish you can catch!$"
+
+MtMeteor_2F_2R_Text_EliasDefeat:
+	.string "The catching's haven't been great!$"
+
+MtMeteor_2F_2R_Text_EliasPostBattle:
+	.string "The biggest challenge to fishing is\n"
+	.string "the patience to wait for the big catch.\p"
+	.string "In times like those, I like to think\n"
+	.string "about my place in the world and what\l"
+	.string "future I want to build for myself.$"
+
+MtMeteor_2F_2R_Text_EvelynIntro:
+	.string "Ooooooohhhhhh…\p"
+	.string "My body's revitalized by the fresh\n"
+	.string "mist of the falls…$"
+
+MtMeteor_2F_2R_Text_EvelynDefeat:
+	.string "Aaahhhhhh…$"
+
+MtMeteor_2F_2R_Text_EvelynPostBattle:
+	.string "Sitting under the falling water is so\n"
+	.string "revitalizing…\p"
+	.string "It's like a full body massage!$"
+
+MeteorPeak_Text_LeoIntro:
+	.string "Team Magma's arrival has brought nothing\n"
+	.string "but pain to the local fauna!$"
+
+MeteorPeak_Text_LeoDefeat:
+	.string "Sigh…$"
+
+MeteorPeak_Text_LeoPostBattle:
+	.string "I became a ranger to protect the wildlife\n"
+	.string "from people like Team Magma and Aqua.\p"
+	.string "Their brand of 'activism' is nothing but\n"
+	.string "snake oil!$"
+
+MeteorPeak_Text_SashaIntro:
+	.string "Snowboarder by day, battler by night.\n"
+	.string "What better life could there be?$"
+
+MeteorPeak_Text_SashaDefeat:
+	.string "The slopes call to me!$"
+
+MeteorPeak_Text_SashaPostBattle:
+	.string "The sports culture is so strong here that\n"
+	.string "kids learn to ski as early as four.\p"
+	.string "I've been going down these mountains\n"
+	.string "as long as I can remember!$"
+
+MeteorPeak_Text_VladIntro:
+	.string "The frigid winds of the mountain…\n"
+	.string "Can you handle this chill?$"
+
+MeteorPeak_Text_VladDefeat:
+	.string "Cold to the bone…$"
+
+MeteorPeak_Text_VladPostBattle:
+	.string "The temperatures near the peak hit\n"
+	.string "sub-zero for a full half-year.\p"
+	.string "If you're caught without a coat,\n"
+	.string "good luck.$"
+
+MeteorPeak_Text_PearlIntro:
+	.string "Once a picknicker, now a ranger.\n"
+	.string "My love for POKéMON knows no bounds!$"
+
+MeteorPeak_Text_PearlDefeat:
+	.string "Oh no, my POKéMON!$"
+
+MeteorPeak_Text_PearlPostBattle:
+	.string "The ecosystem of West Hoenn is\n"
+	.string "tightly interwoven into our lives.\p"
+	.string "If the health of wild POKéMON goes\n"
+	.string "south, us humans also suffer.$"
+
+MeteorPeak_Text_ShaeIntro:
+	.string "Have you noticed all the new POKéMON\n"
+	.string "adapting to Hoenn's environment?\p"
+	.string "It's so exciting to witness!$"
+
+MeteorPeak_Text_ShaeDefeat:
+	.string "I hope you've been a friend to your\n"
+	.string "POKéMON!$"
+
+MeteorPeak_Text_ShaePostBattle:
+	.string "We've started calling these new\n"
+	.string "POKéMON Hoennian forms.\p"
+	.string "My favorite is Skiddo!$"
+
+MeteorPeak_Text_MateoIntro:
+	.string "I'm so close to the top of the\n"
+	.string "mountain, I can taste it!$"
+
+MeteorPeak_Text_MateoDefeat:
+	.string "My knees are about to give out!$"
+
+MeteorPeak_Text_MateoPostBattle:
+	.string "I need to set up camp for a bit…\n"
+	.string "If I don't, I might collapse!$"
+
+MeteorPeak_Text_ErikIntro:
+	.string "Something is sealed away at the\n"
+	.string "top of this mountain…\p"
+	.string "It's my job to discover why!$"
+
+MeteorPeak_Text_ErikDefeat:
+	.string "What do you think is sealed away?$"
+
+MeteorPeak_Text_ErikPostBattle:
+	.string "It is said that the leader of the\n"
+	.string "legendary golems is sealed away in\l"
+	.string "an ancient castle.\p"
+	.string "This is ony a hypothesis, but I\n"
+	.string "believe some terrible force\l"
+	.string "destroyed the bodies of the golems,\p"
+	.string "driving them to hide away to\l"
+	.string "recover for thousands of years.$"
+
+AwakeningWoods_Text_ShaniaIntro:
+	.string "This forest is protected land. We\n"
+	.string "keep it closed to outsiders, but\l"
+	.string "you're allowed any time!$"
+
+AwakeningWoods_Text_ShaniaDefeat:
+	.string "Make sure to respect the POKéMON\n"
+	.string "of the forest!$"
+
+AwakeningWoods_Text_ShaniaPostBattle:
+	.string "We rangers are tasked with helping\n"
+	.string "injured wild POKéMON and protecting\l"
+	.string "the environment.\p"
+	.string "Being stationed in Awakening Wood\n"
+	.string "is our highest honor!$"
+
+AwakeningWoods_Text_PatrickIntro:
+	.string "There's a mythical POKéMON at the\n"
+	.string "heart of this forest.\p"
+	.string "We can't let anyone other than\n"
+	.string "Hoenn's top rangers know.$"
+
+AwakeningWoods_Text_PatrickDefeat:
+	.string "Your strength is nothing to sneeze\n"
+	.string "at!$"
+
+AwakeningWoods_Text_PatrickPostBattle:
+	.string "If people knew of the mythical\n"
+	.string "beast in these woods, nasty folk\l"
+	.string "might threaten it.\p"
+	.string "We can't let that happen.$"
+
+AwakeningWoods_Text_MiloIntro:
+	.string "I'm getting bored…\n"
+	.string "Do you wanna battle?$"
+
+AwakeningWoods_Text_MiloDefeat:
+	.string "I'm still bored…$"
+
+AwakeningWoods_Text_MiloPostBattle:
+	.string "There's too many days on the\n"
+	.string "job where nothing happens…$"
+
+AwakeningWoods_Text_MarianaIntro:
+	.string "The air in this clearing is\n"
+	.string "so, so fresh…\p"
+	.string "There's really nothing else like\n"
+	.string "it in all of Hoenn…$"
+
+AwakeningWoods_Text_MarianaDefeat:
+	.string "So fresh…$"
+
+AwakeningWoods_Text_MarianaPostBattle:
+	.string "There's only supposed to be one\n"
+	.string "mythical found in this forest,\p"
+	.string "but with air this fresh there HAS\n"
+	.string "to be a second…$"
+
+AwakeningWoods_Text_KaterinaIntro:
+	.string "The trails of these woods twist\n"
+	.string "and turn so much.\p"
+	.string "Are you keeping track of your\n"
+	.string "surroundings or are you lost?$"
+
+AwakeningWoods_Text_KaterinaDefeat:
+	.string "If you're lost, I can lend you\n"
+	.string "my map of the woods!$"
+
+AwakeningWoods_Text_KaterinaPostBattle:
+	.string "I'm not gonna lie, I'm pretty new\n"
+	.string "among the rangers.\p"
+	.string "I frequently get lost myself!$"
+
+AwakeningWoods_Text_EmmaIntro:
+	.string "The Awakening Falls are so\n"
+	.string "majestic.\p"
+	.string "Sometimes I wish other natureheads\n"
+	.string "could see take in this view.$"
+
+AwakeningWoods_Text_EmmaDefeat:
+	.string "I hope you can also enjoy these\n"
+	.string "falls.$"
+
+AwakeningWoods_Text_EmmaPostBattle:
+	.string "So many people flock to Meteor\n"
+	.string "Falls for their roaring waters.\p"
+	.string "If they knew about this waterfall,\n"
+	.string "they might damage the ecosystem.$"
+
+AwakeningWoods_Text_ArtyomIntro:
+	.string "The mythical POKéMON is close.\n"
+	.string "Can you sense it?$"
+
+AwakeningWoods_Text_ArtyomDefeat:
+	.string "It's been watching us this\n"
+	.string "whole time!$"
+
+AwakeningWoods_Text_ArtyomPostBattle:
+	.string "Even though we're here to protect\n"
+	.string "the POKéMON, none of us have ever\l"
+	.string "seen it or even know what it is.\p"
+	.string "It will only reveal itself to \n"
+	.string "someone it deems worthy.$"

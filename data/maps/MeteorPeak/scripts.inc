@@ -11,39 +11,39 @@ MeteorPeak_EventScript_CloseDecrepitCastle::
 	setmetatile 22, 11, METATILE_General_RockWall_SandBase, TRUE
 	return
 
-Meteor_Peak_EventScript_Leo::
-	trainerbattle_single TRAINER_LEO, Meteor_Peak_Text_LeoIntro, Meteor_Peak_Text_LeoDefeat
-	msgbox Meteor_Peak_Text_LeoPostBattle, MSGBOX_AUTOCLOSE
+MeteorPeak_EventScript_Leo::
+	trainerbattle_single TRAINER_LEO, MeteorPeak_Text_LeoIntro, MeteorPeak_Text_LeoDefeat
+	msgbox MeteorPeak_Text_LeoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Meteor_Peak_EventScript_Sasha::
-	trainerbattle_single TRAINER_SASHA, Meteor_Peak_Text_SashaIntro, Meteor_Peak_Text_SashaDefeat
-	msgbox Meteor_Peak_Text_SashaPostBattle, MSGBOX_AUTOCLOSE
+MeteorPeak_EventScript_Sasha::
+	trainerbattle_single TRAINER_SASHA, MeteorPeak_Text_SashaIntro, MeteorPeak_Text_SashaDefeat
+	msgbox MeteorPeak_Text_SashaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Meteor_Peak_EventScript_Vlad::
-	trainerbattle_single TRAINER_VLAD, Meteor_Peak_Text_VladIntro, Meteor_Peak_Text_VladDefeat
-	msgbox Meteor_Peak_Text_VladPostBattle, MSGBOX_AUTOCLOSE
+MeteorPeak_EventScript_Vlad::
+	trainerbattle_single TRAINER_VLAD, MeteorPeak_Text_VladIntro, MeteorPeak_Text_VladDefeat
+	msgbox MeteorPeak_Text_VladPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Meteor_Peak_EventScript_Pearl::
-	trainerbattle_single TRAINER_PEARL, Meteor_Peak_Text_PearlIntro, Meteor_Peak_Text_PearlDefeat
-	msgbox Meteor_Peak_Text_PearlPostBattle, MSGBOX_AUTOCLOSE
+MeteorPeak_EventScript_Pearl::
+	trainerbattle_single TRAINER_PEARL, MeteorPeak_Text_PearlIntro, MeteorPeak_Text_PearlDefeat
+	msgbox MeteorPeak_Text_PearlPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Meteor_Peak_EventScript_Shae::
-	trainerbattle_single TRAINER_SHAE, Meteor_Peak_Text_ShaeIntro, Meteor_Peak_Text_ShaeDefeat
-	msgbox Meteor_Peak_Text_ShaePostBattle, MSGBOX_AUTOCLOSE
+MeteorPeak_EventScript_Shae::
+	trainerbattle_single TRAINER_SHAE, MeteorPeak_Text_ShaeIntro, MeteorPeak_Text_ShaeDefeat
+	msgbox MeteorPeak_Text_ShaePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Meteor_Peak_EventScript_Mateo::
-	trainerbattle_single TRAINER_MATEO, Meteor_Peak_Text_MateoIntro, Meteor_Peak_Text_MateoDefeat
-	msgbox Meteor_Peak_Text_MateoPostBattle, MSGBOX_AUTOCLOSE
+MeteorPeak_EventScript_Mateo::
+	trainerbattle_single TRAINER_MATEO, MeteorPeak_Text_MateoIntro, MeteorPeak_Text_MateoDefeat
+	msgbox MeteorPeak_Text_MateoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Meteor_Peak_EventScript_Erik::
-	trainerbattle_single TRAINER_ERIK, Meteor_Peak_Text_ErikIntro, Meteor_Peak_Text_ErikDefeat
-	msgbox Meteor_Peak_Text_ErikPostBattle, MSGBOX_AUTOCLOSE
+MeteorPeak_EventScript_Erik::
+	trainerbattle_single TRAINER_ERIK, MeteorPeak_Text_ErikIntro, MeteorPeak_Text_ErikDefeat
+	msgbox MeteorPeak_Text_ErikPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MeteorPeak_EventScript_ChimneysInnSign::

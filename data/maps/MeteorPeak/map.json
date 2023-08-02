@@ -56,7 +56,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Meteor_Peak_EventScript_Vlad",
+      "script": "MeteorPeak_EventScript_Vlad",
       "flag": "0"
     },
     {
@@ -69,7 +69,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "Meteor_Peak_EventScript_Mateo",
+      "script": "MeteorPeak_EventScript_Mateo",
       "flag": "0"
     },
     {
@@ -82,7 +82,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Meteor_Peak_EventScript_Shae",
+      "script": "MeteorPeak_EventScript_Shae",
       "flag": "0"
     },
     {
@@ -95,7 +95,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Meteor_Peak_EventScript_Leo",
+      "script": "MeteorPeak_EventScript_Leo",
       "flag": "0"
     },
     {
@@ -108,7 +108,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Meteor_Peak_EventScript_Pearl",
+      "script": "MeteorPeak_EventScript_Pearl",
       "flag": "0"
     },
     {
@@ -121,7 +121,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Meteor_Peak_EventScript_Sasha",
+      "script": "MeteorPeak_EventScript_Sasha",
       "flag": "0"
     },
     {
@@ -134,7 +134,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "Meteor_Peak_EventScript_Erik",
+      "script": "MeteorPeak_EventScript_Erik",
       "flag": "0"
     },
     {

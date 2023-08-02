@@ -8,7 +8,7 @@ Route135_EventScript_Luca::
 
 Route135_EventScript_Adrian::
 	trainerbattle_single TRAINER_ADRIAN, Route135_Text_AdrianIntro, Route135_Text_AdrianDefeat
-	msgbox Route135_Text_JackPostBattle, MSGBOX_AUTOCLOSE
+	msgbox Route135_Text_AdrianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route135_EventScript_Kristi::

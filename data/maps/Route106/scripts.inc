@@ -6,17 +6,17 @@ Route106_EventScript_TrainerTipsSign::
 	end
 
 Route106_EventScript_Douglas::
-	trainerbattle_single TRAINER_DOUGLAS, Route106_Text_DouglasIntro, Route106_Text_DouglasDefeated
+	trainerbattle_double TRAINER_DOUGLAS, Route106_Text_DouglasIntro, Route106_Text_DouglasDefeated
 	msgbox Route106_Text_DouglasPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route106_EventScript_Kyla::
-	trainerbattle_single TRAINER_KYLA, Route106_Text_KylaIntro, Route106_Text_KylaDefeated
+	trainerbattle_double TRAINER_KYLA, Route106_Text_KylaIntro, Route106_Text_KylaDefeated
 	msgbox Route106_Text_KylaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route106_EventScript_Elliot::
-	trainerbattle_single TRAINER_ELLIOT_1, Route106_Text_ElliotIntro, Route106_Text_ElliotDefeated
+	trainerbattle_double TRAINER_ELLIOT_1, Route106_Text_ElliotIntro, Route106_Text_ElliotDefeated
 	msgbox Route106_Text_ElliotPostBattle, MSGBOX_AUTOCLOSE
 	release
 	end
@@ -30,7 +30,7 @@ Route106_EventScript_ElliotRegisterMatchCallAfterBattle::
 	end
 
 Route106_EventScript_Ned::
-	trainerbattle_single TRAINER_NED, Route106_Text_NedIntro, Route106_Text_NedDefeated
+	trainerbattle_double TRAINER_NED, Route106_Text_NedIntro, Route106_Text_NedDefeated
 	msgbox Route106_Text_NedPostBattle, MSGBOX_AUTOCLOSE
 	end
 

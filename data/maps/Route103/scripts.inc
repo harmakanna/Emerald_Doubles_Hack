@@ -202,7 +202,7 @@ Route103_EventScript_RouteSign::
 	end
 
 Route103_EventScript_Daisy::
-	trainerbattle_single TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
+	trainerbattle_double TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
 	msgbox Route103_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -229,12 +229,12 @@ Route102_EventScript_LivRegisterMatchCallAfterBattle::
 	end
 
 Route103_EventScript_Andrew::
-	trainerbattle_single TRAINER_ANDREW, Route103_Text_AndrewIntro, Route103_Text_AndrewDefeated
+	trainerbattle_double TRAINER_ANDREW, Route103_Text_AndrewIntro, Route103_Text_AndrewDefeated
 	msgbox Route103_Text_AndrewPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_EventScript_Miguel::
-	trainerbattle_single TRAINER_MIGUEL_1, Route103_Text_MiguelIntro, Route103_Text_MiguelDefeated
+	trainerbattle_double TRAINER_MIGUEL_1, Route103_Text_MiguelIntro, Route103_Text_MiguelDefeated
 	msgbox Route103_Text_MiguelPostBattle, MSGBOX_AUTOCLOSE
 	release
 	end
@@ -248,22 +248,22 @@ Route102_EventScript_MiguelRegisterMatchCallAfterBattle::
 	end
 
 Route103_EventScript_Marcos::
-	trainerbattle_single TRAINER_MARCOS, Route103_Text_MarcosIntro, Route103_Text_MarcosDefeated
+	trainerbattle_double TRAINER_MARCOS, Route103_Text_MarcosIntro, Route103_Text_MarcosDefeated
 	msgbox Route103_Text_MarcosPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_EventScript_Rhett::
-	trainerbattle_single TRAINER_RHETT, Route103_Text_RhettIntro, Route103_Text_RhettDefeated
+	trainerbattle_double TRAINER_RHETT, Route103_Text_RhettIntro, Route103_Text_RhettDefeated
 	msgbox Route103_Text_RhettPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_EventScript_Pete::
-	trainerbattle_single TRAINER_PETE, Route103_Text_PeteIntro, Route103_Text_PeteDefeated
+	trainerbattle_double TRAINER_PETE, Route103_Text_PeteIntro, Route103_Text_PeteDefeated
 	msgbox Route103_Text_PetePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_EventScript_Isabelle::
-	trainerbattle_single TRAINER_ISABELLE, Route103_Text_IsabelleIntro, Route103_Text_IsabelleDefeated
+	trainerbattle_double TRAINER_ISABELLE, Route103_Text_IsabelleIntro, Route103_Text_IsabelleDefeated
 	msgbox Route103_Text_IsabellePostBattle, MSGBOX_AUTOCLOSE
 	end
 

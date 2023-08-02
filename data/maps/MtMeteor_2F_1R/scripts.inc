@@ -2,21 +2,21 @@ MtMeteor_2F_1R_MapScripts::
 	.byte 0
 
 MtMeteor_2F_1R_EventScript_Miles::
-	trainerbattle_single TRAINER_MILES, MtMeteor_2F_1R_Text_MilesIntro, MtMeteor_2F_1R_Text_MilesDefeat
+	trainerbattle_double TRAINER_MILES, MtMeteor_2F_1R_Text_MilesIntro, MtMeteor_2F_1R_Text_MilesDefeat
 	msgbox MtMeteor_2F_1R_Text_MilesPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtMeteor_2F_1R_EventScript_Luna::
-	trainerbattle_single TRAINER_LUNA, MtMeteor_2F_1R_Text_LunaIntro, MtMeteor_2F_1R_Text_LunaDefeat
+	trainerbattle_double TRAINER_LUNA, MtMeteor_2F_1R_Text_LunaIntro, MtMeteor_2F_1R_Text_LunaDefeat
 	msgbox MtMeteor_2F_1R_Text_LunaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtMeteor_2F_1R_EventScript_Harper::
-	trainerbattle_single TRAINER_HARPER, MtMeteor_2F_1R_Text_HarperIntro, MtMeteor_2F_1R_Text_HarperDefeat
+	trainerbattle_double TRAINER_HARPER, MtMeteor_2F_1R_Text_HarperIntro, MtMeteor_2F_1R_Text_HarperDefeat
 	msgbox MtMeteor_2F_1R_Text_HarperPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtMeteor_2F_1R_EventScript_Landon::
-	trainerbattle_single TRAINER_LANDON, MtMeteor_2F_1R_Text_LandonIntro, MtMeteor_2F_1R_Text_LandonDefeat
+	trainerbattle_double TRAINER_LANDON, MtMeteor_2F_1R_Text_LandonIntro, MtMeteor_2F_1R_Text_LandonDefeat
 	msgbox MtMeteor_2F_1R_Text_LandonPostBattle, MSGBOX_AUTOCLOSE
 	end

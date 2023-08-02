@@ -12,37 +12,37 @@ MeteorPeak_EventScript_CloseDecrepitCastle::
 	return
 
 MeteorPeak_EventScript_Leo::
-	trainerbattle_single TRAINER_LEO, MeteorPeak_Text_LeoIntro, MeteorPeak_Text_LeoDefeat
+	trainerbattle_double TRAINER_LEO, MeteorPeak_Text_LeoIntro, MeteorPeak_Text_LeoDefeat
 	msgbox MeteorPeak_Text_LeoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MeteorPeak_EventScript_Sasha::
-	trainerbattle_single TRAINER_SASHA, MeteorPeak_Text_SashaIntro, MeteorPeak_Text_SashaDefeat
+	trainerbattle_double TRAINER_SASHA, MeteorPeak_Text_SashaIntro, MeteorPeak_Text_SashaDefeat
 	msgbox MeteorPeak_Text_SashaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MeteorPeak_EventScript_Vlad::
-	trainerbattle_single TRAINER_VLAD, MeteorPeak_Text_VladIntro, MeteorPeak_Text_VladDefeat
+	trainerbattle_double TRAINER_VLAD, MeteorPeak_Text_VladIntro, MeteorPeak_Text_VladDefeat
 	msgbox MeteorPeak_Text_VladPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MeteorPeak_EventScript_Pearl::
-	trainerbattle_single TRAINER_PEARL, MeteorPeak_Text_PearlIntro, MeteorPeak_Text_PearlDefeat
+	trainerbattle_double TRAINER_PEARL, MeteorPeak_Text_PearlIntro, MeteorPeak_Text_PearlDefeat
 	msgbox MeteorPeak_Text_PearlPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MeteorPeak_EventScript_Shae::
-	trainerbattle_single TRAINER_SHAE, MeteorPeak_Text_ShaeIntro, MeteorPeak_Text_ShaeDefeat
+	trainerbattle_double TRAINER_SHAE, MeteorPeak_Text_ShaeIntro, MeteorPeak_Text_ShaeDefeat
 	msgbox MeteorPeak_Text_ShaePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MeteorPeak_EventScript_Mateo::
-	trainerbattle_single TRAINER_MATEO, MeteorPeak_Text_MateoIntro, MeteorPeak_Text_MateoDefeat
+	trainerbattle_double TRAINER_MATEO, MeteorPeak_Text_MateoIntro, MeteorPeak_Text_MateoDefeat
 	msgbox MeteorPeak_Text_MateoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MeteorPeak_EventScript_Erik::
-	trainerbattle_single TRAINER_ERIK, MeteorPeak_Text_ErikIntro, MeteorPeak_Text_ErikDefeat
+	trainerbattle_double TRAINER_ERIK, MeteorPeak_Text_ErikIntro, MeteorPeak_Text_ErikDefeat
 	msgbox MeteorPeak_Text_ErikPostBattle, MSGBOX_AUTOCLOSE
 	end
 

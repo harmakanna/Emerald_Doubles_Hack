@@ -2,7 +2,7 @@ MagmaHideout_3F_2R_MapScripts::
 	.byte 0
 
 MagmaHideout_3F_2R_EventScript_Grunt10::
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_10, MagmaHideout_3F_2R_Text_Grunt10Intro, MagmaHideout_3F_2R_Text_Grunt10Defeat
+	trainerbattle_double TRAINER_GRUNT_MAGMA_HIDEOUT_10, MagmaHideout_3F_2R_Text_Grunt10Intro, MagmaHideout_3F_2R_Text_Grunt10Defeat
 	msgbox MagmaHideout_3F_2R_Text_Grunt10PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -23,4 +23,3 @@ MagmaHideout_3F_2R_Text_Grunt10PostBattle:
 	.string "You know, losing to you cleared my mind.\p"
 	.string "The next time I see our leader,\n"
 	.string "I'm going to ask him about what we do.$"
-

@@ -2,16 +2,16 @@ SlaterootForest_MapScripts::
 	.byte 0
 
 SlaterootForest_EventScript_Smith::
-	trainerbattle_single TRAINER_SMITH, SlaterootForest_Text_SmithIntro, SlaterootForest_Text_SmithDefeat
+	trainerbattle_double TRAINER_SMITH, SlaterootForest_Text_SmithIntro, SlaterootForest_Text_SmithDefeat
 	msgbox SlaterootForest_Text_SmithPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SlaterootForest_EventScript_Izzy::
-	trainerbattle_single TRAINER_IZZY, SlaterootForest_Text_IzzyIntro, SlaterootForest_Text_IzzyDefeat
+	trainerbattle_double TRAINER_IZZY, SlaterootForest_Text_IzzyIntro, SlaterootForest_Text_IzzyDefeat
 	msgbox SlaterootForest_Text_IzzyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SlaterootForest_EventScript_Jeremiah::
-	trainerbattle_single TRAINER_JEREMIAH, SlaterootForest_Text_JeremiahIntro, SlaterootForest_Text_JeremiahDefeat
+	trainerbattle_double TRAINER_JEREMIAH, SlaterootForest_Text_JeremiahIntro, SlaterootForest_Text_JeremiahDefeat
 	msgbox SlaterootForest_Text_JeremiahPostBattle, MSGBOX_AUTOCLOSE
 	end

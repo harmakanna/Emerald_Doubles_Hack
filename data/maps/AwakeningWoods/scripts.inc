@@ -53,37 +53,37 @@ AwakeningWoods_EventScript_RemoveKecleon:: @ 81F5460
 	return
 
 AwakeningWoods_EventScript_Shania::
-	trainerbattle_single TRAINER_SHANIA, AwakeningWoods_Text_ShaniaIntro, AwakeningWoods_Text_ShaniaDefeat
+	trainerbattle_double TRAINER_SHANIA, AwakeningWoods_Text_ShaniaIntro, AwakeningWoods_Text_ShaniaDefeat
 	msgbox AwakeningWoods_Text_ShaniaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AwakeningWoods_EventScript_Patrick::
-	trainerbattle_single TRAINER_PATRICK, AwakeningWoods_Text_PatrickIntro, AwakeningWoods_Text_PatrickDefeat
+	trainerbattle_double TRAINER_PATRICK, AwakeningWoods_Text_PatrickIntro, AwakeningWoods_Text_PatrickDefeat
 	msgbox AwakeningWoods_Text_PatrickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AwakeningWoods_EventScript_Milo::
-	trainerbattle_single TRAINER_MILO, AwakeningWoods_Text_MiloIntro, AwakeningWoods_Text_MiloDefeat
+	trainerbattle_double TRAINER_MILO, AwakeningWoods_Text_MiloIntro, AwakeningWoods_Text_MiloDefeat
 	msgbox AwakeningWoods_Text_MiloPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AwakeningWoods_EventScript_Mariana::
-	trainerbattle_single TRAINER_MARIANA, AwakeningWoods_Text_MarianaIntro, AwakeningWoods_Text_MarianaDefeat
+	trainerbattle_double TRAINER_MARIANA, AwakeningWoods_Text_MarianaIntro, AwakeningWoods_Text_MarianaDefeat
 	msgbox AwakeningWoods_Text_MarianaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AwakeningWoods_EventScript_Katerina::
-	trainerbattle_single TRAINER_KATERINA, AwakeningWoods_Text_KaterinaIntro, AwakeningWoods_Text_KaterinaDefeat
+	trainerbattle_double TRAINER_KATERINA, AwakeningWoods_Text_KaterinaIntro, AwakeningWoods_Text_KaterinaDefeat
 	msgbox AwakeningWoods_Text_KaterinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AwakeningWoods_EventScript_Emma::
-	trainerbattle_single TRAINER_EMMA, AwakeningWoods_Text_EmmaIntro, AwakeningWoods_Text_EmmaDefeat
+	trainerbattle_double TRAINER_EMMA, AwakeningWoods_Text_EmmaIntro, AwakeningWoods_Text_EmmaDefeat
 	msgbox AwakeningWoods_Text_EmmaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AwakeningWoods_EventScript_Artyom::
-	trainerbattle_single TRAINER_ARTYOM, AwakeningWoods_Text_ArtyomIntro, AwakeningWoods_Text_ArtyomDefeat
+	trainerbattle_double TRAINER_ARTYOM, AwakeningWoods_Text_ArtyomIntro, AwakeningWoods_Text_ArtyomDefeat
 	msgbox AwakeningWoods_Text_ArtyomPostBattle, MSGBOX_AUTOCLOSE
 	end
 

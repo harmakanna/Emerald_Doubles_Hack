@@ -2,7 +2,7 @@ MtPyre_6F_MapScripts::
 	.byte 0
 
 MtPyre_6F_EventScript_Valerie::
-	trainerbattle_single TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat
+	trainerbattle_double TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat
 	msgbox MtPyre_6F_Text_ValeriePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -15,7 +15,7 @@ MtPyre_6F_EventScript_RegisterValerie::
 	end
 
 MtPyre_6F_EventScript_Cedric::
-	trainerbattle_single TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat
+	trainerbattle_double TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat
 	msgbox MtPyre_6F_Text_CedricPostBattle, MSGBOX_AUTOCLOSE
 	end
 

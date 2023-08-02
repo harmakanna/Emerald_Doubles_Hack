@@ -70,12 +70,12 @@ Route121_Movement_Grunt3Exit:
 	step_end
 
 Route121_EventScript_Vanessa::
-	trainerbattle_single TRAINER_VANESSA, Route121_Text_VanessaIntro, Route121_Text_VanessaDefeat
+	trainerbattle_double TRAINER_VANESSA, Route121_Text_VanessaIntro, Route121_Text_VanessaDefeat
 	msgbox Route121_Text_VanessaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Walter::
-	trainerbattle_single TRAINER_WALTER_1, Route121_Text_WalterIntro, Route121_Text_WalterDefeat
+	trainerbattle_double TRAINER_WALTER_1, Route121_Text_WalterIntro, Route121_Text_WalterDefeat
 	msgbox Route121_Text_WalterPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -88,7 +88,7 @@ Route121_EventScript_RegisterWalter::
 	end
 
 Route121_EventScript_Tammy::
-	trainerbattle_single TRAINER_TAMMY, Route121_Text_TammyIntro, Route121_Text_TammyDefeat
+	trainerbattle_double TRAINER_TAMMY, Route121_Text_TammyIntro, Route121_Text_TammyDefeat
 	msgbox Route121_Text_TammyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -103,7 +103,7 @@ Route121_EventScript_Joy::
 	end
 
 Route121_EventScript_Jessica::
-	trainerbattle_single TRAINER_JESSICA_1, Route121_Text_JessicaIntro, Route121_Text_JessicaDefeat
+	trainerbattle_double TRAINER_JESSICA_1, Route121_Text_JessicaIntro, Route121_Text_JessicaDefeat
 	msgbox Route121_Text_JessicaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -116,27 +116,27 @@ Route121_EventScript_RegisterJessica::
 	end
 
 Route121_EventScript_Cale::
-	trainerbattle_single TRAINER_CALE, Route121_Text_CaleIntro, Route121_Text_CaleDefeat
+	trainerbattle_double TRAINER_CALE, Route121_Text_CaleIntro, Route121_Text_CaleDefeat
 	msgbox Route121_Text_CalePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Myles::
-	trainerbattle_single TRAINER_MYLES, Route121_Text_MylesIntro, Route121_Text_MylesDefeat
+	trainerbattle_double TRAINER_MYLES, Route121_Text_MylesIntro, Route121_Text_MylesDefeat
 	msgbox Route121_Text_MylesPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Pat::
-	trainerbattle_single TRAINER_PAT, Route121_Text_PatIntro, Route121_Text_PatDefeat
+	trainerbattle_double TRAINER_PAT, Route121_Text_PatIntro, Route121_Text_PatDefeat
 	msgbox Route121_Text_PatPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Marcel::
-	trainerbattle_single TRAINER_MARCEL, Route121_Text_MarcelIntro, Route121_Text_MarcelDefeat
+	trainerbattle_double TRAINER_MARCEL, Route121_Text_MarcelIntro, Route121_Text_MarcelDefeat
 	msgbox Route121_Text_MarcelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Cristin::
-	trainerbattle_single TRAINER_CRISTIN_1, Route121_Text_CristinIntro, Route121_Text_CristinDefeat
+	trainerbattle_double TRAINER_CRISTIN_1, Route121_Text_CristinIntro, Route121_Text_CristinDefeat
 	msgbox Route121_Text_CristinPostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -375,27 +375,27 @@ Route109_EventScript_TrainerTipsSign::
 	end
 
 Route109_EventScript_David::
-	trainerbattle_single TRAINER_DAVID, Route109_Text_DavidIntro, Route109_Text_DavidDefeated
+	trainerbattle_double TRAINER_DAVID, Route109_Text_DavidIntro, Route109_Text_DavidDefeated
 	msgbox Route109_Text_DavidPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Alice::
-	trainerbattle_single TRAINER_ALICE, Route109_Text_AliceIntro, Route109_Text_AliceDefeated
+	trainerbattle_double TRAINER_ALICE, Route109_Text_AliceIntro, Route109_Text_AliceDefeated
 	msgbox Route109_Text_AlicePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Huey::
-	trainerbattle_single TRAINER_HUEY, Route109_Text_HueyIntro, Route109_Text_HueyDefeated
+	trainerbattle_double TRAINER_HUEY, Route109_Text_HueyIntro, Route109_Text_HueyDefeated
 	msgbox Route109_Text_HueyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Edmond::
-	trainerbattle_single TRAINER_EDMOND, Route109_Text_EdmondIntro, Route109_Text_EdmondDefeated
+	trainerbattle_double TRAINER_EDMOND, Route109_Text_EdmondIntro, Route109_Text_EdmondDefeated
 	msgbox Route109_Text_EdmondPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Ricky::
-	trainerbattle_single TRAINER_RICKY_1, Route109_Text_RickyIntro, Route109_Text_RickyDefeated
+	trainerbattle_double TRAINER_RICKY_1, Route109_Text_RickyIntro, Route109_Text_RickyDefeated
 	msgbox Route109_Text_RickyPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -409,7 +409,7 @@ Route109_EventScript_RickyRegisterMatchCallAfterBattle::
 	end
 
 Route109_EventScript_Lola::
-	trainerbattle_single TRAINER_LOLA_1, Route109_Text_LolaIntro, Route109_Text_LolaDefeated
+	trainerbattle_double TRAINER_LOLA_1, Route109_Text_LolaIntro, Route109_Text_LolaDefeated
 	msgbox Route109_Text_LolaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -423,17 +423,17 @@ Route109_EventScript_LolaRegisterMatchCallAfterBattle::
 	end
 
 Route109_EventScript_Austina::
-	trainerbattle_single TRAINER_AUSTINA, Route109_Text_AustinaIntro, Route109_Text_AustinaDefeated
+	trainerbattle_double TRAINER_AUSTINA, Route109_Text_AustinaIntro, Route109_Text_AustinaDefeated
 	msgbox Route109_Text_AustinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Gwen::
-	trainerbattle_single TRAINER_GWEN, Route109_Text_GwenIntro, Route109_Text_GwenDefeated
+	trainerbattle_double TRAINER_GWEN, Route109_Text_GwenIntro, Route109_Text_GwenDefeated
 	msgbox Route109_Text_GwenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Carter::
-	trainerbattle_single TRAINER_CARTER, Route109_Text_CarterIntro, Route109_Text_CarterDefeated
+	trainerbattle_double TRAINER_CARTER, Route109_Text_CarterIntro, Route109_Text_CarterDefeated
 	msgbox Route109_Text_CarterPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -448,17 +448,17 @@ Route109_EventScript_Mel::
 	end
 
 Route109_EventScript_Chandler::
-	trainerbattle_single TRAINER_CHANDLER, Route109_Text_ChandlerIntro, Route109_Text_ChandlerDefeated
+	trainerbattle_double TRAINER_CHANDLER, Route109_Text_ChandlerIntro, Route109_Text_ChandlerDefeated
 	msgbox Route109_Text_ChandlerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Hailey::
-	trainerbattle_single TRAINER_HAILEY, Route109_Text_HaileyIntro, Route109_Text_HaileyDefeated
+	trainerbattle_double TRAINER_HAILEY, Route109_Text_HaileyIntro, Route109_Text_HaileyDefeated
 	msgbox Route109_Text_HaileyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Elijah::
-	trainerbattle_single TRAINER_ELIJAH, Route109_Text_ElijahIntro, Route109_Text_ElijahDefeated
+	trainerbattle_double TRAINER_ELIJAH, Route109_Text_ElijahIntro, Route109_Text_ElijahDefeated
 	msgbox Route109_Text_ElijahPostBattle, MSGBOX_AUTOCLOSE
 	end
 

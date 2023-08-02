@@ -47,17 +47,17 @@ Route113_EventScript_TrainerTipsRegisterKeyItems::
 	end
 
 Route113_EventScript_Jaylen::
-	trainerbattle_single TRAINER_JAYLEN, Route113_Text_JaylenIntro, Route113_Text_JaylenDefeat
+	trainerbattle_double TRAINER_JAYLEN, Route113_Text_JaylenIntro, Route113_Text_JaylenDefeat
 	msgbox Route113_Text_JaylenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_Dillon::
-	trainerbattle_single TRAINER_DILLON, Route113_Text_DillonIntro, Route113_Text_DillonDefeat
+	trainerbattle_double TRAINER_DILLON, Route113_Text_DillonIntro, Route113_Text_DillonDefeat
 	msgbox Route113_Text_DillonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_Madeline::
-	trainerbattle_single TRAINER_MADELINE_1, Route113_Text_MadelineIntro, Route113_Text_MadelineDefeat
+	trainerbattle_double TRAINER_MADELINE_1, Route113_Text_MadelineIntro, Route113_Text_MadelineDefeat
 	msgbox Route113_Text_MadelinePostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -71,7 +71,7 @@ Route113_EventScript_RegisterMadeline::
 	end
 
 Route113_EventScript_Lao::
-	trainerbattle_single TRAINER_LAO_1, Route113_Text_LaoIntro, Route113_Text_LaoDefeat
+	trainerbattle_double TRAINER_LAO_1, Route113_Text_LaoIntro, Route113_Text_LaoDefeat
 	msgbox Route113_Text_LaoPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -85,7 +85,7 @@ Route113_EventScript_RegisterLao::
 	end
 
 Route113_EventScript_Lung::
-	trainerbattle_single TRAINER_LUNG, Route113_Text_LungIntro, Route113_Text_LungDefeat
+	trainerbattle_double TRAINER_LUNG, Route113_Text_LungIntro, Route113_Text_LungDefeat
 	msgbox Route113_Text_LungPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -100,22 +100,22 @@ Route113_EventScript_Tia::
 	end
 
 Route113_EventScript_Sophie::
-	trainerbattle_single TRAINER_SOPHIE, Route113_Text_SophieIntro, Route113_Text_SophieDefeat
+	trainerbattle_double TRAINER_SOPHIE, Route113_Text_SophieIntro, Route113_Text_SophieDefeat
 	msgbox Route113_Text_SophiePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_Coby::
-	trainerbattle_single TRAINER_COBY, Route113_Text_CobyIntro, Route113_Text_CobyDefeat
+	trainerbattle_double TRAINER_COBY, Route113_Text_CobyIntro, Route113_Text_CobyDefeat
 	msgbox Route113_Text_CobyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_Lawrence::
-	trainerbattle_single TRAINER_LAWRENCE, Route113_Text_LawrenceIntro, Route113_Text_LawrenceDefeat
+	trainerbattle_double TRAINER_LAWRENCE, Route113_Text_LawrenceIntro, Route113_Text_LawrenceDefeat
 	msgbox Route113_Text_LawrencePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_Wyatt::
-	trainerbattle_single TRAINER_WYATT, Route113_Text_WyattIntro, Route113_Text_WyattDefeat
+	trainerbattle_double TRAINER_WYATT, Route113_Text_WyattIntro, Route113_Text_WyattDefeat
 	msgbox Route113_Text_WyattPostBattle, MSGBOX_AUTOCLOSE
 	end
 

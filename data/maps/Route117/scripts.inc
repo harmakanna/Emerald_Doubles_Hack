@@ -39,7 +39,7 @@ Route117_EventScript_DayCareSign::
 	end
 
 Route117_EventScript_Isaac::
-	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat
+	trainerbattle_double TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat
 	msgbox Route117_Text_IsaacPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -52,7 +52,7 @@ Route117_EventScript_RegisterIsaac::
 	end
 
 Route117_EventScript_Lydia::
-	trainerbattle_single TRAINER_LYDIA_1, Route117_Text_LydiaIntro, Route117_Text_LydiaDefeat
+	trainerbattle_double TRAINER_LYDIA_1, Route117_Text_LydiaIntro, Route117_Text_LydiaDefeat
 	msgbox Route117_Text_LydiaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -66,7 +66,7 @@ Route117_EventScript_RegisterLydia::
 	end
 
 Route117_EventScript_Dylan::
-	trainerbattle_single TRAINER_DYLAN_1, Route117_Text_DylanIntro, Route117_Text_DylanDefeat
+	trainerbattle_double TRAINER_DYLAN_1, Route117_Text_DylanIntro, Route117_Text_DylanDefeat
 	msgbox Route117_Text_DylanPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -80,7 +80,7 @@ Route117_EventScript_RegisterDylan::
 	end
 
 Route117_EventScript_Maria::
-	trainerbattle_single TRAINER_MARIA_1, Route117_Text_MariaIntro, Route117_Text_MariaDefeat
+	trainerbattle_double TRAINER_MARIA_1, Route117_Text_MariaIntro, Route117_Text_MariaDefeat
 	msgbox Route117_Text_MariaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -94,7 +94,7 @@ Route117_EventScript_RegisterMaria::
 	end
 
 Route117_EventScript_Derek::
-	trainerbattle_single TRAINER_DEREK, Route117_Text_DerekIntro, Route117_Text_DerekDefeat
+	trainerbattle_double TRAINER_DEREK, Route117_Text_DerekIntro, Route117_Text_DerekDefeat
 	msgbox Route117_Text_DerekPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -123,17 +123,17 @@ Route117_EventScript_RegisterMeg::
 	end
 
 Route117_EventScript_Melina::
-	trainerbattle_single TRAINER_MELINA, Route117_Text_MelinaIntro, Route117_Text_MelinaDefeat
+	trainerbattle_double TRAINER_MELINA, Route117_Text_MelinaIntro, Route117_Text_MelinaDefeat
 	msgbox Route117_Text_MelinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route117_EventScript_Brandi::
-	trainerbattle_single TRAINER_BRANDI, Route117_Text_BrandiIntro, Route117_Text_BrandiDefeat
+	trainerbattle_double TRAINER_BRANDI, Route117_Text_BrandiIntro, Route117_Text_BrandiDefeat
 	msgbox Route117_Text_BrandiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route117_EventScript_Aisha::
-	trainerbattle_single TRAINER_AISHA, Route117_Text_AishaIntro, Route117_Text_AishaDefeat
+	trainerbattle_double TRAINER_AISHA, Route117_Text_AishaIntro, Route117_Text_AishaDefeat
 	msgbox Route117_Text_AishaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

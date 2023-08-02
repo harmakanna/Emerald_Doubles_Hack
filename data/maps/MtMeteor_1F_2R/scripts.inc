@@ -2,32 +2,32 @@ MtMeteor_1F_2R_MapScripts::
 	.byte 0
 
 MtMeteor_1F_2R_EventScript_Donovan::
-	trainerbattle_single TRAINER_DONOVAN, MtMeteor_1F_2R_Text_DonovanIntro, MtMeteor_1F_2R_Text_DonovanDefeat
+	trainerbattle_double TRAINER_DONOVAN, MtMeteor_1F_2R_Text_DonovanIntro, MtMeteor_1F_2R_Text_DonovanDefeat
 	msgbox MtMeteor_1F_2R_Text_DonovanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 MtMeteor_1F_2R_EventScript_Vanya::
-	trainerbattle_single TRAINER_VANYA, MtMeteor_1F_2R_Text_VanyaIntro, MtMeteor_1F_2R_Text_VanyaDefeat
+	trainerbattle_double TRAINER_VANYA, MtMeteor_1F_2R_Text_VanyaIntro, MtMeteor_1F_2R_Text_VanyaDefeat
 	msgbox MtMeteor_1F_2R_Text_VanyaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtMeteor_1F_2R_EventScript_Ajax::
-	trainerbattle_single TRAINER_AJAX, MtMeteor_1F_2R_Text_AjaxIntro, MtMeteor_1F_2R_Text_AjaxDefeat
+	trainerbattle_double TRAINER_AJAX, MtMeteor_1F_2R_Text_AjaxIntro, MtMeteor_1F_2R_Text_AjaxDefeat
 	msgbox MtMeteor_1F_2R_Text_AjaxPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtMeteor_1F_2R_EventScript_Ross::
-	trainerbattle_single TRAINER_ROSS, MtMeteor_1F_2R_Text_RossIntro, MtMeteor_1F_2R_Text_RossDefeat
+	trainerbattle_double TRAINER_ROSS, MtMeteor_1F_2R_Text_RossIntro, MtMeteor_1F_2R_Text_RossDefeat
 	msgbox MtMeteor_1F_2R_Text_RossPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtMeteor_1F_2R_EventScript_Austin::
-	trainerbattle_single TRAINER_AUSTIN, MtMeteor_1F_2R_Text_AustinIntro, MtMeteor_1F_2R_Text_AustinDefeat
+	trainerbattle_double TRAINER_AUSTIN, MtMeteor_1F_2R_Text_AustinIntro, MtMeteor_1F_2R_Text_AustinDefeat
 	msgbox MtMeteor_1F_2R_Text_AustinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtMeteor_1F_2R_EventScript_Noah::
-	trainerbattle_single TRAINER_NOAH, MtMeteor_1F_2R_Text_NoahIntro, MtMeteor_1F_2R_Text_NoahDefeat
+	trainerbattle_double TRAINER_NOAH, MtMeteor_1F_2R_Text_NoahIntro, MtMeteor_1F_2R_Text_NoahDefeat
 	msgbox MtMeteor_1F_2R_Text_NoahPostBattle, MSGBOX_AUTOCLOSE
 	end

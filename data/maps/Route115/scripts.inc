@@ -38,7 +38,7 @@ Route115_EventScript_MeteorFallsSign::
 	end
 
 Route115_EventScript_Timothy::
-	trainerbattle_single TRAINER_TIMOTHY_1, Route115_Text_TimothyIntro, Route115_Text_TimothyDefeat
+	trainerbattle_double TRAINER_TIMOTHY_1, Route115_Text_TimothyIntro, Route115_Text_TimothyDefeat
 	msgbox Route115_Text_TimothyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -51,12 +51,12 @@ Route115_EventScript_RegisterTimothy::
 	end
 
 Route115_EventScript_Koichi::
-	trainerbattle_single TRAINER_KOICHI, Route115_Text_KoichiIntro, Route115_Text_KoichiDefeat
+	trainerbattle_double TRAINER_KOICHI, Route115_Text_KoichiIntro, Route115_Text_KoichiDefeat
 	msgbox Route115_Text_KoichiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_Nob::
-	trainerbattle_single TRAINER_NOB_1, Route115_Text_NobIntro, Route115_Text_NobDefeat
+	trainerbattle_double TRAINER_NOB_1, Route115_Text_NobIntro, Route115_Text_NobDefeat
 	msgbox Route115_Text_NobPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -69,7 +69,7 @@ Route115_EventScript_RegisterNob::
 	end
 
 Route115_EventScript_Cyndy::
-	trainerbattle_single TRAINER_CYNDY_1, Route115_Text_CyndyIntro, Route115_Text_CyndyDefeat
+	trainerbattle_double TRAINER_CYNDY_1, Route115_Text_CyndyIntro, Route115_Text_CyndyDefeat
 	msgbox Route115_Text_CyndyPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -83,32 +83,32 @@ Route115_EventScript_RegisterCyndy::
 	end
 
 Route115_EventScript_Hector::
-	trainerbattle_single TRAINER_HECTOR, Route115_Text_HectorIntro, Route115_Text_HectorDefeat
+	trainerbattle_double TRAINER_HECTOR, Route115_Text_HectorIntro, Route115_Text_HectorDefeat
 	msgbox Route115_Text_HectorPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_Kyra::
-	trainerbattle_single TRAINER_KYRA, Route115_Text_KyraIntro, Route115_Text_KyraDefeat
+	trainerbattle_double TRAINER_KYRA, Route115_Text_KyraIntro, Route115_Text_KyraDefeat
 	msgbox Route115_Text_KyraPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_Jaiden::
-	trainerbattle_single TRAINER_JAIDEN, Route115_Text_JaidenIntro, Route115_Text_JaidenDefeat
+	trainerbattle_double TRAINER_JAIDEN, Route115_Text_JaidenIntro, Route115_Text_JaidenDefeat
 	msgbox Route115_Text_JaidenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_Alix::
-	trainerbattle_single TRAINER_ALIX, Route115_Text_AlixIntro, Route115_Text_AlixDefeat
+	trainerbattle_double TRAINER_ALIX, Route115_Text_AlixIntro, Route115_Text_AlixDefeat
 	msgbox Route115_Text_AlixPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_Helene::
-	trainerbattle_single TRAINER_HELENE, Route115_Text_HeleneIntro, Route115_Text_HeleneDefeat
+	trainerbattle_double TRAINER_HELENE, Route115_Text_HeleneIntro, Route115_Text_HeleneDefeat
 	msgbox Route115_Text_HelenePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_Marlene::
-	trainerbattle_single TRAINER_MARLENE, Route115_Text_MarleneIntro, Route115_Text_MarleneDefeat
+	trainerbattle_double TRAINER_MARLENE, Route115_Text_MarleneIntro, Route115_Text_MarleneDefeat
 	msgbox Route115_Text_MarlenePostBattle, MSGBOX_AUTOCLOSE
 	end
 

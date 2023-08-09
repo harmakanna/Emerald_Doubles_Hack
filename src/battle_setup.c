@@ -190,7 +190,7 @@ static const struct TrainerBattleParameter sDoubleBattleParams[] =
     {&sTrainerAIntroSpeech,         TRAINER_PARAM_LOAD_VAL_32BIT},
     {&sTrainerADefeatSpeech,        TRAINER_PARAM_LOAD_VAL_32BIT},
     {&sTrainerVictorySpeech,        TRAINER_PARAM_CLEAR_VAL_32BIT},
-    {&sTrainerCannotBattleSpeech,   TRAINER_PARAM_LOAD_VAL_32BIT},
+    {&sTrainerCannotBattleSpeech,   TRAINER_PARAM_CLEAR_VAL_32BIT},
     {&sTrainerABattleScriptRetAddr, TRAINER_PARAM_CLEAR_VAL_32BIT},
     {&sTrainerBattleEndScript,      TRAINER_PARAM_LOAD_SCRIPT_RET_ADDR},
 };
@@ -216,7 +216,7 @@ static const struct TrainerBattleParameter sContinueScriptDoubleBattleParams[] =
     {&sTrainerAIntroSpeech,         TRAINER_PARAM_LOAD_VAL_32BIT},
     {&sTrainerADefeatSpeech,        TRAINER_PARAM_LOAD_VAL_32BIT},
     {&sTrainerVictorySpeech,        TRAINER_PARAM_CLEAR_VAL_32BIT},
-    {&sTrainerCannotBattleSpeech,   TRAINER_PARAM_LOAD_VAL_32BIT},
+    {&sTrainerCannotBattleSpeech,   TRAINER_PARAM_CLEAR_VAL_32BIT},
     {&sTrainerABattleScriptRetAddr, TRAINER_PARAM_LOAD_VAL_32BIT},
     {&sTrainerBattleEndScript,      TRAINER_PARAM_LOAD_SCRIPT_RET_ADDR},
 };

@@ -669,6 +669,10 @@ struct BattleStruct
     bool8 trainerSlideMegaEvolutionMsgDone;
     bool8 trainerSlideZMoveMsgDone;
     bool8 trainerSlideBeforeFirstTurnMsgDone;
+    u32 storedBasePartyExp;
+    u32 checkGainedPartyExp;
+    u32 checkShouldGainPartyExp;
+    u8 pokemonGainedExpCount;
 };
 
 #define F_DYNAMIC_TYPE_1 (1 << 6)
@@ -969,6 +973,7 @@ extern struct WishFutureKnock gWishFutureKnock;
 extern u16 gIntroSlideFlags;
 extern u8 gSentPokesToOpponent[2];
 extern u16 gExpShareExp;
+extern u16 gExpHoldExp;
 extern bool8 gExpShareCheck;
 extern struct BattleEnigmaBerry gEnigmaBerries[MAX_BATTLERS_COUNT];
 extern struct BattleScripting gBattleScripting;

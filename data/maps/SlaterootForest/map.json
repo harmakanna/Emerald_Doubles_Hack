@@ -2,7 +2,7 @@
   "id": "MAP_SLATEROOT_FOREST",
   "name": "SlaterootForest",
   "layout": "LAYOUT_SLATEROOT_FOREST",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_LITTLEROOT_WOODS",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

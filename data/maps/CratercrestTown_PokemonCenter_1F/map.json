@@ -2,7 +2,7 @@
   "id": "MAP_CRATERCREST_TOWN_POKEMON_CENTER_1F",
   "name": "CratercrestTown_PokemonCenter_1F",
   "layout": "LAYOUT_CRATERCREST_TOWN_POKEMON_CENTER_1F",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_LILYCOVE_MUSEUM",
   "region_map_section": "MAPSEC_CRATERCREST_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

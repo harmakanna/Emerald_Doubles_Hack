@@ -702,7 +702,7 @@
 	.elseif \type == TRAINER_BATTLE_DOUBLE
 		.4byte \pointer1 @ text
 		.4byte \pointer2 @ text
-		.4byte \pointer3 @ text
+	@	.4byte \pointer3 @ text
 	.elseif \type == TRAINER_BATTLE_REMATCH
 		.4byte \pointer1 @ text
 		.4byte \pointer2 @ text
@@ -714,7 +714,7 @@
 	.elseif \type == TRAINER_BATTLE_REMATCH_DOUBLE
 		.4byte \pointer1 @ text
 		.4byte \pointer2 @ text
-		.4byte \pointer3 @ text
+	@	.4byte \pointer3 @ text
 	.elseif \type == TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC
 		.4byte \pointer1 @ text
 		.4byte \pointer2 @ text

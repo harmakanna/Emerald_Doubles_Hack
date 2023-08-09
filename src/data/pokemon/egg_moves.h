@@ -1751,7 +1751,8 @@ const u16 gEggMoves[] = {
         MOVE_BULLET_SEED,
         MOVE_FOCUS_PUNCH,
         MOVE_NATURAL_GIFT,
-        MOVE_DRAIN_PUNCH),
+        MOVE_DRAIN_PUNCH,
+        MOVE_RAGE_POWDER),
 
     egg_moves(SLAKOTH,
         MOVE_PURSUIT,
@@ -4515,6 +4516,6 @@ const u16 gEggMoves[] = {
         MOVE_MUDDY_WATER,
         MOVE_PARABOLIC_CHARGE,
         MOVE_SOAK),
-        
+
     EGG_MOVES_TERMINATOR
 };

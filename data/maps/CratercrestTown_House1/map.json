@@ -2,7 +2,7 @@
   "id": "MAP_CRATERCREST_TOWN_HOUSE1",
   "name": "CratercrestTown_House1",
   "layout": "LAYOUT_CRATERCREST_TOWN_HOUSE1",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_LILYCOVE_MUSEUM",
   "region_map_section": "MAPSEC_CRATERCREST_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

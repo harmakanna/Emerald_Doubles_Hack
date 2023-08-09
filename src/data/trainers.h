@@ -2217,8 +2217,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("ROXANNE"),
         .items = {},
         .doubleBattle = TRUE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_Roxanne1),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_ACE_POKEMON,
+        .party = EVERYTHING_CUSTOMIZED(sParty_Roxanne1),
     },
 
     [TRAINER_BRAWLY] =
@@ -3766,7 +3766,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_GinaAndMia1),
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_GinaAndMia1),
     },
 
     [TRAINER_MIU_AND_YUKI] =

@@ -2,7 +2,7 @@
   "id": "MAP_CRATERCREST_TOWN_SPECIAL_SHOP",
   "name": "CratercrestTown_SpecialShop",
   "layout": "LAYOUT_CRATERCREST_TOWN_SPECIAL_SHOP",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_LILYCOVE_MUSEUM",
   "region_map_section": "MAPSEC_CRATERCREST_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

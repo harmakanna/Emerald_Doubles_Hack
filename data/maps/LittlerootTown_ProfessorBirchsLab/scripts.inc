@@ -134,7 +134,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveEevee::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_EeveeJoins MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReceivedEevee MSGBOX_DEFAULT
-	givemon SPECIES_EEVEE, 3, ITEM_NONE
+	givemon SPECIES_EEVEE, 5, ITEM_NONE
 	waitfanfare
 	bufferspeciesname 0, SPECIES_EEVEE
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
@@ -775,7 +775,7 @@ LittlerootTown_ProfessorBirchsLab_Text_EeveeJoins:
 	.string "you.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedEevee:
-	.string "Eevee joined {PLAYER}'s team'!$"
+	.string "Eevee joined {PLAYER}'s team!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "PROF. BIRCH: Oh, hi, {PLAYER}{KUN}!\p"

@@ -2328,3 +2328,8 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
     ResetInitialPlayerAvatarState();
     return TRUE;
 }
+
+void ScrCmd_SetItemArg(void)
+{
+	  gSaveBlock2Ptr->ItemArg = gSpecialVar_0x8000;
+}

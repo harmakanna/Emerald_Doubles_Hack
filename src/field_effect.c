@@ -643,8 +643,8 @@ static bool8 (*const sEscalatorWarpInFieldEffectFuncs[])(struct Task *) =
 static bool8 (*const sWaterfallFieldEffectFuncs[])(struct Task *, struct ObjectEvent *) =
 {
     WaterfallFieldEffect_Init,
-    WaterfallFieldEffect_ShowMon,
-    WaterfallFieldEffect_WaitForShowMon,
+  //  WaterfallFieldEffect_ShowMon,
+  //  WaterfallFieldEffect_WaitForShowMon,
     WaterfallFieldEffect_RideUp,
     WaterfallFieldEffect_ContinueRideOrEnd,
 };
@@ -652,7 +652,7 @@ static bool8 (*const sWaterfallFieldEffectFuncs[])(struct Task *, struct ObjectE
 static bool8 (*const sDiveFieldEffectFuncs[])(struct Task *) =
 {
     DiveFieldEffect_Init,
-    DiveFieldEffect_ShowMon,
+  //  DiveFieldEffect_ShowMon,
     DiveFieldEffect_TryWarp,
 };
 
@@ -2593,11 +2593,11 @@ bool8 FldEff_FieldMoveShowMonInit(void)
 
 static void (*const sFieldMoveShowMonOutdoorsEffectFuncs[])(struct Task *) = {
     FieldMoveShowMonOutdoorsEffect_Init,
-    /*FieldMoveShowMonOutdoorsEffect_LoadGfx,
+    FieldMoveShowMonOutdoorsEffect_LoadGfx,
     FieldMoveShowMonOutdoorsEffect_CreateBanner,
     FieldMoveShowMonOutdoorsEffect_WaitForMon,
     FieldMoveShowMonOutdoorsEffect_ShrinkBanner,
-    FieldMoveShowMonOutdoorsEffect_RestoreBg,*/
+    FieldMoveShowMonOutdoorsEffect_RestoreBg,
     FieldMoveShowMonOutdoorsEffect_End,
 };
 
@@ -2989,8 +2989,8 @@ u8 FldEff_UseSurf(void)
 
 static void (*const sSurfFieldEffectFuncs[])(struct Task *) = {
     SurfFieldEffect_Init,
-    SurfFieldEffect_FieldMovePose,
-    SurfFieldEffect_ShowMon,
+    //SurfFieldEffect_FieldMovePose,
+    //SurfFieldEffect_ShowMon,
     SurfFieldEffect_JumpOnSurfBlob,
     SurfFieldEffect_End,
 };

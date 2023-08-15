@@ -15,13 +15,13 @@
   "connections": [
     {
       "map": "MAP_RUSTBORO_CITY",
-      "offset": 0,
+      "offset": 1,
       "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE114",
       "offset": -26,
-      "map": "MAP_ROUTE114"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -345,14 +345,14 @@
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 9,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_DRAGONS_DEN",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

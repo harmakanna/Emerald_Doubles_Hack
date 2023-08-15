@@ -453,7 +453,7 @@ static const u8 sText_SpDefense[] = _("Sp. Def");
 static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
 static const u8 sText_PkmnMakesWaterMiss[] = _("But {B_DEF_NAME_WITH_PREFIX} made the\nWATER move {B_DEF_ABILITY}!");
-static const u8 sText_PkmnCutsSpAttackWith[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\ncuts {B_DEF_NAME_WITH_PREFIX}'s sp.attack!");
+static const u8 sText_PkmnCutsSpAttackWith[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}cuts\n {B_DEF_NAME_WITH_PREFIX}'s special attack!");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {

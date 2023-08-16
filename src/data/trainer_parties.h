@@ -2309,27 +2309,46 @@ static const struct TrainerMonCustomized sParty_Roxanne1[] = {
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
+static const struct TrainerMonCustomized sParty_Brawly1[] = {
     {
-    .iv = 100,
+    .iv = TRAINER_PARTY_IVS(30,15,30,15,15,30),
     .lvl = 16,
-    .species = SPECIES_MACHOP,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_KARATE_CHOP, MOVE_LOW_KICK, MOVE_SEISMIC_TOSS, MOVE_BULK_UP}
+    .species = SPECIES_CROAGUNK,
+    .heldItem = ITEM_ROOM_SERVICE,
+    .ability = ABILITY_DRY_SKIN,
+    .nature = TRAINER_PARTY_NATURE(NATURE_HARDY),
+    .gender = TRAINER_MON_MALE,
+    .moves = {MOVE_FAKE_OUT, MOVE_VENOSHOCK, MOVE_KARATE_CHOP, MOVE_BULK_UP}
     },
     {
-    .iv = 100,
+    .iv = TRAINER_PARTY_IVS(30,15,30,0,15,30),
     .lvl = 16,
     .species = SPECIES_MEDITITE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_FOCUS_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_BULK_UP}
+    .ability = ABILITY_PURE_POWER,
+    .nature = TRAINER_PARTY_NATURE(NATURE_HARDY),
+    .gender = TRAINER_MON_MALE,
+    .moves = {MOVE_TRICK_ROOM, MOVE_COACHING, MOVE_VACUUM_WAVE, MOVE_CONFUSION}
     },
     {
-    .iv = 200,
-    .lvl = 19,
+    .iv = TRAINER_PARTY_IVS(30,15,30,0,15,30),
+    .lvl = 17,
+    .species = SPECIES_CORPHISH,
+    .heldItem = ITEM_MYSTIC_WATER,
+    .ability = ABILITY_HYPER_CUTTER,
+    .nature = TRAINER_PARTY_NATURE(NATURE_HARDY),
+    .gender = TRAINER_MON_MALE,
+    .moves = {MOVE_PROTECT, MOVE_AQUA_JET, MOVE_KNOCK_OFF, MOVE_BRICK_BREAK}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(30,15,30,0,15,30),
+    .lvl = 17,
     .species = SPECIES_MAKUHITA,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_ARM_THRUST, MOVE_VITAL_THROW, MOVE_REVERSAL, MOVE_BULK_UP}
+    .heldItem = ITEM_FLAME_ORB,
+    .ability = ABILITY_GUTS,
+    .nature = TRAINER_PARTY_NATURE(NATURE_HARDY),
+    .gender = TRAINER_MON_MALE,
+    .moves = {MOVE_BULLET_PUNCH, MOVE_FAKE_OUT, MOVE_PROTECT, MOVE_FORCE_PALM}
     }
 };
 

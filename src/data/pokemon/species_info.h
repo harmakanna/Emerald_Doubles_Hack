@@ -166,7 +166,7 @@
 #define CHERRIM_SPECIES_INFO(color)          \
     {                                       \
         CHERRIM_ATTRIBUTES,           \
-        CHERRIM_MISC_INFO(BODY_COLOR_PURPLE), \
+        CHERRIM_MISC_INFO(color), \
     }
 
 

@@ -61,6 +61,7 @@
 #define AI_FLAG_OMNISCIENT            (1 << 17)  // AI has full knowledge of player moves, abilities, hold items
 #define AI_FLAG_DO_NOT_SWITCH         (1 << 18)  // AI does not ever switch when battling
 #define AI_FLAG_PRESERVE_ORDER        (1 << 19)  // AI will send out new Pokemon in the order that they are set
+#define AI_FLAG_TWO_ACES              (1 << 20)  // AI has two ace mons. The last two pokemon will not be used until they're the last ones remaining.
 
 // 'other' ai logic flags
 #define AI_FLAG_ROAMING               (1 << 29)

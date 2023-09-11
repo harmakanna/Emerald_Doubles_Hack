@@ -92,7 +92,7 @@ FallarborTown_CozmosHouse_EventScript_EvolveIntoWho:: @ 8265284
 	msgbox FallarborTown_CozmosHouse_Text_YouHaveAnEevee, MSGBOX_DEFAULT
 	message FallarborTown_CozmosHouse_Text_WhatShouldEvolve
 	waitmessage
-	scrollingmultichoice 0, 0, 0, 7, TRUE
+	scrollingmultichoice 0, 0, 0, 6, TRUE
 	switch VAR_RESULT
 	case 0, FallarborTown_CozmosHouse_EventScript_ThunderStone
 	case 1, FallarborTown_CozmosHouse_EventScript_WaterStone
@@ -108,49 +108,54 @@ FallarborTown_CozmosHouse_EventScript_EvolveIntoWho:: @ 8265284
 FallarborTown_CozmosHouse_EventScript_WaterStone::
 	tryspecialevo EVO_VAPOREON_FORCED, FALSE, FALSE
 	setflag FLAG_COZMOS_KID_EVOLVED_EEVEE
-	goto FallarborTown_CozmosHouse_EventScript_EeveesTheBest
+	goto FallarborTown_CozmosHouse_EventScript_EndEeveeEvo
 	end
 
 FallarborTown_CozmosHouse_EventScript_ThunderStone::
 	tryspecialevo EVO_JOLTEON_FORCED, FALSE, FALSE
 	setflag FLAG_COZMOS_KID_EVOLVED_EEVEE
-	goto FallarborTown_CozmosHouse_EventScript_EeveesTheBest
+	goto FallarborTown_CozmosHouse_EventScript_EndEeveeEvo
 	end
 
 FallarborTown_CozmosHouse_EventScript_FireStone::
 	tryspecialevo EVO_FLAREON_FORCED, FALSE, FALSE
 	setflag FLAG_COZMOS_KID_EVOLVED_EEVEE
-	goto FallarborTown_CozmosHouse_EventScript_EeveesTheBest
+	goto FallarborTown_CozmosHouse_EventScript_EndEeveeEvo
 	end
 
 FallarborTown_CozmosHouse_EventScript_SunStone::
 	tryspecialevo EVO_ESPEON_FORCED, FALSE, FALSE
 	setflag FLAG_COZMOS_KID_EVOLVED_EEVEE
-	goto FallarborTown_CozmosHouse_EventScript_EeveesTheBest
+	goto FallarborTown_CozmosHouse_EventScript_EndEeveeEvo
 	end
 
 FallarborTown_CozmosHouse_EventScript_MoonStone::
 	tryspecialevo EVO_UMBREON_FORCED, FALSE, FALSE
 	setflag FLAG_COZMOS_KID_EVOLVED_EEVEE
-	goto FallarborTown_CozmosHouse_EventScript_EeveesTheBest
+	goto FallarborTown_CozmosHouse_EventScript_EndEeveeEvo
 	end
 
 FallarborTown_CozmosHouse_EventScript_LeafStone::
 	tryspecialevo EVO_LEAFEON_FORCED, FALSE, FALSE
 	setflag FLAG_COZMOS_KID_EVOLVED_EEVEE
-	goto FallarborTown_CozmosHouse_EventScript_EeveesTheBest
+	goto FallarborTown_CozmosHouse_EventScript_EndEeveeEvo
 	end
 
 FallarborTown_CozmosHouse_EventScript_IceStone::
 	tryspecialevo EVO_GLACEON_FORCED, FALSE, FALSE
 	setflag FLAG_COZMOS_KID_EVOLVED_EEVEE
-	goto FallarborTown_CozmosHouse_EventScript_EeveesTheBest
+	goto FallarborTown_CozmosHouse_EventScript_EndEeveeEvo
 	end
 
 FallarborTown_CozmosHouse_EventScript_ShinyStone::
 	tryspecialevo EVO_SYLVEON_FORCED, FALSE, FALSE
 	setflag FLAG_COZMOS_KID_EVOLVED_EEVEE
-	goto FallarborTown_CozmosHouse_EventScript_EeveesTheBest
+	goto FallarborTown_CozmosHouse_EventScript_EndEeveeEvo
+	end
+
+FallarborTown_CozmosHouse_EventScript_EndEeveeEvo::
+	closemessage
+	release
 	end
 
 FallarborTown_CozmosHouse_EventScript_EeveesTheBest::
@@ -176,7 +181,7 @@ FallarborTown_CozmosHouse_Text_NotResponsibleEnough:
 	.string "My mom and dad won't let me get one\n"
 	.string "though, they say I'm not responsible\l"
 	.string "enough for a Pokémon yet?\p"
-	.string "What lame-os!\p"
+	.string "What lame-os!$"
 
 FallarborTown_CozmosHouse_Text_PleaseShowMe:
 	.string "Hey, if you have an Eevee, can you\n"

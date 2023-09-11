@@ -754,7 +754,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_Wilton1),
+        .party = EVERYTHING_CUSTOMIZED(sParty_Wilton1),
     },
 
     [TRAINER_EDGAR] =
@@ -898,7 +898,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_Brooke1),
+        .party = EVERYTHING_CUSTOMIZED(sParty_Brooke1),
     },
 
     [TRAINER_JENNIFER] =
@@ -4786,7 +4786,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_TabithaMtChimney),
+        .party = EVERYTHING_CUSTOMIZED(sParty_TabithaMtChimney),
     },
 
     [TRAINER_JONATHAN] =
@@ -4846,7 +4846,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_MaxieMtChimney),
+        .party = EVERYTHING_CUSTOMIZED(sParty_MaxieMtChimney),
     },
 
     [TRAINER_TIANA] =
@@ -5542,7 +5542,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_ToriAndTia),
+        .party = EVERYTHING_CUSTOMIZED(sParty_ToriAndTia),
     },
 
     [TRAINER_KIM_AND_IRIS] =
@@ -5866,7 +5866,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_Angelina),
+        .party = EVERYTHING_CUSTOMIZED(sParty_Angelina),
     },
 
     [TRAINER_KAI] =

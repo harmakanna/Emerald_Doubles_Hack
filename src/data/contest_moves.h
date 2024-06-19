@@ -5175,12 +5175,20 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .comboMoves = {0}
     },
 
-    [MOVE_REVELATION_DANCE] =
+    [MOVE_REHEARSAL] =
     {
         .effect = CONTEST_EFFECT_REPETITION_NOT_BORING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .comboStarterId = 0,
+        .comboStarterId = COMBO_STARTER_REHEARSAL,
         .comboMoves = {0}
+    },
+
+    [MOVE_REVELATION_DANCE] =
+    {
+        .effect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_REHEARSAL}
     },
 
     [MOVE_CORE_ENFORCER] =

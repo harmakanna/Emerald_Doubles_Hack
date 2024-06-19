@@ -15349,6 +15349,7 @@ static const struct LevelUpMove sCrabrawlerLevelUpLearnset[] = {
     LEVEL_UP_MOVE(22, MOVE_POWER_UP_PUNCH),
     LEVEL_UP_MOVE(25, MOVE_DIZZY_PUNCH),
     LEVEL_UP_MOVE(29, MOVE_PAYBACK),
+    LEVEL_UP_MOVE(31, MOVE_ICE_PUNCH),
     LEVEL_UP_MOVE(33, MOVE_REVERSAL),
     LEVEL_UP_MOVE(37, MOVE_CRABHAMMER),
     LEVEL_UP_MOVE(42, MOVE_IRON_DEFENSE),
@@ -15358,7 +15359,6 @@ static const struct LevelUpMove sCrabrawlerLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sCrabominableLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_ICE_PUNCH),
     LEVEL_UP_MOVE( 1, MOVE_ICE_PUNCH),
     LEVEL_UP_MOVE( 1, MOVE_BUBBLE),
     LEVEL_UP_MOVE( 1, MOVE_ROCK_SMASH),

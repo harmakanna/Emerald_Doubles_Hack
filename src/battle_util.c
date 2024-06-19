@@ -5140,10 +5140,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
             case ABILITY_STEAM_SHOWER:
                 if (moveType == TYPE_WATER || moveType == TYPE_FIRE)
                 {
-                    if ((gProtectStructs[gBattlerAttacker].notFirstStrike))
+                    if (gProtectStructs[gBattlerAttacker].notFirstStrike)
                         gBattlescriptCurrInstr = BattleScript_SteamShowerActivates;
                     else
                         gBattlescriptCurrInstr = BattleScript_SteamShowerActivates_PPLoss;
+                    effect = 3;
                 }
                 break;
             }

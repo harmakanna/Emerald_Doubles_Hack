@@ -4389,7 +4389,7 @@ static void Cmd_getexp(void)
             #endif
             if (!(FlagGet(FLAG_SYS_EXP_SHARE)))
                 calculatedExp = calculatedExp * 1.5;
-            //#if B_SPLIT_EXP < GEN_6
+            #if B_SPLIT_EXP < GEN_6
             if (viaExpHold) // at least one mon is getting exp via exp hold AND exp share is not on
             {
                 *exp = SAFE_DIV(calculatedExp / 2, viaSentIn);
@@ -4407,13 +4407,13 @@ static void Cmd_getexp(void)
                     *exp = 1;
                 gExpHoldExp = 0;
             }
-        //#else
+            #else
 
-            gExpShareExp = calculatedExp / 2;
-            if (gExpShareExp == 0)
-                gExpShareExp = 1;
+            gExpHoldExp = calculatedExp / 2;
+            if (gExpHoldExp == 0)
+                gExpHoldExp = 1;
 
-            //#endif
+            #endif
 
             gBattleScripting.getexpState++;
             gBattleStruct->expGetterMonId = 0;
@@ -4430,13 +4430,15 @@ static void Cmd_getexp(void)
             else
                 holdEffect = ItemId_GetHoldEffect(item);
 
-            if (gExpShareCheck == ((gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId)) != 0))
+            /*if (gExpShareCheck == ((gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId)) != 0) && holdEffect != HOLD_EFFECT_EXP_SHARE)
             {
                 //*(&gBattleStruct->sentInPokes) >>= 1;
                 gBattleScripting.getexpState = 5;
                 gBattleMoveDamage = 0; // used for exp
-            }
-            else if ((!(gBattleStruct->sentInPokes & 1) && holdEffect != HOLD_EFFECT_EXP_SHARE) && !(FlagGet(FLAG_SYS_EXP_SHARE)))
+            } //This is somehow bugged. When included, the pokemon sent out doesn't gain exp if the lead pokemon is fainted, but when it's commented out, even if the exp gain message doesn't show, the mon gets the exp.
+            //The commented out condition regarding HOLD_EFFECT_EXP_SHARE prevents the mon from getting doubled exp when they shouldn't.
+            //Further investigation is needed for the commented out line, line 4435
+            else*/ if (((!(gBattleStruct->sentInPokes & 1) && holdEffect != HOLD_EFFECT_EXP_SHARE) && !(FlagGet(FLAG_SYS_EXP_SHARE))) || (gExpShareCheck == ((gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId)) != 0) && holdEffect != HOLD_EFFECT_EXP_SHARE))
             {
                 *(&gBattleStruct->sentInPokes) >>= 1;
                 gBattleScripting.getexpState = 5;
@@ -4483,10 +4485,10 @@ static void Cmd_getexp(void)
 
                     // only give exp share bonus in later gens if the mon wasn't sent out
                 #if B_SPLIT_EXP < GEN_6
-                    if (holdEffect == HOLD_EFFECT_EXP_SHARE && !(FlagGet(FLAG_SYS_EXP_SHARE)))
+                    if (holdEffect == HOLD_EFFECT_EXP_SHARE/* && !(FlagGet(FLAG_SYS_EXP_SHARE))*/)
                         gBattleMoveDamage += gExpHoldExp;
                 #else
-                    if (holdEffect == HOLD_EFFECT_EXP_SHARE && !(FlagGet(FLAG_SYS_EXP_SHARE)) && gBattleMoveDamage == 0)
+                    if (holdEffect == HOLD_EFFECT_EXP_SHARE/* && !(FlagGet(FLAG_SYS_EXP_SHARE))*/ && gBattleMoveDamage == 0)
                         gBattleMoveDamage += gExpHoldExp;
                 #endif
                     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
@@ -4577,7 +4579,8 @@ static void Cmd_getexp(void)
                         {
 												      gBattleStruct->checkShouldGainPartyExp = 1;
                         }*/
-                    if (gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId))
+                    if (gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId)
+                          || (holdEffect == HOLD_EFFECT_EXP_SHARE && !(FlagGet(FLAG_SYS_EXP_SHARE))))
                             PrepareStringBattle(STRINGID_PKMNGAINEDEXP, gBattleStruct->expGetterBattlerId);
                     MonGainEVs(&gPlayerParty[gBattleStruct->expGetterMonId], gBattleMons[gBattlerFainted].species);
                 }

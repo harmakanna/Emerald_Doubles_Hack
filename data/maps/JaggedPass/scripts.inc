@@ -34,8 +34,8 @@ JaggedPass_OnLoad:
 	end
 
 JaggedPass_EventScript_ConcealHideoutEntrance::
-	setmetatile 16, 17, METATILE_Lavaridge_RockWall, TRUE
-	setmetatile 16, 18, METATILE_Lavaridge_RockWall, TRUE
+	setmetatile 19, 17, METATILE_Lavaridge_RockWall, TRUE
+	setmetatile 19, 18, METATILE_Lavaridge_RockWall, TRUE
 	end
 
 JaggedPass_EventScript_OpenMagmaHideout::

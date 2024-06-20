@@ -4407,6 +4407,14 @@ static void Cmd_getexp(void)
                     *exp = 1;
                 gExpHoldExp = 0;
             }
+            if (FlagGet(FLAG_SYS_EXP_SHARE))
+            {
+                gExpShareExp = calculatedExp / 4;
+                if (gExpShareExp == 0)
+                    gExpShareExp = 1;
+            }
+            else
+                gExpShareExp = 0;
             #else
 
             gExpHoldExp = calculatedExp / 2;
@@ -4430,15 +4438,15 @@ static void Cmd_getexp(void)
             else
                 holdEffect = ItemId_GetHoldEffect(item);
 
-            /*if (gExpShareCheck == ((gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId)) != 0) && holdEffect != HOLD_EFFECT_EXP_SHARE)
-            {
+            //if (gExpShareCheck == ((gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId)) != 0) && holdEffect != HOLD_EFFECT_EXP_SHARE)
+            //{
                 //*(&gBattleStruct->sentInPokes) >>= 1;
-                gBattleScripting.getexpState = 5;
-                gBattleMoveDamage = 0; // used for exp
-            } //This is somehow bugged. When included, the pokemon sent out doesn't gain exp if the lead pokemon is fainted, but when it's commented out, even if the exp gain message doesn't show, the mon gets the exp.
+                //gBattleScripting.getexpState = 5;
+                //gBattleMoveDamage = 0; // used for exp
+            //} //This is somehow bugged. When included, the pokemon sent out doesn't gain exp if the lead pokemon is fainted, but when it's commented out, even if the exp gain message doesn't show, the mon gets the exp.
             //The commented out condition regarding HOLD_EFFECT_EXP_SHARE prevents the mon from getting doubled exp when they shouldn't.
             //Further investigation is needed for the commented out line, line 4435
-            else*/ if (((!(gBattleStruct->sentInPokes & 1) && holdEffect != HOLD_EFFECT_EXP_SHARE) && !(FlagGet(FLAG_SYS_EXP_SHARE))) || (gExpShareCheck == ((gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId)) != 0) && holdEffect != HOLD_EFFECT_EXP_SHARE))
+            /*else*/ if (((!(gBattleStruct->sentInPokes & 1) && holdEffect != HOLD_EFFECT_EXP_SHARE) && !(FlagGet(FLAG_SYS_EXP_SHARE))) || (gExpShareCheck == ((gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId)) != 0) && holdEffect != HOLD_EFFECT_EXP_SHARE))
             {
                 *(&gBattleStruct->sentInPokes) >>= 1;
                 gBattleScripting.getexpState = 5;

@@ -4544,7 +4544,7 @@
     {
       "id": "LAYOUT_SLATEROOT_FOREST",
       "name": "SlaterootForest_Layout",
-      "width": 32,
+      "width": 33,
       "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",

@@ -13618,7 +13618,7 @@
           "map": "MAP_ROUTE135",
           "base_label": "gRoute135",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 5,
@@ -13802,7 +13802,7 @@
           "map": "MAP_SLATEROOT_FOREST",
           "base_label": "gSlaterootForest0",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 5,
@@ -13986,7 +13986,7 @@
           "map": "MAP_MT_METEOR_1F_1R",
           "base_label": "gMtMeteor_1F_1R0",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 5,
@@ -14170,7 +14170,7 @@
           "map": "MAP_MT_METEOR_2F_1R",
           "base_label": "gMtMeteor_2F_1R0",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 5,
@@ -14244,7 +14244,7 @@
           "map": "MAP_MT_METEOR_1F_2R",
           "base_label": "gMtMeteor_1F_2R0",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 5,
@@ -14428,7 +14428,7 @@
           "map": "MAP_MT_METEOR_2F_2R",
           "base_label": "gMtMeteor_2F_2R0",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 5,

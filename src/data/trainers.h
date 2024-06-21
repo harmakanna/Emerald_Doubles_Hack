@@ -514,7 +514,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = NO_ITEM_CUSTOM_MOVES(sParty_Foster),
+        .party = NO_ITEM_DEFAULT_MOVES(sParty_Foster),
     },
 
     [TRAINER_GABBY_AND_TY_1] =
@@ -2278,7 +2278,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_RISKY,
-        .party = ITEM_CUSTOM_MOVES(sParty_Winona1),
+        .party = EVERYTHING_CUSTOMIZED(sParty_Winona1),
     },
 
     [TRAINER_TATE_AND_LIZA] =

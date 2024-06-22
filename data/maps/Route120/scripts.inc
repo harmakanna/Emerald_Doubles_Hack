@@ -157,10 +157,18 @@ Route120_EventScript_BerryNotLove::
 Route120_EventScript_Steven::
 	lock
 	faceplayer
+	goto_if_unset FLAG_DEFEATED_FORTREE_GYM, Route120_EventScript_StevenFightFortreeGym
 	goto_if_set FLAG_NOT_READY_FOR_BATTLE_ROUTE_120, Route120_EventScript_StevenAskReadyForBattle
 	msgbox Route120_Text_StevenGreeting, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route120_EventScript_StevenNotReady
+	goto_if_unset FLAG_DEFEATED_FORTREE_GYM, Route120_EventScript_StevenFightFortreeGym
 	goto Route120_EventScript_StevenBattleKecleon
+	end
+
+Route120_EventScript_StevenFightFortreeGym:
+	msgbox Route120_Text_StevenGoFightWinona, MSGBOX_DEFAULT
+	setflag FLAG_NOT_READY_FOR_BATTLE_ROUTE_120
+	release
 	end
 
 Route120_EventScript_StevenNotReady::
@@ -172,6 +180,7 @@ Route120_EventScript_StevenNotReady::
 Route120_EventScript_StevenAskReadyForBattle::
 	msgbox Route120_Text_StevenReadyForBattle, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route120_EventScript_StevenNotReady
+	goto_if_unset FLAG_DEFEATED_FORTREE_GYM, Route120_EventScript_StevenFightFortreeGym
 	goto Route120_EventScript_StevenBattleKecleon
 	end
 
@@ -360,6 +369,12 @@ Route120_Text_StevenGreeting:
 	.string "That would be more fun.\p"
 	.string "{PLAYER}{KUN}, are your POKéMON ready for\n"
 	.string "battle?$"
+
+Route120_Text_StevenGoFightWinona:
+	.string "Hmm, hold on…\p"
+	.string "I think you should fight Winona first.\p"
+	.string "She's the gym leader of Fortree City.\n"
+	.string "Come back once you've done so.$"
 
 Route120_Text_StevenIllWaitHere:
 	.string "STEVEN: No?\p"

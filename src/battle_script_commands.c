@@ -4574,7 +4574,7 @@ static void Cmd_getexp(void)
                     PREPARE_STRING_BUFFER(gBattleTextBuff2, i);
                     PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff3, 6, gBattleMoveDamage);
 
-                    /*if((gBattleStruct->sentInPokes & 1)
+                    if((gBattleStruct->sentInPokes & 1)
 												|| holdEffect == HOLD_EFFECT_LUCKY_EGG
 												|| IsTradedMon(&gPlayerParty[gBattleStruct->expGetterMonId]) == TRUE)
 										{
@@ -4586,13 +4586,16 @@ static void Cmd_getexp(void)
 												&& gBattleStruct->checkGainedPartyExp == 0)
                         {
 												      gBattleStruct->checkShouldGainPartyExp = 1;
-                        }*/
+                        }
                     if (gBattleStruct->sentInPokes & (1 << gBattleStruct->expGetterMonId)
-                          || (holdEffect == HOLD_EFFECT_EXP_SHARE && !(FlagGet(FLAG_SYS_EXP_SHARE))))
-                            PrepareStringBattle(STRINGID_PKMNGAINEDEXP, gBattleStruct->expGetterBattlerId);
+                        || (holdEffect == HOLD_EFFECT_EXP_SHARE && !(FlagGet(FLAG_SYS_EXP_SHARE))))
+                        {
+                            if(!gExpShareCheck)
+                              PrepareStringBattle(STRINGID_PKMNGAINEDEXP, gBattleStruct->expGetterBattlerId);
+                        }
                     MonGainEVs(&gPlayerParty[gBattleStruct->expGetterMonId], gBattleMons[gBattlerFainted].species);
                 }
-                //gBattleStruct->sentInPokes >>= 1;
+                    gBattleStruct->sentInPokes >>= 1;
                 gBattleScripting.getexpState++;
             }
         }

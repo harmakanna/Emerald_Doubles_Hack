@@ -1790,7 +1790,7 @@ static const u8 sGrassKnotDescription[] = _(
 
 static const u8 sChatterDescription[] = _(
     "Attacks with a sound wave\n"
-    "that causes confusion.");
+    "that may cause confusion.");
 
 static const u8 sJudgmentDescription[] = _(
     "The type varies with the\n"

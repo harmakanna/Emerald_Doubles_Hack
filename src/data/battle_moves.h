@@ -7605,7 +7605,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
             .power = 65,
-            .secondaryEffectChance = 100,
+            .secondaryEffectChance = 30,
             .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND | FLAG_SHEER_FORCE_BOOST,
         #elif B_UPDATED_MOVE_DATA == GEN_5
             .power = 60,
@@ -7619,7 +7619,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .effect = EFFECT_CONFUSE_HIT,
         .type = TYPE_FLYING,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,

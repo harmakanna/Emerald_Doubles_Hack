@@ -6215,9 +6215,9 @@ const struct Item gItems[] =
 
     [ITEM_EXP_SHARE] =
     {
-        .name = _("EXP. SHARE"),
+        .name = _("Exp. Share"),
         .itemId = ITEM_EXP_SHARE,
-        .price = 3000,
+        .price = 0,
         .description = sExpShareDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -10475,7 +10475,7 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
     },
-    
+
     [ITEM_EXP_HOLD] =
     {
         .name = _("Exp. Hold"),

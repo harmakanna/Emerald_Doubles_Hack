@@ -551,17 +551,17 @@ static const struct TrainerMonNoItemCustomMoves sParty_Chip[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Foster[] = {
     {
     .iv = 100,
-    .lvl = 25,
+    .lvl = 28,
     .species = SPECIES_CUFANT,
     },
     {
     .iv = 100,
-    .lvl = 25,
+    .lvl = 28,
     .species = SPECIES_NOSEPASS,
     },
     {
     .iv = 100,
-    .lvl = 25,
+    .lvl = 29,
     .species = SPECIES_SANDSLASH,
     }
 };

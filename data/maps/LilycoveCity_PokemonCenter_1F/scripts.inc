@@ -50,6 +50,22 @@ LilycoveCity_PokemonCenter_1F_EventScript_ManiacBadTeamGone::
 	release
 	end
 
+LilycoveCity_PokemonCenter_1F_EventScript_Wally::
+	msgbox LilycoveCity_PokemonCenter_1F_Text_IllBeHeadingOut, MSGBOX_NPC
+	end
+
+LilycoveCity_PokemonCenter_1F_Text_IllBeHeadingOut:
+	.string "WALLY: Oh, hi {PLAYER}!\p"
+	.string "I'm going to be leaving for\n"
+	.string "Mossdeep City soon.\p"
+	.string "Say, have you been to Cratercrest\n"
+	.string "Town before?\p"
+	.string "You can reach it via Mt. Meteor from\n"
+	.string "the south exit of Rusturf Tunnel.\p"
+	.string "It's a hot tourist destination for\n"
+	.string "its great ski slopes and lodging, so\l"
+	.string "be sure to pack warm clothes!$"
+
 LilycoveCity_PokemonCenter_1F_Text_HowManyKindsOfPokemon:
 	.string "I wonder how many kinds of POKéMON\n"
 	.string "there are in the world.\p"
@@ -65,4 +81,3 @@ LilycoveCity_PokemonCenter_1F_Text_HaventSeenRottenScoundrels:
 	.string "Those rotten scoundrels who steal\n"
 	.string "POKéMON and rip off METEORITES…\p"
 	.string "I haven't seen them around recently.$"
-

@@ -51,8 +51,8 @@
 #define FLAG_HIDE_COURTNEY                            0x27 // Unused Flag
 #define FLAG_SPOKE_TO_COZMOS_KID                      0x28 // Unused Flag
 #define FLAG_COZMOS_KID_EVOLVED_EEVEE                 0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_HIDE_LILYCOVE_PKMN_CENTER_WALLY          0x2A // Unused Flag
+#define FLAG_MET_RIVAL_SOOTOPOLIS                     0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
@@ -307,14 +307,14 @@
 #define FLAG_RECEIVED_FOCUS_BAND             0x11B
 #define FLAG_DECLINED_WALLY_BATTLE_MAUVILLE  0x11C
 #define FLAG_RECEIVED_DEVON_SCOPE            0x11D
-#define FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE  0x11E
+#define FLAG_DECLINED_WALLY_BATTLE_LILYCOVE  0x11E
 #define FLAG_MET_DEVON_EMPLOYEE              0x11F
 #define FLAG_MET_RIVAL_RUSTBORO              0x120
 #define FLAG_RECEIVED_SILK_SCARF             0x121
 #define FLAG_NOT_READY_FOR_BATTLE_ROUTE_120  0x122
 #define FLAG_RECEIVED_SS_TICKET              0x123
-#define FLAG_MET_RIVAL_LILYCOVE              0x124
-#define FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE 0x125
+#define FLAG_MET_WALLY_LILYCOVE              0x124
+#define FLAG_MET_RIVAL_IN_HOUSE_AFTER_SOOTOPOLIS 0x125
 #define FLAG_EXCHANGED_SCANNER               0x126
 #define FLAG_KECLEON_FLED_FORTREE            0x127
 #define FLAG_PETALBURG_MART_EXPANDED_ITEMS   0x128
@@ -868,7 +868,7 @@
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337
 #define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
-#define FLAG_HIDE_ROUTE_116_MAGMA_GRUNT                             0x339 
+#define FLAG_HIDE_ROUTE_116_MAGMA_GRUNT                             0x339
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C
@@ -1014,7 +1014,7 @@
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL       0x3C8
 #define FLAG_HIDE_FORTREE_CITY_KECLEON                              0x3C9
 #define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE                          0x3CA
-#define FLAG_HIDE_LILYCOVE_CITY_RIVAL                               0x3CB
+#define FLAG_HIDE_LILYCOVE_CITY_WALLY                               0x3CB
 #define FLAG_HIDE_ROUTE_120_STEVEN                                  0x3CC
 #define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                            0x3CD
 #define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1                            0x3CE

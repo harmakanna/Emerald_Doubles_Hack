@@ -14,7 +14,7 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 	end
 
 LittlerootTown_MaysHouse_2F_EventScript_CheckShouldUpdateMayPos::
-	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
+	goto_if_set FLAG_MET_RIVAL_SOOTOPOLIS, LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
 	goto_if_ge VAR_BIRCH_LAB_STATE, 2, LittlerootTown_MaysHouse_2F_EventScript_Ret
 	goto LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
 
@@ -237,7 +237,7 @@ LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayEast:
 
 RivalsHouse_2F_EventScript_Rival::
 	lockall
-	goto_if_set FLAG_MET_RIVAL_LILYCOVE, RivalsHouse_2F_EventScript_RivalPostLilycove
+	goto_if_set FLAG_MET_RIVAL_SOOTOPOLIS, RivalsHouse_2F_EventScript_RivalPostLilycove
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, RivalsHouse_2F_EventScript_May
 	goto_if_eq VAR_RESULT, FEMALE, RivalsHouse_2F_EventScript_Brendan
@@ -259,17 +259,17 @@ RivalsHouse_2F_EventScript_RivalPostLilycove::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, RivalsHouse_2F_EventScript_MayPostLilycove
 	call_if_eq VAR_RESULT, FEMALE, RivalsHouse_2F_EventScript_BrendanPostLilycove
-	setflag FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE
+	setflag FLAG_MET_RIVAL_IN_HOUSE_AFTER_SOOTOPOLIS
 	releaseall
 	end
 
 RivalsHouse_2F_EventScript_MayPostLilycove::
-	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE, RivalsHouse_2F_EventScript_MayWhereShouldIGoNext
+	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_SOOTOPOLIS, RivalsHouse_2F_EventScript_MayWhereShouldIGoNext
 	msgbox RivalsHouse_2F_Text_MayJustCheckingMyPokedex, MSGBOX_DEFAULT
 	return
 
 RivalsHouse_2F_EventScript_BrendanPostLilycove::
-	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE, RivalsHouse_2F_EventScript_BrendanWhereShouldIGoNext
+	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_SOOTOPOLIS, RivalsHouse_2F_EventScript_BrendanWhereShouldIGoNext
 	msgbox RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex, MSGBOX_DEFAULT
 	return
 

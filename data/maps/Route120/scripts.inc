@@ -157,7 +157,6 @@ Route120_EventScript_BerryNotLove::
 Route120_EventScript_Steven::
 	lock
 	faceplayer
-	goto_if_unset FLAG_DEFEATED_FORTREE_GYM, Route120_EventScript_StevenFightFortreeGym
 	goto_if_set FLAG_NOT_READY_FOR_BATTLE_ROUTE_120, Route120_EventScript_StevenAskReadyForBattle
 	msgbox Route120_Text_StevenGreeting, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route120_EventScript_StevenNotReady

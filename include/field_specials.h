@@ -3,6 +3,7 @@
 
 extern bool8 gBikeCyclingChallenge;
 extern u8 gBikeCollisions;
+extern u16 gScrollableMultichoice_ScrollOffset;
 
 u8 GetLeadMonIndex(void);
 u8 IsDestinationBoxFull(void);
@@ -31,6 +32,7 @@ bool8 UsedPokemonCenterWarp(void);
 void ResetFanClub(void);
 bool8 ShouldShowBoxWasFullMessage(void);
 void SetPCBoxToSendMon(u8 boxId);
+void PreparePartyForSkyBattle(void);
 bool8 BrailleDecrepitCastleCheck(void);
 
 #endif // GUARD_FIELD_SPECIALS_H

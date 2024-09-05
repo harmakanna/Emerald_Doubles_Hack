@@ -29,6 +29,7 @@
 #include "load_save.h"
 #include "battle_dome.h"
 #include "constants/battle_frontier.h"
+#include "constants/battle_move_effects.h"
 #include "constants/battle_pike.h"
 #include "constants/frontier_util.h"
 #include "constants/trainers.h"
@@ -326,7 +327,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
     },
     [FRONTIER_FACILITY_FACTORY] =
     {
-        // Because Factory's pokemon are random, this facility's Brain also uses random pokemon.
+        // Because Factory's Pokémon are random, this facility's Brain also uses random Pokémon.
         // What is interesting, this team is actually the one Steven uses in the multi tag battle alongside the player.
         {
             {
@@ -622,12 +623,6 @@ static const u8 sFrontierBrainObjEventGfx[NUM_FRONTIER_FACILITIES][2] =
     [FRONTIER_FACILITY_PYRAMID] = {OBJ_EVENT_GFX_BRANDON, FALSE},
 };
 
-const u16 gFrontierBannedSpecies[] =
-{
-    SPECIES_MEW, SPECIES_MEWTWO, SPECIES_HO_OH, SPECIES_LUGIA, SPECIES_CELEBI,
-    SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_JIRACHI, SPECIES_DEOXYS, 0xFFFF
-};
-
 static const u8 *const sRecordsWindowChallengeTexts[][2] =
 {
     [RANKING_HALL_TOWER_SINGLES] = {gText_BattleTower2,  gText_FacilitySingle},
@@ -644,8 +639,8 @@ static const u8 *const sRecordsWindowChallengeTexts[][2] =
 
 static const u8 *const sLevelModeText[] =
 {
-    gText_RecordsLv50,
-    gText_RecordsOpenLevel,
+    [FRONTIER_LVL_50]   = gText_RecordsLv50,
+    [FRONTIER_LVL_OPEN] = gText_RecordsOpenLevel,
 };
 
 static const u8 *const sHallFacilityToRecordsText[] =
@@ -735,28 +730,28 @@ void CallFrontierUtilFunc(void)
     sFrontierUtilFuncs[gSpecialVar_0x8004]();
 }
 
-// Buffers into VAR_TEMP_0 specifically because this is used to react to the status in OnFrame map scripts
+// VAR_TEMP_CHALLENGE_STATUS is used to react to the status in OnFrame map scripts
 static void GetChallengeStatus(void)
 {
-    VarSet(VAR_TEMP_0, 0xFF);
+    VarSet(VAR_TEMP_CHALLENGE_STATUS, 0xFF);
     switch (gSaveBlock2Ptr->frontier.challengeStatus)
     {
     case 0:
         break;
     case CHALLENGE_STATUS_SAVING:
         FrontierGamblerSetWonOrLost(FALSE);
-        VarSet(VAR_TEMP_0, gSaveBlock2Ptr->frontier.challengeStatus);
+        VarSet(VAR_TEMP_CHALLENGE_STATUS, gSaveBlock2Ptr->frontier.challengeStatus);
         break;
     case CHALLENGE_STATUS_LOST:
         FrontierGamblerSetWonOrLost(FALSE);
-        VarSet(VAR_TEMP_0, gSaveBlock2Ptr->frontier.challengeStatus);
+        VarSet(VAR_TEMP_CHALLENGE_STATUS, gSaveBlock2Ptr->frontier.challengeStatus);
         break;
     case CHALLENGE_STATUS_WON:
         FrontierGamblerSetWonOrLost(TRUE);
-        VarSet(VAR_TEMP_0, gSaveBlock2Ptr->frontier.challengeStatus);
+        VarSet(VAR_TEMP_CHALLENGE_STATUS, gSaveBlock2Ptr->frontier.challengeStatus);
         break;
     case CHALLENGE_STATUS_PAUSED:
-        VarSet(VAR_TEMP_0, gSaveBlock2Ptr->frontier.challengeStatus);
+        VarSet(VAR_TEMP_CHALLENGE_STATUS, gSaveBlock2Ptr->frontier.challengeStatus);
         break;
     }
 }
@@ -1643,9 +1638,13 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
     switch (whichText)
     {
     case FRONTIER_BEFORE_TEXT:
+    #if FREE_BATTLE_TOWER_E_READER == FALSE
         if (trainerId == TRAINER_EREADER)
             FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.greeting);
         else if (trainerId == TRAINER_FRONTIER_BRAIN)
+    #else
+        if (trainerId == TRAINER_FRONTIER_BRAIN)
+    #endif //FREE_BATTLE_TOWER_E_READER
             CopyFrontierBrainText(FALSE);
         else if (trainerId < FRONTIER_TRAINERS_COUNT)
             FrontierSpeechToString(gFacilityTrainers[trainerId].speechBefore);
@@ -1655,11 +1654,15 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
             BufferApprenticeChallengeText(trainerId - TRAINER_RECORD_MIXING_APPRENTICE);
         break;
     case FRONTIER_PLAYER_LOST_TEXT:
+    #if FREE_BATTLE_TOWER_E_READER == FALSE
         if (trainerId == TRAINER_EREADER)
         {
             FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.farewellPlayerLost);
         }
         else if (trainerId == TRAINER_FRONTIER_BRAIN)
+    #else
+        if (trainerId == TRAINER_FRONTIER_BRAIN)
+    #endif //FREE_BATTLE_TOWER_E_READER
         {
             CopyFrontierBrainText(FALSE);
         }
@@ -1685,7 +1688,9 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
     case FRONTIER_PLAYER_WON_TEXT:
         if (trainerId == TRAINER_EREADER)
         {
+        #if FREE_BATTLE_TOWER_E_READER == FALSE
             FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.farewellPlayerWon);
+        #endif //FREE_BATTLE_TOWER_E_READER
         }
         else if (trainerId == TRAINER_FRONTIER_BRAIN)
         {
@@ -1878,43 +1883,22 @@ static void CheckBattleTypeFlag(void)
         gSpecialVar_Result = FALSE;
 }
 
-static u8 AppendCaughtBannedMonSpeciesName(u16 species, u8 count, s32 numBannedMonsCaught)
-{
-    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
-    {
-        count++;
-        switch (count)
-        {
-        case 1:
-        case 3:
-        case 5:
-        case 7:
-        case 9:
-        case 11:
-            if (numBannedMonsCaught == count)
-                StringAppend(gStringVar1, gText_SpaceAndSpace);
-            else if (numBannedMonsCaught > count)
-                StringAppend(gStringVar1, gText_CommaSpace);
-            break;
-        case 2:
-            if (count == numBannedMonsCaught)
-                StringAppend(gStringVar1, gText_SpaceAndSpace);
-            else
-                StringAppend(gStringVar1, gText_CommaSpace);
-            StringAppend(gStringVar1, gText_NewLine);
-            break;
-        default:
-            if (count == numBannedMonsCaught)
-                StringAppend(gStringVar1, gText_SpaceAndSpace);
-            else
-                StringAppend(gStringVar1, gText_CommaSpace);
-            StringAppend(gStringVar1, gText_LineBreak);
-            break;
-        }
-        StringAppend(gStringVar1, gSpeciesNames[species]);
-    }
+#define SPECIES_PER_LINE 3
 
-    return count;
+static void AppendCaughtBannedMonSpeciesName(u16 species, u8 count, s32 numBannedMonsCaught)
+{
+    if (numBannedMonsCaught == count)
+        StringAppend(gStringVar1, gText_SpaceAndSpace);
+    else if (numBannedMonsCaught > count)
+        StringAppend(gStringVar1, gText_CommaSpace);
+    if ((count % SPECIES_PER_LINE) == 0)
+    {
+        if (count == SPECIES_PER_LINE)
+            StringAppend(gStringVar1, gText_NewLine);
+        else
+            StringAppend(gStringVar1, gText_LineBreak);
+    }
+    StringAppend(gStringVar1, GetSpeciesName(species));
 }
 
 static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monLevel, u16 *speciesArray, u16 *itemsArray, u8 *count)
@@ -1923,11 +1907,7 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
 
     if (species == SPECIES_EGG || species == SPECIES_NONE)
         return;
-
-    for (i = 0; gFrontierBannedSpecies[i] != 0xFFFF && gFrontierBannedSpecies[i] != species; i++)
-        ;
-
-    if (gFrontierBannedSpecies[i] != 0xFFFF)
+    if (gSpeciesInfo[species].isFrontierBanned)
         return;
     if (lvlMode == FRONTIER_LVL_50 && monLevel > FRONTIER_MAX_LEVEL_50)
         return;
@@ -1952,7 +1932,7 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
 
 // gSpecialVar_Result is the level mode before and after calls to this function
 // gSpecialVar_0x8004 is used to store the return value instead (TRUE if there are insufficient eligible mons)
-// The names of ineligible pokemon that have been caught are also buffered to print
+// The names of ineligible Pokémon that have been caught are also buffered to print
 static void CheckPartyIneligibility(void)
 {
     u16 speciesArray[PARTY_SIZE];
@@ -2013,28 +1993,41 @@ static void CheckPartyIneligibility(void)
 
     if (numEligibleMons < toChoose)
     {
-        s32 i;
-        s32 caughtBannedMons = 0;
-        s32 species = gFrontierBannedSpecies[0];
-        for (i = 0; species != 0xFFFF; i++, species = gFrontierBannedSpecies[i])
+        u32 i;
+        u32 baseSpecies = 0;
+        u32 totalCaughtBanned = 0;
+        u32 caughtBanned[100] = {0};
+
+        for (i = 0; i < NUM_SPECIES; i++)
         {
-            if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
-                caughtBannedMons++;
+            if (totalCaughtBanned >= ARRAY_COUNT(caughtBanned))
+                break;
+            baseSpecies = GET_BASE_SPECIES_ID(i);
+            if (baseSpecies == i)
+            {
+                if (gSpeciesInfo[baseSpecies].isFrontierBanned)
+                {
+                    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(baseSpecies), FLAG_GET_CAUGHT))
+                    {
+                        caughtBanned[totalCaughtBanned] = baseSpecies;
+                        totalCaughtBanned++;
+                    }
+                }
+            }
         }
         gStringVar1[0] = EOS;
         gSpecialVar_0x8004 = TRUE;
-        count = 0;
-        for (i = 0; gFrontierBannedSpecies[i] != 0xFFFF; i++)
-            count = AppendCaughtBannedMonSpeciesName(gFrontierBannedSpecies[i], count, caughtBannedMons);
+        for (i = 0; i < totalCaughtBanned; i++)
+            AppendCaughtBannedMonSpeciesName(caughtBanned[i], i+1, totalCaughtBanned);
 
-        if (count == 0)
+        if (totalCaughtBanned == 0)
         {
             StringAppend(gStringVar1, gText_Space2);
             StringAppend(gStringVar1, gText_Are);
         }
         else
         {
-            if (count & 1)
+            if (totalCaughtBanned % SPECIES_PER_LINE == SPECIES_PER_LINE - 1)
                 StringAppend(gStringVar1, gText_LineBreak);
             else
                 StringAppend(gStringVar1, gText_Space2);
@@ -2048,6 +2041,8 @@ static void CheckPartyIneligibility(void)
     }
     #undef numEligibleMons
 }
+
+#undef SPECIES_PER_LINE
 
 static void ValidateVisitingTrainer(void)
 {
@@ -2215,6 +2210,7 @@ static void Print2PRecord(s32 position, s32 x, s32 y, struct RankingHall2P *hall
 
 static void Fill1PRecords(struct RankingHall1P *dst, s32 hallFacilityId, s32 lvlMode)
 {
+#if FREE_RECORD_MIXING_HALL_RECORDS == FALSE
     s32 i, j;
     struct RankingHall1P record1P[HALL_RECORDS_COUNT + 1];
     struct PlayerHallRecords *playerHallRecords = AllocZeroed(sizeof(struct PlayerHallRecords));
@@ -2245,10 +2241,12 @@ static void Fill1PRecords(struct RankingHall1P *dst, s32 hallFacilityId, s32 lvl
     }
 
     Free(playerHallRecords);
+#endif //FREE_RECORD_MIXING_HALL_RECORDS
 }
 
 static void Fill2PRecords(struct RankingHall2P *dst, s32 lvlMode)
 {
+#if FREE_RECORD_MIXING_HALL_RECORDS == FALSE
     s32 i, j;
     struct RankingHall2P record2P[HALL_RECORDS_COUNT + 1];
     struct PlayerHallRecords *playerHallRecords = AllocZeroed(sizeof(struct PlayerHallRecords));
@@ -2279,6 +2277,7 @@ static void Fill2PRecords(struct RankingHall2P *dst, s32 lvlMode)
     }
 
     Free(playerHallRecords);
+#endif //FREE_RECORD_MIXING_HALL_RECORDS
 }
 
 static void PrintHallRecords(s32 hallFacilityId, s32 lvlMode)
@@ -2328,6 +2327,7 @@ void ScrollRankingHallRecordsWindow(void)
 
 void ClearRankingHallRecords(void)
 {
+#if FREE_RECORD_MIXING_HALL_RECORDS == FALSE
     s32 i, j, k;
 
     // UB: Passing 0 as a pointer instead of a pointer holding a value of 0.
@@ -2362,6 +2362,7 @@ void ClearRankingHallRecords(void)
             gSaveBlock2Ptr->hallRecords2P[j][k].winStreak = 0;
         }
     }
+#endif //FREE_RECORD_MIXING_HALL_RECORDS
 }
 
 void SaveGameFrontier(void)
@@ -2395,7 +2396,7 @@ u8 GetFrontierBrainTrainerPicIndex(void)
     else
         facility = VarGet(VAR_FRONTIER_FACILITY);
 
-    return gTrainers[sFrontierBrainTrainerIds[facility]].trainerPic;
+    return GetTrainerPicFromId(sFrontierBrainTrainerIds[facility]);
 }
 
 u8 GetFrontierBrainTrainerClass(void)
@@ -2407,21 +2408,23 @@ u8 GetFrontierBrainTrainerClass(void)
     else
         facility = VarGet(VAR_FRONTIER_FACILITY);
 
-    return gTrainers[sFrontierBrainTrainerIds[facility]].trainerClass;
+    return GetTrainerClassFromId(sFrontierBrainTrainerIds[facility]);
 }
 
 void CopyFrontierBrainTrainerName(u8 *dst)
 {
     s32 i;
     s32 facility;
+    const u8 *trainerName;
 
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         facility = GetRecordedBattleFrontierFacility();
     else
         facility = VarGet(VAR_FRONTIER_FACILITY);
 
+    trainerName = GetTrainerNameFromId(sFrontierBrainTrainerIds[facility]);
     for (i = 0; i < PLAYER_NAME_LENGTH; i++)
-        dst[i] = gTrainers[sFrontierBrainTrainerIds[facility]].trainerName[i];
+        dst[i] = trainerName[i];
 
     dst[i] = EOS;
 }
@@ -2465,10 +2468,7 @@ void CreateFrontierBrainPokemon(void)
 
         do
         {
-            do
-            {
-                j = Random32(); //should just be one while loop, but that doesn't match
-            } while (IsShinyOtIdPersonality(FRONTIER_BRAIN_OTID, j));
+            j = Random32(); //should just be one while loop, but that doesn't match
         } while (sFrontierBrainsMons[facility][symbol][i].nature != GetNatureFromPersonality(j));
         CreateMon(&gEnemyParty[monPartyId],
                   sFrontierBrainsMons[facility][symbol][i].species,
@@ -2483,10 +2483,12 @@ void CreateFrontierBrainPokemon(void)
         for (j = 0; j < MAX_MON_MOVES; j++)
         {
             SetMonMoveSlot(&gEnemyParty[monPartyId], sFrontierBrainsMons[facility][symbol][i].moves[j], j);
-            if (sFrontierBrainsMons[facility][symbol][i].moves[j] == MOVE_FRUSTRATION)
+            if (gMovesInfo[sFrontierBrainsMons[facility][symbol][i].moves[j]].effect == EFFECT_FRUSTRATION)
                 friendship = 0;
         }
         SetMonData(&gEnemyParty[monPartyId], MON_DATA_FRIENDSHIP, &friendship);
+        j = FALSE;
+        SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_IS_SHINY, &j);
         CalculateMonStats(&gEnemyParty[monPartyId]);
         monPartyId++;
     }

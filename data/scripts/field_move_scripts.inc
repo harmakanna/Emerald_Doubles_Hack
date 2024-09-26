@@ -10,18 +10,14 @@ EventScript_CutTree::
 	@ goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
 	@ msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	@ closemessage
-	goto EventScript_CutTreeDown
-	end
-
-@ Use cut from party menu
-EventScript_UseCut::
-	lockall
+EventScript_CutTreeCommon:
+	isfollowerfieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
-	goto EventScript_CutTreeDown
-	end
-
 EventScript_CutTreeDown::
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
 	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -76,18 +72,15 @@ EventScript_RockSmash::
 	@ goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
 	@ msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	@ closemessage
-	goto EventScript_SmashRock
-	end
-
-@ Use rock smash from party menu
-EventScript_UseRockSmash::
-	lockall
+EventScript_RockSmashCommon:
+	@ check if follower should use the field move
+	isfollowerfieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
-	goto EventScript_SmashRock
-	end
-
 EventScript_SmashRock::
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED

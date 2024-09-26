@@ -57117,6 +57117,137 @@
       "MOVE_UPROAR"
     ]
   },
+  "CHATOT_HOENNIAN": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_HYPER_VOICE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_CHATTER"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_CONFIDE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_TAUNT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_PECK"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_GROWL"
+      },
+      {
+        "Level": 9,
+        "Move": "MOVE_MIRROR_MOVE"
+      },
+      {
+        "Level": 13,
+        "Move": "MOVE_SING"
+      },
+      {
+        "Level": 17,
+        "Move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "Level": 21,
+        "Move": "MOVE_CHATTER"
+      },
+      {
+        "Level": 25,
+        "Move": "MOVE_TAUNT"
+      },
+      {
+        "Level": 29,
+        "Move": "MOVE_ROUND"
+      },
+      {
+        "Level": 33,
+        "Move": "MOVE_MIMIC"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_ECHOED_VOICE"
+      },
+      {
+        "Level": 41,
+        "Move": "MOVE_ROOST"
+      },
+      {
+        "Level": 45,
+        "Move": "MOVE_UPROAR"
+      },
+      {
+        "Level": 49,
+        "Move": "MOVE_SYNCHRONOISE"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_FEATHER_DANCE"
+      },
+      {
+        "Level": 57,
+        "Move": "MOVE_HYPER_VOICE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_WORK_UP",
+      "MOVE_TOXIC",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_SUNNY_DAY",
+      "MOVE_TAUNT",
+      "MOVE_PROTECT",
+      "MOVE_RAIN_DANCE",
+      "MOVE_ROOST",
+      "MOVE_FRUSTRATION",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_AERIAL_ACE",
+      "MOVE_TORMENT",
+      "MOVE_FACADE",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_THIEF",
+      "MOVE_ROUND",
+      "MOVE_ECHOED_VOICE",
+      "MOVE_STEEL_WING",
+      "MOVE_FLY",
+      "MOVE_SWAGGER",
+      "MOVE_SLEEP_TALK",
+      "MOVE_U_TURN",
+      "MOVE_SUBSTITUTE",
+      "MOVE_CONFIDE"
+    ],
+    "EggMoves": [
+      "MOVE_AGILITY",
+      "MOVE_AIR_CUTTER",
+      "MOVE_BOOMBURST",
+      "MOVE_DEFOG",
+      "MOVE_ENCORE",
+      "MOVE_NASTY_PLOT",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_STEEL_WING",
+      "MOVE_SUPERSONIC"
+    ],
+    "TutorMoves": [
+      "MOVE_DEFOG",
+      "MOVE_HEAT_WAVE",
+      "MOVE_HYPER_VOICE",
+      "MOVE_ROLE_PLAY",
+      "MOVE_SKY_ATTACK",
+      "MOVE_SNORE",
+      "MOVE_TAILWIND",
+      "MOVE_UPROAR"
+    ]
+  },
   "SPIRITOMB": {
     "LevelMoves": [
       {

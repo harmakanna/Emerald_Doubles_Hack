@@ -2805,10 +2805,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
                 // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
-                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM02_FLY, 1))
+                if (sFieldMoves[j] != MOVE_FLY || !CheckBagHasItem(ITEM_HM_FLY, 1))
                     {
                     // If Mon already knows FLASH and the HM is in the bag, prevent it from being added to action list
-                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM05_FLASH, 1)){
+                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM_FLASH, 1)){
                         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                     }
                 }
@@ -2818,10 +2818,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     }
 
     // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
-    if (sPartyMenuInternal->numActions < 5 && CanTeachMove(&mons[slotId], ITEM_HM02 - ITEM_TM01) && CheckBagHasItem(ITEM_HM02_FLY, 1))
+    if (sPartyMenuInternal->numActions < 5 && CanTeachMove(&mons[slotId], ITEM_HM02 - ITEM_TM01) && CheckBagHasItem(ITEM_HM_FLY, 1))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
     // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
-    if (sPartyMenuInternal->numActions < 5 && CanTeachMove(&mons[slotId], ITEM_HM05 - ITEM_TM01) && CheckBagHasItem(ITEM_HM05_FLASH, 1))
+    if (sPartyMenuInternal->numActions < 5 && CanTeachMove(&mons[slotId], ITEM_HM05 - ITEM_TM01) && CheckBagHasItem(ITEM_HM_FLASH, 1))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
 
     if (!InBattlePike())
@@ -5594,6 +5594,37 @@ static void UNUSED DisplayExpPoints(u8 taskId, TaskFunc task, u8 holdEffectParam
     gTasks[taskId].func = task;
 }
 
+u32 GetCommonCandyMax(void)
+{
+    static const u32 sCommonCandyFlagMap[][2] =
+    {
+        {FLAG_SYS_ENABLE_PC_FROM_MENU, 10}, //Acts as a default case as this flag is enabled when you receive your first Pokemon.
+        {FLAG_BADGE01_GET, 13},
+        {FLAG_BADGE02_GET, 17},
+        {FLAG_BADGE03_GET, 23},
+        {FLAG_BADGE04_GET, 29},
+        {FLAG_BADGE05_GET, 31},
+        {FLAG_BADGE06_GET, 35},
+        {FLAG_BADGE07_GET, 46},
+        {FLAG_BADGE08_GET, 51},
+        {FLAG_IS_CHAMPION, 65},
+    };
+
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sCommonCandyFlagMap); i++)
+    {
+            if (!FlagGet(sCommonCandyFlagMap[i][0]))
+            {
+                if(i == 0) //Failsafe to prevent potential crashes from netagive array index
+                    return sCommonCandyFlagMap[0][1];
+                return sCommonCandyFlagMap[i-1][1];
+            }
+    }
+
+    return MAX_LEVEL;
+}
+
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
@@ -5602,13 +5633,21 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     u16 *itemPtr = &gSpecialVar_ItemId;
     bool8 cannotUseEffect;
     u8 holdEffectParam = ItemId_GetHoldEffectParam(*itemPtr);
+    u32 commonCandyMax = GetCommonCandyMax();
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
     if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
     {
-        BufferMonStatsToTaskData(mon, arrayPtr);
-        cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
-        BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
+        if(holdEffectParam == LEVEL_CANDY && !(sInitialLevel < commonCandyMax))
+        {
+            cannotUseEffect = TRUE;
+        }
+        else
+        {
+            BufferMonStatsToTaskData(mon, arrayPtr);
+            cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
+            BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
+        }
     }
     else
     {
@@ -5624,7 +5663,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         sInitialLevel = 0;
         sFinalLevel = 0;
 
-        if (holdEffectParam == 0)
+        if (holdEffectParam == 0 || holdEffectParam == LEVEL_CANDY)
         {
             targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
             if (targetSpecies == SPECIES_NONE)
@@ -5660,7 +5699,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         if (sFinalLevel > sInitialLevel)
         {
             PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
-            if (holdEffectParam == 0) // Rare Candy
+            if (holdEffectParam == 0 || holdEffectParam == LEVEL_CANDY) // Rare Candy and Level Candy
             {
                 ConvertIntToDecimalStringN(gStringVar2, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
                 StringExpandPlaceholders(gStringVar4, gText_PkmnElevatedToLvVar2);

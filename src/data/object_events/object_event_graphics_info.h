@@ -4682,7 +4682,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee = {
     .paletteSlot = PALSLOT_NPC_SPECIAL,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
-    .disableReflectionPaletteLoad = FALSE,
+    .compressed = FALSE,
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
@@ -4690,6 +4690,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee = {
     .images = sPicTable_Eevee,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regidrago = {TAG_NONE, OBJ_EVENT_PAL_TAG_NPC_1, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 5, SHADOW_SIZE_M, TRUE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard, sPicTable_Regi, gDummySpriteAffineAnimTable};
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regieleki = {TAG_NONE, OBJ_EVENT_PAL_TAG_HO_OH, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 5, SHADOW_SIZE_M, TRUE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard, sPicTable_Regi, gDummySpriteAffineAnimTable};
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regigigas = {TAG_NONE, OBJ_EVENT_PAL_TAG_TRUCK, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 5, SHADOW_SIZE_M, TRUE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Standard, sPicTable_Regi, gDummySpriteAffineAnimTable};

@@ -3941,7 +3941,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                 u8 param = ItemId_GetHoldEffectParam(item);
                 dataUnsigned = 0;
 
-                if (param == 0) // Rare Candy
+                if (param == 0 || param == LEVEL_CANDY) // Rare Candy
                 {
                     dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + 1];
                 }
@@ -4968,35 +4968,35 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 break;
             case EVO_JOLTEON_FORCED:
                 if (evolutionItem == EVO_JOLTEON_FORCED)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_VAPOREON_FORCED:
                 if (evolutionItem == EVO_VAPOREON_FORCED)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_FLAREON_FORCED:
                 if (evolutionItem == EVO_FLAREON_FORCED)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_ESPEON_FORCED:
                 if (evolutionItem == EVO_ESPEON_FORCED)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_UMBREON_FORCED:
                 if (evolutionItem == EVO_UMBREON_FORCED)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_LEAFEON_FORCED:
                 if (evolutionItem == EVO_LEAFEON_FORCED)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_GLACEON_FORCED:
                 if (evolutionItem == EVO_GLACEON_FORCED)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_SYLVEON_FORCED:
                 if (evolutionItem == EVO_SYLVEON_FORCED)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    targetSpecies = evolutions[i].targetSpecies;
                 break;
             }
         }
@@ -6002,12 +6002,12 @@ const u32 *GetMonSpritePalFromSpecies(u16 species, bool32 isShiny, bool32 isFema
 
 bool8 IsMoveHM(u16 move)
 {
-    int i = 0;
+    //int i = 0;
 
-    if (P_CAN_FORGET_HIDDEN_MOVE)
-        return FALSE;
+    //if (P_CAN_FORGET_HIDDEN_MOVE)
+    //    return FALSE;
 
-    while (sHMMoves[i] != HM_MOVES_END)
+    /*while (sHMMoves[i] != HM_MOVES_END)
     {
         if (sHMMoves[i++] == move)
             return TRUE;

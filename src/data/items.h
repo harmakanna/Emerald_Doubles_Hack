@@ -2032,112 +2032,23 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_DynamaxCandy,
     },
 
-    [ITEM_CANDY_GYM_1] =
+    [ITEM_COMMON_CANDY] =
     {
-        .name = _("Rare Candy"),
-        .itemId = ITEM_CANDY_GYM_1,
+        .name = _("Common Candy"),
+        .pluralName = _("Common Candies"),
         .price = 25,
-        .description = sRareCandyDesc,
+        .holdEffectParam = LEVEL_CANDY,
+        .description = COMPOUND_STRING(
+            "Levels a Pokémon\n"
+            "by one up to the\n"
+            "candy's cap."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
         .flingPower = 30,
-    },
-
-    [ITEM_CANDY_GYM_2] =
-    {
-        .name = _("Rare Candy"),
-        .itemId = ITEM_CANDY_GYM_2,
-        .price = 25,
-        .description = sRareCandyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .flingPower = 30,
-    },
-
-    [ITEM_CANDY_GYM_3] =
-    {
-        .name = _("Rare Candy"),
-        .itemId = ITEM_CANDY_GYM_3,
-        .price = 25,
-        .description = sRareCandyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .flingPower = 30,
-    },
-
-    [ITEM_CANDY_GYM_4] =
-    {
-        .name = _("Rare Candy"),
-        .itemId = ITEM_CANDY_GYM_4,
-        .price = 25,
-        .description = sRareCandyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .flingPower = 30,
-    },
-
-    [ITEM_CANDY_GYM_5] =
-    {
-        .name = _("Rare Candy"),
-        .itemId = ITEM_CANDY_GYM_5,
-        .price = 25,
-        .description = sRareCandyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .flingPower = 30,
-    },
-
-    [ITEM_CANDY_GYM_6] =
-    {
-        .name = _("Rare Candy"),
-        .itemId = ITEM_CANDY_GYM_6,
-        .price = 25,
-        .description = sRareCandyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .flingPower = 30,
-    },
-
-    [ITEM_CANDY_CRATERCREST] =
-    {
-        .name = _("Rare Candy"),
-        .itemId = ITEM_CANDY_CRATERCREST,
-        .price = 25,
-        .description = sRareCandyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .flingPower = 30,
-    },
-
-    [ITEM_CANDY_GYM_7] =
-    {
-        .name = _("Rare Candy"),
-        .itemId = ITEM_CANDY_GYM_7,
-        .price = 25,
-        .description = sRareCandyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .flingPower = 30,
-    },
-
-    [ITEM_CANDY_GYM_8] =
-    {
-        .name = _("Rare Candy"),
-        .itemId = ITEM_CANDY_GYM_8,
-        .price = 25,
-        .description = sRareCandyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
-        .flingPower = 30,
+        .iconPic = gItemIcon_RareCandy,
+        .iconPalette = gItemIconPalette_RareCandy,
     },
 
 // Medicinal Flutes
@@ -4066,13 +3977,15 @@ const struct Item gItemsInfo[] =
     [ITEM_MEGA_STONE] =
     {
         .name = _("Mega Stone"),
-        .itemId = ITEM_MEGA_STONE,
-        .price = 5000,
-        .description = sMegaStoneDesc,
+        .price = (I_PRICE >= GEN_7) ? 5000 : 4200,
+        .description = sEvolutionStoneDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
+        .iconPic = gItemIcon_MegaStone,
+        .iconPalette = gItemIconPalette_MegaStone,
     },
 
     [ITEM_SWEET_APPLE] =
@@ -8317,20 +8230,20 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Exp. Share"),
         .holdEffect = HOLD_EFFECT_EXP_SHARE,
-        #if I_EXP_SHARE_ITEM >= GEN_6
+        //#if I_EXP_SHARE_ITEM >= GEN_6
             .price = 0,
             .description = COMPOUND_STRING(
                 "This device gives\n"
                 "exp. to other\n"
                 "party members."),
-        #else
+        /*#else
             .price = 3000,
             .description = COMPOUND_STRING(
                 "A hold item that\n"
                 "gets Exp. points\n"
                 "from battles."),
-        #endif
-        .pocket = I_EXP_SHARE_ITEM >= GEN_6 ? POCKET_KEY_ITEMS : POCKET_ITEMS,
+        #endif*/
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_ExpShare,
         .flingPower = 30,
@@ -14194,10 +14107,12 @@ const struct Item gItemsInfo[] =
     [ITEM_EXP_HOLD] =
     {
         .name = _("Exp. Hold"),
-        .itemId = ITEM_EXP_HOLD,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_EXP_SHARE,
-        .description = sExpShareDesc,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "gets Exp. points\n"
+            "from battles."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

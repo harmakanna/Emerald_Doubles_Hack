@@ -7911,7 +7911,184 @@
       "MOVE_SWAGGER"
     ]
   },
+  "SEEL_HOENNIAN": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_HEADBUTT"
+      },
+      {
+        "Level": 9,
+        "Move": "MOVE_GROWL"
+      },
+      {
+        "Level": 17,
+        "Move": "MOVE_ICY_WIND"
+      },
+      {
+        "Level": 21,
+        "Move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "Level": 29,
+        "Move": "MOVE_REST"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "Level": 41,
+        "Move": "MOVE_ICE_BEAM"
+      },
+      {
+        "Level": 49,
+        "Move": "MOVE_SAFEGUARD"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_WATER_PULSE",
+      "MOVE_TOXIC",
+      "MOVE_HAIL",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
+      "MOVE_PROTECT",
+      "MOVE_RAIN_DANCE",
+      "MOVE_SAFEGUARD",
+      "MOVE_FRUSTRATION",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_THIEF",
+      "MOVE_SURF",
+      "MOVE_WATERFALL",
+      "MOVE_DIVE"
+    ],
+    "EggMoves": [
+      "MOVE_DISABLE",
+      "MOVE_ENCORE",
+      "MOVE_FAKE_OUT",
+      "MOVE_HORN_DRILL",
+      "MOVE_ICICLE_SPEAR",
+      "MOVE_LICK",
+      "MOVE_PERISH_SONG",
+      "MOVE_SLAM"
+    ],
+    "TutorMoves": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_ENDURE",
+      "MOVE_ICY_WIND",
+      "MOVE_MIMIC",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SNORE",
+      "MOVE_SUBSTITUTE",
+      "MOVE_SWAGGER"
+    ]
+  },
   "DEWGONG": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_HEADBUTT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_GROWL"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ICY_WIND"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "Level": 9,
+        "Move": "MOVE_GROWL"
+      },
+      {
+        "Level": 17,
+        "Move": "MOVE_ICY_WIND"
+      },
+      {
+        "Level": 21,
+        "Move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "Level": 29,
+        "Move": "MOVE_REST"
+      },
+      {
+        "Level": 34,
+        "Move": "MOVE_SHEER_COLD"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "Level": 51,
+        "Move": "MOVE_ICE_BEAM"
+      },
+      {
+        "Level": 64,
+        "Move": "MOVE_SAFEGUARD"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_WATER_PULSE",
+      "MOVE_TOXIC",
+      "MOVE_HAIL",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
+      "MOVE_HYPER_BEAM",
+      "MOVE_PROTECT",
+      "MOVE_RAIN_DANCE",
+      "MOVE_SAFEGUARD",
+      "MOVE_FRUSTRATION",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_THIEF",
+      "MOVE_SURF",
+      "MOVE_WATERFALL",
+      "MOVE_DIVE"
+    ],
+    "EggMoves": [
+      "MOVE_DISABLE",
+      "MOVE_ENCORE",
+      "MOVE_FAKE_OUT",
+      "MOVE_HORN_DRILL",
+      "MOVE_ICICLE_SPEAR",
+      "MOVE_LICK",
+      "MOVE_PERISH_SONG",
+      "MOVE_SLAM"
+    ],
+    "TutorMoves": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_ENDURE",
+      "MOVE_ICY_WIND",
+      "MOVE_MIMIC",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SNORE",
+      "MOVE_SUBSTITUTE",
+      "MOVE_SWAGGER"
+    ]
+  },
+  "DEWGONG_HOENNIAN": {
     "LevelMoves": [
       {
         "Level": 1,

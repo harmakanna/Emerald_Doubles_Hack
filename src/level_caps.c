@@ -4,20 +4,19 @@
 #include "level_caps.h"
 #include "pokemon.h"
 
-
 u32 GetCurrentLevelCap(void)
 {
     static const u32 sLevelCapFlagMap[][2] =
     {
-        {FLAG_BADGE01_GET, 15},
-        {FLAG_BADGE02_GET, 19},
-        {FLAG_BADGE03_GET, 24},
+        {FLAG_BADGE01_GET, 13},
+        {FLAG_BADGE02_GET, 17},
+        {FLAG_BADGE03_GET, 23},
         {FLAG_BADGE04_GET, 29},
         {FLAG_BADGE05_GET, 31},
-        {FLAG_BADGE06_GET, 33},
-        {FLAG_BADGE07_GET, 42},
-        {FLAG_BADGE08_GET, 46},
-        {FLAG_IS_CHAMPION, 58},
+        {FLAG_BADGE06_GET, 35},
+        {FLAG_BADGE07_GET, 46},
+        {FLAG_BADGE08_GET, 51},
+        {FLAG_IS_CHAMPION, 65},
     };
 
     u32 i;

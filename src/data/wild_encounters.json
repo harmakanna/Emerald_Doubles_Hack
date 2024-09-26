@@ -11224,7 +11224,7 @@
               {
                 "min_level": 44,
                 "max_level": 44,
-                "species": "SPECIES_PHIONE"
+                "species": "SPECIES_PHIONE_HOENNIAN"
               },
               {
                 "min_level": 45,
@@ -11412,7 +11412,7 @@
               {
                 "min_level": 44,
                 "max_level": 44,
-                "species": "SPECIES_PHIONE"
+                "species": "SPECIES_PHIONE_HOENNIAN"
               },
               {
                 "min_level": 45,
@@ -11486,7 +11486,7 @@
               {
                 "min_level": 46,
                 "max_level": 46,
-                "species": "SPECIES_PHIONE"
+                "species": "SPECIES_PHIONE_HOENNIAN"
               },
               {
                 "min_level": 46,

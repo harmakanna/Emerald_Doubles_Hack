@@ -615,6 +615,7 @@ struct BattleStruct
     u16 wrappedMove[MAX_BATTLERS_COUNT];
     u16 moveTarget[MAX_BATTLERS_COUNT];
     u32 expShareExpValue;
+    u32 expHoldExpValue;
     u32 expValue;
     u8 expGettersOrder[PARTY_SIZE]; // First battlers which were sent out, then via exp-share
     u8 expGetterMonId;
@@ -801,10 +802,8 @@ struct BattleStruct
     u8 categoryOverride; // for Z-Moves and Max Moves
     u32 stellarBoostFlags[NUM_BATTLE_SIDES]; // stored as a bitfield of flags for all types for each side
     u8 fickleBeamBoosted:1;
-    u32 storedBasePartyExp;
-    u32 checkGainedPartyExp;
-    u32 checkShouldGainPartyExp;
-    u8 pokemonGainedExpCount;
+    u8 obedienceResult:3;
+    u8 usedMicleBerry;
 };
 
 // The palaceFlags member of struct BattleStruct contains 1 flag per move to indicate which moves the AI should consider,
@@ -1094,9 +1093,6 @@ extern u16 gBattleWeather;
 extern struct WishFutureKnock gWishFutureKnock;
 extern u16 gIntroSlideFlags;
 extern u8 gSentPokesToOpponent[2];
-extern u16 gExpShareExp;
-extern u16 gExpHoldExp;
-extern bool8 gExpShareCheck;
 extern struct BattleEnigmaBerry gEnigmaBerries[MAX_BATTLERS_COUNT];
 extern struct BattleScripting gBattleScripting;
 extern struct BattleStruct *gBattleStruct;

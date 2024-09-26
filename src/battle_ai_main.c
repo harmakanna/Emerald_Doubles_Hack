@@ -522,7 +522,7 @@ static bool32 AI_ShouldSwitchIfBadMoves(u32 battler, bool32 doubleBattle)
 {
     u32 i, j;
     // If can switch.
-    if (!(AI_THINKING_STRUCT->aiFlags & (AI_FLAG_DO_NOT_SWITCH | AI_FLAG_PRESERVE_ORDER))
+    if (!(AI_THINKING_STRUCT->aiFlags[battler] & (AI_FLAG_DO_NOT_SWITCH | AI_FLAG_PRESERVE_ORDER))
         && CountUsablePartyMons(battler) > 0
         && !IsBattlerTrapped(battler, TRUE)
         && !(gBattleTypeFlags & (BATTLE_TYPE_ARENA | BATTLE_TYPE_PALACE))
@@ -1032,7 +1032,6 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     if (IsAromaVeilProtectedMove(move))
                         RETURN_SCORE_MINUS(10);
                     break;
-                case ABILITY_ARMOR_TAIL:
                 case ABILITY_DAZZLING:
                 case ABILITY_QUEENLY_MAJESTY:
                 case ABILITY_ARMOR_TAIL:
@@ -5093,6 +5092,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 
             if (AI_DATA->hpPercents[battlerDef] <= 50 || AI_DATA->hpPercents[battlerAtk] <= 50)
                 ADJUST_SCORE(WEAK_EFFECT);
+        }
     }
     else
     {

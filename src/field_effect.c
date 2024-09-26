@@ -107,14 +107,14 @@ static bool8 EscalatorWarpIn_End(struct Task *);
 
 static void Task_UseWaterfall(u8);
 static bool8 WaterfallFieldEffect_Init(struct Task *, struct ObjectEvent *);
-static bool8 WaterfallFieldEffect_ShowMon(struct Task *, struct ObjectEvent *);
-static bool8 WaterfallFieldEffect_WaitForShowMon(struct Task *, struct ObjectEvent *);
+//static bool8 WaterfallFieldEffect_ShowMon(struct Task *, struct ObjectEvent *);
+//static bool8 WaterfallFieldEffect_WaitForShowMon(struct Task *, struct ObjectEvent *);
 static bool8 WaterfallFieldEffect_RideUp(struct Task *, struct ObjectEvent *);
 static bool8 WaterfallFieldEffect_ContinueRideOrEnd(struct Task *, struct ObjectEvent *);
 
 static void Task_UseDive(u8);
 static bool8 DiveFieldEffect_Init(struct Task *);
-static bool8 DiveFieldEffect_ShowMon(struct Task *);
+//static bool8 DiveFieldEffect_ShowMon(struct Task *);
 static bool8 DiveFieldEffect_TryWarp(struct Task *);
 
 static void Task_LavaridgeGymB1FWarp(u8);
@@ -173,16 +173,16 @@ static void LoadFieldMoveOutdoorStreaksTilemap(u16);
 
 static void Task_FieldMoveShowMonIndoors(u8);
 static void FieldMoveShowMonIndoorsEffect_Init(struct Task *);
-static void FieldMoveShowMonIndoorsEffect_LoadGfx(struct Task *);
-static void FieldMoveShowMonIndoorsEffect_SlideBannerOn(struct Task *);
-static void FieldMoveShowMonIndoorsEffect_WaitForMon(struct Task *);
-static void FieldMoveShowMonIndoorsEffect_RestoreBg(struct Task *);
-static void FieldMoveShowMonIndoorsEffect_SlideBannerOff(struct Task *);
+//static void FieldMoveShowMonIndoorsEffect_LoadGfx(struct Task *);
+//static void FieldMoveShowMonIndoorsEffect_SlideBannerOn(struct Task *);
+//static void FieldMoveShowMonIndoorsEffect_WaitForMon(struct Task *);
+//static void FieldMoveShowMonIndoorsEffect_RestoreBg(struct Task *);
+//static void FieldMoveShowMonIndoorsEffect_SlideBannerOff(struct Task *);
 static void FieldMoveShowMonIndoorsEffect_End(struct Task *);
 static void VBlankCB_FieldMoveShowMonIndoors(void);
-static void AnimateIndoorShowMonBg(struct Task *);
-static bool8 SlideIndoorBannerOnscreen(struct Task *);
-static bool8 SlideIndoorBannerOffscreen(struct Task *);
+//static void AnimateIndoorShowMonBg(struct Task *);
+//static bool8 SlideIndoorBannerOnscreen(struct Task *);
+//static bool8 SlideIndoorBannerOffscreen(struct Task *);
 
 static u8 InitFieldMoveMonSprite(u32, bool8, u32);
 static void SpriteCB_FieldMoveMonSlideOnscreen(struct Sprite *);
@@ -191,8 +191,8 @@ static void SpriteCB_FieldMoveMonSlideOffscreen(struct Sprite *);
 
 static void Task_SurfFieldEffect(u8);
 static void SurfFieldEffect_Init(struct Task *);
-static void SurfFieldEffect_FieldMovePose(struct Task *);
-static void SurfFieldEffect_ShowMon(struct Task *);
+//static void SurfFieldEffect_FieldMovePose(struct Task *);
+//static void SurfFieldEffect_ShowMon(struct Task *);
 static void SurfFieldEffect_JumpOnSurfBlob(struct Task *);
 static void SurfFieldEffect_End(struct Task *);
 
@@ -1863,7 +1863,7 @@ static bool8 WaterfallFieldEffect_Init(struct Task *task, struct ObjectEvent *ob
     return FALSE;
 }
 
-static bool8 WaterfallFieldEffect_ShowMon(struct Task *task, struct ObjectEvent *objectEvent)
+/*static bool8 WaterfallFieldEffect_ShowMon(struct Task *task, struct ObjectEvent *objectEvent)
 {
     LockPlayerFieldControls();
     if (!ObjectEventIsMovementOverridden(objectEvent))
@@ -1874,9 +1874,9 @@ static bool8 WaterfallFieldEffect_ShowMon(struct Task *task, struct ObjectEvent 
         task->tState++;
     }
     return FALSE;
-}
+}*/
 
-static bool8 WaterfallFieldEffect_WaitForShowMon(struct Task *task, struct ObjectEvent *objectEvent)
+/*static bool8 WaterfallFieldEffect_WaitForShowMon(struct Task *task, struct ObjectEvent *objectEvent)
 {
     if (FieldEffectActiveListContains(FLDEFF_FIELD_MOVE_SHOW_MON))
     {
@@ -1884,7 +1884,7 @@ static bool8 WaterfallFieldEffect_WaitForShowMon(struct Task *task, struct Objec
     }
     task->tState++;
     return TRUE;
-}
+}*/
 
 static bool8 WaterfallFieldEffect_RideUp(struct Task *task, struct ObjectEvent *objectEvent)
 {
@@ -1937,14 +1937,14 @@ static bool8 DiveFieldEffect_Init(struct Task *task)
     return FALSE;
 }
 
-static bool8 DiveFieldEffect_ShowMon(struct Task *task)
+/*static bool8 DiveFieldEffect_ShowMon(struct Task *task)
 {
     LockPlayerFieldControls();
     gFieldEffectArguments[0] = task->data[15];
     FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
     task->data[0]++;
     return FALSE;
-}
+}*/
 
 static bool8 DiveFieldEffect_TryWarp(struct Task *task)
 {
@@ -2804,7 +2804,7 @@ static void FieldMoveShowMonIndoorsEffect_Init(struct Task *task)
     task->tState++;
 }
 
-static void FieldMoveShowMonIndoorsEffect_LoadGfx(struct Task *task)
+/*static void FieldMoveShowMonIndoorsEffect_LoadGfx(struct Task *task)
 {
     u16 offset;
     u16 delta;
@@ -2815,9 +2815,9 @@ static void FieldMoveShowMonIndoorsEffect_LoadGfx(struct Task *task)
     CpuFill32(0, (void *)(VRAM + delta), 0x800);
     LoadPalette(sFieldMoveStreaksIndoors_Pal, BG_PLTT_ID(15), sizeof(sFieldMoveStreaksIndoors_Pal));
     task->tState++;
-}
+}*/
 
-static void FieldMoveShowMonIndoorsEffect_SlideBannerOn(struct Task *task)
+/*static void FieldMoveShowMonIndoorsEffect_SlideBannerOn(struct Task *task)
 {
     if (SlideIndoorBannerOnscreen(task))
     {
@@ -2827,16 +2827,16 @@ static void FieldMoveShowMonIndoorsEffect_SlideBannerOn(struct Task *task)
         task->tState++;
     }
     AnimateIndoorShowMonBg(task);
-}
+}*/
 
-static void FieldMoveShowMonIndoorsEffect_WaitForMon(struct Task *task)
+/*static void FieldMoveShowMonIndoorsEffect_WaitForMon(struct Task *task)
 {
     AnimateIndoorShowMonBg(task);
     if (gSprites[task->tMonSpriteId].sSlidOffscreen)
         task->tState++;
-}
+}*/
 
-static void FieldMoveShowMonIndoorsEffect_RestoreBg(struct Task *task)
+/*static void FieldMoveShowMonIndoorsEffect_RestoreBg(struct Task *task)
 {
     AnimateIndoorShowMonBg(task);
     task->tBgOffsetIdx = task->tBgHoriz & 7;
@@ -2844,14 +2844,14 @@ static void FieldMoveShowMonIndoorsEffect_RestoreBg(struct Task *task)
     SetGpuReg(REG_OFFSET_WIN1H, WIN_RANGE(0xFF, 0xFF));
     SetGpuReg(REG_OFFSET_WIN1V, WIN_RANGE(0xFF, 0xFF));
     task->tState++;
-}
+}*/
 
-static void FieldMoveShowMonIndoorsEffect_SlideBannerOff(struct Task *task)
+/*static void FieldMoveShowMonIndoorsEffect_SlideBannerOff(struct Task *task)
 {
     AnimateIndoorShowMonBg(task);
     if (SlideIndoorBannerOffscreen(task))
         task->tState++;
-}
+}*/
 
 static void FieldMoveShowMonIndoorsEffect_End(struct Task *task)
 {
@@ -2878,13 +2878,13 @@ static void VBlankCB_FieldMoveShowMonIndoors(void)
     SetGpuReg(REG_OFFSET_BG0VOFS, task->tBgVert);
 }
 
-static void AnimateIndoorShowMonBg(struct Task *task)
+/*static void AnimateIndoorShowMonBg(struct Task *task)
 {
     task->tBgHoriz -= 16;
     task->tBgOffsetIdx += 16;
-}
+}*/
 
-static bool8 SlideIndoorBannerOnscreen(struct Task *task)
+/*static bool8 SlideIndoorBannerOnscreen(struct Task *task)
 {
     u16 i;
     u16 srcOffs;
@@ -2911,9 +2911,9 @@ static bool8 SlideIndoorBannerOnscreen(struct Task *task)
         task->tBgOffset += 2;
     }
     return FALSE;
-}
+}*/
 
-static bool8 SlideIndoorBannerOffscreen(struct Task *task)
+/*static bool8 SlideIndoorBannerOffscreen(struct Task *task)
 {
     u16 i;
     u16 dstOffs;
@@ -2935,7 +2935,7 @@ static bool8 SlideIndoorBannerOffscreen(struct Task *task)
         task->tBgOffset += 2;
     }
     return FALSE;
-}
+}*/
 
 #undef tState
 #undef tBgHoriz
@@ -3034,7 +3034,7 @@ static void SurfFieldEffect_Init(struct Task *task)
     task->tState++;
 }
 
-static void SurfFieldEffect_FieldMovePose(struct Task *task)
+/*static void SurfFieldEffect_FieldMovePose(struct Task *task)
 {
     struct ObjectEvent *objectEvent;
     objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
@@ -3044,9 +3044,9 @@ static void SurfFieldEffect_FieldMovePose(struct Task *task)
         ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
         task->tState++;
     }
-}
+}*/
 
-static void SurfFieldEffect_ShowMon(struct Task *task)
+/*static void SurfFieldEffect_ShowMon(struct Task *task)
 {
     struct ObjectEvent *objectEvent;
     objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
@@ -3056,7 +3056,7 @@ static void SurfFieldEffect_ShowMon(struct Task *task)
         FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
         task->tState++;
     }
-}
+}*/
 
 static void SurfFieldEffect_JumpOnSurfBlob(struct Task *task)
 {

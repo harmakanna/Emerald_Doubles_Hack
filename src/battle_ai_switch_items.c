@@ -1024,7 +1024,7 @@ bool32 ShouldSwitch(u32 battler, bool32 emitResult)
 
     availableToSwitch = 0;
 
-    if (!(gBattleResources->ai->aiFlags & (AI_FLAG_DO_NOT_SWITCH | AI_FLAG_PRESERVE_ORDER)))
+    if (AI_THINKING_STRUCT->aiFlags[battler] & (AI_FLAG_DO_NOT_SWITCH | AI_FLAG_PRESERVE_ORDER))
     {
         battlerIn1 = battler;
         if (gAbsentBattlerFlags & gBitTable[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))])
@@ -1285,8 +1285,7 @@ static u32 GetBestMonTypeMatchup(struct Pokemon *party, int firstId, int lastId,
 
 static u32 GetPreservedOrderMon(struct Pokemon *party, int firstId, int lastId, u8 invalidMons, u32 opposingBattler)
 {
-    int i, j;
-    int bestDmg = 0;
+    int i;
     int bestMonId = PARTY_SIZE;
 
     for (i = firstId; i < lastId; i++)

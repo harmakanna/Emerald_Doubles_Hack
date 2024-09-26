@@ -273,8 +273,10 @@ bool8 ShouldDoBrailleRegidragoEffect(void)
         return TRUE;
     }
   }
+  return FALSE;
 }
 
+//This puzzle requires you to use Fly at the entrance tile of the den.
 void SetUpPuzzleEffectRegidrago(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
@@ -284,7 +286,7 @@ void SetUpPuzzleEffectRegidrago(void)
 void UseRegidragoHm_Callback(void)
 {
     FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
-    DoBrailleRegisteelEffect();
+    DoBrailleRegidragoEffect();
 }
 
 void DoBrailleRegidragoEffect(void)
@@ -327,6 +329,7 @@ bool8 ShouldDoBrailleRegielekiPuzzle(void)
     return FALSE;
 }
 
+//This puzzle requires you to ues a fishing rod on one of the three braille tiles. This is handled with the item use case rather than in this file/
 void SetUpPuzzleEffectRegieleki(void)
 {
     //gFieldEffectArguments[0] = ItemId_GetSecondaryId(gSpecialVar_ItemId);
@@ -450,6 +453,7 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
     return FALSE;
 }
 
+//This braille puzzle is meant to check that you have all five Regis captured prior to allowing entrance into the Decrepit Castle.
 bool8 BrailleDecrepitCastleCheck(void)
 {
   int i, regiCount[5] = {0, 0, 0, 0, 0};

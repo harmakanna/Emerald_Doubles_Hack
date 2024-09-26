@@ -871,10 +871,10 @@ static bool8 StartMenuBattlePyramidBagCallback(void)
     return FALSE;
 }
 
-static bool8 PCStartCallback(void)
+/*static bool8 PCStartCallback(void)
 {
     return FALSE;
-}
+}*/
 
 static bool8 SaveStartCallback(void)
 {

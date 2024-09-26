@@ -4210,7 +4210,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             .effect = EFFECT_RECOIL_HP_25,
             .accuracy = 0,
             .mirrorMoveBanned = TRUE,
-            .additionalEffects = ADDITIONAL_EFFECTS({
+            .additionalEffects = ADDITIONAL_EFFECTS(
+            {
                 .moveEffect = MOVE_EFFECT_RECOIL_HP_25,
                 .self = TRUE,
             }),
@@ -5671,7 +5672,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .punchingMove = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
+        .additionalEffects = ADDITIONAL_EFFECTS(
+        {
             .moveEffect = MOVE_EFFECT_CONFUSION,
             .chance = 100,
         }),
@@ -5817,7 +5819,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
+        .additionalEffects = ADDITIONAL_EFFECTS(
+        {
             .moveEffect = MOVE_EFFECT_RAPID_SPIN,
             .self = TRUE,
         }
@@ -5874,7 +5877,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
+        .additionalEffects = ADDITIONAL_EFFECTS(
+        {
             .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
             .chance = 30,
         }),
@@ -16141,7 +16145,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "Dances with mystical power.\n"
             "Matches user's first type."),
         .effect = EFFECT_REVELATION_DANCE,
-        .power = 90,
+        .power = 100,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
@@ -20667,6 +20671,98 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             .chance = 50,
         }),
         .battleAnimScript = Move_MALIGNANT_CHAIN,
+    },
+
+    [MOVE_ROMP] =
+    {
+        .name = COMPOUND_STRING("Tackle"),
+        .description = COMPOUND_STRING(
+            "Cutely pounces the foe with a\n"
+            "a full body tackle."),
+        .power = 40,
+        .effect = EFFECT_HIT,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_DEFENSE_CURL, COMBO_STARTER_HARDEN, COMBO_STARTER_LEER},
+        .battleAnimScript = Move_ROMP,
+    },
+
+    [MOVE_SOUL_DANCE] =
+    {
+        .name = COMPOUND_STRING("Soul Dance"),
+        .description = COMPOUND_STRING(
+            "A hypnotizing dance that may\n"
+            "confuse the foe."),
+        .effect = EFFECT_HIT,
+        .power = 95,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = Move_SOUL_DANCE,
+    },
+
+    [MOVE_GLACIER_SMASH] =
+    {
+        .name = HANDLE_EXPANDED_MOVE_NAME("GlacierSmash", "Glacier Smash"),
+        .description = COMPOUND_STRING(
+            "A charge with the force to\n"
+            "smash a glacier. Causes recoil."),
+        .effect = EFFECT_HIT,
+        .power = 120,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .recoil = 33,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_HAIL},
+        .battleAnimScript = Move_GLACIER_SMASH,
+    },
+
+    [MOVE_REHEARSAL] =
+    {
+        .name = COMPOUND_STRING("Rehearsal"),
+        .description = COMPOUND_STRING(
+            "Practices for a performance.\n"
+            "Matches user's first type."),
+        .effect = EFFECT_REVELATION_DANCE,
+        .power = 65,
+        .type = TYPE_NORMAL,
+        .accuracy = 95,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .danceMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = Move_REVELATION_DANCE,
     },
 
     // Z-Moves

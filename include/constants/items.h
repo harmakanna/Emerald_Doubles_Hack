@@ -1003,18 +1003,10 @@
 
 //Newly added items
 #define ITEM_MEGA_STONE 828 //Used to evolve Sableye, Mawile, Sharpedo, Camerupt, Altaria, and Banette
-#define ITEM_CANDY_GYM_1 829 //Post-Roxanne
-#define ITEM_CANDY_GYM_2 830 //Post-Brawly
-#define ITEM_CANDY_GYM_3 831 //Post-Wattson
-#define ITEM_CANDY_GYM_4 832 //Post-Flannery
-#define ITEM_CANDY_GYM_5 833 //Post-Norman
-#define ITEM_CANDY_GYM_6 834 //Post-Winona
-#define ITEM_CANDY_CRATERCREST 835 //Post-Cratercrest
-#define ITEM_CANDY_GYM_7 836 //Post-Tate&Liza
-#define ITEM_CANDY_GYM_8 837 //Post-Juan
-#define ITEM_EXP_HOLD 838
+#define ITEM_COMMON_CANDY 829
+#define ITEM_EXP_HOLD 830
 
-#define ITEMS_COUNT 839
+#define ITEMS_COUNT 831
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
@@ -1064,11 +1056,12 @@
 #define ACRO_BIKE 1
 
 // Item parameters for EXP Candies
-#define EXP_100   1
-#define EXP_800   2
-#define EXP_3000  3
-#define EXP_10000 4
-#define EXP_30000 5
+#define EXP_100     1
+#define EXP_800     2
+#define EXP_3000    3
+#define EXP_10000   4
+#define EXP_30000   5
+#define LEVEL_CANDY 6
 
 // Item type IDs (used to determine the exit callback)
 #define ITEM_USE_MAIL             0

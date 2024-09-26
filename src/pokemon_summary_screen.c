@@ -233,9 +233,9 @@ static void SwapMonMoves(struct Pokemon *, u8, u8);
 static void SwapBoxMonMoves(struct BoxPokemon *, u8, u8);
 static void Task_SetHandleReplaceMoveInput(u8);
 static void Task_HandleReplaceMoveInput(u8);
-static bool8 CanReplaceMove(void);
-static void ShowCantForgetHMsWindow(u8);
-static void Task_HandleInputCantForgetHMsMoves(u8);
+//static bool8 CanReplaceMove(void);
+//static void ShowCantForgetHMsWindow(u8);
+//static void Task_HandleInputCantForgetHMsMoves(u8);
 static void DrawPagination(void);
 static void HandlePowerAccTilemap(u16, s16);
 static void Task_ShowPowerAccWindow(u8);
@@ -295,7 +295,7 @@ static void PrintMoveDetails(u16);
 static void PrintNewMoveDetailsOrCancelText(void);
 static void AddAndFillMoveNamesWindow(void);
 static void SwapMovesNamesPP(u8, u8);
-static void PrintHMMovesCantBeForgotten(void);
+//static void PrintHMMovesCantBeForgotten(void);
 static void ResetSpriteIds(void);
 static void SetSpriteInvisibility(u8, bool8);
 static void HidePageSpecificSprites(void);
@@ -320,7 +320,6 @@ static void DestroyMoveSelectorSprites(u8);
 static void SetMainMoveSelectorColor(u8);
 static void KeepMoveSelectorVisible(u8);
 static void SummaryScreen_DestroyAnimDelayTask(void);
-static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n);
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -2323,7 +2322,7 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
     }
 }
 
-static bool8 CanReplaceMove(void)
+/*static bool8 CanReplaceMove(void)
 {
     if (sMonSummaryScreen->firstMoveIndex == MAX_MON_MOVES
         || sMonSummaryScreen->newMove == MOVE_NONE)
@@ -2331,9 +2330,9 @@ static bool8 CanReplaceMove(void)
         return TRUE;
     else
         return FALSE;
-}
+}*/
 
-static void ShowCantForgetHMsWindow(u8 taskId)
+/*static void ShowCantForgetHMsWindow(u8 taskId)
 {
     ClearWindowTilemap(PSS_LABEL_WINDOW_MOVES_POWER_ACC);
     ClearWindowTilemap(PSS_LABEL_WINDOW_MOVES_APPEAL_JAM);
@@ -2343,10 +2342,10 @@ static void ShowCantForgetHMsWindow(u8 taskId)
     HandleAppealJamTilemap(0, 3, 0);
     PrintHMMovesCantBeForgotten();
     gTasks[taskId].func = Task_HandleInputCantForgetHMsMoves;
-}
+}*/
 
 // This redraws the power/accuracy window when the player scrolls out of the "HM Moves can't be forgotten" message
-static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
+/*static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     u16 move;
@@ -2409,7 +2408,7 @@ static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
             gTasks[taskId].func = Task_HandleReplaceMoveInput;
         }
     }
-}
+}*/
 
 u8 GetMoveSlotToReplace(void)
 {
@@ -3844,12 +3843,12 @@ static void SwapMovesNamesPP(u8 moveIndex1, u8 moveIndex2)
     PrintMoveNameAndPP(moveIndex2);
 }
 
-static void PrintHMMovesCantBeForgotten(void)
+/*static void PrintHMMovesCantBeForgotten(void)
 {
     u8 windowId = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_DESCRIPTION);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
     PrintTextOnWindow(windowId, gText_HMMovesCantBeForgotten2, 6, 1, 0, 0);
-}
+}*/
 
 static void ResetSpriteIds(void)
 {
@@ -4281,22 +4280,4 @@ static void KeepMoveSelectorVisible(u8 firstSpriteId)
         gSprites[spriteIds[i]].data[1] = 0;
         gSprites[spriteIds[i]].invisible = FALSE;
     }
-}
-
-static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n)
-{
-    static const u8 sTextNatureDown[] = _("{COLOR}{08}");
-    static const u8 sTextNatureUp[] = _("{COLOR}{05}");
-    static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
-    u8 *txtPtr;
-
-    if (natureMod == 0)
-        txtPtr = StringCopy(dst, sTextNatureNeutral);
-    else if (natureMod > 0)
-        txtPtr = StringCopy(dst, sTextNatureUp);
-    else
-        txtPtr = StringCopy(dst, sTextNatureDown);
-
-    ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
 }

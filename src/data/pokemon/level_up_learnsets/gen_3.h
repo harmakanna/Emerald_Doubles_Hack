@@ -9137,6 +9137,21 @@ static const struct LevelUpMove sManaphyLevelUpLearnset[] = {
     LEVEL_UP_MOVE(76, MOVE_HEART_SWAP),
     LEVEL_UP_END
 };
+
+static const struct LevelUpMove sPhioneHoennianLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_BUBBLE),
+    LEVEL_UP_MOVE( 1, MOVE_WATER_SPORT),
+    LEVEL_UP_MOVE( 9, MOVE_CHARM),
+    LEVEL_UP_MOVE(16, MOVE_SUPERSONIC),
+    LEVEL_UP_MOVE(24, MOVE_BUBBLE_BEAM),
+    LEVEL_UP_MOVE(31, MOVE_ACID_ARMOR),
+    LEVEL_UP_MOVE(39, MOVE_WHIRLPOOL),
+    LEVEL_UP_MOVE(46, MOVE_WATER_PULSE),
+    LEVEL_UP_MOVE(54, MOVE_AQUA_RING),
+    LEVEL_UP_MOVE(61, MOVE_DIVE),
+    LEVEL_UP_MOVE(69, MOVE_RAIN_DANCE),
+    LEVEL_UP_END
+};
 #endif //P_FAMILY_MANAPHY
 
 #if P_FAMILY_DARKRAI
@@ -20359,4 +20374,3 @@ static const struct LevelUpMove sPecharuntLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 #endif //P_FAMILY_PECHARUNT
-

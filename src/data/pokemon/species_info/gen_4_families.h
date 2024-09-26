@@ -2364,13 +2364,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     {
         .baseHP        = 70,
         .baseAttack    = 60,
-        .baseDefense   = 70,
-        .baseSpeed     = 85,
+        .baseDefense   = 100,
+        .baseSpeed     = 45,
         .baseSpAttack  = 87,
-        .baseSpDefense = 78,
+        .baseSpDefense = 108,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 75,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 133,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 118,
         .evYield_SpAttack = 2,
         .itemRare = ITEM_MIRACLE_SEED,
         .genderRatio = PERCENT_FEMALE(50),
@@ -2426,14 +2426,14 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_CHERRIM_SUNSHINE] =
     {
         .baseHP        = 70,
-        .baseAttack    = 60,
+        .baseAttack    = 80,
         .baseDefense   = 70,
         .baseSpeed     = 85,
         .baseSpAttack  = 87,
         .baseSpDefense = 78,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 75,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 133,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 118,
         .evYield_SpAttack = 2,
         .itemRare = ITEM_MIRACLE_SEED,
         .genderRatio = PERCENT_FEMALE(50),
@@ -3476,6 +3476,69 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sChatotTeachableLearnset,
         .eggMoveLearnset = sChatotEggMoveLearnset,
     },
+#if P_HOENNIAN_FORMS
+    [SPECIES_CHATOT_HOENNIAN] =
+    {
+        .baseHP        = 76,
+        .baseAttack    = 45,
+        .baseDefense   = 65,
+        .baseSpeed     = 101,
+        .baseSpAttack  = 107,
+        .baseSpDefense = 72,
+        .types = MON_TYPES(TYPE_DARK, TYPE_FLYING),
+        .catchRate = 60,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 144 : 125,
+        .evYield_Attack = 1,
+        .itemRare = ITEM_METRONOME,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = 35,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_PRANKSTER, ABILITY_OVERCOAT, ABILITY_PUNK_ROCK },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Chatot"),
+        .cryId = CRY_CHATOT,
+        .natDexNum = NATIONAL_DEX_CHATOT,
+        .categoryName = _("Music Note"),
+        .height = 5,
+        .weight = 19,
+        .description = COMPOUND_STRING(
+            "It mimics the cries of other Pokémon to\n"
+            "trick them into thinking it's one of them.\n"
+            "This way they won't attack it. It can\n"
+            "also learn and speak human words."),
+        .pokemonScale = 432,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Chatot,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 11,
+        .frontAnimFrames = sAnims_Chatot,
+        .frontAnimId = ANIM_V_SHAKE_TWICE,
+        .backPic = gMonBackPic_Chatot,
+        .backPicSize = MON_COORDS_SIZE(48, 48),
+        .backPicYOffset = 9,
+        .backAnimId = BACK_ANIM_V_STRETCH,
+        .palette = gMonPalette_Chatot,
+        .shinyPalette = gMonShinyPalette_Chatot,
+        .iconSprite = gMonIcon_Chatot,
+        .iconPalIndex = 0,
+        FOOTPRINT(Chatot)
+        OVERWORLD(
+            sPicTable_Chatot,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Chatot,
+            gShinyOverworldPalette_Chatot
+        )
+        .levelUpLearnset = sChatotLevelUpLearnset,
+        .teachableLearnset = sChatotTeachableLearnset,
+        .eggMoveLearnset = sChatotEggMoveLearnset,
+    },
+#endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_CHATOT
 
 #if P_FAMILY_SPIRITOMB
@@ -4260,7 +4323,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_POISON, TYPE_FIGHTING),
         .catchRate = 140,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 83,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 70,
         .evYield_Attack = 1,
         .itemRare = ITEM_BLACK_SLUDGE,
         .genderRatio = PERCENT_FEMALE(50),
@@ -4327,7 +4390,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_POISON, TYPE_FIGHTING),
         .catchRate = 75,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 172 : 181,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 172 : 132,
         .evYield_Attack = 2,
         .itemRare = ITEM_BLACK_SLUDGE,
         .genderRatio = PERCENT_FEMALE(50),
@@ -4784,7 +4847,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseSpDefense = 77,
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_GHOST),
         .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 154 : 132,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 154 : 152,
         .evYield_Speed = 1,
         .evYield_SpAttack = 1,
         .genderRatio = MON_GENDERLESS,
@@ -4843,7 +4906,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #elif P_UPDATED_EXP_YIELDS >= GEN_5
     #define ROTOM_APPLIANCE_EXP_YIELD 154
 #else
-    #define ROTOM_APPLIANCE_EXP_YIELD 132
+    #define ROTOM_APPLIANCE_EXP_YIELD 182
 #endif
 
     [SPECIES_ROTOM_HEAT] =
@@ -6070,8 +6133,6 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Phione,
             gShinyOverworldPalette_Phione
         )
-        .isMythical = TRUE,
-        .isFrontierBanned = TRUE,
         .levelUpLearnset = sPhioneLevelUpLearnset,
         .teachableLearnset = sPhioneTeachableLearnset,
     },
@@ -6144,6 +6205,76 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sManaphyLevelUpLearnset,
         .teachableLearnset = sManaphyTeachableLearnset,
     },
+#if P_HOENNIAN_FORMS
+    [SPECIES_PHIONE_HOENNIAN] =
+    {
+        .baseHP        = 90,
+        .baseAttack    = 90,
+        .baseDefense   = 80,
+        .baseSpeed     = 150,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_FLYING),
+        .catchRate = 30,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 240,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 216,
+    #else
+        .expYield = 180,
+    #endif
+        .evYield_HP = 1,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 40,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_FREE_SPIRIT, ABILITY_NONE, ABILITY_AIR_LOCK },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Phione"),
+        .cryId = CRY_PHIONE,
+        .natDexNum = NATIONAL_DEX_PHIONE,
+        .categoryName = _("Sea Drifter"),
+        .height = 4,
+        .weight = 31,
+        .description = COMPOUND_STRING(
+            "When the water warms, they inflate the\n"
+            "flotation sac on their heads and drift\n"
+            "languidly on the sea in packs.\n"
+            "It always returns to where it was born."),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Phione,
+        .frontPicSize = MON_COORDS_SIZE(56, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_Phione,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 8,
+        .backPic = gMonBackPic_Phione,
+        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = 9,
+        .backAnimId = BACK_ANIM_CONVEX_DOUBLE_ARC,
+        .palette = gMonPalette_Phione,
+        .shinyPalette = gMonShinyPalette_Phione,
+        .iconSprite = gMonIcon_Phione,
+        .iconPalIndex = 0,
+        FOOTPRINT(Phione)
+        OVERWORLD(
+            sPicTable_Phione,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Phione,
+            gShinyOverworldPalette_Phione
+        )
+        .isMythical = TRUE,
+        .isFrontierBanned = TRUE,
+        .levelUpLearnset = sPhioneLevelUpLearnset,
+        .teachableLearnset = sPhioneTeachableLearnset,
+    },
+#endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_MANAPHY
 
 #if P_FAMILY_DARKRAI

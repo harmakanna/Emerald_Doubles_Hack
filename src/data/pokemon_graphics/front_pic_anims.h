@@ -3579,7 +3579,7 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(Obstagoon);
 #endif //P_GALARIAN_FORMS
 
 #if P_HOENNIAN_FORMS
-PLACEHOLDER_ANIM_SINGLE_FRAME(ObstagoonHoennian);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Obstagoon_Hoennian);
 #endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_ZIGZAGOON
 
@@ -10266,7 +10266,7 @@ static const union AnimCmd sAnim_Egg_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_ObstagoonHoennian_1[] =
+/*static const union AnimCmd sAnim_ObstagoonHoennian_1[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
@@ -10330,7 +10330,7 @@ static const union AnimCmd sAnim_DiancieHoennian_1[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
-};
+};*/
 
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
@@ -10640,8 +10640,8 @@ SINGLE_ANIMATION(Dodrio);
 SINGLE_ANIMATION(Seel);
 SINGLE_ANIMATION(Dewgong);
 #if P_HOENNIAN_FORMS
-SINGLE_ANIMATION(SeelHoennian);
-SINGLE_ANIMATION(DewgongHoennian);
+SINGLE_ANIMATION(Seel_Hoennian);
+SINGLE_ANIMATION(Dewgong_Hoennian);
 #endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_SEEL
 #if P_FAMILY_GRIMER
@@ -11234,7 +11234,7 @@ SINGLE_ANIMATION(LinooneGalarian);
 SINGLE_ANIMATION(Obstagoon);
 #endif //P_GALARIAN_FORMS
 #if P_HOENNIAN_FORMS
-SINGLE_ANIMATION(ObstagoonHoennian);
+SINGLE_ANIMATION(Obstagoon_Hoennian);
 #endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_ZIGZAGOON
 #if P_FAMILY_WURMPLE
@@ -11670,7 +11670,7 @@ SINGLE_ANIMATION(Bronzong);
 #if P_FAMILY_CHATOT
 SINGLE_ANIMATION(Chatot);
 #if P_HOENNIAN_FORMS
-SINGLE_ANIMATION(ChatotHoennian);
+SINGLE_ANIMATION(Chatot_Hoennian);
 #endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_CHATOT
 #if P_FAMILY_SPIRITOMB
@@ -11759,7 +11759,7 @@ SINGLE_ANIMATION(Cresselia);
 SINGLE_ANIMATION(Phione);
 SINGLE_ANIMATION(Manaphy);
 #if P_HOENNIAN_FORMS
-SINGLE_ANIMATION(PhioneHoennian);
+SINGLE_ANIMATION(Phione_Hoennian);
 #endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_MANAPHY
 #if P_FAMILY_DARKRAI
@@ -12051,8 +12051,8 @@ SINGLE_ANIMATION(StunfiskGalarian);
 SINGLE_ANIMATION(Mienfoo);
 SINGLE_ANIMATION(Mienshao);
 #if P_HOENNIAN_FORMS
-SINGLE_ANIMATION(Mienfoo);
-SINGLE_ANIMATION(Mienshao);
+SINGLE_ANIMATION(Mienfoo_Hoennian);
+SINGLE_ANIMATION(Mienshao_Hoennian);
 #endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_MIENFOO
 #if P_FAMILY_DRUDDIGON
@@ -12186,8 +12186,8 @@ SINGLE_ANIMATION(Florges);
 SINGLE_ANIMATION(Skiddo);
 SINGLE_ANIMATION(Gogoat);
 #if P_HOENNIAN_FORMS
-SINGLE_ANIMATION(SkiddoHoennian);
-SINGLE_ANIMATION(GogoatHoennian);
+SINGLE_ANIMATION(Skiddo_Hoennian);
+SINGLE_ANIMATION(Gogoat_Hoennian);
 #endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_SKIDDO
 #if P_FAMILY_PANCHAM
@@ -12252,7 +12252,7 @@ SINGLE_ANIMATION(Dedenne);
 #if P_FAMILY_CARBINK
 SINGLE_ANIMATION(Carbink);
 #if P_HOENNIAN_FORMS
-SINGLE_ANIMATION(CarbinkHoennian);
+SINGLE_ANIMATION(Carbink_Hoennian);
 #endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_CARBINK
 #if P_FAMILY_GOOMY
@@ -12303,7 +12303,7 @@ SINGLE_ANIMATION(Diancie);
 SINGLE_ANIMATION(DiancieMega);
 #endif //P_MEGA_EVOLUTIONS
 #if P_HOENNIAN_FORMS
-SINGLE_ANIMATION(DiancieHoennian);
+SINGLE_ANIMATION(Diancie_Hoennian);
 #endif //P_HOENNIAN_FORMS
 #endif //P_FAMILY_DIANCIE
 #if P_FAMILY_HOOPA

@@ -4091,8 +4091,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
     u32 moveType, move;
     u32 side;
     u32 i, j;
-    u32 partner;
-    struct Pokemon *mon;
 
     if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
         return 0;
@@ -4697,6 +4695,15 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_MUD_BATH:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattlerAttacker = battler;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_MudBathActivates);
+                effect++;
+            }
+            break;
         case ABILITY_INTIMIDATE:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
@@ -4787,7 +4794,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_WIND_RIDER:
-            if (!gSpecialStatuses[battler].switchInAbilityDone 
+            if (!gSpecialStatuses[battler].switchInAbilityDone
              && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN)
              && gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)
             {
@@ -6570,8 +6577,7 @@ bool32 CanBePoisoned(u32 battlerAtk, u32 battlerDef, u32 defAbility)
 
 bool32 CanBeBurned(u32 battler, u32 ability)
 {
-    u16 ability = GetBattlerAbility(battler);
-    if (IS_BATTLER_OF_TYPE(battlerId, TYPE_FIRE)
+    if (IS_BATTLER_OF_TYPE(battler, TYPE_FIRE)
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
       || gBattleMons[battler].status1 & STATUS1_ANY
       || ability == ABILITY_WATER_VEIL
@@ -6588,12 +6594,8 @@ bool32 CanBeBurned(u32 battler, u32 ability)
 
 bool32 CanBeParalyzed(u32 battler, u32 ability)
 {
-    u16 ability = GetBattlerAbility(battler);
-    if (
-    #if B_PARALYZE_ELECTRIC >= GEN_6
-        IS_BATTLER_OF_TYPE(battler, TYPE_ELECTRIC) ||
-    #endif
-        gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
+    if ((B_PARALYZE_ELECTRIC >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_ELECTRIC))
+        || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
         || ability == ABILITY_LIMBER
         || ability == ABILITY_COMATOSE
         || ability == ABILITY_FREE_SPIRIT
@@ -8622,7 +8624,7 @@ static bool32 IsBattlerGrounded2(u32 battler, bool32 considerInverse)
         return FALSE;
     if (holdEffect == HOLD_EFFECT_AIR_BALLOON)
         return FALSE;
-    if (GetBattlerAbility(battlerId) == ABILITY_LEVITATE)
+    if (GetBattlerAbility(battler) == ABILITY_LEVITATE)
         return FALSE;
     if (IS_BATTLER_OF_TYPE(battler, TYPE_FLYING) && (!considerInverse || !FlagGet(B_FLAG_INVERSE_BATTLE)))
         return FALSE;
@@ -9650,10 +9652,6 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
                 RecordAbilityBattle(battlerDef, ABILITY_SPIRIT_WARD);
         }
         break;
-    case ABILITY_ICE_SCALES:
-        if (IS_MOVE_SPECIAL(move))
-            MulModifier(&modifier, UQ_4_12(0.5));
-        break;
     }
 
     // ally's abilities
@@ -9808,7 +9806,7 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
     case ABILITY_ICY_PELT:
         if (gFieldStatuses & B_WEATHER_HAIL && usesDefStat)
         {
-            MulModifier(&modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
             if (updateFlags)
                 RecordAbilityBattle(battlerDef, ABILITY_ICY_PELT);
         }
@@ -9944,12 +9942,6 @@ static uq4_12_t GetWeatherDamageModifier(u32 battlerAtk, u32 move, u32 moveType,
 }
 
 static inline uq4_12_t GetBurnOrFrostBiteModifier(u32 battlerAtk, u32 move, u32 abilityAtk)
-{
-    if (gBattleMons[battlerAtk].status1 & STATUS1_BURN
-        && IS_MOVE_PHYSICAL(move)
-        && (B_BURN_FACADE_DMG < GEN_6 || gMovesInfo[move].effect != EFFECT_FACADE)
-        && abilityAtk != ABILITY_GUTS)
-        static inline uq4_12_t GetBurnOrFrostBiteModifier(u32 battlerAtk, u32 move, u32 abilityAtk)
 {
     if (gBattleMons[battlerAtk].status1 & STATUS1_BURN
         && IS_MOVE_PHYSICAL(move)
@@ -11600,7 +11592,7 @@ void RemoveConfusionStatus(u32 battler)
 static bool32 CanBeInfinitelyConfused(u32 battler)
 {
     if  (GetBattlerAbility(battler) == ABILITY_OWN_TEMPO
-         || gBattleMons[battlerId].ability == ABILITY_FREE_SPIRIT
+         || GetBattlerAbility(battler) == ABILITY_FREE_SPIRIT
          || IsBattlerTerrainAffected(battler, STATUS_FIELD_MISTY_TERRAIN)
          || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
     {
@@ -11660,10 +11652,10 @@ bool32 IsAlly(u32 battlerAtk, u32 battlerDef)
 
 bool32 IsGen6ExpShareEnabled(void)
 {
-    if (I_EXP_SHARE_FLAG <= TEMP_FLAGS_END)
-        return FALSE;
+    //if (FLAG_SYS_EXP_SHARE <= TEMP_FLAGS_END)
+    //    return FALSE;
 
-    return FlagGet(I_EXP_SHARE_FLAG);
+    return FlagGet(FLAG_SYS_EXP_SHARE);
 }
 
 

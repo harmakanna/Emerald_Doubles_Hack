@@ -20,3 +20,10 @@ MtMeteor_2F_2R_EventScript_Evelyn::
 	trainerbattle_double TRAINER_EVELYN, MtMeteor_2F_2R_Text_EvelynIntro, MtMeteor_2F_2R_Text_EvelynDefeat
 	msgbox MtMeteor_2F_2R_Text_EvelynPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+@ Placeholder until I get to when I need to actually 
+MtMeteor_2F_2R_EventScript_DracoMeteorTutor::
+	lock
+	faceplayer
+	release
+	end

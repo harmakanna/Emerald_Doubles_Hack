@@ -4870,10 +4870,10 @@ SlaterootForest_Text_JeremiahPostBattle:
 	.string "from other regions?$"
 
 MtMeteor_1F_1R_Text_KingstonIntro:
-	.string "Some trainers test their skills in\n"
-	.string "Ever Grande City, but for me,\p"
-	.string "Mt. Meteor is by far the best\n"
-	.string "place to hone my skills!$"
+	.string "Mt. Meteor is a major training\n"
+	.string "ground in this part of Hoenn.\p"
+	.string "Some call it the Victory Road\n"
+	.string "of the west!$"
 
 MtMeteor_1F_1R_Text_KingstonDefeat:
 	.string "I will learn from this loss and\n"
@@ -4886,19 +4886,23 @@ MtMeteor_1F_1R_Text_KingstonPostBattle:
 	.string "their might against one another!$"
 
 MtMeteor_1F_1R_Text_OpalIntro:
-	.string "I've been training in these caves\n"
-	.string "for sixty years!\p"
-	.string "There's nothing you can hit me with\n"
-	.string "that I won't expect!$"
+	.string "Oh dear, you look like you're\n"
+	.string "new here.\p"
+	.string "Let me give you a warm welcome\n"
+	.string "to Mt. Meteor.$"
 
 MtMeteor_1F_1R_Text_OpalDefeat:
-	.string "Oh… I didn't expect that…$"
+	.string "Trainers have gotten so strong\n"
+	.string "since I was young!$"
 
 MtMeteor_1F_1R_Text_OpalPostBattle:
-	.string "Even after sixty years, I'm still\n"
-	.string "being surprised…\p"
-	.string "Fufufu… You younguns have changed\n"
-	.string "so much since my prime!$"
+	.string "Through the mountain, there's\n"
+	.string "two paths you can take to\l"
+	.string "reach the other side - an\l"
+	.string "upper path and a lower path.\p"
+	.string "Make sure not to get lost\n"
+	.string "on your way through.$"
+
 
 MtMeteor_1F_2R_Text_DonovanIntro:
 	.string "This cave is chock full of Feebas!\n"
@@ -4914,16 +4918,18 @@ MtMeteor_1F_2R_Text_DonovanPostBattle:
 	.string "the dozen!$"
 
 MtMeteor_1F_2R_Text_VanyaIntro:
-	.string "When I'm here, I seek out Machokes\n"
-	.string "and grapple them into submission!\p"
-	.string "Just try to stop me!$"
+	.string "Hyah!\p"
+	.string "Roundhouse kick!$"
 
 MtMeteor_1F_2R_Text_VanyaDefeat:
-	.string "Grappled like a Machoke!$"
+	.string "I stumbled!$"
 
 MtMeteor_1F_2R_Text_VanyaPostBattle:
-	.string "I'm not going to stop grappling\n"
-	.string "Machokes just because you beat me.$"
+	.string "This little corner of the\n"
+	.string "cave is perfect for solo\l"
+	.string "training!$"
+	.string "No elite trainers or hikers\n"
+	.string "get in my way!$"
 
 MtMeteor_1F_2R_Text_AjaxIntro:
 	.string "The locales of Hoenn are all so\n"
@@ -4935,10 +4941,11 @@ MtMeteor_1F_2R_Text_AjaxDefeat:
 	.string "you've gone all across Hoenn!$"
 
 MtMeteor_1F_2R_Text_AjaxPostBattle:
-	.string "The caves of Mt. Meteor connect\n"
-	.string "directly to Meteor Falls.\p"
-	.string "These rivers around us come\n"
-	.string "directly from the falls!$"
+	.string "Mt. Meteor is almost maze-like\n"
+	.string "in its layout.$"
+	.string "If you make it go northwest of\n"
+	.string "here, you should make it to\l"
+	.string "the other side all right.$"
 
 MtMeteor_1F_2R_Text_RossIntro:
 	.string "Why aren't my Feebas evolving?\n"
@@ -4955,45 +4962,53 @@ MtMeteor_1F_2R_Text_RossPostBattle:
 	.string "Donovan lied to me!$"
 
 MtMeteor_1F_2R_Text_AustinIntro:
-	.string "Reaching the peak of Mt. Meteor is a\n"
-	.string "rite of passage for hikers.\p"
-	.string "Only the most dedicated reach the top!$"
+	.string "At the top of the mountain lies\n"
+	.string "the remnants of an ancient\l"
+	.string "castle.\p"
+	.string "It's a rite of passage among\n"
+	.string "hikers to reach the peak of\l"
+	.string "Mt. Meteor and witness our\l"
+	.string "ancestors' magnum opus!$"
 
 MtMeteor_1F_2R_Text_AustinDefeat:
-	.string "Urp…$"
+	.string "This loss won't deter me from\n"
+	.string "reaching the top!$"
 
 MtMeteor_1F_2R_Text_AustinPostBattle:
-	.string "I'm still a long way away from reaching\n"
-	.string "Meteor Peak.\p"
-	.string "But man… Just imagining the peak keeps\n"
-	.string "me motivated!$"
+	.string "Legends say that deep within\n"
+	.string "the castle on Meteor Peak lies\l"
+	.string "the king of the golems.\p"
+	.string "I wonder what such a beast\n"
+	.string "would look like?$"
 
 MtMeteor_1F_2R_Text_NoahIntro:
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "What? I'm fishing here!$"
+	.string "Nobody knows how good this\n"
+	.string "tiny fishing spot is!\p"
+	.string "It's teeming with the strongest\n"
+	.string "Pokémon this side of Mauville!$"
 
 MtMeteor_1F_2R_Text_NoahDefeat:
-	.string "You're gonna break my focus!$"
+	.string "Guess you can't catch your way\n"
+	.string "into winning a Pokémon battle!$"
 
 MtMeteor_1F_2R_Text_NoahPostBattle:
-	.string "… … …\n"
-	.string "I'm trying to concentrate! Scram!$"
+	.string "Because of this spot, I never\n"
+	.string "lose a fishing competition!$"
 
 MtMeteor_2F_1R_Text_MilesIntro:
 	.string "So many twists and turns…\n"
 	.string "I think I'm getting lost…$"
 
 MtMeteor_2F_1R_Text_MilesDefeat:
-	.string "I wish I had a flashlight!$"
+	.string "I wish my Ranger friends were\n"
+	.string "here to help!$"
+
 
 MtMeteor_2F_1R_Text_MilesPostBattle:
-	.string "I was underprepared when coming in…\n"
-	.string "Can I really call myself an ace trainer?$"
+	.string "My Ranger friends and I battle\n"
+	.string "daily to hone our skills.\p"
+	.string "I'm truly impressed by their\n"
+	.string "dedication to Pokémon.$"
 
 MtMeteor_2F_1R_Text_LunaIntro:
 	.string "The caves here are so deep it can be\n"
@@ -5054,33 +5069,36 @@ MtMeteor_2F_2R_Text_VinniePostBattle:
 	.string "mountain.$"
 
 MtMeteor_2F_2R_Text_MiraIntro:
-	.string "Mt. Meteor is the top-rated training\n"
-	.string "spot for trainers in the west.\p"
-	.string "Show me how strong you are!$"
+	.string "I'm looking for a rare Pokémon\n"
+	.string "by the name of Larvitar.\p"
+	.string "Have you found one yet?$"
 
 MtMeteor_2F_2R_Text_MiraDefeat:
-	.string "Snuffed like a light!$"
+	.string "This'll make it a lot tougher\n"
+	.string "to find one now…$"
 
 MtMeteor_2F_2R_Text_MiraPostBattle:
-	.string "As a resident of Fallarbor Town\n"
-	.string "I find it near impossible to travel\l"
-	.string "to Victory Road for battle./p"
-	.string "Us westerners come here for our own\n"
-	.string "mini-Victory Road.$"
+	.string "I have been here searching for\n"
+	.string "Larvitar for TWO.\p"
+	.string "WHOLE.\p"
+	.string "DAYS!\p"
+	.string "I know they're here, but maybe\n"
+	.string "it's time to give up!$"
 
 MtMeteor_2F_2R_Text_EliasIntro:
-	.string "The closer you are to the Falls,\n"
-	.string "the better the fish you can catch!$"
+	.string "Ha, nobody thinks to fish at\n"
+	.string "a waterfall!\p"
+	.string "I'll trounce everybody in this\n"
+	.string "silly fishing competition!$"
 
 MtMeteor_2F_2R_Text_EliasDefeat:
-	.string "The catching's haven't been great!$"
+	.string "And it all comes crashing down!$"
 
 MtMeteor_2F_2R_Text_EliasPostBattle:
-	.string "The biggest challenge to fishing is\n"
-	.string "the patience to wait for the big catch.\p"
-	.string "In times like those, I like to think\n"
-	.string "about my place in the world and what\l"
-	.string "future I want to build for myself.$"
+	.string "Admittedly, I've yet to catch a\n"
+	.string "single fish here.\p"
+	.string "I won't let that discourage me\n"
+	.string "though!$"
 
 MtMeteor_2F_2R_Text_EvelynIntro:
 	.string "Ooooooohhhhhh…\p"
@@ -5091,9 +5109,11 @@ MtMeteor_2F_2R_Text_EvelynDefeat:
 	.string "Aaahhhhhh…$"
 
 MtMeteor_2F_2R_Text_EvelynPostBattle:
-	.string "Sitting under the falling water is so\n"
-	.string "revitalizing…\p"
-	.string "It's like a full body massage!$"
+	.string "Just above these falls is an\n"
+	.string "entrance to Meteor Falls.\p"
+	.string "With the right gear, it's easy\n"
+	.string "to get from Cratercrest to\l"
+	.string "most parts of west Hoenn!$"
 
 MeteorPeak_Text_LeoIntro:
 	.string "Team Magma's arrival has brought nothing\n"

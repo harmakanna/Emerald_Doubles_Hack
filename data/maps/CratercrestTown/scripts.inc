@@ -1,16 +1,19 @@
 .set LOCALID_COURTNEY, 10
 
 CratercrestTown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CratercrestTown_MapScript_OnTransition
 	.byte 0
 
-CratercrestTown_Movement_Exit:
-	face_up
-	walk_up
-	delay_8
-	step_end
+CratercrestTown_MapScript_OnTransition::
+	call_if_eq VAR_CRATERCREST_TOWN_STATE, 0, CratercrestTown_EventScript_SetTeamMagmaInvasion
+	end
+
+CratercrestTown_EventScript_SetTeamMagmaInvasion::
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
+	end
 
 CratercrestTown_EventScript_Courtney:: @ 8234938
-	lock
+	lockall
 	faceplayer
 	msgbox CratercrestTown_Text_CourtneyBlockingTheWay, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, CratercrestTown_EventScript_CourtneyBattle
@@ -21,12 +24,14 @@ CratercrestTown_EventScript_CourtneyBattle::
 	msgbox CratercrestTown_Text_CourtneyIntro
 	trainerbattle_no_intro TRAINER_COURTNEY_CRATERCREST, CratercrestTown_Text_CourtneyDefeat
 	msgbox CratercrestTown_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
-	playse SE_EXIT
-	applymovement LOCALID_COURTNEY CratercrestTown_Movement_Exit
-	waitmovement 0
+	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_COURTNEY
-	setflag FLAG_HIDE_COURTNEY
-	release
+	setflag FLAG_HIDE_CRATERCREST_GRUNTS
+	clearflag FLAG_HIDE_CRATERCREST_CITIZENS
+	setvar VAR_CRATERCREST_TOWN_STATE, 1
+	fadedefaultbgm
+	fadescreen FADE_FROM_BLACK
+	releaseall
 	end
 
 CratercrestTown_EventScript_CourtneyThoughtSo::
@@ -48,6 +53,34 @@ CratercrestTown_EventScript_Girl2::
 
 CratercrestTown_EventScript_PokefanM::
 	msgbox CratercrestTown_Text_FertileLand, MSGBOX_NPC
+	end
+
+CratercrestTown_EventScript_MagmaGruntPass1::
+	msgbox CratercrestTown_Text_MagmaGruntPass1, MSGBOX_NPC
+	end
+
+CratercrestTown_EventScript_MagmaGruntPass2::
+	msgbox CratercrestTown_Text_MagmaGruntPass2, MSGBOX_NPC
+	end
+
+CratercrestTown_EventScript_MagmaGruntPeak1::
+	msgbox CratercrestTown_Text_MagmaGruntPeak1, MSGBOX_NPC
+	end
+
+CratercrestTown_EventScript_MagmaGruntPeak2::
+	msgbox CratercrestTown_Text_MagmaGruntPeak2, MSGBOX_NPC
+	end
+
+CratercrestTown_EventScript_MagmaGruntSgtSneasel::
+	msgbox CratercrestTown_Text_MagmaGruntSgtSneasel, MSGBOX_NPC
+	end
+
+CratercrestTown_EventScript_MagmaGruntHouse1::
+	msgbox CratercrestTown_Text_MagmaGruntHouse1, MSGBOX_NPC
+	end
+
+CratercrestTown_EventScript_MagmaGruntHouse2::
+	msgbox CratercrestTown_Text_MagmaGruntHouse2, MSGBOX_NPC
 	end
 
 CratercrestTown_EventScript_SgtSneaselsSign::
@@ -124,3 +157,38 @@ CratercrestTown_Text_SgtSneasel:
 	.string "Old Town Store\p"
 	.string "Celebrating our 150th\n"
 	.string "anniversary!$"
+
+CratercrestTown_Text_MagmaGruntPass1:
+	.string "We just tunneled our way\n"
+	.string "through our old Jagged\l"
+	.string "hideout./p"
+	.string "Don't mess this up for us!$"
+
+CratercrestTown_Text_MagmaGruntPass2:
+	.string "Cratercrest is ours!$"
+
+CratercrestTown_Text_MagmaGruntPeak1:
+	.string "There's a lot of strong\n"
+	.string "POKéMON on Meteor Peak…\p"
+
+CratercrestTown_Text_MagmaGruntPeak2:
+	.string "Once we're settled into\n"
+	.string "the new base, we'll capture\l"
+	.string "the toughest POKéMON on the\l"
+	.string "mountaintops!$"
+
+CratercrestTown_Text_MagmaGruntSgtSneasel:
+	.string "Do you think I could buy\n"
+	.string "lava cookies at Sargent\l"
+	.string "Sneasel's General Store?$"
+
+CratercrestTown_Text_MagmaGruntHouse1:
+	.string "Nobody gets in and out\n"
+	.string "while we're moving base.\p"
+	.string "Scram!$"
+
+CratercrestTown_Text_MagmaGruntHouse2:
+	.string "Don't you have something\n"
+	.string "better to be doing than\l"
+	.string "screwing with us?$"
+	

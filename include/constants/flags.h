@@ -48,12 +48,12 @@
 #define FLAG_HIDE_REGIDRAGO                           0x24 // Unused Flag
 #define FLAG_HIDE_REGIELEKI                           0x25 // Unused Flag
 #define FLAG_HIDE_REGIGIGAS                           0x26 // Unused Flag
-#define FLAG_HIDE_COURTNEY                            0x27 // Unused Flag
+#define FLAG_HIDE_CRATERCREST_GRUNTS                  0x27 // Unused Flag
 #define FLAG_SPOKE_TO_COZMOS_KID                      0x28 // Unused Flag
 #define FLAG_COZMOS_KID_EVOLVED_EEVEE                 0x29 // Unused Flag
 #define FLAG_HIDE_LILYCOVE_PKMN_CENTER_WALLY          0x2A // Unused Flag
 #define FLAG_MET_RIVAL_SOOTOPOLIS                     0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
+#define FLAG_HIDE_CRATERCREST_CITIZENS                0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag

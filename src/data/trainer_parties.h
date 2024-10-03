@@ -6781,26 +6781,51 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Eric[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_CourtneyCratercrest[] = {
+static const struct TrainerMonCustomized sParty_CourtneyCratercrest[] = {
     {
-    .iv = 50,
-    .lvl = 18,
-    .species = SPECIES_NUMEL,
+    .iv = 100,
+    .lvl = 40,
+    .ability = ABILITY_DROUGHT,
+    .species = SPECIES_NINETALES,
+    .moves = {MOVE_WILL_O_WISP, MOVE_FLAMETHROWER, MOVE_EXTRASENSORY, MOVE_SUNNY_DAY},
     },
     {
-    .iv = 50,
-    .lvl = 20,
-    .species = SPECIES_POOCHYENA,
+    .iv = 150,
+    .lvl = 41,
+    .ability = ABILITY_FLOWER_GIFT,
+    .species = SPECIES_CHERRIM,
+    .moves = {MOVE_GRASSY_TERRAIN, MOVE_SOLAR_BEAM, MOVE_WEATHER_BALL, MOVE_SLEEP_POWDER},
     },
     {
-    .iv = 50,
-    .lvl = 22,
-    .species = SPECIES_NUMEL,
+    .iv = 150,
+    .lvl = 41,
+    .heldItem = ITEM_SCOPE_LENS,
+    .ability = ABILITY_GRASS_PELT,
+    .species = SPECIES_GOGOAT,
+    .moves = {MOVE_HORN_LEECH, MOVE_HIGH_HORSEPOWER, MOVE_WILD_CHARGE, MOVE_SYNTHESIS},
     },
     {
-    .iv = 50,
-    .lvl = 22,
-    .species = SPECIES_ZUBAT,
+    .iv = 200,
+    .lvl = 42,
+    .heldItem = ITEM_FLAME_ORB,
+    .ability = ABILITY_GUTS,
+    .species = SPECIES_HERACROSS,
+    .moves = {MOVE_MEGAHORN, MOVE_SUBMISSION, MOVE_SMART_STRIKE, MOVE_BULK_UP},
+    },
+    {
+    .iv = 200,
+    .lvl = 42,
+    .ability = ABILITY_CHLOROPHYLL,
+    .species = SPECIES_VILEPLUME,
+    .moves = {MOVE_POLLEN_PUFF, MOVE_ENERGY_BALL, MOVE_MOONBLAST, MOVE_AFTER_YOU},
+    },
+    {
+    .iv = 200,
+    .lvl = 43,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_OVERCOAT,
+    .species = SPECIES_VOLCARONA,
+    .moves = {MOVE_HEAT_WAVE, MOVE_STRUGGLE_BUG, MOVE_RAGE_POWDER, MOVE_QUIVER_DANCE},
     }
 };
 

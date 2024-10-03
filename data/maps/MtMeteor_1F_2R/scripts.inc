@@ -31,3 +31,4 @@ MtMeteor_1F_2R_EventScript_Noah::
 	trainerbattle_double TRAINER_NOAH, MtMeteor_1F_2R_Text_NoahIntro, MtMeteor_1F_2R_Text_NoahDefeat
 	msgbox MtMeteor_1F_2R_Text_NoahPostBattle, MSGBOX_AUTOCLOSE
 	end
+	

@@ -10,3 +10,4 @@ MtMeteor_1F_1R_EventScript_Opal::
 	trainerbattle_double TRAINER_OPAL, MtMeteor_1F_1R_Text_OpalIntro, MtMeteor_1F_1R_Text_OpalDefeat
 	msgbox MtMeteor_1F_1R_Text_OpalPostBattle, MSGBOX_AUTOCLOSE
 	end
+	

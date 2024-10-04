@@ -1,16 +1,7 @@
 .set LOCALID_COURTNEY, 10
 
 CratercrestTown_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, CratercrestTown_MapScript_OnTransition
 	.byte 0
-
-CratercrestTown_MapScript_OnTransition::
-	call_if_eq VAR_CRATERCREST_TOWN_STATE, 0, CratercrestTown_EventScript_SetTeamMagmaInvasion
-	end
-
-CratercrestTown_EventScript_SetTeamMagmaInvasion::
-	playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	end
 
 CratercrestTown_EventScript_Courtney:: @ 8234938
 	lockall
@@ -28,7 +19,6 @@ CratercrestTown_EventScript_CourtneyBattle::
 	removeobject LOCALID_COURTNEY
 	setflag FLAG_HIDE_CRATERCREST_GRUNTS
 	clearflag FLAG_HIDE_CRATERCREST_CITIZENS
-	setvar VAR_CRATERCREST_TOWN_STATE, 1
 	fadedefaultbgm
 	fadescreen FADE_FROM_BLACK
 	releaseall

@@ -40,14 +40,13 @@ MtMeteor_2F_1R_EventScript_Landon::
 
 MtMeteor_2F_1R_Text_StonesInMtMeteor:
 	.string "I'm digging for stones!\p"
-	.string "Scattered across these caves\n"
-	.string "are many gems and evolutionary\l"
-	.string "stones, which attract geologists\l"
-	.string "like me.\p"
-	.string "Here, have one for yourself!\p"
+	.string "Scattered across these caves are many\n"
+	.string "gems and evolutionary stones, which\l"
+	.string "attract geologists like me.\p"
+	.string "Here, have one for yourself!$"
 
 MtMeteor_2F_1R_Text_IHavePlentyStones:
-	.string "Don't worry about me - I've\n"
-	.string "already found plenty of stones!\p"
-	.string "I'm sure this will be useful\n"
-	.string "for a trainer like you.$"
+	.string "Don't worry about me - I've already\n"
+	.string "found plenty of stones!\p"
+	.string "I'm sure this will be useful for a\n"
+	.string "trainer like you.$"

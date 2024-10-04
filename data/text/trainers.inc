@@ -4896,12 +4896,11 @@ MtMeteor_1F_1R_Text_OpalDefeat:
 	.string "since I was young!$"
 
 MtMeteor_1F_1R_Text_OpalPostBattle:
-	.string "Through the mountain, there's\n"
-	.string "two paths you can take to\l"
-	.string "reach the other side - an\l"
-	.string "upper path and a lower path.\p"
-	.string "Make sure not to get lost\n"
-	.string "on your way through.$"
+	.string "Through the mountain, there's two\n"
+	.string "paths you can take to reach the other\l"
+	.string "side - an upper and a lower path.\p"
+	.string "Make sure not to get lost on your way\n"
+	.string "through.$"
 
 
 MtMeteor_1F_2R_Text_DonovanIntro:
@@ -5003,7 +5002,6 @@ MtMeteor_2F_1R_Text_MilesDefeat:
 	.string "I wish my Ranger friends were\n"
 	.string "here to help!$"
 
-
 MtMeteor_2F_1R_Text_MilesPostBattle:
 	.string "My Ranger friends and I battle\n"
 	.string "daily to hone our skills.\p"
@@ -5021,7 +5019,7 @@ MtMeteor_2F_1R_Text_LunaDefeat:
 
 MtMeteor_2F_1R_Text_LunaPostBattle:
 	.string "I grew up in Cratercrest Town exploring\n"
-	.string "the peaks and valleys of this\l"
+	.string "the many peaks and valleys of this\l"
 	.string "mountain range.\p"
 	.string "Have you ever been to Cratercrest?$"
 
@@ -5062,7 +5060,7 @@ MtMeteor_2F_2R_Text_VinnieDefeat:
 	.string "of my defeat!$"
 
 MtMeteor_2F_2R_Text_VinniePostBattle:
-	.string "The path to the peak of the mountaion\n"
+	.string "The path to the peak of the mountain\n"
 	.string "is just up ahead.\p"
 	.string "Cratercrest Town acts as a rest stop\n"
 	.string "for the many people who climb the\l"

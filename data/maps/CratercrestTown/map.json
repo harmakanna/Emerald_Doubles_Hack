@@ -259,7 +259,7 @@
     },
     {
       "x": 7,
-      "y": 6,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_MT_METEOR_2F_2R",
       "dest_warp_id": "5"
@@ -294,7 +294,7 @@
     },
     {
       "x": 21,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_MAGMA_HIDEOUT_1F",
       "dest_warp_id": "0"

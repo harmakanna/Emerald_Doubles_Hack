@@ -150,7 +150,7 @@
     },
     {
       "x": 21,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_MT_METEOR_2F_2R",
       "dest_warp_id": "1"

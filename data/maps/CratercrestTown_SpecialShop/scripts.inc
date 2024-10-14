@@ -32,6 +32,6 @@ CratercrestTown_SpecialShop_Text_DoYouKnowAboutGrusha:
 	.string "to go down our slopes!$"
 
 CratercrestTown_SpecialShop_Text_ShouldIBuy:
-	.string "I need souvenirs for my whole\n"
-	.string "family in Kalos!\p"
+	.string "I need souvenirs for my whole family\n"
+	.string "in Kalos!\p"
 	.string "What do you think I should buy?$"

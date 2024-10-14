@@ -32,14 +32,14 @@ CratercrestTown_PokemonCenter_1F_EventScript_WereGaming::
 CratercrestTown_PokemonCenter_1F_Text_SoBeautiful:
 	.string "The nature… The POKéMON…\p"
 	.string "It's all so beautiful!\p"
-	.string "You could never see something\n"
-	.string "like this in Kanto!$"
+	.string "You could never see something like this\n"
+	.string "in Kanto!$"
 
 CratercrestTown_PokemonCenter_1F_Text_MeteorShards:
-	.string "Those meteor shards in the\n"
-	.string "center of town?\p"
-	.string "They're remnants of the meteor\n"
-	.string "which created our town.\p"
+	.string "Those meteor shards in the center of\n"
+	.string "town?\p"
+	.string "They're remnants of the meteor which\n"
+	.string "created our town.\p"
 	.string "I wonder how old they are…$"
 
 CratercrestTown_PokemonCenter_1F_Text_WereGaming:

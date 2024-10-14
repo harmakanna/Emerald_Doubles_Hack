@@ -20,17 +20,15 @@ CratercrestTown_House2_EventScript_Skitty::
 	end
 
 CratercrestTown_House2_Text_LegendOfTheGolems:
-	.string "Long ago, humans lived in peace\n"
-	.string "with the six legendary golems.\p"
-	.string "But one day, that peace was\n"
-	.string "was threatened by a thief who\l"
-	.string "brought ruinous treasures from\l"
-	.string "a distant land.\p"
-	.string "The golems protected the people,\n"
-	.string "but were severely damaged.\p"
-	.string "It's said that today, those golems\n"
-	.string "are resting in remote caves across\l"
-	.string "Hoenn.$"
+	.string "Long ago, humans lived in peace with\n"
+	.string "the six legendary golems.\p"
+	.string "But one day, that peace was threatened\n"
+	.string "by a thief who brought ruinous\l"
+	.string "treasures from a distant land.\p"
+	.string "The golems protected the people, but\n"
+	.string "they were severely damaged.\p"
+	.string "It's said that today, those golems are\n"
+	.string "resting in remote caves across Hoenn.$"
 
 CratercrestTown_House2_Text_MyBigSister::
 	.string "My big sister protects nature!\p"

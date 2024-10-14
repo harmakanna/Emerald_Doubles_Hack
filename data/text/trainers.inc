@@ -5153,7 +5153,7 @@ MeteorPeak_Text_VladPostBattle:
 	.string "good luck.$"
 
 MeteorPeak_Text_PearlIntro:
-	.string "Once a picknicker, now a ranger.\n"
+	.string "Once a picknicker, now a ranger.\p"
 	.string "My love for POKéMON knows no bounds!$"
 
 MeteorPeak_Text_PearlDefeat:

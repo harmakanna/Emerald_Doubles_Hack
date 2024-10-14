@@ -2914,7 +2914,7 @@
     {
       "id": "LAYOUT_JAGGED_PASS",
       "name": "JaggedPass_Layout",
-      "width": 33,
+      "width": 35,
       "height": 46,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
@@ -4414,7 +4414,7 @@
     {
       "id": "LAYOUT_CRATERCREST_TOWN",
       "name": "CratercrestTown_Layout",
-      "width": 31,
+      "width": 32,
       "height": 25,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",

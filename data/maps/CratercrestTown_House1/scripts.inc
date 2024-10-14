@@ -11,17 +11,15 @@ CratercrestTown_House1_EventScript_IJustWannaHike::
 
 CratercrestTown_House1_Text_WhatsWithTeamMagma:
 	.string "What's with Team Magma!?\p"
-	.string "They come in, drill into\n"
-	.string "the side of the mountain,\p"
-	.string "and have been terrorizing\n"
-	.string "the town ever since!\p"
+	.string "They come in, drill into the side of\n"
+	.string "the mountain, and they've been\l"
+	.string "terrorizing the town ever since!\p"
 	.string "Can't they just bug off?$"
 
 CratercrestTown_House1_Text_IJustWannaHike:
-	.string "We moved here for the many\n"
-	.string "trails between Mt. Chimney\l"
-	.string "and Mt. Meteor.\p"
-	.string "But ever since Team Magma set\n"
-	.string "up shop here, Mt. Chimney has\l"
-	.string "been dangerously unstable.\p"
+	.string "We moved here for the many trails\n"
+	.string "between Mt. Chimney and Mt. Meteor.\p"
+	.string "But ever since Team Magma set up shop\n"
+	.string "here, Mt. Chimney has been dangerously\l"
+	.string "unstable.\p"
 	.string "I just wanna hike, man...$"

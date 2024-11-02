@@ -5134,8 +5134,8 @@ MeteorPeak_Text_SashaDefeat:
 	.string "The slopes call to me!$"
 
 MeteorPeak_Text_SashaPostBattle:
-	.string "The sports culture is so strong here that\n"
-	.string "kids learn to ski as early as four.\p"
+	.string "The sports culture is so strong here\n"
+	.string "that kids start skiing as early as four.\p"
 	.string "I've been going down these mountains\n"
 	.string "as long as I can remember!$"
 
@@ -5160,7 +5160,7 @@ MeteorPeak_Text_PearlDefeat:
 	.string "Oh no, my POKéMON!$"
 
 MeteorPeak_Text_PearlPostBattle:
-	.string "The ecosystem of West Hoenn is\n"
+	.string "The ecosystem of western Hoenn is\n"
 	.string "tightly interwoven into our lives.\p"
 	.string "If the health of wild POKéMON goes\n"
 	.string "south, us humans also suffer.$"

@@ -35,7 +35,7 @@ MeteorPeak_RestHouse_NothingLikeANiceWarmBed::
 MeteorPeak_RestHouse_Text_WelcomeToChimneysInn:
 	.string "Welcome to Chimney's Inn!\p"
 	.string "All our beds are full now, but we're\n"
-	.string "renovating soon to increase our space.\p
+	.string "renovating soon to increase our space.\p"
 	.string "You can still quickly rest if you like.$"
 
 MeteorPeak_RestHouse_Text_IfYouSoDesire:

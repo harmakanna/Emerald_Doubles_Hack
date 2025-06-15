@@ -111,8 +111,12 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Poochyena
-Level: 32
+Seadra
+Level: 44
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mightyena
+Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
@@ -124,12 +128,16 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Zubat
-Level: 31
+Electrike
+Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carvanha
-Level: 31
+Sealeo
+Level: 44
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Crawdaunt
+Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
@@ -141,8 +149,12 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Zubat
-Level: 32
+Golbat
+Level: 44
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Grimer
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
@@ -154,8 +166,16 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
+Mightyena
+Level: 44
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Carvanha
-Level: 32
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tentacruel
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
@@ -167,8 +187,12 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Poochyena
-Level: 36
+Golbat
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seaking
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
@@ -180,8 +204,16 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 36
+Grimer
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seadra
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tentacruel
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
@@ -193,8 +225,20 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Zubat
-Level: 36
+Golbat
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mienfoo-Hoennian
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Grapploct
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sharpedo
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GABRIELLE_1 ===
@@ -311,8 +355,16 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 36
+Mightyena
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Toxicroak
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Gyarados
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DECLAN ===
@@ -325,7 +377,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Gyarados
-Level: 34
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Staryu
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_RUSTURF_TUNNEL ===
@@ -548,8 +604,12 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 32
+Staryu
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seaking
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
@@ -561,8 +621,16 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Zubat
-Level: 32
+Mienfoo-Hoennian
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Grimer
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seadra
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FREDRICK ===
@@ -595,13 +663,59 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Mightyena
-Level: 34
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Cradily @ Power Herb
+Level: 46
+Ability: Suction Cups
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Meteor Beam
+- Giga Drain
+- Brine
+- Recover
 
-Golbat
-Level: 34
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Golisopod
+Level: 47
+Ability: Emergency Exit
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Protect
+- First Impression
+- Aqua Jet
+- Liquidation
+
+Grapploct
+Level: 46
+Ability: Limber
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Octolock
+- Drain Punch
+- Sucker Punch
+- Retaliate
+
+Chatot-Hoennian @ Throat Spray
+Level: 47
+Ability: Punk Rock
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Eerie Spell
+- Boomburst
+- Chatter
+- Tailwind
+
+Palossand
+Level: 48
+Ability: Water Compaction
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Earth Power
+- Shadow Ball
+- Shore Up
+- Giga Drain
+
+Huntail @ White Herb
+Level: 48
+Ability: Water Veil
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Submission
+- Liquidation
+- Leech Life
+- Shell Smash
 
 === TRAINER_ZANDER ===
 Name: ZANDER
@@ -683,13 +797,59 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Sharpedo
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kilowattrel
+Level: 47
+Ability: Volt Absorb
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunderbolt
+- Hurricane
+- Thunder Wave
+- U-Turn
 
-Mightyena
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Armaldo
+Level: 47
+Ability: Swift Swim
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Stealth Rock
+- Rock Slide
+- Aqua Jet
+- Breaking Swipe
+
+Togekiss @ Rocky Helmet
+Level: 33
+Ability: Serene Grace
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Follow Me
+- Moonblast
+- Helping Hand
+- Protect
+
+Relicanth
+Level: 48
+Ability: Rock Head
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Head Smash
+- Wave Crash
+- Double Edge
+- Rock Polish
+
+Mawile-Mega @ Life Orb
+Level: 49
+Ability: Intimidate
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Play Rough
+- Iron Head
+- Crunch
+- Swords Dance
+
+Gorebyss @ Wise Glasses
+Level: 50
+Ability: Swift Swim
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Muddy Water
+- Shadow Ball
+- Calm Mind
 
 === TRAINER_ARCHIE ===
 Name: ARCHIE
@@ -700,17 +860,59 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Mightyena
-Level: 41
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Golduck @ Damp Rock
+Level: 49
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psyshock
+- Muddy Water
+- Icy Wind
+- Soak
 
-Crobat
-Level: 41
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Manectric
+Level: 48
+Ability: Lightning Rod
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Snarl
+- Thunder
+- Reflect
+- Eerie Impulse
 
-Sharpedo
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Scizor
+Level: 49
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bullet Punch
+- Dual Wingbeat
+- Bug Bite
+- Protect
+
+Muk @ Leftovers
+Level: 50
+Ability: Sticky Hold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rain Dance
+- Gunk Shot
+- Shadow Sneak
+- Explosion
+
+Dhelmise @ Assault Vest
+Level: 51
+Ability: Steelworker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power Whip
+- Heavy Slam
+- Assurance
+- Shadow Claw
+
+Sharpedo-Mega @ Life Orb
+Level: 52
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fishous Rend
+- Crunch
+- Giga Impact
+- Surf
 
 === TRAINER_LEAH ===
 Name: LEAH
@@ -1451,12 +1653,16 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Graveler
-Level: 33
+Hariyama
+Level: 51
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Ludicolo
-Level: 33
+Farigiraf
+Level: 51
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Gogoat
+Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MARY ===
@@ -1906,21 +2112,17 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Luvdisc @ Nugget
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Attract
-- Sweet Kiss
-- Flail
-- Water Pulse
+Seaking @ Nugget
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Luvdisc @ Nugget
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Attract
-- Safeguard
-- Take Down
-- Water Pulse
+Sealeo @ Nugger
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Whiscash @ Nugget
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_2 ===
 Name: GRUNT
@@ -1952,8 +2154,16 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Seaking @ Nugget
-Level: 40
+Dewgong-Hoennian @ Nugget
+Level: 48
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Sealeo @ Nugget
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Seadra @ Nugget
+Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_NAOMI ===
@@ -2054,9 +2264,13 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Goldeen
-Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Azumarill
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Wailmer
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_BRIDGET ===
 Name: BRIDGET
@@ -2067,8 +2281,12 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Azumarill
-Level: 40
+Luvdisc
+Level: 51
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Golisopod
+Level: 49
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_OLIVIA ===
@@ -2080,28 +2298,13 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Clamperl
-Level: 35
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Iron Defense
-- Whirlpool
-- Rain Dance
-- Water Pulse
+Pelipper
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Corphish
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Taunt
-- Crabhammer
-- Water Pulse
-
-Lombre
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Uproar
-- Fury Swipes
-- Fake Out
-- Water Pulse
+Golduck
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_TIFFANY ===
 Name: TIFFANY
@@ -2112,13 +2315,13 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Masquerain
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Sharpedo
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Lombre
+Level: 51
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_WINSTON_1 ===
 Name: WINSTON
@@ -2146,12 +2349,12 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Whiscash
-Level: 33
+Seadra
+Level: 52
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Meditite
-Level: 33
+Shelgon
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_GARRET ===
@@ -2388,12 +2591,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Tentacool
-Level: 33
+Wailmer
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wingull
-Level: 33
+Sealeo
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Carvanha
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ROLAND ===
@@ -2405,8 +2612,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 34
+Wattrel
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wailmer
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NOLEN ===
@@ -2418,8 +2629,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
+Wattrel
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Tentacruel
-Level: 34
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_STAN ===
@@ -2431,8 +2646,20 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Horsea
-Level: 34
+Psyduck
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wattrel
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Clobbopus
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wailmer
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BARRY ===
@@ -2444,8 +2671,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Gyarados
-Level: 34
+Corphish
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Clobbopus
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seaking
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DEAN ===
@@ -2457,16 +2692,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 31
+Tentacool
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wingull
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Carvanha
-Level: 31
+Wailmer
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RODNEY ===
@@ -2478,8 +2709,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Gyarados
-Level: 34
+Eiscue
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Eiscue
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RICHARD ===
@@ -2491,8 +2726,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Pelipper
-Level: 34
+Wailmer
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Golduck
+Level: 49
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HERMAN ===
@@ -2504,12 +2743,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Wingull
-Level: 33
+Chinchou
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacruel
-Level: 33
+Lanturn
+Level: 49
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SANTIAGO ===
@@ -2521,12 +2760,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Tentacruel
-Level: 33
+Mienfoo-Hoennian
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wailmer
-Level: 33
+Grapploct
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GILBERT ===
@@ -2538,8 +2777,24 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
+Carvanha
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Clobbopus
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Sharpedo
-Level: 34
+Level: 49
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Grapploct
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tentacruel
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FRANKLIN ===
@@ -2551,8 +2806,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Sealeo
-Level: 34
+Huntail
+Level: 52
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Gorebyss
+Level: 52
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KEVIN ===
@@ -2564,8 +2823,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Spheal
-Level: 34
+Pelipper
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Starmie
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JACK ===
@@ -2577,8 +2840,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Gyarados
-Level: 34
+Ludicolo
+Level: 52
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Kilowattrel
+Level: 52
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seaking
+Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DUDLEY ===
@@ -2611,12 +2882,20 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Tentacool
-Level: 33
+Horsea
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wailmer
-Level: 33
+Carvanha
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Staryu
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seaking
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TAKAO ===
@@ -2645,12 +2924,20 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Machop
-Level: 32
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Machamp
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Machoke
-Level: 32
+Grapploct
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Hariyama
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Machamp
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_KIYO ===
@@ -2662,8 +2949,20 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
+Toxicroak
+Level: 49
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 Hariyama
-Level: 34
+Level: 49
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Machamp
+Level: 50
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Machamp
+Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_KOICHI ===
@@ -2785,12 +3084,12 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Poochyena
-Level: 31
+Pelipper
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
-Level: 31
+Golbat
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_8 ===
@@ -2802,8 +3101,16 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 32
+Crawdaunt
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pelipper
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tentacruel
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SHAWN ===
@@ -3232,8 +3539,12 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
+Kadabra
+Level: 46
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 Kirlia
-Level: 36
+Level: 46
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_VIRGIL ===
@@ -3245,8 +3556,12 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Ralts
-Level: 36
+Baltoy
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Kadabra
+Level: 46
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BLAKE ===
@@ -3258,8 +3573,16 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Girafarig
-Level: 36
+Chimecho
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Kirlia
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Medicham
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_WILLIAM ===
@@ -3343,8 +3666,12 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Kirlia
-Level: 36
+Medicham
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Medicham
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SAMANTHA ===
@@ -3356,8 +3683,12 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Xatu
-Level: 36
+Wobbuffet
+Level: 46
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Kadabra
+Level: 46
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAURA ===
@@ -3369,8 +3700,16 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Kadabra
-Level: 36
+Girafarig
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Xatu
+Level: 46
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Oricorio-Pau
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_KAYLA ===
@@ -4384,17 +4723,13 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Azurill @ Oran Berry
-Level: 35
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Marill @ Oran Berry
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
 Azumarill @ Oran Berry
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Corsola @ Oran Berry
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_ISABEL_1 ===
 Name: ISABEL
@@ -4997,27 +5332,27 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Magikarp
-Level: 19
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Gyarados
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Gyarados
-Level: 23
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Gyarados
-Level: 26
+Feebas
+Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Gyarados
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Milotic
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Gyarados
-Level: 35
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Milotic
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JACOB ===
@@ -5160,12 +5495,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Staryu
-Level: 33
+Starmie
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
-Level: 33
+Raichu-Alola
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DEMETRIUS ===
@@ -5194,8 +5529,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Staryu
-Level: 35
+Magneton
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Starmie
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Vaporeon
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PABLO_1 ===
@@ -5207,12 +5550,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Staryu
-Level: 33
+Kilowattrel
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
-Level: 33
+Starmie
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CHASE ===
@@ -5224,12 +5567,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Wingull
-Level: 26
+Magneton
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
-Level: 34
+Kilowattrel
+Level: 47
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
 === TRAINER_ISOBEL ===
@@ -5241,8 +5584,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
+Raichu-Alola
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Staryu
-Level: 34
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Dodrio
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DONNY ===
@@ -5254,13 +5605,17 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Wingull
-Level: 26
+Doduo
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
-Level: 34
+Mienfoo-Hoennian
+Level: 46
 IVs: 19 HP / 19 Atk / 19 Def / 19 SpA / 19 SpD / 19 Spe
+
+Starmie
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TALIA ===
 Name: TALIA
@@ -5272,7 +5627,19 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Staryu
-Level: 34
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Starmie
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Starmie
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Galvantula
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KATELYN_1 ===
@@ -5284,8 +5651,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Staryu
-Level: 35
+Jolteon
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Dodrio
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pelipper
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALLISON ===
@@ -5297,13 +5672,17 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Wingull
-Level: 27
+Galvantula
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
-Level: 33
+Starmie
+Level: 47
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+
+Vaporeon
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NICOLAS_1 ===
 Name: NICOLAS
@@ -5332,12 +5711,20 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Bagon
-Level: 34
+Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Breath
-- Headbutt
-- Focus Energy
-- Ember
+
+Shelgon
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Flygon
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Drakloak
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_PERRY ===
 Name: PERRY
@@ -5433,12 +5820,16 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move
 
-Tropius
-Level: 33
+Doduo
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Swellow
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Xatu
-Level: 33
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_EDWARDO ===
@@ -5539,13 +5930,21 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move
 
-Natu
-Level: 33
+Xatu
+Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Swellow
-Level: 33
+Oricorio
+Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Skarmory
+Level: 53
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Aerodactyl
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_BECK ===
 Name: BECK
@@ -5556,8 +5955,16 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move
 
-Tropius
-Level: 34
+Swellow
+Level: 51
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Chatot-Hoennian
+Level: 51
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Oricorio-Sensu
+Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_YASU ===
@@ -6009,7 +6416,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Wailmer
-Level: 34
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seadra
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRACE ===
@@ -6021,8 +6432,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Marill
-Level: 34
+Wailmer
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Tentacool
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TANYA ===
@@ -6034,8 +6449,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Luvdisc
-Level: 34
+Spheal
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Horsea
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sealeo
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SHARON ===
@@ -6047,8 +6470,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Seaking
-Level: 34
+Clobbopus
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seel-Hoennian
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NIKKI ===
@@ -6060,12 +6487,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Marill
-Level: 33
+Luvdisc
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Spheal
-Level: 33
+Seadra
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDA ===
@@ -6077,8 +6504,20 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Goldeen
-Level: 34
+Spheal
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Corsola
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Luvdisc
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Dewgong-Hoennian
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KATIE ===
@@ -6090,12 +6529,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Goldeen
-Level: 33
+Seadra
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Spheal
-Level: 33
+Seaking
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sealeo
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SUSIE ===
@@ -6107,8 +6550,20 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Luvdisc
-Level: 34
+Seel-Hoennian
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seel-Hoennian
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sealeo
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Dewgong-Hoennian
+Level: 49
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KARA ===
@@ -6120,8 +6575,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Seaking
-Level: 34
+Horsea
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sealeo
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Corsola
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DANA ===
@@ -6133,8 +6596,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
+Luvdisc
+Level: 49
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seadra
+Level: 49
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Azumarill
-Level: 34
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SIENNA ===
@@ -6146,12 +6617,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Luvdisc
-Level: 33
+Seel-Hoennian
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Luvdisc
-Level: 33
+Corsola
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DEBRA ===
@@ -6163,8 +6634,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Seaking
-Level: 34
+Dewgong-Hoennian
+Level: 51
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Avalugg
+Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LINDA ===
@@ -6176,12 +6651,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Horsea
-Level: 33
+Whiscash
+Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Seadra
-Level: 33
+Wailord
+Level: 51
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Lanturn
+Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KAYLEE ===
@@ -6210,12 +6689,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Luvdisc
-Level: 33
+Tentacruel
+Level: 52
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Luvdisc
-Level: 33
+Relicanth
+Level: 52
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Walrein
+Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CARLEE ===
@@ -6227,8 +6710,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Seaking
-Level: 35
+Azumarill
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Seel-Hoennian
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HEIDI ===
@@ -6497,12 +6984,16 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Wingull
-Level: 33
+Machoke
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machoke
-Level: 33
+Pelipper
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Grapploct
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DWAYNE ===
@@ -6611,21 +7102,13 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Feebas @ Oran Berry
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Flail
-- Water Pulse
-- Return
-- Attract
+Seadra
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Feebas @ Oran Berry
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Flail
-- Water Pulse
-- Return
-- Attract
+Seadra
+Level: 50
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_JAZMYN ===
 Name: JAZMYN
@@ -6699,12 +7182,12 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Manectric
-Level: 33
+Altaria
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machamp
-Level: 33
+Drampa
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KELVIN ===
@@ -6716,12 +7199,20 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Machoke
-Level: 33
+Machamp
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Spheal
-Level: 33
+Huntail
+Level: 54
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Dusclops
+Level: 53
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Crawdaunt
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MARLEY ===
@@ -6733,13 +7224,21 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Manectric
-Level: 34
+Minior
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
-- Roar
-- Thunder Wave
-- Thunderbolt
+
+Mawile-Mega
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Rhyperior
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Weavile
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_REYNA ===
 Name: REYNA
@@ -6750,12 +7249,16 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Meditite
-Level: 33
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Medicham
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Hariyama
-Level: 33
+Primeape
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Mienshao-Hoennian
+Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_HUDSON ===
@@ -6767,8 +7270,20 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Wailmer
-Level: 34
+Crabominable
+Level: 52
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pelipper
+Level: 53
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Squawkabilly
+Level: 53
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Golisopod
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CONOR ===
@@ -6780,12 +7295,12 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Chinchou
-Level: 33
+Metang
+Level: 52
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Hariyama
-Level: 33
+Heracross
+Level: 51
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_EDWIN_1 ===
@@ -7798,13 +8313,17 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Mightyena
-Level: 35
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Pelipper
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Golbat
-Level: 35
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Mightyena
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Crawdaunt
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_4 ===
 Name: GRUNT
@@ -7937,8 +8456,16 @@ Music: Suspicious
 Double Battle: Yes
 AI: Check Bad Move
 
-Meditite
-Level: 36
+Spoink
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Oricorio-Sensu
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Grumpig
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LEONARDO ===
@@ -7950,8 +8477,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 34
+Golduck
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sealeo
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ATHENA ===
@@ -7963,18 +8494,17 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Manectric
-Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Thunder
-- Thunder Wave
-- Quick Attack
+Breloom
+Level: 34
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Linoone
-Level: 32
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Surf
-- Thief
+Ninetales
+Level: 34
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Kingdra
+Level: 34
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HARRISON ===
 Name: HARRISON
@@ -7985,8 +8515,16 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
+Chinchou
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Tentacruel
-Level: 35
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Eiscue
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_2 ===
@@ -8015,8 +8553,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Sharpedo
-Level: 34
+Seadra
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wailord
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TERRY ===
@@ -8041,8 +8583,12 @@ Music: Rich
 Double Battle: Yes
 AI: Check Bad Move
 
-Spoink
-Level: 36
+Girafarig
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Espeon
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_KATHLEEN ===
@@ -8054,8 +8600,12 @@ Music: Suspicious
 Double Battle: Yes
 AI: Check Bad Move
 
-Kadabra
-Level: 36
+Grumpig
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Oricorio-Pau
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CLIFFORD ===
@@ -8068,8 +8618,12 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Girafarig
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Girafarig
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_NICHOLAS ===
 Name: NICHOLAS
@@ -8080,9 +8634,13 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Wobbuffet
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kirlia
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Xatu
+Level: 46
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_3 ===
 Name: GRUNT
@@ -8162,9 +8720,17 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Natu
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Spoink
+Level: 46
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Kirlia
+Level: 46
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Espeon
+Level: 45
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_TREECKO ===
 Name: BRENDAN
@@ -8225,12 +8791,16 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Swellow
-Level: 33
+Vibrava
+Level: 49
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Breloom
-Level: 33
+Altaria
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Flygon
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ISABELLA ===
@@ -8243,7 +8813,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Staryu
-Level: 34
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Starmie
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_5 ===
@@ -8317,12 +8891,20 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Setup First Turn
 
-Kecleon
-Level: 33
+Banette
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Loudred
-Level: 33
+Tropius
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Exploud
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Castform
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
@@ -8384,17 +8966,59 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
+Torkoal @ Heat Rock
+Level: 44
+Ability: Drought
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Solar Beam
+- Burning Jealousy
+- Earth Power
+- Protect
+
 Mightyena
-Level: 37
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 43
+Ability: Intimidate
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Snarl
+- Glare
+- Taunt
+- Double Edge
 
-Crobat
-Level: 38
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Steelix
+Level: 45
+Ability: Mold Breaker
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Body Press
+- Iron Tail
+- High Horsepower
+- Bulldoze
 
-Camerupt
-Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Weezing @ Leftovers
+Level: 44
+Ability: Levitate
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Sunny Day
+- Heat Wave
+- Will-o-wisp
+- Explosion
+
+Gliscor @ Life Orb
+Level: 45
+Ability: Hyper Cutter
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Swords Dance
+- Thunder Fang
+- Rock Slide
+- Protect
+
+Camerupt-Mega @ Assault Vest
+Level: 46
+Ability: Solid Rock
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Overheat
+- Hyper Beam
+- Eruption
 
 === TRAINER_MAXIE_MT_CHIMNEY ===
 Name: MAXIE
@@ -8566,8 +9190,16 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Luvdisc
-Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Corsola
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Gorebyss
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_CRISSY ===
 Name: CRISSY
@@ -8578,13 +9210,17 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Goldeen
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Luvdisc
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Wailmer
-Level: 39
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Masquerain
+Level: 49
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Dewgong-Hoennian
+Level: 48
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_RICK ===
 Name: RICK
@@ -9501,16 +10137,12 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
+Gyarados
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Wailmer
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Tentacool
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Sharpedo
-Level: 32
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HENRY ===
@@ -9522,12 +10154,16 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Carvanha
-Level: 31
+Clamperl
+Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacruel
-Level: 34
+Chinchou
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Huntail
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ROGER ===
@@ -9539,16 +10175,12 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Magikarp
-Level: 15
+Lanturn
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Magikarp
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Gyarados
-Level: 35
+Gorebyss
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALEXA ===
@@ -9560,12 +10192,20 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Gloom
-Level: 34
+Nuzleaf
+Level: 46
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Azumarill
-Level: 34
+Primeape
+Level: 46
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Grapploct
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Zangoose
+Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_RUBEN ===
@@ -9577,12 +10217,20 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Shiftry
-Level: 34
+Lombre
+Level: 46
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Nosepass
-Level: 34
+Bisharp
+Level: 46
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Toxicroak
+Level: 47
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Seviper
+Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_KOJI_1 ===
@@ -9594,8 +10242,12 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Machoke
-Level: 34
+Primeape
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Primeape
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WAYNE ===
@@ -9607,16 +10259,12 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Tentacool
-Level: 31
+Whiscash
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Wailmer
-Level: 36
+Seaking
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_AIDAN ===
@@ -9628,12 +10276,20 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move
 
-Swellow
-Level: 32
+Oricorio-Baile
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skarmory
-Level: 32
+Oricorio-Pom-Pom
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Oricorio-Pau
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Oricorio-Sensu
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_REED ===
@@ -9645,12 +10301,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Spheal
-Level: 33
+Mienfoo-Hoennian
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sharpedo
-Level: 33
+Crabrawler
+Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TISHA ===
@@ -9662,8 +10318,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Chinchou
-Level: 34
+Azumarill
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sealeo
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TORI_AND_TIA ===
@@ -9702,21 +10362,15 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Swablu
-Level: 32
+Torkoal
+Level: 43
+Ability: Drought
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sing
-- Fury Attack
-- Safeguard
-- Aerial Ace
 
-Numel
-Level: 35
+Cherrim
+Level: 45
+Ability: Flower Gift
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Flamethrower
-- Take Down
-- Rest
-- Earthquake
 
 === TRAINER_TYRA_AND_IVY ===
 Name: TYRA & IVY
@@ -9802,12 +10456,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Azumarill
-Level: 35
+Gorebyss
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wingull
-Level: 33
+Clamperl
+Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LILA_AND_ROY_1 ===
@@ -9819,12 +10473,12 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Chinchou
-Level: 34
+Relicanth
+Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carvanha
-Level: 33
+Corsola
+Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LISA_AND_RAY ===
@@ -10271,8 +10925,12 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Zubat
-Level: 29
+Houndour
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Golbat
+Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_2 ===
@@ -10285,7 +10943,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Poochyena
-Level: 29
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Golbat
+Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_3 ===
@@ -10297,8 +10959,12 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Numel
-Level: 29
+Slugma
+Level: 41
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Koffing
+Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_4 ===
@@ -10310,12 +10976,16 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Baltoy
-Level: 28
+Houndour
+Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
-Level: 28
+Graveler-Alola
+Level: 41
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Onix
+Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_5 ===
@@ -10327,12 +10997,12 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Baltoy
-Level: 28
+Donphan
+Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Numel
-Level: 28
+Carbink-Hoennian
+Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_6 ===
@@ -10344,8 +11014,16 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
+Numel
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Mightyena
-Level: 29
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Growlithe
+Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_7 ===
@@ -10357,8 +11035,16 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Zubat
-Level: 29
+Rhyhorn
+Level: 41
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Magcargo
+Level: 43
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Houndour
+Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_8 ===
@@ -10370,8 +11056,12 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Poochyena
-Level: 29
+Weezing
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mightyena
+Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_9 ===
@@ -10383,8 +11073,16 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Zubat
-Level: 29
+Houndour
+Level: 41
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Growlithe
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Houndoom
+Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_10 ===
@@ -10396,8 +11094,16 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Mightyena
-Level: 29
+Lairon
+Level: 41
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Donphan
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Rhydon
+Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_11 ===
@@ -10409,8 +11115,20 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Baltoy
-Level: 29
+Magcargo
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Magcargo
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Magcargo
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Magcargo
+Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_12 ===
@@ -10422,8 +11140,12 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Numel
-Level: 29
+Carbink-Hoennian
+Level: 43
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mightyena
+Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_13 ===
@@ -10435,8 +11157,12 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Zubat
-Level: 29
+Golbat
+Level: 43
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mightyena
+Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_14 ===
@@ -10448,8 +11174,12 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Mightyena
-Level: 29
+Weezing
+Level: 43
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Gligar
+Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_15 ===
@@ -10461,8 +11191,16 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Numel
-Level: 29
+Golem-Alola
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Crobat
+Level: 43
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Torkoal
+Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_16 ===
@@ -10474,8 +11212,16 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Baltoy
-Level: 29
+Rhydon
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Houndoom
+Level: 43
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Camerupt
+Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TABITHA_MAGMA_HIDEOUT ===
@@ -10485,23 +11231,61 @@ Pic: Magma Admin M
 Gender: Male
 Music: Magma
 Double Battle: Yes
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Numel
-Level: 26
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Crobat
+Level: 43
+Ability: Inner Focus
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Brave Bird
+- Cross Poison
+- Steel Wing
+- Roost
 
-Mightyena
-Level: 28
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Sableye-Mega
+Level: 43
+Ability: Prankster
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Quash
+- Foul Play
+- Recover
+- Will-o-wisp
 
-Zubat
-Level: 30
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Pinsir
+Level: 44
+Ability: Moxie
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Submission
+- X-Scissor
+- Throat Chop
+- Bulldoze
 
-Camerupt
-Level: 33
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Cacturne @ Big Root
+Level: 44
+Ability: Storm Drain
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Spiky Shield
+- Drain Punch
+- Sucker Punch
+- Giga Drain
+
+Rhyperior @ Assault Vest
+Level: 45
+Ability: Solid Rock
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Rock Wrecker
+- Drill Run
+- Megahorn
+- Heat Crash
+
+Arcanine @ Sitrus Berry
+Level: 45
+Ability: Intimidate
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Wild Charge
+- Flare Blitz
+- Extreme Speed
+- Play Rough
 
 === TRAINER_DARCY ===
 Name: DARCY
@@ -10512,12 +11296,20 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Pelipper
-Level: 33
+Sableye-Mega
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Camerupt
-Level: 33
+Roserade
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wigglytuff
+Level: 50
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Kecleon
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAXIE_MOSSDEEP ===
@@ -10970,12 +11762,12 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Roselia
-Level: 33
+Hariyama
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Medicham
-Level: 33
+Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FABIAN ===
@@ -11663,3 +12455,548 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Draining Kiss
 - Double Team
 - Calm Mind
+
+=== TRAINER_KINGSTON ===
+Name: KINGSTON
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Sneasel 
+Level: 36
+IVs: 20 HP / 31 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Loudred 
+Level: 37
+IVs: 20 HP / 31 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Rhydon
+Level: 38
+IVs: 20 HP / 31 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_OPAL ===
+Name: OPAL
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Check Bad Move
+
+Seadra
+Level: 37
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Seadra
+Level: 37
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Dragalge
+Level: 38
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+=== TRAINER_DONOVAN ===
+Name: DONOVAN
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Check Bad Move
+
+Feebas
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Feebas
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Feebas
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Milotic
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_VANYA ===
+Name: VANYA
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Check Bad Move
+
+Machoke
+Level: 38
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Machoke
+Level: 38
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_AJAX ===
+Name: AJAX
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Kadabra
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 31 SpA / 20 SpD / 20 Spe
+
+Grafaiai
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Medicham
+Level: 38
+IVs: 20 HP / 31 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_ROSS ===
+Name: ROSS
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Check Bad Move
+
+Feebas
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Feebas
+Level: 25
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Feebas
+Level: 35
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Feebas
+Level: 45
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Feebas
+Level: 55
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Feebas
+Level: 65
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_AUSTIN ===
+Name: AUSTIN
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Check Bad Move
+
+Graveler-Alola
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Nosepass
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_NOAH ===
+Name: NOAH
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Check Bad Move
+
+Relicanth
+Level: 37
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Whiscash
+Level: 39
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_HARPER ===
+Name: HARPER
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Check Bad Move
+
+Primeape
+Level: 38
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Dusclops
+Level: 38
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+=== TRAINER_LANDON ===
+Name: LANDON
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Check Bad Move
+
+Onix
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Growlithe
+Level: 38
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+Marowak
+Level: 37
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+
+=== TRAINER_MILES ===
+Name: MILES
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Breloom
+Level: 39
+IVs: 25 HP / 31 Atk / 25 Def / 20 SpA / 25 SpD / 20 Spe
+
+Masquerain
+Level: 39
+IVs: 25 HP / 20 Atk / 25 Def / 31 SpA / 20 SpD / 31 Spe
+
+=== TRAINER_LUNA ===
+Name: LUNA
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Check Bad Move
+
+Shelgon
+Level: 37
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Sliggoo
+Level: 37
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Grumpig
+Level: 38
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Xatu
+Level: 39
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+=== TRAINER_VINNIE ===
+Name: VINNIE
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Raichu
+Level: 39
+IVs: 25 HP / 25 Atk / 25 Def / 31 SpA / 25 SpD / 25 Spe
+
+Pinsir
+Level: 39
+IVs: 25 HP / 31 Atk / 25 Def / 25 SpA / 20 SpD / 35 Spe
+
+Tropius
+Level: 40
+IVs: 25 HP / 25 Atk / 25 Def / 35 SpA / 25 SpD / 35 Spe
+
+=== TRAINER_MIRA ===
+Name: MIRA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Mawile
+Level: 39
+Ability: Intimidate
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Ninetales-Alola
+Level: 39
+Ability: Snow Warning
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Walrein
+Level: 40
+Ability: Slush Rush
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+=== TRAINER_ELIAS ===
+Name: ELIAS
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Check Bad Move
+
+Gyarados
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Whiscash
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_EVELYN ===
+Name: EVELYN
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Check Bad Move
+
+Seadra
+Level: 40
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Toxicroak
+Level: 39
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+Hariyama
+Level: 40
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+
+=== TRAINER_COURTNEY ===
+Name: COURTNEY
+Class: Magma Admin
+Pic: Magma Admin F
+Gender: Female
+Music: Magma
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Ninetales
+Level: 40
+Ability: Drought
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Will-o-wisp
+- Flamethrower
+- Extrasensory
+- Sunny Day
+
+Cherrim
+Level: 41
+Ability: Flower Gift
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Grassy Terrain
+- Solar Beam
+- Weather Ball
+- Sleep Powder
+
+Gogoat @ Scope Lens
+Level: 41
+Ability: Grass Pelt
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Horn Leech
+- High Horsepower
+- Wild Charge
+- Synthesis
+
+Heracross @ Flame Orb
+Level: 42
+Ability: Guts
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Megahorn
+- Submission
+- Smart Strike
+- Bulk Up
+
+Vileplume
+Level: 42
+Ability: Chlorophyll
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Pollen Puff
+- Energy Ball
+- Moonblast
+- After You
+
+Volcarona @ Sitrus Berry
+Level: 43
+Ability: Overcoat
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Heat Wave
+- Struggle Bug
+- Rage Powder
+- Quiver Dance
+
+=== TRAINER_LEO ===
+Name: LEO
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Gender: Male
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Snorunt
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Ninetales-Alola
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Gogoat
+Level: 42
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_SASHA ===
+Name: SASHA
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Female
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Loudred
+Level: 40
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Minior
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Braviary
+Level: 42
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_VLAD ===
+Name: VLAD
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Chimecho
+Level: 42
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Kecleon
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Gligar
+Level: 42
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_SHAE ===
+Name: SHAE
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Gender: Female
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Setup First Turn
+
+Glalie
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Snorunt
+Level: 42
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Drampa
+Level: 41
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_PEARL ===
+Name: PEARL
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
+Gender: Female
+Music: Cool
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Setup First Turn
+
+Mandibuzz
+Level: 42
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Gogoat
+Level: 42
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_MATEO ===
+Name: MATEO
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Check Bad Move
+
+Nosepass
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Graveler-Alola
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Onix
+Level: 41
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Nosepass
+Level: 40
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_ERIK ===
+Name: ERIK
+Class: Ruin Maniac
+Pic: Ruin Maniac
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Check Bad Move
+
+Sandslash
+Level: 41
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Sandslash-Alola
+Level: 41
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Probopass
+Level: 43
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe

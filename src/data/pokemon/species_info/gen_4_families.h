@@ -3480,10 +3480,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_CHATOT_HOENNIAN] =
     {
         .baseHP        = 76,
-        .baseAttack    = 45,
+        .baseAttack    = 65,
         .baseDefense   = 65,
-        .baseSpeed     = 101,
-        .baseSpAttack  = 107,
+        .baseSpeed     = 91,
+        .baseSpAttack  = 92,
         .baseSpDefense = 72,
         .types = MON_TYPES(TYPE_DARK, TYPE_FLYING),
         .catchRate = 60,

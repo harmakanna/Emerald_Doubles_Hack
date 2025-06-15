@@ -1459,10 +1459,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_SQUAWKABILLY
     [SPECIES_SQUAWKABILLY_GREEN_PLUMAGE] =
     {
-        .baseHP        = 101,
-        .baseAttack    = 116,
+        .baseHP        = 82,
+        .baseAttack    = 96,
         .baseDefense   = 51,
-        .baseSpeed     = 102,
+        .baseSpeed     = 92,
         .baseSpAttack  = 45,
         .baseSpDefense = 51,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
@@ -1513,10 +1513,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 
     [SPECIES_SQUAWKABILLY_BLUE_PLUMAGE] =
     {
-        .baseHP        = 101,
-        .baseAttack    = 116,
+        .baseHP        = 82,
+        .baseAttack    = 96,
         .baseDefense   = 51,
-        .baseSpeed     = 102,
+        .baseSpeed     = 92,
         .baseSpAttack  = 45,
         .baseSpDefense = 51,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
@@ -1567,10 +1567,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 
     [SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE] =
     {
-        .baseHP        = 101,
-        .baseAttack    = 116,
+        .baseHP        = 82,
+        .baseAttack    = 96,
         .baseDefense   = 51,
-        .baseSpeed     = 102,
+        .baseSpeed     = 92,
         .baseSpAttack  = 45,
         .baseSpDefense = 51,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
@@ -1621,10 +1621,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 
     [SPECIES_SQUAWKABILLY_WHITE_PLUMAGE] =
     {
-        .baseHP        = 101,
-        .baseAttack    = 116,
+        .baseHP        = 82,
+        .baseAttack    = 96,
         .baseDefense   = 51,
-        .baseSpeed     = 102,
+        .baseSpeed     = 92,
         .baseSpAttack  = 45,
         .baseSpDefense = 51,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
@@ -2062,7 +2062,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseSpDefense = 83,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 50,
-        .expYield = 153,
+        .expYield = 174,
         .evYield_HP = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,

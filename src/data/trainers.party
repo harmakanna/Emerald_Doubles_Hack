@@ -909,7 +909,7 @@ Sharpedo-Mega @ Life Orb
 Level: 52
 Ability: Mold Breaker
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fishous Rend
+- Fishious Rend
 - Crunch
 - Giga Impact
 - Surf
@@ -2116,7 +2116,7 @@ Seaking @ Nugget
 Level: 49
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Sealeo @ Nugger
+Sealeo @ Nugget
 Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -12791,7 +12791,7 @@ Hariyama
 Level: 40
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
-=== TRAINER_COURTNEY ===
+=== TRAINER_COURTNEY_CRATERCREST ===
 Name: COURTNEY
 Class: Magma Admin
 Pic: Magma Admin F

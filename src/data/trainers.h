@@ -3642,22 +3642,22 @@ F_TRAINER_FEMALE |
             },
             {
 #line 1537
-            .species = SPECIES_SCYTHER,
+            .species = SPECIES_SQUAWKABILLY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1540
             .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
 #line 1539
-            .ability = ABILITY_SWARM,
+            .ability = ABILITY_INTIMIDATE,
 #line 1538
             .lvl = 21,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1541
-                MOVE_POUNCE,
-                MOVE_WING_ATTACK,
+                MOVE_SWAGGER,
+                MOVE_AERIAL_ACE,
                 MOVE_QUICK_ATTACK,
-                MOVE_QUICK_GUARD,
+                MOVE_REVERSAL,
             },
             },
         },
@@ -4505,22 +4505,22 @@ F_TRAINER_FEMALE |
             },
             {
 #line 1883
-            .species = SPECIES_TOGETIC,
+            .species = SPECIES_ORICORIO_POM_POM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1886
             .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
 #line 1885
-            .ability = ABILITY_HEALER,
+            .ability = ABILITY_DANCER,
 #line 1884
             .lvl = 21,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1887
-                MOVE_FOLLOW_ME,
+                MOVE_FEATHER_DANCE,
                 MOVE_HELPING_HAND,
-                MOVE_DRAINING_KISS,
-                MOVE_MAGICAL_LEAF,
+                MOVE_AIR_CUTTER,
+                MOVE_REHEARSAL,
             },
             },
         },
@@ -4885,7 +4885,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 2028
-            .species = SPECIES_HAUNTER,
+            .species = SPECIES_SHUPPET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2030
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -4941,7 +4941,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 2049
-            .species = SPECIES_HAUNTER,
+            .species = SPECIES_DUSKULL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2051
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -11738,7 +11738,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 4743
-            .species = SPECIES_TOGEPI,
+            .species = SPECIES_AZURILL,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4743
             .heldItem = ITEM_ORAN_BERRY,
@@ -12379,7 +12379,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 5002
-            .species = SPECIES_GASTLY,
+            .species = SPECIES_SKIDDO_HOENNIAN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5004
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -17102,7 +17102,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 6835
-            .species = SPECIES_TOGEPI,
+            .species = SPECIES_SUNKERN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6837
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -20346,7 +20346,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 8126
-            .species = SPECIES_TOGEPI,
+            .species = SPECIES_ROSELIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 8128
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -24388,7 +24388,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9714
-            .species = SPECIES_GASTLY,
+            .species = SPECIES_KOFFING,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9716
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -24498,7 +24498,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9756
-            .species = SPECIES_TOGETIC,
+            .species = SPECIES_ORICORIO_PAU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9758
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),

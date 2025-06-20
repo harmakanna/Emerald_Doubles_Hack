@@ -4107,7 +4107,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
 #define MINIOR_MISC_INFO(color)                                             \
         .types = MON_TYPES(TYPE_ROCK, TYPE_FLYING),                         \
         .catchRate = 30,                                                    \
-        .expYield = 134,                                                    \
+        .expYield = 154,                                                    \
         .evYield_Defense = 1,                                               \
         .evYield_SpDefense = 1,                                             \
         .itemRare = ITEM_STAR_PIECE,                                        \
@@ -4137,10 +4137,10 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
     {                                                       \
         .baseHP        = 60,                                \
         .baseAttack    = 60,                                \
-        .baseDefense   = 130,                               \
+        .baseDefense   = 100,                               \
         .baseSpeed     = 60,                                \
         .baseSpAttack  = 60,                                \
-        .baseSpDefense = 130,                               \
+        .baseSpDefense = 100,                               \
         .weight = 400,                                      \
         .description = gMiniorMeteorPokedexText,            \
         .frontPic = gMonFrontPic_MiniorMeteor,              \

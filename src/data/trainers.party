@@ -1048,15 +1048,15 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Graveler-Alola
+Graveler
 Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Graveler-Alola
+Graveler
 Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Graveler-Alola
+Graveler
 Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -3071,7 +3071,7 @@ Joltik
 Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Geodude-Alola
+Geodude
 Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4850,11 +4850,11 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Geodude-Alola
+Geodude
 Level: 10
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
-- Charge
+- Defense Curl
 - Rollout
 
 Sandshrew
@@ -4873,7 +4873,7 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Geodude-Alola
+Geodude
 Level: 10
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
@@ -8376,7 +8376,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Geodude-Alola
+Geodude
 Level: 10
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -9383,15 +9383,15 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Geodude-Alola
+Geodude
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Geodude-Alola
+Geodude
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Geodude-Alola
+Geodude
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9433,7 +9433,7 @@ Nosepass
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Graveler-Alola
+Graveler
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9467,7 +9467,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Geodude-Alola
+Geodude
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9475,7 +9475,7 @@ Sandshrew
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Geodude-Alola
+Geodude
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9488,7 +9488,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Geodude-Alola
+Geodude
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10389,12 +10389,12 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Mega Drain
 - Leech Seed
 
-Graveler-Alola
+Graveler
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Defense Curl
 - Rollout
-- Spark
+- Selfdestruct
 - Rock Throw
 
 === TRAINER_MEL_AND_PAUL ===
@@ -10980,7 +10980,7 @@ Houndour
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Graveler-Alola
+Graveler
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11191,7 +11191,7 @@ Music: Magma
 Double Battle: Yes
 AI: Check Bad Move
 
-Golem-Alola
+Golem
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11673,7 +11673,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Geodude-Alola
+Geodude
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11681,7 +11681,7 @@ Mankey
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Geodude-Alola
+Geodude
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12603,7 +12603,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Graveler-Alola
+Graveler
 Level: 39
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
@@ -12968,7 +12968,7 @@ Nosepass
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Graveler-Alola
+Graveler
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

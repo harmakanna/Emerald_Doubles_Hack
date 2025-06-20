@@ -2456,7 +2456,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 1051
-            .species = SPECIES_GRAVELER_ALOLA,
+            .species = SPECIES_GRAVELER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1053
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -2467,7 +2467,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 1055
-            .species = SPECIES_GRAVELER_ALOLA,
+            .species = SPECIES_GRAVELER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1057
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -2478,7 +2478,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 1059
-            .species = SPECIES_GRAVELER_ALOLA,
+            .species = SPECIES_GRAVELER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1061
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -7610,7 +7610,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 3074
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3076
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -12018,7 +12018,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 4853
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4855
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -12029,7 +12029,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 4856
                 MOVE_TACKLE,
-                MOVE_CHARGE,
+                MOVE_DEFENSE_CURL,
                 MOVE_ROLLOUT,
             },
             },
@@ -12073,7 +12073,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 4876
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4878
             .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
@@ -21003,7 +21003,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 8379
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 8381
             .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
@@ -23573,7 +23573,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9386
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9388
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23584,7 +23584,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9390
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9392
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23595,7 +23595,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9394
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9396
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23703,7 +23703,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9436
-            .species = SPECIES_GRAVELER_ALOLA,
+            .species = SPECIES_GRAVELER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9438
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23789,7 +23789,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9470
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9472
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23811,7 +23811,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9478
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9480
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23843,7 +23843,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9491
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9493
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26072,7 +26072,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10392
-            .species = SPECIES_GRAVELER_ALOLA,
+            .species = SPECIES_GRAVELER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10394
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26084,7 +26084,7 @@ F_TRAINER_FEMALE |
 #line 10395
                 MOVE_DEFENSE_CURL,
                 MOVE_ROLLOUT,
-                MOVE_SPARK,
+                MOVE_SELFDESTRUCT,
                 MOVE_ROCK_THROW,
             },
             },
@@ -27579,7 +27579,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10983
-            .species = SPECIES_GRAVELER_ALOLA,
+            .species = SPECIES_GRAVELER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10985
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -28122,7 +28122,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11194
-            .species = SPECIES_GOLEM_ALOLA,
+            .species = SPECIES_GOLEM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11196
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -29358,7 +29358,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11676
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11678
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -29380,7 +29380,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11684
-            .species = SPECIES_GEODUDE_ALOLA,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11686
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -31739,7 +31739,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 12606
-            .species = SPECIES_GRAVELER_ALOLA,
+            .species = SPECIES_GRAVELER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12608
             .iv = TRAINER_PARTY_IVS(20, 20, 20, 20, 20, 20),
@@ -32674,7 +32674,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12971
-            .species = SPECIES_GRAVELER_ALOLA,
+            .species = SPECIES_GRAVELER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12973
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

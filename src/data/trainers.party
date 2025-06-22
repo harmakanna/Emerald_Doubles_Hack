@@ -90,7 +90,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Drilbur
+Mankey
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -296,15 +296,15 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
+Meowstic-Female
+Level: 34
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
 Whiscash
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Drampa
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Crabominable
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -321,7 +321,7 @@ Skarmory
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Squawkabilly-White
+Oricorio-Sensu
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -410,7 +410,7 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Scraggy
+Clobbopus
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -448,7 +448,7 @@ Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Golbat
+Zubat
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -456,7 +456,7 @@ Clobbopus
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sandygast
+Golbat
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -545,7 +545,7 @@ Carvanha
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sandygast
+Zubat
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -944,7 +944,7 @@ Shroomish
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cherubi
+Milcery
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -957,15 +957,16 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Cherubi
+
+Budew
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sunkern
+Milcery
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cherubi
+Budew
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -1023,13 +1024,13 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Sand Attack
 - Poison Sting
 
-Drilbur
+Cubone
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Fury Swipes
-- Metal Claw
+- Bone Club
+- Headbutt
 - Dig
-- Rapid Spin
+- Tail Whip
 
 Sandslash
 Level: 29
@@ -1069,7 +1070,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Cufant
+Phanpy
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -1293,7 +1294,7 @@ Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
 
-Tadbulb
+Psyduck
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -1302,7 +1303,7 @@ Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Linoone
-Level: 36
+Level: 29
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Sand Attack
 - Pin Missile
@@ -1442,14 +1443,14 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rest
 - Sleep Talk
 
-Shiftry
+Alcremie
 Level: 35
-Ability: Wind Rider
+Ability: Aroma Veil
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tailwind
-- Air Cutter
-- Razor Leaf
-- Knock Off
+- Decorate
+- Draining Kiss
+- Charm
+- Dazzling Gleam
 
 Electrode @ Magnet
 Level: 35
@@ -1460,14 +1461,14 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Discharge
 - Selfdestruct
 
-Copperajah @ Assault Vest
+Shiftry @ Focus Sash
 Level: 36
-Ability: Sheer Force
+Ability: Wind Rider
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Rollout
-- Stomp
-- Bulldoze
-- Hard Press
+- Tailwind
+- Air Cutter
+- Razor Leaf
+- Knock Off
 
 === TRAINER_VINCENT ===
 Name: VINCENT
@@ -1534,13 +1535,13 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 - Yawn
 - Light Screen
 
-Squawkabilly
+Snubbull
 Level: 21
 Ability: Intimidate
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 - Swagger
-- Aerial Ace
-- Quick Attack
+- Headbutt
+- Spirit Break
 - Reversal
 
 === TRAINER_EDGAR ===
@@ -1746,9 +1747,9 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Setup First Turn / Prefer Baton Pass
 
-Squawkabilly @ Loaded Dice
+Chatot-Hoennian @ Loaded Dice
 Level: 28
-Ability: Intimidate
+Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Parting Shot
 - Wing Attack
@@ -1898,7 +1899,7 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Yanmega
+Granbull
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -2251,7 +2252,7 @@ Roselia
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cherrim
+Bellossom
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2383,7 +2384,7 @@ Lairon
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Swinub
+Cubone
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2396,11 +2397,11 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Cherubi
+Snubbull
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sunflora
+Bellossom
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2451,7 +2452,7 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Tadbulb
+Psyduck
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2574,7 +2575,7 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Skrelp
+Pikachu
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3071,7 +3072,7 @@ Joltik
 Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Geodude
+Whismur
 Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -3143,7 +3144,7 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Revavroom
+Electrode
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3232,7 +3233,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Sunkern
+Numel
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -3249,7 +3250,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Sunkern
+Numel
 Level: 26
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -3299,13 +3300,13 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Ingrain
 - Bullet Seed
 
-Swinub
+Skiddo-Hoennian @ Safety Goggles
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Dig
+- Take Down
 - Powder Snow
 - Ice Shard
-- Mud Slap
+- Bulldoze
 
 === TRAINER_BEAU ===
 Name: BEAU
@@ -3316,11 +3317,11 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Drilbur
+Skiddo @ Safety Goggles
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cufant
+Phanpy
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3388,7 +3389,7 @@ Taillow
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cufant
+Skiddo-Hoennian
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3456,8 +3457,8 @@ Golisopod
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Yanma
-Level: 30
+Pinsir
+Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_TAYLOR ===
@@ -3486,7 +3487,7 @@ Music: Suspicious
 Double Battle: Yes
 AI: Check Bad Move
 
-Scyther
+Pinsir
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3649,7 +3650,7 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Spoink
+Espurr
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3725,7 +3726,7 @@ Spoink
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Baltoy
+Espurr
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3755,7 +3756,7 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Kadabra
+Espurr
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4454,11 +4455,11 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Spinda
+Ralts
 Level: 12
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Abra
+Lotad
 Level: 12
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -4740,11 +4741,11 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Azurill @ Oran Berry
+Plusle @ Oran Berry
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Igglybuff @ Oran Berry
+Skitty @ Oran Berry
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4761,7 +4762,7 @@ Hariyama
 Level: 31
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Scrafty
+Machoke
 Level: 31
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -4799,7 +4800,7 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Noibat
+Espurr
 Level: 25
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -4915,7 +4916,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Growl
 - Thunderbolt
 
-Tadbulb
+Pikachu
 Level: 19
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -5465,7 +5466,7 @@ Doduo
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Yanma
+Growlithe
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5478,7 +5479,7 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Yanma
+Vulpix-Alola
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5786,7 +5787,7 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move
 
-Squawkabilly
+Oricorio
 Level: 32
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -5875,11 +5876,11 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move
 
-Vullaby
+Oricorio
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Vullaby
+Oricorio-Sensu
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6241,13 +6242,13 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Solar Beam
 - Flamethrower
 
-Sunflora
+Leafeon
 Level: 33
-Ability: Solar Power
+Ability: Leaf Guard
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Sleep Powder
-- Weather Ball
-- Giga Drain
+- Detect
+- Leech Seed
+- Leaf Blade
 - Synthesis
 
 === TRAINER_BEVERLY ===
@@ -6381,7 +6382,7 @@ Wattrel
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cetoddle
+Bergmite
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6398,7 +6399,7 @@ Goldeen
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cetoddle
+Bergmite
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6752,7 +6753,7 @@ Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
 
-Marill
+Marill @ Safety Goggles
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Rollout
@@ -6832,7 +6833,7 @@ Oddish
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sunkern
+Clefairy
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7136,16 +7137,16 @@ Music: Suspicious
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Zangoose
+Pawniard
 Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Sneasel
-Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pawniard
 Level: 34
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Zangoose
+Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KAYLEY ===
@@ -7224,7 +7225,7 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Minior
+Alcremie
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -7236,7 +7237,7 @@ Rhyperior
 Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Weavile
+Mismagius
 Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -7278,7 +7279,7 @@ Pelipper
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Squawkabilly
+Chatot-Hoennian
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7753,7 +7754,7 @@ Skitty
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Swinub
+Cubone
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -7787,14 +7788,14 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Reflect
 - Helping Hand
 
-Piloswine @ Soft Sand
+Marowak @ Thick Club
 Level: 31
-Ability: Sap Sipper
+Ability: Lightning Rod
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Ice Shard
-- Body Slam
-- Mist
-- Stomping Tantrum
+- Focus Energy
+- Bone Rush
+- Fling
+- Swords Dance
 
 Azumarill
 Level: 32
@@ -7857,7 +7858,7 @@ Skitty
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Swinub
+Cubone
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -7891,14 +7892,14 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Reflect
 - Helping Hand
 
-Piloswine @ Soft Sand
+Marowak @ Thick Club
 Level: 31
-Ability: Sap Sipper
+Ability: Lightning Rod
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Ice Shard
-- Body Slam
-- Mist
-- Stomping Tantrum
+- Focus Energy
+- Bone Rush
+- Fling
+- Swords Dance
 
 Breloom
 Level: 32
@@ -7961,7 +7962,7 @@ Skitty
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Swinub
+Cubone
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -7995,14 +7996,14 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Reflect
 - Helping Hand
 
-Piloswine @ Soft Sand
+Marowak @ Thick Club
 Level: 31
-Ability: Sap Sipper
+Ability: Lightning Rod
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Ice Shard
-- Body Slam
-- Mist
-- Stomping Tantrum
+- Focus Energy
+- Bone Rush
+- Fling
+- Swords Dance
 
 Carbink-Hoennian
 Level: 32
@@ -8040,7 +8041,7 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Scraggy
+Snubbull
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8060,7 +8061,7 @@ Phanpy
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Clobbopus
+Seedot
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8119,7 +8120,7 @@ Swablu
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Jigglypuff
+Clefairy
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8292,7 +8293,7 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Varoom
+Voltorb
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8401,7 +8402,7 @@ Crabrawler
 Level: 13
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Machop
+Clobbopus
 Level: 13
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -8443,7 +8444,11 @@ Shroomish
 Level: 14
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Scraggy
+Machop
+Level: 14
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Machop
 Level: 14
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -8464,8 +8469,8 @@ Oricorio-Sensu
 Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Grumpig
-Level: 45
+Espurr
+Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LEONARDO ===
@@ -8600,7 +8605,7 @@ Music: Suspicious
 Double Battle: Yes
 AI: Check Bad Move
 
-Grumpig
+Misdreavus
 Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9083,11 +9088,11 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Wingull
+Marill
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wattrel
+Lotad
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9117,7 +9122,7 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Eevee
+Clefairy
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9505,17 +9510,17 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Pelipper
-Level: 10
+Geodude
+Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Gust
-- Growl
 
-Poochyena
-Level: 10
+Machop
+Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Scary Face
+
+Mankey
+Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DEZ_AND_LUKE ===
 Name: DEZ & LUKE
@@ -9581,7 +9586,7 @@ Horsea
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Corsola
+Snubbull
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9694,7 +9699,7 @@ Music: Suspicious
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint
 
-Yanma
+Gulpin
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9728,7 +9733,7 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Noibat
+Rufflet
 Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -10367,9 +10372,9 @@ Level: 43
 Ability: Drought
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cherrim
+Vileplume
 Level: 45
-Ability: Flower Gift
+Ability: Chlorophyll
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TYRA_AND_IVY ===
@@ -10536,7 +10541,7 @@ Chingling @ Nugget
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skiddo
+Seedot
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10553,7 +10558,7 @@ Budew @ Nugget
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cherubi
+Snubbull
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10600,11 +10605,11 @@ Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
 
-Sandygast
+Pichu
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sandygast
+Zigzagoon
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10617,11 +10622,11 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Wynaut @ Oran Berry
+Minun @ Oran Berry
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Pichu @ Oran Berry
+Snubbull @ Oran Berry
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10634,7 +10639,7 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Electrike
+Whismur
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10706,7 +10711,7 @@ Sandshrew
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cufant
+Skiddo
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10723,7 +10728,7 @@ Oddish
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cherubi
+Milcery
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10744,7 +10749,7 @@ Tinkatink
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sunkern
+Clefairy
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10870,7 +10875,7 @@ Barboach
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skrelp
+Goldeen
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11380,7 +11385,7 @@ Phanpy
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Drilbur
+Sandshrew
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -11397,11 +11402,11 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move
 
-Squawkabilly-Blue
+Swellow
 Level: 29
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Squawkabilly-Yellow
+Swellow
 Level: 29
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -11435,7 +11440,7 @@ Mankey
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Squawkabilly-White
+Croagunk
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11456,7 +11461,7 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Minior
+Granbull
 Level: 30
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -11477,7 +11482,7 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move
 
-Vullaby
+Rufflet
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11498,9 +11503,9 @@ Tinkatuff
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Vullaby
+Clefairy
 Level: 28
-Ability: Overcoat
+Ability: Magic Guard
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRYAN ===
@@ -11512,7 +11517,7 @@ Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
-Drilbur
+Phanpy
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11567,11 +11572,11 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Cherubi
+Milcery
 Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Cherubi
+Milcery
 Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11715,7 +11720,7 @@ Vulpix
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Yanma
+Doduo
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11779,7 +11784,7 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Varoom
+Loudred
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11813,7 +11818,7 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Goomy
+Skiddo-Hoennian
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11834,11 +11839,11 @@ Lanturn
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Piloswine
+Wobbuffet
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Scrafty
+Raichu
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -11947,15 +11952,15 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Bellibolt
-Level: 34
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Dragalge
+Meowstic-Male
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Rotom-Fan
+Level: 34
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Crabominable
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12302,7 +12307,7 @@ Vibrava
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sneasel
+Phanpy
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12340,7 +12345,7 @@ Seel-Hoennian
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wailmer
+Bergmite
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12374,7 +12379,7 @@ Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
 
-Cherrim
+Clefairy
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12465,7 +12470,7 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Sneasel 
+Misdreavus
 Level: 36
 IVs: 20 HP / 31 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
@@ -12494,7 +12499,7 @@ Seadra
 Level: 37
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
-Dragalge
+Kingdra
 Level: 38
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
@@ -12696,11 +12701,11 @@ Shelgon
 Level: 37
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
-Sliggoo
+Meowstic-Female
 Level: 37
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
-Grumpig
+Misdreavus
 Level: 38
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
@@ -12888,7 +12893,7 @@ Loudred
 Level: 40
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Minior
+Froslass
 Level: 41
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -12947,7 +12952,7 @@ Music: Cool
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Setup First Turn
 
-Mandibuzz
+Braviary
 Level: 42
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
